@@ -1,0 +1,39 @@
+{
+  "version": 6,
+  "include": [
+  ],
+  "configurePresets": [
+    {
+      "name": "fortran-conda-shared",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "flang",
+      "generator": "Ninja",
+      "inherits": "fortran-conda-shared",
+      "hidden": false,
+      "environment": {
+        "PREFIX": "C:/work/mambaforge/envs/libmed-base",
+        "PATH": "$env{PREFIX}/Library/bin"
+      },
+      "cacheVariables": {
+        "CMAKE_PREFIX_PATH": "$env{PREFIX}/Library",
+        "CMAKE_INSTALL_PREFIX": "$env{PREFIX}/Library",
+        "CMAKE_LINKER": "$env{PREFIX}/Library/bin/lld-link.exe",
+        "CMAKE_C_COMPILER_ID": "Clang",
+        "CMAKE_CXX_COMPILER_ID": "Clang",
+        "CMAKE_CXX_FLAGS": "-stdlib=libc++ $env{CMAKE_CXX_FLAGS}",
+        "CMAKE_C_FLAGS": "-stdlib=libc++ $env{CMAKE_C_FLAGS}",
+        "CMAKE_Fortran_FLAGS": "-stdlib=libc++ $env{CMAKE_C_FLAGS}",
+        "CMAKE_C_COMPILER": "$env{PREFIX}/Library/bin/clang-cl.exe",
+        "CMAKE_CXX_COMPILER": "$env{PREFIX}/Library/bin/clang-cl.exe",
+
+        "CMAKE_Fortran_COMPILER": "$env{PREFIX}/Library/bin/flang-new.exe"
+
+      }
+    }
+  ]
+}
