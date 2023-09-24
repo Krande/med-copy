@@ -7,14 +7,20 @@
       "name": "fortran-conda-shared",
       "hidden": true,
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release"
+        "CMAKE_BUILD_TYPE": "Release",
+        "MED_MEDINT_TYPE": "int",
+        "MEDFILE_INSTALL_DOC": "OFF",
+        "MEDFILE_BUILD_PYTHON": "ON",
+        "MEDFILE_BUILD_SHARED_LIBS": "ON",
+        "MEDFILE_BUILD_STATIC_LIBS": "OFF"
       }
     },
     {
       "name": "flang",
+      "description": "Using flang-new.exe from conda. Not working yet.",
       "generator": "Ninja",
       "inherits": "fortran-conda-shared",
-      "hidden": false,
+      "hidden": true,
       "environment": {
         "PREFIX": "C:/work/mambaforge/envs/libmed-base",
         "PATH": "$env{PREFIX}/Library/bin"
@@ -30,9 +36,28 @@
         "CMAKE_Fortran_FLAGS": "-stdlib=libc++ $env{CMAKE_C_FLAGS}",
         "CMAKE_C_COMPILER": "$env{PREFIX}/Library/bin/clang-cl.exe",
         "CMAKE_CXX_COMPILER": "$env{PREFIX}/Library/bin/clang-cl.exe",
-
         "CMAKE_Fortran_COMPILER": "$env{PREFIX}/Library/bin/flang-new.exe"
-
+      }
+    },
+    {
+      "name": "mingw-clion",
+      "description": "Using mingw64 MSVC variant 13.1 from https://winlibs.com/",
+      "generator": "Ninja",
+      "inherits": "fortran-conda-shared",
+      "hidden": false,
+      "environment": {
+        "PREFIX": "C:/compilers/mingw64",
+        "CONDA_PREFIX": "C:/work/mambaforge/envs/libmed-base",
+        "PATH": "$env{PREFIX}/bin;$env{PREFIX};$env{CONDA_PREFIX}/Library/bin;$env{CONDA_PREFIX}/Library/lib;$env{CONDA_PREFIX}/Library/include"
+      },
+      "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "$env{CONDA_PREFIX}/Library",
+        "PYTHON_INCLUDE_DIR": "$env{CONDA_PREFIX}/include",
+        "PYTHON_EXECUTABLE": "$env{CONDA_PREFIX}/python.exe",
+        "PYTHON_LIBRARY": "$env{CONDA_PREFIX}/libs/python311.lib",
+        "CMAKE_C_COMPILER": "$env{PREFIX}/bin/gcc.exe",
+        "CMAKE_CXX_COMPILER": "$env{PREFIX}/bin/g++.exe",
+        "CMAKE_Fortran_COMPILER": "$env{PREFIX}/bin/gfortran.exe"
       }
     }
   ]
