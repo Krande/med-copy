@@ -4786,7 +4786,7 @@ printf "%s\n" "$ac_cv_path_SED" >&6; }
 
 
 
-if grep -q "#define *H5_HAVE_PARALLEL 1" ${hdf5include}/H5pubconf.h
+if test "x`sed -n '/^#define *H5_HAVE_PARALLEL *1\{0,1\}/{s/.*/MED_CATCH_H5_HAVE_PARALLEL/p;}' ${hdf5include}/H5pubconf.h`" = "xMED_CATCH_H5_HAVE_PARALLEL"
 then
  mpi_wanted_test="yes"
 else
@@ -6362,14 +6362,14 @@ fi
 
 #Pour des raisons historiques prend en compte la variable utilisateur F90
 test x"$with_f90" = xyes && f90prog=${F90}
-#La variable f90prog mï¿½morise le choix de compilateur F90 fait par l'utilisateur, mais les variables MPIFC et FC restent prioritaires
-#Ces deux veriables sont utilisï¿½es dans ax__prog__fc__mpi
+#La variable f90prog mémorise le choix de compilateur F90 fait par l'utilisateur, mais les variables MPIFC et FC restent prioritaires
+#Ces deux veriables sont utilisées dans ax__prog__fc__mpi
 test ! x"$with_f90" = xyes && test ! x"$with_f90" = xno && f90prog=$with_f90
-#Faut-il lancer la dï¿½tection du compilateur (par dï¿½faut non)
+#Faut-il lancer la détection du compilateur (par défaut non)
 med_check_f90="no"
-#Si l'activation de f90 a ï¿½tï¿½ explicitement demandï¿½e ou si l'une des variables FC, MPIFC est positionï¿½e la dï¿½tection du compilateur doit ï¿½tre activï¿½e
+#Si l'activation de f90 a été explicitement demandée ou si l'une des variables FC, MPIFC est positionée la détection du compilateur doit être activée
 (test ! x"$with_f90" = xno||(test x"$with_f90" = xno &&(test ! x"$FC" = x||test ! x"$MPIFC" = x )))&&med_check_f90="yes"
-#Si l'utilisateur a explicitement demandï¿½ de ne pas contruire l'interface Fortran par l'option --enable-fortran=no, il ne faut pas lancer la dï¿½tection du compilateur
+#Si l'utilisateur a explicitement demandé de ne pas contruire l'interface Fortran par l'option --enable-fortran=no, il ne faut pas lancer la détection du compilateur
 test x"$enable_fortran" = xno && med_check_f90="no"
 
 
@@ -7059,8 +7059,8 @@ case $host_os in *\ *) host_os=`echo "$host_os" | sed 's/ /-/g'`;; esac
 
 
 
-#la macro de dï¿½tection du compilateur f90 cherchera le compilateur sï¿½quentiel si mpi_wanted_test == no
-#Elle prend en compte les variables f90prog, FC et MPIFC et mpi_wanted_test pour dï¿½finir et tester le compilateur dont le nom sera forcï¿½ment FC en retour (parallel ou sï¿½quentiel)
+#la macro de détection du compilateur f90 cherchera le compilateur séquentiel si mpi_wanted_test == no
+#Elle prend en compte les variables f90prog, FC et MPIFC et mpi_wanted_test pour définir et tester le compilateur dont le nom sera forcément FC en retour (parallel ou séquentiel)
 
 
 
@@ -7173,14 +7173,14 @@ else $as_nop
 fi
 
 
-#Si aucun compilateur n'a ï¿½tï¿½ trouvï¿½ et que le F90 est requis, on gï¿½nï¿½re une erreur
+#Si aucun compilateur n'a été trouvé et que le F90 est requis, on génère une erreur
   test x"$FC" = x && test x"$med_check_f90" = xyes && as_fn_error $? "Can't find a valid FC compiler, check your configure switches or the FC var..." "$LINENO" 5
 
 
 if test  x"$FC" != x && test x"$med_check_f90" = xyes
 then :
 
-#Le compilateur FC ï¿½tant dï¿½fini, on positionne maintenant les LDFLAGS
+#Le compilateur FC étant défini, on positionne maintenant les LDFLAGS
   ac_ext=${ac_fc_srcext-f}
 ac_compile='$FC -c $FCFLAGS $ac_fcflags_srcext conftest.$ac_ext >&5'
 ac_link='$FC -o conftest$ac_exeext $FCFLAGS $LDFLAGS $ac_fcflags_srcext conftest.$ac_ext $LIBS >&5'
@@ -7551,14 +7551,14 @@ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
 ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
 ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
-  ##AC_FC_WRAPPERS Inutile car pas d'interface spï¿½cifique f90
+  ##AC_FC_WRAPPERS Inutile car pas d'interface spécifique f90
 
-# Ce test semble obsolï¿½te : A vï¿½rifier.
+# Ce test semble obsolète : A vérifier.
   if test -z "$FC" ; then
     as_fn_error $? "Can't find $f90prog command, please verify your env. var. PATH" "$LINENO" 5
   fi
 
-#Si HDF5 n'est pas parallel, la macro ax__prog__fc__mpi n'a pas testï¿½ de compilation en F90
+#Si HDF5 n'est pas parallel, la macro ax__prog__fc__mpi n'a pas testé de compilation en F90
 if test x"$mpi_wanted_test" = xno; then
     ac_ext=${ac_fc_srcext-f}
 ac_compile='$FC -c $FCFLAGS $ac_fcflags_srcext conftest.$ac_ext >&5'
@@ -7594,7 +7594,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 fi
 
-#Test la capacitï¿½ du compilateur F90 ï¿½ gï¿½rer le prï¿½-processing
+#Test la capacité du compilateur F90 à gérer le pré-processing
    ac_ext=${ac_fc_srcext-f}
 ac_compile='$FC -c $FCFLAGS $ac_fcflags_srcext conftest.$ac_ext >&5'
 ac_link='$FC -o conftest$ac_exeext $FCFLAGS $LDFLAGS $ac_fcflags_srcext conftest.$ac_ext $LIBS >&5'
