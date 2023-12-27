@@ -1,11 +1,21 @@
 {
   "version": 6,
   "include": [
+    ".env.json"
   ],
   "configurePresets": [
     {
-      "name": "fortran-conda-shared",
+      "name": "conda-shared",
       "hidden": true,
+      "inherits": [
+        "env-vars"
+      ],
+      "warnings": {
+        "dev": false
+      },
+      "environment": {
+        "PREFIX": "$env{MED_PREFIX}"
+      },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
         "MED_MEDINT_TYPE": "int",
@@ -16,81 +26,16 @@
       }
     },
     {
-      "name": "ci-StdShar-MSVC-Fortran",
-      "description": "MSVC Standard Config for x64 (Release)",
-      "vendor": {
-        "jetbrains.com/clion": {
-          "toolchain": "Visual Studio (intel)"
-        }
-      },
-      "environment": {
-        "PREFIX": "C:/work/mambaforge/envs/libmed-base",
-        "PATH": "$env{PREFIX}/Library/bin;$env{PATH}"
-      },
-      "architecture": {
-        "value": "x64",
-        "strategy": "external"
-      },
-      "cacheVariables": {
-        "PATH": "$env{PREFIX}/Library/bin;$env{PATH}",
-        "CMAKE_C_COMPILER": "cl",
-        "CMAKE_CXX_COMPILER": "cl",
-        "CMAKE_Fortran_COMPILER": "ifx",
-        "HDF5_BUILD_FORTRAN": "ON"
-      },
-      "toolset": {
-        "value": "host=x64",
-        "strategy": "external"
-      },
-      "condition": {
-        "type": "equals",
-        "lhs": "${hostSystemName}",
-        "rhs": "Windows"
-      }
-    },
-    {
-      "name": "flang",
-      "description": "Using flang-new.exe from conda. Not working yet.",
+      "name": "gcc-ninja-debug",
+      "description": "Using gcc",
       "generator": "Ninja",
-      "inherits": "fortran-conda-shared",
-      "hidden": true,
-      "environment": {
-        "PREFIX": "C:/work/mambaforge/envs/libmed-base",
-        "PATH": "$env{PREFIX}/Library/bin"
-      },
-      "cacheVariables": {
-        "CMAKE_PREFIX_PATH": "$env{PREFIX}/Library",
-        "CMAKE_INSTALL_PREFIX": "$env{PREFIX}/Library",
-        "CMAKE_LINKER": "$env{PREFIX}/Library/bin/lld-link.exe",
-        "CMAKE_C_COMPILER_ID": "Clang",
-        "CMAKE_CXX_COMPILER_ID": "Clang",
-        "CMAKE_CXX_FLAGS": "-stdlib=libc++ $env{CMAKE_CXX_FLAGS}",
-        "CMAKE_C_FLAGS": "-stdlib=libc++ $env{CMAKE_C_FLAGS}",
-        "CMAKE_Fortran_FLAGS": "-stdlib=libc++ $env{CMAKE_C_FLAGS}",
-        "CMAKE_C_COMPILER": "$env{PREFIX}/Library/bin/clang-cl.exe",
-        "CMAKE_CXX_COMPILER": "$env{PREFIX}/Library/bin/clang-cl.exe",
-        "CMAKE_Fortran_COMPILER": "$env{PREFIX}/Library/bin/flang-new.exe"
-      }
-    },
-    {
-      "name": "mingw-clion",
-      "description": "Using mingw64 MSVC variant 13.1 from https://winlibs.com/",
-      "generator": "Ninja",
-      "inherits": "fortran-conda-shared",
+      "inherits": "conda-shared",
       "hidden": false,
-      "environment": {
-        "PREFIX": "C:/compilers/mingw64",
-        "CONDA_PREFIX": "C:/work/mambaforge/envs/libmed-base",
-        "PATH": "$env{PREFIX}/bin;$env{PREFIX};$env{CONDA_PREFIX}/Library/bin;$env{CONDA_PREFIX}/Library/lib;$env{CONDA_PREFIX}/Library/include"
-      },
       "cacheVariables": {
-        "CMAKE_INSTALL_PREFIX": "$env{CONDA_PREFIX}/Library",
-        "PYTHON_INCLUDE_DIR": "$env{CONDA_PREFIX}/include",
-        "PYTHON_EXECUTABLE": "$env{CONDA_PREFIX}/python.exe",
-        "PYTHON_LIBRARY": "$env{CONDA_PREFIX}/libs/python311.lib",
-        "CMAKE_C_COMPILER": "$env{PREFIX}/bin/gcc.exe",
-        "CMAKE_CXX_COMPILER": "$env{PREFIX}/bin/g++.exe",
-        "CMAKE_Fortran_COMPILER": "$env{PREFIX}/bin/gfortran.exe"
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_PREFIX_PATH": "$env{PREFIX}:$env{PREFIX}/include:$env{PREFIX}/lib:$env{PREFIX}/bin",
+        "CMAKE_FIND_ROOT_PATH": "$env{PREFIX}",
+        "CMAKE_INSTALL_PREFIX": "$env{INSTALL_PREFIX}"
       }
     }
   ]

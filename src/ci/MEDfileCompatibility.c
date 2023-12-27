@@ -113,10 +113,6 @@ MEDfileCompatibility(const char* const filename,
 #if MED_NUM_MAJEUR != 4
 #error "Don't forget to update the test version here when you change the major version of the library !"
 #endif
-#if H5_VERS_MINOR > 10
-#error "Don't forget to check the compatibility version of the library, depending on the internal hdf model choice !"
-#error "Cf. _MEDfileCreate ..."
-#endif
 
  SORTIE:
   _ret = 0;

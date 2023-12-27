@@ -72,9 +72,6 @@ med_idt _MEDfileOpen(const char * const filename,const med_access_mode accessmod
 
    •   The creation order tracking property, H5P_CRT_ORDER_TRACKED, has been set in the group creation property list (see H5Pset_link_creation_order). 
   */
-#if H5_VERS_MINOR > 10
-#error "Don't forget to change the compatibility version of the library !"
-#endif
 /* L'avantage de bloquer le modèle interne HDF5 
    est que l'on peut modifier des fichiers med de différentes versions majeures de fichiers.
    L'inconvénient est que l'on ne profite pas des évolutions de performances d'HDF.
