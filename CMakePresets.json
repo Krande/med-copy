@@ -18,23 +18,36 @@
       },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "MED_MEDINT_TYPE": "int",
+        "MED_MEDINT_TYPE": "long",
         "MEDFILE_INSTALL_DOC": "OFF",
         "MEDFILE_BUILD_PYTHON": "ON",
         "MEDFILE_BUILD_SHARED_LIBS": "ON",
-        "MEDFILE_BUILD_STATIC_LIBS": "OFF"
+        "MEDFILE_BUILD_STATIC_LIBS": "OFF",
+        "CMAKE_FIND_ROOT_PATH_MODE_PROGRAM": "NEVER",
+        "CMAKE_FIND_ROOT_PATH_MODE_LIBRARY": "ONLY",
+        "CMAKE_FIND_ROOT_PATH_MODE_INCLUDE": "ONLY"
       }
     },
     {
       "name": "gcc-ninja-debug",
       "description": "Using gcc",
-      "generator": "Ninja",
+      "generator": "Unix Makefiles",
       "inherits": "conda-shared",
       "hidden": false,
+      "environment": {
+        "FC": "$env{PREFIX}/bin/x86_64-conda-linux-gnu-gfortran"
+      },
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_PREFIX_PATH": "$env{PREFIX}:$env{PREFIX}/include:$env{PREFIX}/lib:$env{PREFIX}/bin",
-        "CMAKE_FIND_ROOT_PATH": "$env{PREFIX}",
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_PREFIX_PATH": "$env{PREFIX};$env{PREFIX}/include;$env{PREFIX}/lib;$env{PREFIX}/bin;$env{PREFIX}/x86_64-conda-linux-gnu/sysroot/usr",
+        "CMAKE_FIND_ROOT_PATH": "$env{PREFIX};$env{PREFIX}/x86_64-conda-linux-gnu/sysroot",
+        "CMAKE_PROGRAM_PATH": "$env{PREFIX}/bin",
+        "CMAKE_C_FLAGS": "-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem $env{PREFIX}/include",
+        "CMAKE_CXX_FLAGS": "-fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem $env{PREFIX}/include",
+        "CMAKE_Fortran_FLAGS": "-fdefault-integer-8 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem $env{PREFIX}/include $env{FFLAGS}",
+        "CMAKE_LINKER": "$env{PREFIX}/bin/x86_64-conda-linux-gnu-ld",
+        "CMAKE_STRIP": "$env{PREFIX}/bin/x86_64-conda-linux-gnu-strip",
+        "CMAKE_AR": "$env{PREFIX}/bin/x86_64-conda-linux-gnu-ar",
         "CMAKE_INSTALL_PREFIX": "$env{INSTALL_PREFIX}"
       }
     }
