@@ -5,7 +5,7 @@
   ],
   "configurePresets": [
     {
-      "name": "conda-shared",
+      "name": "shared",
       "hidden": true,
       "inherits": [
         "env-vars"
@@ -29,10 +29,30 @@
       }
     },
     {
+      "name": "Win debug",
+      "generator": "Ninja",
+      "inherits": [
+        "shared"
+      ],
+      "hidden": false,
+      "environment": {
+        "LIBRARY_PREFIX": "$env{PREFIX}/Library"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "HDF5_ROOT_DIR": "$env{LIBRARY_PREFIX}",
+        "PYTHON_ROOT_DIR": "$env{PREFIX}",
+        "PYTHONINTERP_ROOT_DIR": "$env{PREFIX}",
+        "PYTHONLIBS_ROOT_DIR": "$env{LIBRARY_PREFIX}",
+        "PYTHON_INCLUDE_DIRS": "$env{LIBRARY_PREFIX}/include",
+        "PYTHON_LIBRARIES": "$env{PREFIX}/libs/python312.lib"
+      }
+    },
+    {
       "name": "gcc-ninja-debug",
       "description": "Using gcc",
       "generator": "Unix Makefiles",
-      "inherits": "conda-shared",
+      "inherits": "shared",
       "hidden": false,
       "environment": {
         "FC": "$env{PREFIX}/bin/x86_64-conda-linux-gnu-gfortran"
