@@ -18,7 +18,7 @@
       },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "MED_MEDINT_TYPE": "long",
+        "MED_MEDINT_TYPE": "int",
         "MEDFILE_INSTALL_DOC": "OFF",
         "MEDFILE_BUILD_PYTHON": "ON",
         "MEDFILE_BUILD_SHARED_LIBS": "ON",
@@ -40,12 +40,8 @@
       },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "HDF5_ROOT_DIR": "$env{LIBRARY_PREFIX}",
-        "PYTHON_ROOT_DIR": "$env{PREFIX}",
-        "PYTHONINTERP_ROOT_DIR": "$env{PREFIX}",
-        "PYTHONLIBS_ROOT_DIR": "$env{LIBRARY_PREFIX}",
-        "PYTHON_INCLUDE_DIRS": "$env{LIBRARY_PREFIX}/include",
-        "PYTHON_LIBRARIES": "$env{PREFIX}/libs/python312.lib"
+        "CMAKE_PREFIX_PATH": "$env{PREFIX};$env{LIBRARY_PREFIX};$env{LIBRARY_PREFIX}/include;$env{LIBRARY_PREFIX}/lib;$env{LIBRARY_PREFIX}/bin",
+        "HDF5_ROOT_DIR": "$env{LIBRARY_PREFIX}"
       }
     },
     {
