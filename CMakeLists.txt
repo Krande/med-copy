@@ -88,7 +88,11 @@ IF (WIN32)
     IF (NOT MINGW)
         # Needed to avoid a seg fault at runtime!
         # The variable is not very well documented but seems to exist
-        SET(CMAKE_Fortran_FLAGS "/iface:mixed_str_len_arg ${CMAKE_Fortran_FLAGS}")
+        if (CMAKE_Fortran_COMPILER MATCHES "flang")
+            message(STATUS "Using flang-new compiler")
+        else ()
+            SET(CMAKE_Fortran_FLAGS "/iface:mixed_str_len_arg ${CMAKE_Fortran_FLAGS}")
+        endif ()
         ADD_DEFINITIONS(-DPPRO_NT) # For windows medfile function nammes
     ENDIF ()
 

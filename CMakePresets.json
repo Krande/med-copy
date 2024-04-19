@@ -14,10 +14,14 @@
         "dev": false
       },
       "environment": {
-        "PREFIX": "$env{MED_PREFIX}"
+        "PREFIX": "$env{MED_PREFIX}",
+        "LDFLAGS": "$penv{LDFLAGS} /LIBPATH:$env{PREFIX}/lib msvcrt.lib",
+        "FCFLAGS": "$penv{FCFLAGS} -fms-runtime-lib=dll"
       },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_GENERATOR_PLATFORM": "",
+        "CMAKE_GENERATOR_TOOLSET": "",
         "MED_MEDINT_TYPE": "int",
         "MEDFILE_INSTALL_DOC": "OFF",
         "MEDFILE_BUILD_PYTHON": "ON",
@@ -29,19 +33,63 @@
       }
     },
     {
-      "name": "Win debug",
-      "generator": "Ninja",
+      "name": "win-shared",
       "inherits": [
         "shared"
       ],
-      "hidden": false,
+      "hidden": true,
       "environment": {
         "LIBRARY_PREFIX": "$env{PREFIX}/Library"
       },
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_Fortran_COMPILER": "$env{FC}",
         "CMAKE_PREFIX_PATH": "$env{PREFIX};$env{LIBRARY_PREFIX};$env{LIBRARY_PREFIX}/include;$env{LIBRARY_PREFIX}/lib;$env{LIBRARY_PREFIX}/bin",
         "HDF5_ROOT_DIR": "$env{LIBRARY_PREFIX}"
+      }
+    },
+    {
+      "name": "win-msvc-llvm-flang",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "inherits": [
+        "win-shared"
+      ],
+      "hidden": false,
+      "environment": {
+        "CC": "cl.exe",
+        "CXX": "cl.exe",
+        "FC": "flang-new.exe"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_C_FLAGS": "/MD",
+        "CMAKE_CXX_FLAGS": "/MD",
+        "CMAKE_Fortran_FLAGS": "-fms-runtime-lib=dll"
+      }
+    },
+    {
+      "name": "win-msvc-intel-fortran",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "inherits": [
+        "win-shared"
+      ],
+      "hidden": false,
+      "environment": {
+        "LIBRARY_PREFIX": "$env{PREFIX}/Library",
+        "CC": "cl.exe",
+        "CXX": "cl.exe",
+        "FC": "ifx.exe"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Visual Studio (MSVC) with Intel Fortran"
+        }
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_Fortran_FLAGS": "/MD",
+        "MEDFILE_BUILD_TESTS": "OFF"
       }
     },
     {
