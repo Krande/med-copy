@@ -117,7 +117,10 @@ IF(CMAKE_Fortran_COMPILER_WORKS)
     ADD_LIBRARY(medfwrap SHARED ${medfort_wrap_SOURCES})
     SET_TARGET_PROPERTIES(medfwrap PROPERTIES
       SOVERSION 11
-      VERSION   11.1.1)
+      VERSION   11.1.1
+      WINDOWS_EXPORT_ALL_SYMBOLS ON
+      POSITION_INDEPENDENT_CODE ON
+    )
     TARGET_LINK_LIBRARIES(medfwrap medC)
     INSTALL(TARGETS medfwrap
             EXPORT ${_export_group}

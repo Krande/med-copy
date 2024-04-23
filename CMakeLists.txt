@@ -1,5 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.8 FATAL_ERROR)
-PROJECT(MEDFile C CXX)
+PROJECT(MEDFile Fortran C CXX)
 
 ## The following signature is still buggy as of CMake 2.8.11 - 
 ## the OPTIONAL is not considered.
@@ -91,7 +91,7 @@ IF (WIN32)
         if (CMAKE_Fortran_COMPILER MATCHES "flang")
             message(STATUS "Using flang-new compiler")
         else ()
-            SET(CMAKE_Fortran_FLAGS "/iface:mixed_str_len_arg ${CMAKE_Fortran_FLAGS}")
+            SET(CMAKE_Fortran_FLAGS "/iface:mixed_str_len_arg /nologo /fpp /fixed /dll /MD ${CMAKE_Fortran_FLAGS}")
         endif ()
         ADD_DEFINITIONS(-DPPRO_NT) # For windows medfile function nammes
     ENDIF ()

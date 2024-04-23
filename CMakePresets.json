@@ -89,7 +89,8 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
         "CMAKE_Fortran_FLAGS": "/MD",
-        "MEDFILE_BUILD_TESTS": "OFF"
+        "MEDFILE_BUILD_TESTS": "OFF",
+        "CMAKE_VERBOSE_MAKEFILE": "ON"
       }
     },
     {
