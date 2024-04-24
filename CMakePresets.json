@@ -15,8 +15,7 @@
       },
       "environment": {
         "PREFIX": "$env{MED_PREFIX}",
-        "LDFLAGS": "$penv{LDFLAGS} /LIBPATH:$env{PREFIX}/lib msvcrt.lib",
-        "FCFLAGS": "$penv{FCFLAGS} -fms-runtime-lib=dll"
+        "LDFLAGS": "$penv{LDFLAGS} /LIBPATH:$env{PREFIX}/lib msvcrt.lib"
       },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
@@ -88,7 +87,9 @@
       },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "CMAKE_Fortran_FLAGS": "/MD",
+        "CMAKE_Fortran_FLAGS": "/nologo /fpp /fixed /dll /MD",
+        "CMAKE_C_FLAGS": "/nologo",
+        "CMAKE_CXX_FLAGS": "/nologo /EHsc",
         "MEDFILE_BUILD_TESTS": "OFF",
         "CMAKE_VERBOSE_MAKEFILE": "ON"
       }

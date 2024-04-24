@@ -91,7 +91,7 @@ IF (WIN32)
         if (CMAKE_Fortran_COMPILER MATCHES "flang")
             message(STATUS "Using flang-new compiler")
         else ()
-            SET(CMAKE_Fortran_FLAGS "/iface:mixed_str_len_arg /nologo /fpp /fixed /dll /MD ${CMAKE_Fortran_FLAGS}")
+            SET(CMAKE_Fortran_FLAGS "/iface:mixed_str_len_arg ${CMAKE_Fortran_FLAGS}")
         endif ()
         ADD_DEFINITIONS(-DPPRO_NT) # For windows medfile function nammes
     ENDIF ()

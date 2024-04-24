@@ -114,12 +114,21 @@ IF(CMAKE_Fortran_COMPILER_WORKS)
   IF(MEDFILE_BUILD_SHARED_LIBS)
     ## Intermediate library - this is unavoidable 
     ## if we want the Fortran wrapper to build correctly under win.
-    ADD_LIBRARY(medfwrap SHARED ${medfort_wrap_SOURCES})
+    if (MSVC)
+      # Due to issue https://gitlab.kitware.com/cmake/cmake/-/issues/25598
+      # I need to manually set the target link option (otherwise I would have to use intel compiler)
+      configure_file (medfwrap_symbols.def.in medfwrap_symbols.def @ONLY)
+      set (DLLDEF "${CMAKE_CURRENT_BINARY_DIR}/medfwrap_symbols.def")
+      ADD_LIBRARY(medfwrap SHARED ${medfort_wrap_SOURCES})
+      target_link_options(medfwrap PRIVATE "/DEF:${DLLDEF}")
+    else ()
+      ADD_LIBRARY(medfwrap SHARED ${medfort_wrap_SOURCES})
+    endif ()
+    # Add a particular link flag for medfwrap.dll
+
     SET_TARGET_PROPERTIES(medfwrap PROPERTIES
       SOVERSION 11
       VERSION   11.1.1
-      WINDOWS_EXPORT_ALL_SYMBOLS ON
-      POSITION_INDEPENDENT_CODE ON
     )
     TARGET_LINK_LIBRARIES(medfwrap medC)
     INSTALL(TARGETS medfwrap
