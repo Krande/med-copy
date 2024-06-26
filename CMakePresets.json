@@ -19,6 +19,7 @@
       "cacheVariables": {
         "CMAKE_GENERATOR_PLATFORM": "",
         "CMAKE_GENERATOR_TOOLSET": "",
+
         "MED_MEDINT_TYPE": "long long",
         "MEDFILE_INSTALL_DOC": "OFF",
         "MEDFILE_BUILD_PYTHON": "ON",
@@ -89,13 +90,15 @@
         }
       },
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_INSTALL_PREFIX": "$env{LIBRARY_PREFIX}",
         "CMAKE_Fortran_FLAGS": "/Od /debug /Zi /nologo /fpp /fixed /dll /MD /real-size:64 /integer-size:64",
-        "CMAKE_C_FLAGS": "/nologo /Od /Zi",
-        "CMAKE_CXX_FLAGS": "/nologo /Od /Zi /EHsc",
+        "CMAKE_C_FLAGS": "/nologo /Od /Zi -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
+        "CMAKE_CXX_FLAGS": "/nologo /Od /Zi /EHsc -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
         "MEDFILE_BUILD_TESTS": "OFF",
         "CMAKE_VERBOSE_MAKEFILE": "ON",
-        "CMAKE_EXE_LINKER_FLAGS": "/DEBUG /INCREMENTAL:NO"
+        "CMAKE_EXE_LINKER_FLAGS": "/DEBUG /INCREMENTAL:NO",
+        "MEDFILE_BUILD_CUSTOM_TESTS": "ON"
       }
     },
     {

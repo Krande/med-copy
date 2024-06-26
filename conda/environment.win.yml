@@ -1,9 +1,10 @@
 name: med-deps
 channels:
+  - https://repo.prefix.dev/code-aster
   - conda-forge
 dependencies:
-  - python 3.12
-  - hdf5 1.14.2
+  - python 3.11
+  - hdf5 1.14.4.3
   - vswhere
   - cmake
   - make

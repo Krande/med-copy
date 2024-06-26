@@ -59,7 +59,9 @@ IF(MEDFILE_BUILD_SHARED_LIBS)
     VERSION 0.4.0)
   TARGET_LINK_LIBRARIES(medimportengine medC)
   SET_TARGET_PROPERTIES(medimportengine PROPERTIES OUTPUT_NAME medimport)
-  INSTALL(TARGETS medimportengine DESTINATION lib${LIB_SUFFIX})
+  INSTALL(TARGETS medimportengine
+          RUNTIME DESTINATION bin
+          ARCHIVE DESTINATION lib${LIB_SUFFIX})
   SET(_lib_to_link "medimportengine")
 ENDIF()
 
