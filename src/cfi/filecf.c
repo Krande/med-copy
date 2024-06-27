@@ -59,8 +59,7 @@ From Fortran call of following C functions :
 #ifdef PPRO_NT
 med_idt
 MFIFVOP(const char const *name,
-	const unsigned int bidon,
-	const int const *access, 
+	const int const *access,
 	const med_int* const major, 
 	const med_int* const minor, 
 	const med_int* const release,
@@ -85,6 +84,12 @@ nmfifvop (const char const *name,
   croyant qu'il nest pas utilisé et la mise à jour de MedVersionedApi n'est
   alors pas effectuée.*/
   f77Api3IsSet(MedVersionedApi3F);
+
+
+  if (!len || *len <= 0) {
+	printf("Invalid string length: %d\n", len ? *len : -1);
+	return(-1);
+  }
 
   _fn = _MED2cstring((char *) name, (int) *len);
   if (!_fn) return(-1);

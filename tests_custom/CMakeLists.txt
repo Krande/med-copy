@@ -4,7 +4,8 @@ INCLUDE_DIRECTORIES(
 )
 
 SET(testf_SOURCES
-    test1/test1.f90
+        test1/subr1.f
+        test1/test1.f
 )
 
 FOREACH(testf_SOURCE ${testf_SOURCES})

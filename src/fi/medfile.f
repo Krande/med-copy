@@ -27,8 +27,10 @@ c
       integer access
       integer major, minor, rel
       integer*8 mfifvop
+      integer len_name  ! Local variable to hold length
 c
-      fid = mfifvop(name, access, major, minor, rel, len(name))
+      len_name = len_trim(name)  ! Get the trimmed length of the name
+      fid = mfifvop(name, access, major, minor, rel, len_name)
       if (fid.lt.0) then
          cret = fid
       else

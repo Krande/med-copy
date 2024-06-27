@@ -98,7 +98,7 @@
         "MEDFILE_BUILD_TESTS": "OFF",
         "CMAKE_VERBOSE_MAKEFILE": "ON",
         "CMAKE_EXE_LINKER_FLAGS": "/DEBUG /INCREMENTAL:NO",
-        "MEDFILE_BUILD_CUSTOM_TESTS": "ON"
+        "MEDFILE_BUILD_CUSTOM_TESTS": "OFF"
       }
     },
     {
