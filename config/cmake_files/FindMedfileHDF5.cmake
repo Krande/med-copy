@@ -43,7 +43,7 @@ IF(EXISTS "${HDF5_ROOT_DIR}")
   IF(WIN32)
     SET(_CONF_DIR "${HDF5_ROOT_DIR}/cmake/hdf5") 
   ELSE()
-    SET(_CONF_DIR "${HDF5_ROOT_DIR}/share/cmake/hdf5") 
+    SET(_CONF_DIR "${HDF5_ROOT_DIR}/share/cmake-3.29/Modules")
   ENDIF()
   # Try find_package in config mode with a hard-coded guess. This
   # has the priority.
@@ -166,8 +166,9 @@ IF (HDF5_FOUND)
                 REGEX "^[ \t]*#[ \t]*define[ \t]+H5_VERSION[ \t]+" )
 	    #MESSAGE(STATUS "HDF5_VERSION_DEFINE=${HDF5_VERSION_DEFINE}")
             if( "${HDF5_VERSION_DEFINE}" MATCHES
-                "H5_VERSION[ \t]+\"([0-9]+\\.[0-9]+\\.[0-9]+)(-patch([0-9]+))?\"" )
-	        set( HDF5_VERSION "${CMAKE_MATCH_1}" )
+                    "H5_VERSION[ \t]+\"([0-9]+\\.[0-9]+\\.[0-9]+)(-([0-9]+|patch([0-9]+)))?\"" )
+
+              set( HDF5_VERSION "${CMAKE_MATCH_1}" )
                 if( CMAKE_MATCH_3 )
                   set( HDF5_VERSION ${HDF5_VERSION}.${CMAKE_MATCH_3})
                 endif()

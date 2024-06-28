@@ -1,6 +1,6 @@
 program hello
     implicit none
-#include 'med.hf'
+#include <med.hf>
     character(len=255) :: kfic
     character(len=200) :: nofimd
     character(len=200) :: nom  ! Add this line to declare 'nom'

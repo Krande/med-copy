@@ -1,14 +1,17 @@
-name: libmed-base
+name: med-deps
 channels:
+  - https://repo.prefix.dev/code-aster
   - conda-forge
 dependencies:
-  - python 3.12
-  - hdf5 1.14.2
-  - gxx
-  - gcc
-  - gfortran
-  - zlib
+  - python 3.11.9
+  - hdf5 1.14.4.3
+  - sysroot_linux-64=2.17
+  - gxx=12
+  - gcc=12
+  - gfortran=12
+  - zlib=1.2
   - swig
   - cmake
   - ninja
+  - xy
   - make
