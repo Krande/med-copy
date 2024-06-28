@@ -8,6 +8,14 @@ set VS_VARS_PATH=C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\A
 call "%VS_VARS_PATH%\vcvars64.bat"
 @call "%INTEL_VARS_PATH%\vars.bat" -arch intel64
 
+set THIS_DIR=%~dp0
+set ROOT_DIR=%THIS_DIR%..\..
+echo ROOT_DIR=%ROOT_DIR%
+
+REM cmake.exe --preset win-msvc-intel-fortran -S %ROOT_DIR% -B %ROOT_DIR%\build\win-msvc-intel-fortran
+cmake.exe --build "%ROOT_DIR%\build\win-msvc-intel-fortran" --target all -j 10
+cmake.exe --build "%ROOT_DIR%\build\win-msvc-intel-fortran" --target install -j 10
+
 set FC=ifx
 set INCLUDE_DIRS=%INCLUDE_DIRS% /I"%CONDA_PREFIX%\Library\include"
 set LIB_DIRS=%LIB_DIRS% /LIBPATH:"%CONDA_PREFIX%\Library\lib" /LIBPATH:"%CONDA_PREFIX%\Library\bin"

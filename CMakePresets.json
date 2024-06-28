@@ -19,8 +19,6 @@
       "cacheVariables": {
         "CMAKE_GENERATOR_PLATFORM": "",
         "CMAKE_GENERATOR_TOOLSET": "",
-
-        "MED_MEDINT_TYPE": "long long",
         "MEDFILE_INSTALL_DOC": "OFF",
         "MEDFILE_BUILD_PYTHON": "ON",
         "MEDFILE_BUILD_SHARED_LIBS": "ON",
@@ -41,6 +39,7 @@
       },
       "cacheVariables": {
         "CMAKE_Fortran_COMPILER": "$env{FC}",
+        "MED_MEDINT_TYPE": "long long",
         "CMAKE_C_FLAGS": "/MD",
         "CMAKE_CXX_FLAGS": "/MD",
         "CMAKE_PREFIX_PATH": "$env{PREFIX};$env{LIBRARY_PREFIX};$env{LIBRARY_PREFIX}/include;$env{LIBRARY_PREFIX}/lib;$env{LIBRARY_PREFIX}/bin",

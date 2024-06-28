@@ -76,7 +76,7 @@ med_idt _MEDfileOpen(const char * const filename,const med_access_mode accessmod
    est que l'on peut modifier des fichiers med de différentes versions majeures de fichiers.
    L'inconvénient est que l'on ne profite pas des évolutions de performances d'HDF.
 */
-  if ( H5Pset_libver_bounds( _fapl, H5F_LIBVER_18, H5F_LIBVER_18 ) ) {
+  if (H5Pset_libver_bounds(_fapl, H5F_LIBVER_18, H5F_LIBVER_V114)) {
     MED_ERR_(_fid,MED_ERR_INIT,MED_ERR_PROPERTY,MED_ERR_FILEVERSION_MSG);
     goto ERROR;
   }

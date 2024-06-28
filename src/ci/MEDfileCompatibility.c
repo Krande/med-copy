@@ -54,7 +54,9 @@ MEDfileCompatibility(const char* const filename,
 
   /* Si le fichier n'est pas un fichier hdf retourne en indiquant hdfok=false et medok=false 
      mais pas de code d'erreur */
-  if  ( H5Fis_hdf5(filename) <= 0 )  {goto SORTIE;};
+  
+  hid_t is_accessible = H5Fis_accessible(filename, (int)H5P_DEFAULT);
+  if  ( is_accessible < 0 ) {goto SORTIE;};
 
   /* Si l'on ne peut pas déterminer la version de la bibliothèque med, renvoie une erreur */
   if (MEDlibraryHdfNumVersion(&_hmajeur, &_hmineur, &_hrelease) < 0) {
