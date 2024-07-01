@@ -79,7 +79,7 @@ med_idt _MEDfileCreate(const char * const filename, const med_access_mode access
     _h518medfileMMN[MED_FILE_H518_MINOR  ]= _i8_minor;
     _h518medfileMMN[MED_FILE_H518_RELEASE]= _i8_release; /* 0 */
 
-    _fp = fopen(filename, "w");
+    _fp = fopen(filename, "wb");
     if(!_fp) {
       MED_ERR_(_fid,MED_ERR_CREATE,MED_ERR_FILE,filename);
       ISCRUTE(major);ISCRUTE(minor);ISCRUTE(release);
