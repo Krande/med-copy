@@ -109,6 +109,7 @@
       "inherits": "shared",
       "hidden": false,
       "environment": {
+        "INSTALL_PREFIX": "$env{MED_PREFIX}"
       },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
@@ -119,10 +120,13 @@
         "MED_MEDINT_TYPE": "long",
         "CMAKE_PREFIX_PATH": "$env{PREFIX}:$env{PREFIX}/include:$env{PREFIX}/lib:$env{PREFIX}/bin",
         "CMAKE_FIND_ROOT_PATH": "$env{PREFIX}",
-        "CMAKE_C_FLAGS": "-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem $env{PREFIX}/include",
-        "CMAKE_CXX_FLAGS": "-fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem $env{PREFIX}/include",
-        "CMAKE_Fortran_FLAGS": "-fdefault-integer-8 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -isystem $env{PREFIX}/include $env{FFLAGS}",
-        "CMAKE_INSTALL_PREFIX": "$env{INSTALL_PREFIX}"
+        "CMAKE_C_FLAGS": "-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -O0 -fno-plt -ffunction-sections -pipe -isystem $env{PREFIX}/include",
+        "CMAKE_CXX_FLAGS": "-fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O0 -ffunction-sections -pipe -isystem $env{PREFIX}/include",
+        "CMAKE_Fortran_FLAGS": "-fdefault-integer-8 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O0 -ffunction-sections -pipe -isystem $env{PREFIX}/include $env{FFLAGS}",
+        "CMAKE_INSTALL_PREFIX": "$env{INSTALL_PREFIX}",
+        "Python_FIND_VIRTUALENV": "FIRST",
+        "Python_FIND_STRATEGY": "LOCATION",
+        "Python_ROOT_DIR": "$env{PREFIX}"
       }
     }
   ]

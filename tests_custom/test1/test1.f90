@@ -12,7 +12,7 @@ program hello
     integer :: cret
     character(len=1) :: dummy  ! Dummy variable to capture Enter key press
 
-    kfic = 'fort.80                                                                                                                                                                                                                                                        '
+    kfic = 'fort.80'
     ! Initialize the variable 'nofimd'
     nom = kfic(1:200)
     acces = 3

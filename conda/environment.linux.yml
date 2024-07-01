@@ -4,7 +4,7 @@ channels:
   - conda-forge
 dependencies:
   - python 3.11.9
-  - hdf5 1.14.4.3
+  - hdf5 1.14.4.3=*debug*
   - sysroot_linux-64=2.17
   - gxx=12
   - gcc=12
@@ -13,5 +13,5 @@ dependencies:
   - swig
   - cmake
   - ninja
-  - xy
+  #- xy
   - make
