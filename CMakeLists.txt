@@ -94,6 +94,7 @@ IF (WIN32)
          #   SET(CMAKE_Fortran_FLAGS "/iface:mixed_str_len_arg ${CMAKE_Fortran_FLAGS}")
         endif ()
         ADD_DEFINITIONS(-DPPRO_NT) # For windows medfile function nammes
+        ADD_DEFINITIONS(-DASTER_PLATFORM_MSVC64)
     ENDIF ()
 
 ELSE ()

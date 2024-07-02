@@ -106,10 +106,16 @@ nmfifvop (const char const *name,
 
 #ifdef PPRO_NT
 med_idt
+#ifdef ASTER_PLATFORM_MSVC64
+MFIFOPE(const char const *name,
+	const int const *access,
+	const med_int const *len)
+#else
 MFIFOPE(const char const *name,
 	const unsigned int bidon,
-	const int const *access, 
+	const int const *access,
 	const med_int const *len)
+#endif
 #else
 med_idt
 nmfifope (const char const *name,
@@ -143,11 +149,18 @@ nmfifope (const char const *name,
 
 #ifdef PPRO_NT
 med_int
+#ifdef ASTER_PLATFORM_MSVC64
+MFIFNAM(med_idt *fid,
+	char const *filename,
+	/* const med_int const *filenamesize,  */
+  	const med_int const *filenamelen)
+#else
 MFIFNAM(med_idt *fid,
 	char const *filename,
 	const unsigned int bidon,
 	/* const med_int const *filenamesize,  */
   	const med_int const *filenamelen)
+#endif
 #else
 med_int
 nmfifnam(med_idt *fid,
@@ -202,10 +215,16 @@ nmfifclo(med_idt *fid)
 
 #ifdef PPRO_NT
 med_int
+#ifdef ASTER_PLATFORM_MSVC64
+MFIFCOW(const med_idt const *fid,
+	const char const *comment,
+	const med_int *commentlen)
+#else
 MFIFCOW(const med_idt const *fid,
 	const char const *comment,
 	const unsigned int bidon,
 	const med_int *commentlen)
+#endif
 #else
 med_int
 nmfifcow(const med_idt const *fid,
@@ -231,10 +250,16 @@ nmfifcow(const med_idt const *fid,
 
 #ifdef PPRO_NT
 med_int
+#ifdef ASTER_PLATFORM_MSVC64
+MFIFCOR(const med_idt const *fid,
+		  char const *comment,
+		  const med_int *commentlen)
+#else
 MFIFCOR(const med_idt const *fid,
 		  char const *comment,
 		  const unsigned int bidon,
 		  const med_int *commentlen)
+#endif
 #else
 med_int
 nmfifcor(const med_idt const *fid,
@@ -303,11 +328,18 @@ nmfifsvr(const med_idt const *fid,
 
 #ifdef PPRO_NT
 med_int
+#ifdef ASTER_PLATFORM_MSVC64
+MFIFCOM(const char const *name,
+		    const med_int const *len,
+		    med_int *hdfok,
+		    med_int *medok)
+#else
 MFIFCOM(const char const *name,
 		    const unsigned int bidon,
 		    const med_int const *len,
 		    med_int *hdfok,
 		    med_int *medok)
+#endif
 #else
 med_int
 nmfifcom(const char const *name,
@@ -337,11 +369,18 @@ nmfifcom(const char const *name,
 
 #ifdef PPRO_NT
 med_idt
+#ifdef ASTER_PLATFORM_MSVC64
+MFIFOMN (med_idt *fid,
+	 char *fname,
+	 med_int *len,
+	 med_int *class)
+#else
 MFIFOMN (med_idt *fid,
 	 char *fname,
 	 unsigned int bidon,
 	 med_int *len,
 	 med_int *class)
+#endif
 #else
 med_idt
 nmfifomn(med_idt *fid,
@@ -389,12 +428,20 @@ nmfifoun(const med_idt const *fid,
 
 #ifdef PPRO_NT
 med_int
+#ifdef ASTER_PLATFORM_MSVC64
+MFIFOEX (const med_idt const *fid,
+	 const med_int const *class,
+	 char    *oname,
+	 med_int *len,
+	 med_int *oexist)
+#else
 MFIFOEX (const med_idt const *fid,
 	 const med_int const *class,
 	 char    *oname,
 	 unsigned int bidon,
 	 med_int *len,
 	 med_int *oexist)
+#endif
 #else
 med_int
 nmfifoex(const med_idt const *fid,
@@ -426,12 +473,20 @@ nmfifoex(const med_idt const *fid,
 
 #ifdef PPRO_NT
 med_int
+#ifdef ASTER_PLATFORM_MSVC64
 MFIFEXI (const char * const fname,
-	 unsigned int       bidon,
 	 med_int            *len,
 	 const int const    *access, 
 	 med_int            *fexist,
 	 med_int            *accok)
+#else
+MFIFEXI (const char * const fname,
+	 unsigned int       bidon,
+	 med_int            *len,
+	 const int const    *access,
+	 med_int            *fexist,
+	 med_int            *accok)
+#endif
 #else
 med_int
 nmfifexi(const char * const fname,

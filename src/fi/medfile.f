@@ -16,7 +16,8 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C*
 
 
-      subroutine mfivop(fid, name, access, major, minor, rel, cret)
+      subroutine mfivop(fid, name, access, major, minor, rel,
+     & cret) BIND(C, NAME='MFIVOP')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfivop
 c
       implicit none
@@ -40,7 +41,7 @@ c
       return
       end
 
-      subroutine mfiope(fid, name, access, cret)
+      subroutine mfiope(fid, name, access, cret) BIND(C, NAME='MFIOPE')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfiope
 c
       implicit none
@@ -50,8 +51,10 @@ c
       integer   cret
       integer access
       integer*8 mfifope
+      integer len_name  ! Local variable to hold length
 c
-      fid = mfifope(name, access, len(name))
+      len_name = len_trim(name)  ! Get the trimmed length of the name
+      fid = mfifope(name, access, len_name)
       if (fid.lt.0) then
          cret = fid
       else
@@ -63,7 +66,7 @@ c
 
 
 
-      subroutine mfinam(fid, name, cret)
+      subroutine mfinam(fid, name, cret) BIND(C, NAME='MFINAM')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfinam
 c
       implicit none
@@ -80,7 +83,7 @@ c
 
 
 
-      subroutine mficlo(fid, cret)
+      subroutine mficlo(fid, cret) BIND(C, NAME='MFICLO')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mficlo
 c
       implicit none
@@ -97,7 +100,7 @@ c
 
 
 
-      subroutine mficow(fid,cmt,cret)
+      subroutine mficow(fid,cmt,cret) BIND(C, NAME='MFICOW')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mficow
 c
       implicit none
@@ -114,7 +117,7 @@ c
       end
 
 
-      subroutine mficor(fid,cmt,cret)
+      subroutine mficor(fid,cmt,cret) BIND(C, NAME='MFICOR')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mficor 
 c
       implicit none
@@ -132,7 +135,8 @@ c
 
 
 
-      subroutine  mfinvr(fid,major,minor,rel,cret)
+      subroutine  mfinvr(fid,major,minor,rel,
+     & cret) BIND(C, NAME='MFINVR')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfinvr
 c
       implicit none
@@ -149,7 +153,7 @@ c
       end
 
 
-      subroutine mfisvr(fid,version,cret)
+      subroutine mfisvr(fid,version,cret) BIND(C, NAME='MFISVR')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfisvr
 c
       implicit none
@@ -168,7 +172,7 @@ c
 c
 c
 c
-      subroutine mficom(fname,hdfok,medok,cret)
+      subroutine mficom(fname,hdfok,medok,cret) BIND(C, NAME='MFICOM')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mficom
 c
       implicit none
@@ -185,7 +189,8 @@ c
       end
 
 
-      subroutine mfiomn(fid, fname, class, mid, cret)
+      subroutine mfiomn(fid, fname, class, mid,
+     & cret) BIND(C, NAME='MFIOMN')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfiomn
 c
       implicit none
@@ -209,7 +214,7 @@ c
 c
 c
 c
-      subroutine mfioun(fid, mid, class, cret)
+      subroutine mfioun(fid, mid, class, cret) BIND(C, NAME='MFIOUN')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfioun
 c
       implicit none
@@ -225,7 +230,8 @@ c
       end
 
       
-      subroutine mfioex(fid, class, oname, oexist, cret)
+      subroutine mfioex(fid, class, oname, oexist,
+     & cret) BIND(C, NAME='MFIOEX')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfioex
 c
       implicit none
@@ -242,7 +248,8 @@ c
       end
 
 
-      subroutine mfiexi(fname, access, fexist, accok, cret)
+      subroutine mfiexi(fname, access, fexist, accok,
+     & cret) BIND(C, NAME='MFIEXI')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfioex
 c
       implicit none

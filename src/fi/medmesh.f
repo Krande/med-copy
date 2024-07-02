@@ -16,7 +16,8 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C
 
       subroutine mmhcre(fid, name, sdim, mdim, mtype, desc, dtunit,
-     &                  stype, atype, aname, aunit, cret)
+     &                  stype, atype, aname, aunit,
+     & cret) BIND(C, NAME='MMHCRE')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcre
 c
       implicit none
@@ -27,8 +28,8 @@ c
       integer   sdim, mdim, mtype, stype, atype, cret
       integer mmhfcre
 c
-      cret = mmhfcre(fid, name, len(name), sdim, mdim, mtype, 
-     &               desc, len(desc), dtunit, len(dtunit),
+      cret = mmhfcre(fid, name, sdim, mdim, mtype, 
+     &               desc,  dtunit,
      &               stype, atype, aname, 16*sdim, 
      &               aunit, 16*sdim)
 c      
