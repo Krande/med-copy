@@ -16,7 +16,7 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C
 
       subroutine mmhcre(fid, name, sdim, mdim, mtype, desc, dtunit,
-     &                  stype, atype, aname, aunit, cret)
+     &                  stype, atype, aname, aunit, cret) bind(C, name="MMHCRE")
 c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcre
 c
       implicit none

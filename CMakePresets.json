@@ -93,7 +93,7 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_INSTALL_PREFIX": "$env{LIBRARY_PREFIX}",
-        "CMAKE_Fortran_FLAGS": "/Od /debug /Zi /nologo /fpp /fixed /dll /MD /real-size:64 /integer-size:64",
+        "CMAKE_Fortran_FLAGS": "/Od /debug /Zi /nologo /fpp /fixed /dll /MD /real-size:64 /integer-size:64 /assume:byterecl,aligned_dummy_args,dummy_aliases,writeable_strings /4L132",
         "CMAKE_C_FLAGS": "/nologo /Od /Zi -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
         "CMAKE_CXX_FLAGS": "/nologo /Od /Zi /EHsc -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
         "MEDFILE_BUILD_TESTS": "OFF",

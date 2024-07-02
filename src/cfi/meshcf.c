@@ -151,12 +151,20 @@ From Fortran call of following C functions :
 
 #ifdef PPRO_NT
 med_int 
-MMHFCRE(med_idt *fid, char *mname, unsigned int bidon, 
+MMHFCRE(med_idt *fid, char *mname, 
+	// unsigned int bidon, 
                   med_int *mnamelen, med_int * sdim, med_int * mdim, med_int *mtype,
-		  char *desc, unsigned int bidon2, med_int *desclen,
-		  char *dtunit, unsigned int bidon3, med_int *dtunitlen,
-		  med_int *stype, med_int *atype, char *aname, unsigned int bidon4,
-		  med_int *anamelen, char *aunit, unsigned int bidon5, med_int* aunitlen)
+		  char *desc, 
+			// unsigned int bidon2, 
+			med_int *desclen,
+		  char *dtunit, 
+	//unsigned int bidon3, 
+	med_int *dtunitlen,
+		  med_int *stype, med_int *atype, char *aname, 
+	//unsigned int bidon4,
+		  med_int *anamelen, char *aunit, 
+	//unsigned int bidon5, 
+	med_int* aunitlen)
 #else
 med_int 
 nmmhfcre(med_idt *fid, char *mname, med_int *mnamelen, med_int * sdim,

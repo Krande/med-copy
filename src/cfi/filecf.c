@@ -107,8 +107,8 @@ nmfifvop (const char const *name,
 #ifdef PPRO_NT
 med_idt
 MFIFOPE(const char const *name,
-	const unsigned int bidon,
-	const int const *access, 
+    // const unsigned int bidon,
+	const int const *access,
 	const med_int const *len)
 #else
 med_idt
@@ -145,7 +145,7 @@ nmfifope (const char const *name,
 med_int
 MFIFNAM(med_idt *fid,
 	char const *filename,
-	const unsigned int bidon,
+	// const unsigned int bidon,
 	/* const med_int const *filenamesize,  */
   	const med_int const *filenamelen)
 #else
@@ -204,7 +204,7 @@ nmfifclo(med_idt *fid)
 med_int
 MFIFCOW(const med_idt const *fid,
 	const char const *comment,
-	const unsigned int bidon,
+	// const unsigned int bidon,
 	const med_int *commentlen)
 #else
 med_int
@@ -233,7 +233,7 @@ nmfifcow(const med_idt const *fid,
 med_int
 MFIFCOR(const med_idt const *fid,
 		  char const *comment,
-		  const unsigned int bidon,
+		  // const unsigned int bidon,
 		  const med_int *commentlen)
 #else
 med_int
@@ -281,7 +281,7 @@ nmfifnvr(const med_idt const *fid,
 med_int
 MFIFSVR(const med_idt const *fid,
 		  char* const medversion, 
-		  const unsigned int bidon, 
+		  // const unsigned int bidon,
 		  const med_int const *len)
 #else
 med_int
@@ -304,7 +304,7 @@ nmfifsvr(const med_idt const *fid,
 #ifdef PPRO_NT
 med_int
 MFIFCOM(const char const *name,
-		    const unsigned int bidon,
+		    // const unsigned int bidon,
 		    const med_int const *len,
 		    med_int *hdfok,
 		    med_int *medok)
@@ -339,7 +339,7 @@ nmfifcom(const char const *name,
 med_idt
 MFIFOMN (med_idt *fid,
 	 char *fname,
-	 unsigned int bidon,
+	 // unsigned int bidon,
 	 med_int *len,
 	 med_int *class)
 #else
@@ -392,7 +392,7 @@ med_int
 MFIFOEX (const med_idt const *fid,
 	 const med_int const *class,
 	 char    *oname,
-	 unsigned int bidon,
+	 // unsigned int bidon,
 	 med_int *len,
 	 med_int *oexist)
 #else
@@ -427,7 +427,7 @@ nmfifoex(const med_idt const *fid,
 #ifdef PPRO_NT
 med_int
 MFIFEXI (const char * const fname,
-	 unsigned int       bidon,
+	 // unsigned int       bidon,
 	 med_int            *len,
 	 const int const    *access, 
 	 med_int            *fexist,
