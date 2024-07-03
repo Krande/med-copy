@@ -44,10 +44,22 @@ From Fortran call of following C functions :
 
 #ifdef PPRO_NT
 med_int
-MFAFCRE(med_idt *fid, char *mname, unsigned int bidon1, med_int *mnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFAFCRE(med_idt *fid,
+          char *mname,
+          med_int *mnamelen,
+  		  char *fname,
+            med_int *fnamelen,
+  		  med_int *fnum,
+            med_int *ng,
+            char* gname,
+  		  med_int *gnamelen)
+#else
+  MFAFCRE(med_idt *fid, char *mname, unsigned int bidon1, med_int *mnamelen,
 		  char *fname, unsigned int bidon2, med_int *fnamelen,
 		  med_int *fnum, med_int *ng, char* gname, unsigned int bidon3,
 		  med_int *gnamelen)
+#endif
 #else
 med_int
 nmfafcre(med_idt *fid, char *mname, med_int *mnamelen,

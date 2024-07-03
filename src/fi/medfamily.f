@@ -15,7 +15,8 @@ C*  You should have received a copy of the GNU Lesser General Public License
 C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C
 
-      subroutine mfacre(fid, name, fname, fnum, ngro, gname, cret)
+      subroutine mfacre(fid, name, fname, fnum, ngro, gname,
+     & cret) BIND(C, NAME='MFACRE')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfacre
 c
       implicit none

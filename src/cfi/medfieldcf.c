@@ -87,11 +87,27 @@ From Fortran call of following C functions :
 
 #ifdef PPRO_NT
 med_int
-MFDFCRE(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFCRE(med_idt *fid,
+          char *fname,
+          med_int *fnamelen,
+  		  med_int *ftype,
+          med_int *ncomp,
+          char *cname,
+          med_int *cnamelen,
+  		  char *cuname,
+          med_int *cunamelen,
+  		  char *dtunit,
+          med_int *dtunitlen,
+  		  char* mname,
+          med_int *mnamelen)
+#else
+  MFDFCRE(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *ftype, med_int *ncomp, char *cname, unsigned int bidon2, med_int *cnamelen,
 		  char *cuname, unsigned int bidon3, med_int *cunamelen,
 		  char *dtunit, unsigned int bidon4, med_int *dtunitlen,
 		  char* mname, unsigned int bidon5, med_int *mnamelen)
+#endif
 #else
 med_int
 nmfdfcre(med_idt *fid, char *fname, med_int *fnamelen,
@@ -143,10 +159,17 @@ nmfdfcre(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFRVW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFRVW(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit, med_float *dt,
+  		  med_int *etype, med_int *gtype, med_int *swm,
+  		  med_int *cs, med_int *n, med_float *val)
+#else
+  MFDFRVW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_float *dt,
 		  med_int *etype, med_int *gtype, med_int *swm,
 		  med_int *cs, med_int *n, med_float *val)
+#endif
 #else
 med_int
 nmfdfrvw(med_idt *fid, char *fname, med_int *fnamelen,
@@ -188,10 +211,17 @@ nmfdfrvw(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFIVW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFIVW(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit, med_float *dt,
+  		  med_int *etype, med_int *gtype, med_int *swm,
+  		  med_int *cs, med_int *n, med_int *val)
+#else
+  MFDFIVW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_float *dt,
 		  med_int *etype, med_int *gtype, med_int *swm,
 		  med_int *cs, med_int *n, med_int *val)
+#endif
 #else
 med_int
 nmfdfivw(med_idt *fid, char *fname, med_int *fnamelen,
@@ -232,12 +262,29 @@ nmfdfivw(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFRPW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFRPW(med_idt *fid,
+          char *fname,
+          med_int *fnamelen,
+  		  med_int *numdt,
+            med_int *numit,
+            med_float *dt,
+  		  med_int *etype,
+            med_int *gtype,
+  		  med_int *stm,
+            char *pname,
+            med_int *pnamelen,
+  		  char *lname,
+            med_int *lnamelen,
+  		  med_int *swm,med_int *cs, med_int *n, med_float *val)
+#else
+  MFDFRPW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_float *dt,
-		  med_int *etype, med_int *gtype, 
-		  med_int *stm, char *pname, unsigned int bidon2, med_int *pnamelen,  
+		  med_int *etype, med_int *gtype,
+		  med_int *stm, char *pname, unsigned int bidon2, med_int *pnamelen,
 		  char *lname, unsigned int bidon3, med_int *lnamelen,
 		  med_int *swm,med_int *cs, med_int *n, med_float *val)
+#endif
 #else
 med_int
 nmfdfrpw(med_idt *fid, char *fname, med_int *fnamelen,
@@ -293,12 +340,21 @@ nmfdfrpw(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFIPW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFIPW(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit, med_float *dt,
+  		  med_int *etype, med_int *gtype,
+  		  med_int *stm, char *pname, med_int *pnamelen,
+  		  char *lname, med_int *lnamelen,
+  		  med_int *swm,med_int *cs, med_int *n, med_int *val)
+#else
+  MFDFIPW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_float *dt,
-		  med_int *etype, med_int *gtype, 
-		  med_int *stm, char *pname, unsigned int bidon2, med_int *pnamelen,  
-		  char *lname, unsigned int bidon3, med_int *lnamelen, 
+		  med_int *etype, med_int *gtype,
+		  med_int *stm, char *pname, unsigned int bidon2, med_int *pnamelen,
+		  char *lname, unsigned int bidon3, med_int *lnamelen,
 		  med_int *swm,med_int *cs, med_int *n, med_int *val)
+#endif
 #else
 med_int
 nmfdfipw(med_idt *fid, char *fname, med_int *fnamelen,
@@ -354,11 +410,19 @@ nmfdfipw(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFRAW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFRAW(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit, med_float *dt,
+  		  med_int *etype, med_int *gtype,
+  		  char *lname, med_int *lnamelen,
+  		  unsigned char **flt, med_float *val)
+#else
+  MFDFRAW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_float *dt,
 		  med_int *etype, med_int *gtype,
-		  char *lname, unsigned int bidon2, med_int *lnamelen, 
+		  char *lname, unsigned int bidon2, med_int *lnamelen,
 		  unsigned char **flt, med_float *val)
+#endif
 #else
 med_int
 nmfdfraw(med_idt *fid, char *fname, med_int *fnamelen,
@@ -405,11 +469,19 @@ nmfdfraw(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFIAW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFIAW(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit, med_float *dt,
+  		  med_int *etype, med_int *gtype,
+  		  char *lname, med_int *lnamelen,
+  		  unsigned char **flt, med_int *val)
+#else
+  MFDFIAW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_float *dt,
 		  med_int *etype, med_int *gtype,
-		  char *lname, unsigned int bidon2, med_int *lnamelen, 
+		  char *lname, unsigned int bidon2, med_int *lnamelen,
 		  unsigned char **flt, med_int *val)
+#endif
 #else
 med_int
 nmfdfiaw(med_idt *fid, char *fname, med_int *fnamelen,
@@ -489,8 +561,13 @@ nmfdfnfc(med_idt *fid, med_int *ind)
 
 #ifdef PPRO_NT
 med_int 
-MFDFNCN(med_idt *fid,  
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFNCN(med_idt *fid,
+  		  char* fname, med_int *fnamelen)
+#else
+  MFDFNCN(med_idt *fid,
 		  char* fname, unsigned int bidon1, med_int *fnamelen)
+#endif
 #else
 med_int 
 nmfdfncn(med_idt *fid, 
@@ -516,13 +593,23 @@ nmfdfncn(med_idt *fid,
 
 #ifdef PPRO_NT
 med_int 
-MFDFFDI(med_idt *fid, med_int *it, char *fname, unsigned int bidon1, 
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFFDI(med_idt *fid, med_int *it, char *fname,
+  		  char*mname,
+  		  med_int *localmesh, med_int *type,
+  		  char *cname,
+  		  char *cunit,
+  		  char *dtunit,
+  		  med_int *nc)
+#else
+  MFDFFDI(med_idt *fid, med_int *it, char *fname, unsigned int bidon1,
 		  char*mname, unsigned int bidon2,
 		  med_int *localmesh, med_int *type,
-		  char *cname, unsigned int bidon3, 
+		  char *cname, unsigned int bidon3,
 		  char *cunit, unsigned int bidon4,
-		  char *dtunit, unsigned int bidon5, 
+		  char *dtunit, unsigned int bidon5,
 		  med_int *nc)
+#endif
 #else
 med_int 
 nmfdffdi(med_idt *fid, med_int *it, char *fname,char *mname,
@@ -579,13 +666,23 @@ nmfdffdi(med_idt *fid, med_int *it, char *fname,char *mname,
 
 #ifdef PPRO_NT
 med_int 
-MFDFFIN(med_idt *fid, char *fname, unsigned int bidon1,med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFFIN(med_idt *fid, char *fname, med_int *fnamelen,
+  		  char*mname,
+  		  med_int *localmesh, med_int *type,
+  		  char *cname,
+  		  char *cunit,
+  		  char *dtunit,
+  		  med_int *nc)
+#else
+  MFDFFIN(med_idt *fid, char *fname, unsigned int bidon1,med_int *fnamelen,
 		  char*mname, unsigned int bidon2,
 		  med_int *localmesh, med_int *type,
-		  char *cname, unsigned int bidon3, 
+		  char *cname, unsigned int bidon3,
 		  char *cunit, unsigned int bidon4,
-		  char *dtunit, unsigned int bidon5, 
+		  char *dtunit, unsigned int bidon5,
 		  med_int *nc)
+#endif
 #else
 med_int 
 nmfdffin(med_idt *fid, char *fname, med_int *fnamelen,
@@ -648,8 +745,13 @@ nmfdffin(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFCSI(med_idt *fid, char* fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFCSI(med_idt *fid, char* fname, med_int *fnamelen,
+  		  med_int *it, med_int *numdt, med_int *numit, med_float *dt)
+#else
+  MFDFCSI(med_idt *fid, char* fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *it, med_int *numdt, med_int *numit, med_float *dt)
+#endif
 #else
 med_int
 nmfdfcsi(med_idt *fid, char* fname, med_int *fnamelen,
@@ -678,8 +780,13 @@ nmfdfcsi(med_idt *fid, char* fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFCMI(med_idt *fid, char* fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFCMI(med_idt *fid, char* fname, med_int *fnamelen,
+  		  med_int *it, med_int *numdt, med_int *numit, med_float *dt, med_int *meshnumdt, med_int *meshnumit)
+#else
+  MFDFCMI(med_idt *fid, char* fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *it, med_int *numdt, med_int *numit, med_float *dt, med_int *meshnumdt, med_int *meshnumit)
+#endif
 #else
 med_int
 nmfdfcmi(med_idt *fid, char* fname, med_int *fnamelen,
@@ -710,8 +817,13 @@ nmfdfcmi(med_idt *fid, char* fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFCMW(med_idt *fid, char* fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFCMW(med_idt *fid, char* fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit, med_int *meshnumdt, med_int *meshnumit)
+#else
+  MFDFCMW(med_idt *fid, char* fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_int *meshnumdt, med_int *meshnumit)
+#endif
 #else
 med_int
 nmfdfcmw(med_idt *fid, char* fname, med_int *fnamelen,
@@ -742,9 +854,15 @@ nmfdfcmw(med_idt *fid, char* fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int 
-MFDFNPF(med_idt *fid, char*fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFNPF(med_idt *fid, char*fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit, med_int *etype, med_int *gtype,
+  		  char *dpname, char *dlname)
+#else
+  MFDFNPF(med_idt *fid, char*fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_int *etype, med_int *gtype,
 		  char *dpname, unsigned int bidon2, char *dlname, unsigned int bidon3)
+#endif
 #else
 med_int 
 nmfdfnpf(med_idt *fid, char*fname, med_int *fnamelen,
@@ -783,8 +901,13 @@ nmfdfnpf(med_idt *fid, char*fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFNVA(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFNVA(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit, med_int *etype, med_int *gtype)
+#else
+  MFDFNVA(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_int *etype, med_int *gtype)
+#endif
 #else
 med_int 
 nmfdfnva(med_idt *fid, char *fname, med_int *fnamelen,
@@ -815,10 +938,17 @@ nmfdfnva(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int 
-MFDFNVP(med_idt *fid, char*fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFNVP(med_idt *fid, char*fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit, med_int *etype, med_int *gtype,
+  		  med_int *pit, med_int *stm, char *pname,
+  		  med_int *psize, char *lname, med_int *nip)
+#else
+  MFDFNVP(med_idt *fid, char*fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_int *etype, med_int *gtype,
-		  med_int *pit, med_int *stm, char *pname, unsigned int bidon2, 
+		  med_int *pit, med_int *stm, char *pname, unsigned int bidon2,
 		  med_int *psize, char *lname, unsigned int bidon3, med_int *nip)
+#endif
 #else
 med_int 
 nmfdfnvp(med_idt *fid, char*fname, med_int *fnamelen,
@@ -863,10 +993,17 @@ nmfdfnvp(med_idt *fid, char*fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int 
-MFDFNPN(med_idt *fid, char* fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFNPN(med_idt *fid, char* fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit, med_int *etype, med_int *gtype,
+  		  char *pname, med_int *pnamelen, med_int *stm,
+  		  med_int *psize, char *lname, med_int *nip)
+#else
+  MFDFNPN(med_idt *fid, char* fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_int *etype, med_int *gtype,
-		  char *pname, unsigned int bidon2, med_int *pnamelen, med_int *stm, 
+		  char *pname, unsigned int bidon2, med_int *pnamelen, med_int *stm,
 		  med_int *psize, char *lname, unsigned int bidon3, med_int *nip)
+#endif
 #else
 med_int 
 nmfdfnpn(med_idt *fid, char* fname, med_int *fnamelen,
@@ -914,10 +1051,17 @@ nmfdfnpn(med_idt *fid, char* fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFRVR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
-		  med_int *numdt, med_int *numit, 
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFRVR(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit,
+  		  med_int *etype, med_int *gtype, med_int *swm,
+  		  med_int *cs, med_float *val)
+#else
+  MFDFRVR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+		  med_int *numdt, med_int *numit,
 		  med_int *etype, med_int *gtype, med_int *swm,
 		  med_int *cs, med_float *val)
+#endif
 #else
 med_int
 nmfdfrvr(med_idt *fid, char *fname, med_int *fnamelen,
@@ -957,10 +1101,17 @@ nmfdfrvr(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFIVR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFIVR(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit,
+  		  med_int *etype, med_int *gtype, med_int *swm,
+  		  med_int *cs, med_int *val)
+#else
+  MFDFIVR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit,
 		  med_int *etype, med_int *gtype, med_int *swm,
 		  med_int *cs, med_int *val)
+#endif
 #else
 med_int
 nmfdfivr(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
@@ -999,11 +1150,19 @@ nmfdfivr(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFRPR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFRPR(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit,
+  		  med_int *etype, med_int *gtype,
+  		  med_int *stm, char *pname, med_int *pnamelen,
+  		  med_int *swm,med_int *cs, med_float *val)
+#else
+  MFDFRPR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit,
-		  med_int *etype, med_int *gtype, 
-		  med_int *stm, char *pname, unsigned int bidon2, med_int *pnamelen,  
+		  med_int *etype, med_int *gtype,
+		  med_int *stm, char *pname, unsigned int bidon2, med_int *pnamelen,
 		  med_int *swm,med_int *cs, med_float *val)
+#endif
 #else
 med_int
 nmfdfrpr(med_idt *fid, char *fname, med_int *fnamelen,
@@ -1050,11 +1209,19 @@ nmfdfrpr(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFIPR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFIPR(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit,
+  		  med_int *etype, med_int *gtype,
+  		  med_int *stm, char *pname, med_int *pnamelen,
+  		  med_int *swm, med_int *cs, med_int *val)
+#else
+  MFDFIPR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit,
-		  med_int *etype, med_int *gtype, 
-		  med_int *stm, char *pname, unsigned int bidon2, med_int *pnamelen,  
+		  med_int *etype, med_int *gtype,
+		  med_int *stm, char *pname, unsigned int bidon2, med_int *pnamelen,
 		  med_int *swm, med_int *cs, med_int *val)
+#endif
 #else
 med_int
 nmfdfipr(med_idt *fid, char *fname, med_int *fnamelen,
@@ -1101,10 +1268,17 @@ nmfdfipr(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFRAR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFRAR(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit,
+  		  med_int *etype, med_int *gtype,
+  		  unsigned char **flt, med_float *val)
+#else
+  MFDFRAR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit,
 		  med_int *etype, med_int *gtype,
 		  unsigned char **flt, med_float *val)
+#endif
 #else
 med_int
 nmfdfrar(med_idt *fid, char *fname, med_int *fnamelen,
@@ -1141,10 +1315,17 @@ nmfdfrar(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFIAR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFIAR(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit,
+  		  med_int *etype, med_int *gtype,
+  		  unsigned char **flt, med_int *val)
+#else
+  MFDFIAR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit,
 		  med_int *etype, med_int *gtype,
 		  unsigned char **flt, med_int *val)
+#endif
 #else
 med_int
 nmfdfiar(med_idt *fid, char *fname, med_int *fnamelen,
@@ -1182,8 +1363,13 @@ nmfdfiar(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFINW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFINW(med_idt *fid, char *fname, med_int *fnamelen,
+  		  char *iname, med_int *inamelen)
+#else
+  MFDFINW(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  char *iname, unsigned int bidon2, med_int *inamelen)
+#endif
 #else
 med_int
 nmfdfinw(med_idt *fid, char *fname, med_int *fnamelen,
@@ -1216,8 +1402,13 @@ nmfdfinw(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int 
-MFDFNIN(med_idt *fid, 
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFNIN(med_idt *fid,
+  		  char *fname, med_int *fnamelen)
+#else
+  MFDFNIN(med_idt *fid,
 		  char *fname, unsigned int bidon1, med_int *fnamelen)
+#endif
 #else
 med_int 
 nmfdfnin(med_idt *fid,char *fname, med_int *fnamelen)
@@ -1241,8 +1432,13 @@ nmfdfnin(med_idt *fid,char *fname, med_int *fnamelen)
 
 #ifdef PPRO_NT
 med_int
-MFDFINI(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFINI(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *it, char *iname)
+#else
+  MFDFINI(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *it, char *iname, unsigned int bidon2)
+#endif
 #else
 med_int
 nmfdfini(med_idt *fid, char *fname, med_int *fnamelen, med_int *it, char *iname)
@@ -1271,10 +1467,17 @@ nmfdfini(med_idt *fid, char *fname, med_int *fnamelen, med_int *it, char *iname)
 
 #ifdef PPRO_NT
 med_int
-MFDFOCI(med_idt *fid, char* fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFOCI(med_idt *fid, char* fname, med_int *fnamelen,
+  		  med_int *it, med_int *numdt, med_int *numit, med_float *dt,
+  		  med_int *nmesh, char *mname, med_int *lmesh,
+  		  med_int *mnumdt, med_int *mnumit)
+#else
+  MFDFOCI(med_idt *fid, char* fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *it, med_int *numdt, med_int *numit, med_float *dt,
 		  med_int *nmesh, char *mname, unsigned int bidon2, med_int *lmesh,
 		  med_int *mnumdt, med_int *mnumit)
+#endif
 #else
 med_int
 nmfdfoci(med_idt *fid, char* fname,med_int *fnamelen,
@@ -1315,10 +1518,17 @@ nmfdfoci(med_idt *fid, char* fname,med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int 
-MFDFONP(med_idt *fid, char* fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFONP(med_idt *fid, char* fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit, med_int *etype, med_int *gtype,
+  		  med_int *it, char *mname,
+  		  char *dpname, char *dlname)
+#else
+  MFDFONP(med_idt *fid, char* fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_int *etype, med_int *gtype,
 		  med_int *it, char *mname, unsigned int bidon2,
 		  char *dpname, unsigned int bidon3, char *dlname, unsigned int bidon4)
+#endif
 #else
 med_int 
 nmfdfonp(med_idt *fid, char*fname, med_int *fnamelen,
@@ -1363,11 +1573,19 @@ nmfdfonp(med_idt *fid, char*fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int 
-MFDFONV(med_idt *fid, char*fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFONV(med_idt *fid, char*fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit, med_int *etype, med_int *gtype,
+  		  char* mname, med_int *mnamelen,
+  		  med_int *pit, med_int *stm, char *pname,
+  		  med_int *psize, char *lname, med_int *nip)
+#else
+  MFDFONV(med_idt *fid, char*fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit, med_int *etype, med_int *gtype,
 		  char* mname,  unsigned int bidon2, med_int *mnamelen,
-		  med_int *pit, med_int *stm, char *pname, unsigned int bidon3, 
+		  med_int *pit, med_int *stm, char *pname, unsigned int bidon3,
 		  med_int *psize, char *lname, unsigned int bidon4, med_int *nip)
+#endif
 #else
 med_int 
 nmfdfonv(med_idt *fid, char*fname, med_int *fnamelen,
@@ -1420,12 +1638,21 @@ nmfdfonv(med_idt *fid, char*fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFORR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFORR(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit,
+  		  med_int *etype, med_int *gtype,
+  		  char *mname, med_int *mnamelen,
+  		  med_int *stm, char *pname, med_int *pnamelen,
+  		  med_int *swm,med_int *cs, med_float *val)
+#else
+  MFDFORR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit,
 		  med_int *etype, med_int *gtype,
 		  char *mname, unsigned int bidon2, med_int *mnamelen,
-		  med_int *stm, char *pname, unsigned int bidon3, med_int *pnamelen,  
+		  med_int *stm, char *pname, unsigned int bidon3, med_int *pnamelen,
 		  med_int *swm,med_int *cs, med_float *val)
+#endif
 #else
 med_int
 nmfdforr(med_idt *fid, char *fname, med_int *fnamelen,
@@ -1479,12 +1706,21 @@ nmfdforr(med_idt *fid, char *fname, med_int *fnamelen,
 
 #ifdef PPRO_NT
 med_int
-MFDFOIR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
+#ifdef ASTER_PLATFORM_MSVC64
+  MFDFOIR(med_idt *fid, char *fname, med_int *fnamelen,
+  		  med_int *numdt, med_int *numit,
+  		  med_int *etype, med_int *gtype,
+  		  char *mname, med_int *mnamelen,
+  		  med_int *stm, char *pname, med_int *pnamelen,
+  		  med_int *swm, med_int *cs, med_int *val)
+#else
+  MFDFOIR(med_idt *fid, char *fname, unsigned int bidon1, med_int *fnamelen,
 		  med_int *numdt, med_int *numit,
-		  med_int *etype, med_int *gtype, 
+		  med_int *etype, med_int *gtype,
 		  char *mname, unsigned int bidon2, med_int *mnamelen,
-		  med_int *stm, char *pname, unsigned int bidon3, med_int *pnamelen,  
+		  med_int *stm, char *pname, unsigned int bidon3, med_int *pnamelen,
 		  med_int *swm, med_int *cs, med_int *val)
+#endif
 #else
 med_int
 nmfdfoir(med_idt *fid, char *fname, med_int *fnamelen,

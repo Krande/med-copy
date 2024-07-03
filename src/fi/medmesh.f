@@ -423,7 +423,7 @@ c
 c
 c
       subroutine  mmhenw(fid,name,numdt,numit,entype,geotype, 
-     &                   n,num,cret)
+     &                   n,num,cret) BIND(C, NAME='MMHENW')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mmhenw
 c
       implicit none
@@ -465,7 +465,7 @@ c
 c
 c
       subroutine  mmhfnw(fid,name,numdt,numit,entype,geotype, 
-     &                   n,num,cret)
+     &                   n,num,cret) BIND(C, NAME='MMHFNW')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mmhfnw
 c
       implicit none
@@ -577,7 +577,7 @@ c
 c
 c
       subroutine  mmhcyw(fid,name,numdt,numit,dt,entype,geotype, 
-     &                   cmode,swm,n,con,cret)
+     &                   cmode,swm,n,con,cret) BIND(C, NAME='MMHCYW')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcyw
 c
       implicit none

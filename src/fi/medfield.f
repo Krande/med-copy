@@ -18,7 +18,7 @@ c
 c
 c
       subroutine mfdcre(fid,fname,ftype,ncomp,cname,cunit,
-     &                  dtunit,mname,cret)
+     &                  dtunit,mname,cret) BIND(C, NAME='MFDCRE')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfdcre
 c
       implicit none
@@ -83,7 +83,7 @@ c
       subroutine mfdrpw(fid,fname,numdt,numit,dt,
      &                  etype,gtype,
      &                  stm,pname,lname,
-     &                  swm,cs,n,val,cret)
+     &                  swm,cs,n,val,cret) BIND(C, NAME='MFDRPW')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfdrpw
 c
       implicit none
