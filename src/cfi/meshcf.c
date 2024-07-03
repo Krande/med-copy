@@ -152,12 +152,24 @@ From Fortran call of following C functions :
 #ifdef PPRO_NT
 med_int
 #ifdef ASTER_PLATFORM_MSVC64
-  MMHFCRE(med_idt *fid, char *mname,
-                    med_int *mnamelen, med_int * sdim, med_int * mdim, med_int *mtype,
-  		  char *desc, med_int *desclen,
-  		  char *dtunit, med_int *dtunitlen,
-  		  med_int *stype, med_int *atype, char *aname,
-  		  med_int *anamelen, char *aunit, med_int* aunitlen)
+  MMHFCRE(
+  	med_idt *fid,
+  	char *mname,
+    med_int *mnamelen,
+    med_int * sdim,
+    med_int * mdim,
+    med_int *mtype,
+	char *desc,
+	med_int *desclen,
+	char *dtunit,
+	med_int *dtunitlen,
+	med_int *stype,
+	med_int *atype,
+	char *aname,
+	med_int *anamelen,
+	char *aunit,
+	med_int* aunitlen
+  	)
 #else
   MMHFCRE(med_idt *fid, char *mname, unsigned int bidon,
                   med_int *mnamelen, med_int * sdim, med_int * mdim, med_int *mtype,
@@ -615,10 +627,17 @@ nmmhfgsr(med_idt *fid, char *mname, med_int *mnamelen,
 
 
 #ifdef PPRO_NT
-med_int 
-MMHFCOW(med_idt *fid, char *mname, unsigned int bidon, med_int *mnamelen,
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MMHFCOW(med_idt *fid, char *mname,  med_int *mnamelen,
 		  med_int *numdt, med_int *numit, med_float *dt, med_int *swm,
 		  med_int *n, med_float *coo)
+#else
+MMHFCOW(med_idt* fid, char* mname, unsigned int bidon, med_int* mnamelen,
+        med_int* numdt, med_int* numit, med_float* dt, med_int* swm,
+        med_int* n, med_float* coo)
+#endif
+
 #else
 med_int 
 nmmhfcow(med_idt *fid, char *mname, med_int *mnamelen,

@@ -28,8 +28,8 @@ c
       integer   sdim, mdim, mtype, stype, atype, cret
       integer mmhfcre
 c
-      cret = mmhfcre(fid, name, sdim, mdim, mtype,
-     &               desc,  dtunit,
+      cret = mmhfcre(fid, name, len(name), sdim, mdim, mtype,
+     &               desc, len(desc), dtunit, len(dtunit),
      &               stype, atype, aname, 16*sdim, 
      &               aunit, 16*sdim)
 c      
@@ -296,7 +296,7 @@ c
 c
 c
       subroutine  mmhcow( fid , name, numdt, numit, dt, 
-     &                    swm, n, coo, cret)
+     &                    swm, n, coo, cret) BIND(C, NAME='MMHCOW')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcow
 c
       implicit none
@@ -308,8 +308,10 @@ c
       character *(*) name
       real*8 coo(*)
       integer mmhfcow
+      integer len_name
 c
-      cret = mmhfcow(fid,name,len(name),numdt,numit,dt,swm,n,coo)
+      len_name = len_trim(name)
+      cret = mmhfcow(fid,name,len_name,numdt,numit,dt,swm,n,coo)
 c     
       return
       end

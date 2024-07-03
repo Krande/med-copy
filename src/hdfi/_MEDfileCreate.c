@@ -21,6 +21,13 @@
 #include <med_config.h>
 #include <med_outils.h>
 
+#ifdef _WIN32
+#include <sys/stat.h>
+#include <direct.h>
+#define getcwd _getcwd
+#define PATH_MAX MAX_PATH
+#endif
+
 #include <string.h>
 #include "med_filechar.h"
 
@@ -97,6 +104,12 @@ med_idt _MEDfileCreate(const char * const filename, const med_access_mode access
     fclose(_fp);
     free(_h518medfileMMN);_h518medfileMMN=NULL;
 
+#ifdef _WIN32
+    if (_chmod(filename, _S_IREAD | _S_IWRITE) != 0) {
+      MED_ERR_(_fid, MED_ERR_NOTEQUAL, MED_ERR_PROPERTY, "Failed to set file permissions");
+      goto ERROR;
+    }
+#endif
     if ( MEDfileCompatibility(filename, &_hdfok, &_medok) < 0 ) {
       MED_ERR_(_fid, MED_ERR_CALL,MED_ERR_API,"MEDfileCompatibility");
       ISCRUTE(major);ISCRUTE(minor);ISCRUTE(release);
