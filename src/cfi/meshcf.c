@@ -150,21 +150,22 @@ From Fortran call of following C functions :
 
 
 #ifdef PPRO_NT
-med_int 
-MMHFCRE(med_idt *fid, char *mname, 
-	// unsigned int bidon, 
+med_int
+#ifdef ASTER_PLATFORM_MSVC64
+  MMHFCRE(med_idt *fid, char *mname,
+                    med_int *mnamelen, med_int * sdim, med_int * mdim, med_int *mtype,
+  		  char *desc, med_int *desclen,
+  		  char *dtunit, med_int *dtunitlen,
+  		  med_int *stype, med_int *atype, char *aname,
+  		  med_int *anamelen, char *aunit, med_int* aunitlen)
+#else
+  MMHFCRE(med_idt *fid, char *mname, unsigned int bidon,
                   med_int *mnamelen, med_int * sdim, med_int * mdim, med_int *mtype,
-		  char *desc, 
-			// unsigned int bidon2, 
-			med_int *desclen,
-		  char *dtunit, 
-	//unsigned int bidon3, 
-	med_int *dtunitlen,
-		  med_int *stype, med_int *atype, char *aname, 
-	//unsigned int bidon4,
-		  med_int *anamelen, char *aunit, 
-	//unsigned int bidon5, 
-	med_int* aunitlen)
+		  char *desc, unsigned int bidon2, med_int *desclen,
+		  char *dtunit, unsigned int bidon3, med_int *dtunitlen,
+		  med_int *stype, med_int *atype, char *aname, unsigned int bidon4,
+		  med_int *anamelen, char *aunit, unsigned int bidon5, med_int* aunitlen)
+#endif
 #else
 med_int 
 nmmhfcre(med_idt *fid, char *mname, med_int *mnamelen, med_int * sdim,
@@ -963,7 +964,7 @@ nmmhfeaw(med_idt *fid, char *mname, med_int *mnamelen,
     return(-1);
 
   /* Ce traitement est-il utile ?
-     A moins d'accès en subscript dont l'union ne constituerait pas le tableau Fortran complet, le fortran remplit le tableau de blancs t[1:?] */
+     A moins d'accï¿½s en subscript dont l'union ne constituerait pas le tableau Fortran complet, le fortran remplit le tableau de blancs t[1:?] */
   /* _fn2 = _MED1cstring(ename, (int) *enamelen,(int) *n*MED_SNAME_SIZE); */
   /* if (!_fn2) */
   /*   return(-1); */
@@ -2350,7 +2351,7 @@ nmmhfsar(med_idt *fid, char *mname, med_int *mnamelen,
   if (!_fn2)
     return(-1);
 
-  /* on recupere le nom du modèle de structure */
+  /* on recupere le nom du modï¿½le de structure */
   _ret = MEDstructElementName((med_idt) *fid, 
 			      _gtype, 
 			      _modelname);   

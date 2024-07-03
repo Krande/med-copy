@@ -44,12 +44,20 @@
 
 
 #ifdef PPRO_NT
-med_int 
- EDFCONE(med_idt *fid, char *maa, unsigned int bidon,
+med_int
+#ifdef ASTER_PLATFORM_MSVC64
+EDFCONE(med_idt *fid, char *maa,
+                  med_int *lon, med_int *mdim, med_int *con,med_int *mode_switch,
+		  med_int *nbre,
+	          med_int *type_ent,
+                  med_int *type_geo,med_int *type_con )
+#else
+EDFCONE(med_idt *fid, char *maa, unsigned int bidon,
                   med_int *lon, med_int *mdim, med_int *con,med_int *mode_switch,
 		  med_int *nbre, 
 	          med_int *type_ent,
                   med_int *type_geo,med_int *type_con )
+#endif
 #else
 med_int
 nedfcone(med_idt *fid, char *maa, med_int *lon,med_int *mdim, 
@@ -80,11 +88,19 @@ nedfcone(med_idt *fid, char *maa, med_int *lon,med_int *mdim,
 
 #ifdef PPRO_NT
 med_int 
- EDFCONL(med_idt *fid, char *maa, unsigned int bidon, 
+#ifdef ASTER_PLATFORM_MSVC64
+EDFCONL(med_idt *fid, char *maa,
                   med_int *lon, med_int *mdim, med_int *con, med_int *mode_switch,
 		  med_int * pfltabtmp, med_int *psizetmp,
                   med_int *type_ent,med_int *type_geo,
                   med_int *type_con )
+#else
+EDFCONL(med_idt *fid, char *maa, unsigned int bidon,
+                  med_int *lon, med_int *mdim, med_int *con, med_int *mode_switch,
+		  med_int * pfltabtmp, med_int *psizetmp,
+                  med_int *type_ent,med_int *type_geo,
+                  med_int *type_con )
+#endif
 #else
 med_int 
 nedfconl(med_idt *fid, char *maa, med_int *lon,med_int *mdim,med_int *con, 
@@ -116,11 +132,19 @@ nedfconl(med_idt *fid, char *maa, med_int *lon,med_int *mdim,med_int *con,
 
 #ifdef PPRO_NT
 med_int
+#ifdef ASTER_PLATFORM_MSVC64
+ EDFCOOE(med_idt *fid,char *maa,med_int *lon1,
+		  med_int *mdim, med_float * coo,med_int * modcoo, med_int *n,
+	          med_int *type_rep, char *nom,
+                   med_int *lon2,
+	          char *unit, med_int *lon3)
+#else
  EDFCOOE(med_idt *fid,char *maa,unsigned int bidon1,med_int *lon1,
 		  med_int *mdim, med_float * coo,med_int * modcoo, med_int *n, 
 	          med_int *type_rep, char *nom, 
                   unsigned int bidon2, med_int *lon2, 
 	          char *unit, unsigned int bidon3, med_int *lon3)
+#endif
 #else
 med_int
 nedfcooe(med_idt *fid, char *maa, med_int *lon1, med_int *mdim,
@@ -156,11 +180,18 @@ nedfcooe(med_idt *fid, char *maa, med_int *lon1, med_int *mdim,
 
 #ifdef PPRO_NT
 med_int
- EDFCOOL(med_idt *fid, char *maa, unsigned int bidon1, 
+#ifdef ASTER_PLATFORM_MSVC64
+ EDFCOOL(med_idt *fid, char *maa,
                   med_int *lon1, med_int *mdim, med_float * coo, med_int * modcoo, 
 		  med_int *numco, med_int * pfltabtmp, med_int * psize, 
-		  med_int *type_rep, char *nom, unsigned int bidon2, char *unit, 
+		  med_int *type_rep, char *nom, char *unit)
+#else
+EDFCOOL(med_idt *fid, char *maa, unsigned int bidon1,
+                  med_int *lon1, med_int *mdim, med_float * coo, med_int * modcoo,
+		  med_int *numco, med_int * pfltabtmp, med_int * psize,
+		  med_int *type_rep, char *nom, unsigned int bidon2, char *unit,
                   unsigned int bidon3)
+#endif
 #else
 med_int
 nedfcool(med_idt *fid, char *maa,med_int *lon1,med_int *mdim,
@@ -205,11 +236,17 @@ nedfcool(med_idt *fid, char *maa,med_int *lon1,med_int *mdim,
 
 #ifdef PPRO_NT
 int
- EDFNOME (med_idt *fid,char *maa, unsigned int bidon1, med_int *lon1,
-                   char *nom, unsigned int bidon2, med_int *lon2, 
+#ifdef ASTER_PLATFORM_MSVC64
+ EDFNOME (med_idt *fid,char *maa, med_int *lon1,
+                   char *nom, med_int *lon2,
                    med_int *n, med_int *type_ent,
                    med_int *type_geo)
-
+#else
+ EDFNOME (med_idt *fid,char *maa, unsigned int bidon1, med_int *lon1,
+                   char *nom, unsigned int bidon2, med_int *lon2,
+                   med_int *n, med_int *type_ent,
+                   med_int *type_geo)
+#endif
 #else
 med_int
 nedfnome(med_idt *fid,char *maa,med_int *lon1, char *nom,med_int *lon2, 
@@ -237,10 +274,15 @@ nedfnome(med_idt *fid,char *maa,med_int *lon1, char *nom,med_int *lon2,
 
 #ifdef PPRO_NT
 med_int
- EDFNOML(med_idt *fid,char *maa, unsigned int bidon1, med_int *lon1,
-                  char *nom , unsigned int bidon2, med_int *n, 
+#ifdef ASTER_PLATFORM_MSVC64
+ EDFNOML(med_idt *fid,char *maa, med_int *lon1,
+                  char *nom, med_int *n,
 	          med_int *type_ent, med_int *type_geo)
-
+#else
+EDFNOML(med_idt *fid,char *maa, unsigned int bidon1, med_int *lon1,
+                  char *nom , unsigned int bidon2, med_int *n,
+	          med_int *type_ent, med_int *type_geo)
+#endif
 #else
 med_int
 nedfnoml(med_idt *fid,char *maa,med_int *lon1, char *nom,med_int *n, 
