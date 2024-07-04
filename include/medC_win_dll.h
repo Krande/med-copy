@@ -19,7 +19,7 @@
 #ifndef MEDC_WIN_DLL_H
 #define MEDC_WIN_DLL_H
 
-#if !defined(MED3_USESTATIC) && defined(PPRO_NT)
+#if !defined(MED3_USESTATIC) && (defined(PPRO_NT) || defined(ASTER_PLATFORM_MSVC64))
 # ifdef medC_EXPORTS
 #  define MEDC_EXPORT __declspec( dllexport )
 # else

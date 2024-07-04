@@ -40,8 +40,14 @@ From Fortran call of following C functions :
 
 #ifdef PPRO_NT
 med_int
-MLNFLIW(med_idt *fid, char *mname, unsigned int bidon1, med_int *mnamelen,
-		  char *lname, unsigned int bidon2, med_int *lnamelen)
+#if ASTER_PLATFORM_MSVC64
+  MLNFLIW(med_idt *fid, char *mname, med_int *mnamelen,
+		  char *lname,  med_int *lnamelen)
+#else
+MLNFLIW(med_idt* fid, char* mname, unsigned int bidon1, med_int* mnamelen,
+        char* lname, unsigned int bidon2, med_int* lnamelen)
+#endif
+
 #else
 med_int
 nmlnfliw(med_idt *fid, char *mname, med_int *mnamelen,
@@ -88,9 +94,15 @@ nmlnfnln(med_idt *fid)
 
 
 #ifdef PPRO_NT
-med_int 
-MLNFLNI(med_idt *fid, med_int *it, char*mname, unsigned int bidon1, 
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MLNFLNI(med_idt *fid, med_int *it, char*mname,
 		  med_int *lsize)
+#else
+MLNFLNI(med_idt* fid, med_int* it, char* mname, unsigned int bidon1,
+        med_int* lsize)
+#endif
+
 #else
 med_int
 nmlnflni(med_idt *fid, med_int *it, char*mname, med_int *lsize)
@@ -110,8 +122,13 @@ nmlnflni(med_idt *fid, med_int *it, char*mname, med_int *lsize)
 }
 
 #ifdef PPRO_NT
-med_int 
-MLNFLAI(med_idt *fid, char*mname, unsigned int bidon1, med_int *mnamelen, med_int *lsize)
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MLNFLAI(med_idt *fid, char*mname, med_int *mnamelen, med_int *lsize)
+#else
+MLNFLAI(med_idt* fid, char* mname, unsigned int bidon1, med_int* mnamelen, med_int* lsize)
+#endif
+
 #else
 med_int
 nmlnflai(med_idt *fid, char*mname, med_int *mnamelen, med_int *lsize)
@@ -137,8 +154,14 @@ nmlnflai(med_idt *fid, char*mname, med_int *mnamelen, med_int *lsize)
 
 #ifdef PPRO_NT
 med_int
-MLNFLIR(med_idt *fid, char *mname, unsigned int bidon1, med_int *mnamelen,
-		  char *lname, unsigned int bidon2, med_int *lnamelen)
+#if ASTER_PLATFORM_MSVC64
+  MLNFLIR(med_idt *fid, char *mname, med_int *mnamelen,
+		  char *lname, med_int *lnamelen)
+#else
+MLNFLIR(med_idt* fid, char* mname, unsigned int bidon1, med_int* mnamelen,
+        char* lname, unsigned int bidon2, med_int* lnamelen)
+#endif
+
 #else
 med_int
 nmlnflir(med_idt *fid, char *mname, med_int *mnamelen, char *lname, med_int *lnamelen)

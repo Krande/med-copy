@@ -18,7 +18,7 @@
 #ifndef MEDIMPORT_WIN_DLL_H
 #define MEDIMPORT_WIN_DLL_H
 
-#if !defined(MED3_USESTATIC) && defined(PPRO_NT)
+#if !defined(MED3_USESTATIC) && (defined(PPRO_NT) || ASTER_PLATFORM_MSVC64)
 # ifdef medimport_EXPORTS
 #  define MEDIMPORT_EXPORT __declspec( dllexport )
 # else

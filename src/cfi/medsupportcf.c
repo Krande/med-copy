@@ -40,12 +40,21 @@ From Fortran call of following C functions :
 #define nmsmfnan F77_FUNC(msmfnan,MSMFNAN)
 
 #ifdef PPRO_NT
-med_int 
-MSMFCRE(med_idt *fid, char *mname, unsigned int bidon, med_int *mnamelen, 
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MSMFCRE(med_idt *fid, char *mname, med_int *mnamelen,
 		  med_int * sdim, med_int * mdim,
-		  char *desc, unsigned int bidon2, med_int *desclen,
-		  med_int *atype, char *aname, unsigned int bidon3, med_int *anamelen, 
-		  char *aunit, unsigned int bidon4, med_int* aunitlen)
+		  char *desc, med_int *desclen,
+		  med_int *atype, char *aname, med_int *anamelen,
+		  char *aunit, med_int* aunitlen)
+#else
+MSMFCRE(med_idt* fid, char* mname, unsigned int bidon, med_int* mnamelen,
+        med_int* sdim, med_int* mdim,
+        char* desc, unsigned int bidon2, med_int* desclen,
+        med_int* atype, char* aname, unsigned int bidon3, med_int* anamelen,
+        char* aunit, unsigned int bidon4, med_int* aunitlen)
+#endif
+
 #else
 med_int 
 nmsmfcre(med_idt *fid, char *mname, med_int *mnamelen, 
@@ -109,12 +118,22 @@ nmsmfnsm(med_idt *fid)
 
 #ifdef PPRO_NT
 med_int
-MSMFSNI(med_idt *fid, char*mname, unsigned int bidon, med_int *mnamelen,
+#if ASTER_PLATFORM_MSVC64
+  MSMFSNI(med_idt *fid, char*mname, med_int *mnamelen,
                   med_int * sdim, med_int * mdim, 
-		  char *desc, unsigned int bidon2,
+		  char *desc,
 		  med_int *atype,
-		  char *aname, unsigned int bidon4,
-		  char *aunit, unsigned int bidon5)
+		  char *aname,
+		  char *aunit)
+#else
+MSMFSNI(med_idt* fid, char* mname, unsigned int bidon, med_int* mnamelen,
+        med_int* sdim, med_int* mdim,
+        char* desc, unsigned int bidon2,
+        med_int* atype,
+        char* aname, unsigned int bidon4,
+        char* aunit, unsigned int bidon5)
+#endif
+
 #else
 med_int
 nmsmfsni(med_idt *fid, char* mname, med_int *mnamelen,
@@ -169,12 +188,22 @@ nmsmfsni(med_idt *fid, char* mname, med_int *mnamelen,
 
 #ifdef PPRO_NT
 med_int
-MSMFSMI(med_idt *fid, med_int *it, char*mname, unsigned int bidon, 
+#if ASTER_PLATFORM_MSVC64
+  MSMFSMI(med_idt *fid, med_int *it, char*mname,
                   med_int * sdim, med_int * mdim, 
-		  char *desc, unsigned int bidon2,
+		  char *desc,
 		  med_int *atype,
-		  char *aname, unsigned int bidon4,
-		  char *aunit, unsigned int bidon5)
+		  char *aname,
+		  char *aunit)
+#else
+MSMFSMI(med_idt* fid, med_int* it, char* mname, unsigned int bidon,
+        med_int* sdim, med_int* mdim,
+        char* desc, unsigned int bidon2,
+        med_int* atype,
+        char* aname, unsigned int bidon4,
+        char* aunit, unsigned int bidon5)
+#endif
+
 #else
 med_int
 nmsmfsmi(med_idt *fid, med_int *it, char* mname, 
@@ -227,7 +256,12 @@ nmsmfsmi(med_idt *fid, med_int *it, char* mname,
 
 #ifdef PPRO_NT
 med_int
-MSMFNAN(med_idt *fid, char *mname, unsigned int bidon, med_int *mnamelen)
+#if ASTER_PLATFORM_MSVC64
+  MSMFNAN(med_idt *fid, char *mname, med_int *mnamelen)
+#else
+MSMFNAN(med_idt* fid, char* mname, unsigned int bidon, med_int* mnamelen)
+#endif
+
 #else
 med_int
 nmsmfnan(med_idt *fid, char *mname, med_int *mnamelen)

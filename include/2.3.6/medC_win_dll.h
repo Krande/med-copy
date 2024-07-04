@@ -24,7 +24,7 @@
 #endif
 
 #if !defined(MED3_USESTATIC)
-# ifdef PPRO_NT
+#if defined(PPRO_NT) || defined(ASTER_PLATFORM_MSVC64)
 #  ifdef medC_EXPORTS
 #   define MEDC_EXPORT __declspec( dllexport )
 #  else

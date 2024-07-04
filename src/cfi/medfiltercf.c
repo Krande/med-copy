@@ -87,9 +87,16 @@ nmfrfdea(med_int* nflt,unsigned char** flt)
 
 #ifdef PPRO_NT
 med_int
-MFRFCRE(med_idt *fid, med_int* nent, med_int *nvent, med_int *ncent,
-		  med_int *cs, med_int *swm, med_int *stm, char *pname, unsigned int bidon, med_int *pnamelen, 
+#if ASTER_PLATFORM_MSVC64
+  MFRFCRE(med_idt *fid, med_int* nent, med_int *nvent, med_int *ncent,
+		  med_int *cs, med_int *swm, med_int *stm, char *pname, med_int *pnamelen,
 		  med_int *fltas, med_int *flta, unsigned char **flt)
+#else
+MFRFCRE(med_idt* fid, med_int* nent, med_int* nvent, med_int* ncent,
+        med_int* cs, med_int* swm, med_int* stm, char* pname, unsigned int bidon, med_int* pnamelen,
+        med_int* fltas, med_int* flta, unsigned char** flt)
+#endif
+
 #else
 med_int
 nmfrfcre(med_idt *fid, med_int* nent, med_int *nvent, med_int *ncent,
@@ -135,10 +142,18 @@ nmfrfcre(med_idt *fid, med_int* nent, med_int *nvent, med_int *ncent,
 
 #ifdef PPRO_NT
 med_int
-MFRFBLC(med_idt *fid, med_int* nent, med_int *nvent, med_int *ncent,
-		  med_int *cs, med_int *swm, med_int *stm, char *pname, unsigned int bidon, med_int *pnamelen,  
+#if ASTER_PLATFORM_MSVC64
+  MFRFBLC(med_idt *fid, med_int* nent, med_int *nvent, med_int *ncent,
+		  med_int *cs, med_int *swm, med_int *stm, char *pname, med_int *pnamelen,
 		  med_int *start, med_int *stride, med_int *count, med_int *bsize, med_int *lbsize,
 		  unsigned char **flt)
+#else
+MFRFBLC(med_idt* fid, med_int* nent, med_int* nvent, med_int* ncent,
+        med_int* cs, med_int* swm, med_int* stm, char* pname, unsigned int bidon, med_int* pnamelen,
+        med_int* start, med_int* stride, med_int* count, med_int* bsize, med_int* lbsize,
+        unsigned char** flt)
+#endif
+
 #else
 med_int
 nmfrfblc(med_idt *fid, med_int* nent, med_int *nvent, med_int *ncent,

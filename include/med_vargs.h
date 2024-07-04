@@ -21,7 +21,7 @@
 
 #include "med_config.h"
 
-#ifdef PPRO_NT
+#if defined(PPRO_NT) || defined(ASTER_PLATFORM_MSVC64)
 
 #define MED_VARGS_DECL(cst1,type,cst2,varname) type varname
 #define MED_VARGS_DEF(cst1,type,cst2,varname) varname = va_arg(params, cst1 type cst2)

@@ -39,11 +39,20 @@ From Fortran call of following C functions :
 
 #ifdef PPRO_NT
 med_int
-MLCFLOW(med_idt *fid, char *lname, unsigned int bidon1, med_int *lnamelen,
+#if ASTER_PLATFORM_MSVC64
+  MLCFLOW(med_idt *fid, char *lname, med_int *lnamelen,
 		  med_int *gtype, med_int *sdim, med_float *ecoo,
 		  med_int *swm, med_int *nip, med_float *icoo,
-		  med_float *wght, char * giname, unsigned int bidon2, med_int *ginamelen,
-		  char * isname,unsigned int bidon3, med_int *isnamelen)
+		  med_float *wght, char * giname, med_int *ginamelen,
+		  char * isname, med_int *isnamelen)
+#else
+MLCFLOW(med_idt* fid, char* lname, unsigned int bidon1, med_int* lnamelen,
+        med_int* gtype, med_int* sdim, med_float* ecoo,
+        med_int* swm, med_int* nip, med_float* icoo,
+        med_float* wght, char* giname, unsigned int bidon2, med_int* ginamelen,
+        char* isname, unsigned int bidon3, med_int* isnamelen)
+#endif
+
 #else
 med_int
 nmlcflow(med_idt *fid, char *lname,med_int *lnamelen,
@@ -104,12 +113,21 @@ nmlcfnlc(med_idt *fid)
 
 
 #ifdef PPRO_NT
-med_int 
-MLCFLCI(med_idt *fid, med_int *it, char*lname, unsigned int bidon1, 
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MLCFLCI(med_idt *fid, med_int *it, char*lname,
 		  med_int *gtype, med_int *sdim, med_int nip, 
-		  char * giname, unsigned int bidon2,
-		  char * isname, unsigned int bidon3,
+		  char * giname,
+		  char * isname,
 		  med_int *nsmc, med_int *sgtype)
+#else
+MLCFLCI(med_idt* fid, med_int* it, char* lname, unsigned int bidon1,
+        med_int* gtype, med_int* sdim, med_int nip,
+        char* giname, unsigned int bidon2,
+        char* isname, unsigned int bidon3,
+        med_int* nsmc, med_int* sgtype)
+#endif
+
 #else
 med_int
 nmlcflci(med_idt *fid, med_int *it, char *lname, med_int *gtype, med_int *sdim, 
@@ -147,11 +165,20 @@ nmlcflci(med_idt *fid, med_int *it, char *lname, med_int *gtype, med_int *sdim,
 
 #ifdef PPRO_NT
 med_int
-MLCFLNI(med_idt *fid, char*lname, unsigned int bidon1, med_int *lnamelen,
+#if ASTER_PLATFORM_MSVC64
+  MLCFLNI(med_idt *fid, char*lname, med_int *lnamelen,
 		  med_int *gtype, med_int *sdim, med_int nip,
-		  char * giname, unsigned int bidon2,
-		  char * isname, unsigned int bidon3,
+		  char * giname,
+		  char * isname,
 		  med_int *nsmc, med_int *sgtype)
+#else
+MLCFLNI(med_idt* fid, char* lname, unsigned int bidon1, med_int* lnamelen,
+        med_int* gtype, med_int* sdim, med_int nip,
+        char* giname, unsigned int bidon2,
+        char* isname, unsigned int bidon3,
+        med_int* nsmc, med_int* sgtype)
+#endif
+
 #else
 med_int
 nmlcflni(med_idt *fid, char *lname,  med_int *lnamelen, med_int *gtype, med_int *sdim,
@@ -193,8 +220,14 @@ nmlcflni(med_idt *fid, char *lname,  med_int *lnamelen, med_int *gtype, med_int 
 
 #ifdef PPRO_NT
 med_int
-MLCFLOR(med_idt *fid, char *lname, unsigned int bidon1, med_int *lnamelen,
+#if ASTER_PLATFORM_MSVC64
+  MLCFLOR(med_idt *fid, char *lname, med_int *lnamelen,
 		  med_int *swm, med_float *ecoo, med_float *icoo, med_float *wght)
+#else
+MLCFLOR(med_idt* fid, char* lname, unsigned int bidon1, med_int* lnamelen,
+        med_int* swm, med_float* ecoo, med_float* icoo, med_float* wght)
+#endif
+
 #else
 med_int
 nmlcflor(med_idt *fid, char *lname, med_int *lnamelen,

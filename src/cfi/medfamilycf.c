@@ -100,7 +100,12 @@ nmfafcre(med_idt *fid, char *mname, med_int *mnamelen,
 
 #ifdef PPRO_NT
 int
-MFAFNFA(med_idt *fid, char *mname, unsigned int bidon, med_int *mnamelen)
+#if ASTER_PLATFORM_MSVC64
+  MFAFNFA(med_idt *fid, char *mname, med_int *mnamelen)
+#else
+MFAFNFA(med_idt* fid, char* mname, unsigned int bidon, med_int* mnamelen)
+#endif
+
 #else
 med_int
 nmfafnfa(med_idt *fid, char *mname, med_int *mnamelen)
@@ -126,7 +131,12 @@ nmfafnfa(med_idt *fid, char *mname, med_int *mnamelen)
 
 #ifdef PPRO_NT
 int
-MFAFNFG(med_idt *fid, char *mname, unsigned int bidon, med_int *mnamelen, med_int *it)
+#if ASTER_PLATFORM_MSVC64
+  MFAFNFG(med_idt *fid, char *mname, med_int *mnamelen, med_int *it)
+#else
+MFAFNFG(med_idt* fid, char* mname, unsigned int bidon, med_int* mnamelen, med_int* it)
+#endif
+
 #else
 med_int
 nmfafnfg(med_idt *fid, char *mname, med_int *mnamelen, med_int *it)
@@ -152,9 +162,16 @@ nmfafnfg(med_idt *fid, char *mname, med_int *mnamelen, med_int *it)
 
 #ifdef  PPRO_NT
 int
-MFAFFAI(med_idt *fid, char *mname, unsigned int bidon1, med_int *mnamelen,
-                  med_int *it, char *fname, unsigned int bidon2,
-	          med_int *fnum, char *gname , int unsigned bidon4)
+#if ASTER_PLATFORM_MSVC64
+  MFAFFAI(med_idt *fid, char *mname, med_int *mnamelen,
+                  med_int *it, char *fname,
+	          med_int *fnum, char *gname)
+#else
+MFAFFAI(med_idt* fid, char* mname, unsigned int bidon1, med_int* mnamelen,
+        med_int* it, char* fname, unsigned int bidon2,
+        med_int* fnum, char* gname, int unsigned bidon4)
+#endif
+
 #else
 med_int
 nmfaffai(med_idt *fid, char *mname,med_int *mnamelen,
@@ -203,7 +220,12 @@ nmfaffai(med_idt *fid, char *mname,med_int *mnamelen,
 
 #ifdef PPRO_NT
 int
-MFAFONA(med_idt *fid, char *mname, unsigned int bidon, med_int *mnamelen, med_int *it)
+#if ASTER_PLATFORM_MSVC64
+  MFAFONA(med_idt *fid, char *mname, med_int *mnamelen, med_int *it)
+#else
+MFAFONA(med_idt* fid, char* mname, unsigned int bidon, med_int* mnamelen, med_int* it)
+#endif
+
 #else
 med_int
 nmfafona(med_idt *fid, char *mname, med_int *mnamelen, med_int *it)
@@ -229,11 +251,20 @@ nmfafona(med_idt *fid, char *mname, med_int *mnamelen, med_int *it)
 
 #ifdef  PPRO_NT
 int
-MFAFOFI(med_idt *fid, char *mname, unsigned int bidon1, med_int *mnamelen,
-                  med_int *it, char *fname, unsigned int bidon2,
+#if ASTER_PLATFORM_MSVC64
+  MFAFOFI(med_idt *fid, char *mname, med_int *mnamelen,
+                  med_int *it, char *fname,
 		  med_int *attr_ident, med_int *attr_val,
-	          char *attr_desc, unsigned int bidon3,
-	          med_int *fnum, char *gname , int unsigned bidon4)
+	          char *attr_desc,
+	          med_int *fnum, char *gname)
+#else
+MFAFOFI(med_idt* fid, char* mname, unsigned int bidon1, med_int* mnamelen,
+        med_int* it, char* fname, unsigned int bidon2,
+        med_int* attr_ident, med_int* attr_val,
+        char* attr_desc, unsigned int bidon3,
+        med_int* fnum, char* gname, int unsigned bidon4)
+#endif
+
 #else
 med_int
 nmfafofi(med_idt *fid, char *mname,med_int *mnamelen,

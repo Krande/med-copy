@@ -43,11 +43,19 @@ From Fortran call of following C functions :
 
 
 #ifdef PPRO_NT
-med_int 
-MIPFCRE(med_idt *fid,
-                  char *name,  unsigned int bidon1, med_int *lon1,
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MIPFCRE(med_idt *fid,
+                  char *name, med_int *lon1,
 		  med_int *gtype, med_int *cnode, med_int *nvar,
 		  med_int *mdeg, med_int *nmaxc)
+#else
+MIPFCRE(med_idt* fid,
+        char* name, unsigned int bidon1, med_int* lon1,
+        med_int* gtype, med_int* cnode, med_int* nvar,
+        med_int* mdeg, med_int* nmaxc)
+#endif
+
 #else
 med_int 
 nmipfcre(med_idt *fid,
@@ -81,10 +89,17 @@ nmipfcre(med_idt *fid,
 
 
 #ifdef PPRO_NT
-med_int 
-MIPFBFW(med_idt *fid,
-                  char *name,  unsigned int bidon1, med_int *lon1,
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MIPFBFW(med_idt *fid,
+                  char *name, med_int *lon1,
 		  med_int *it, med_int *nc, med_int *pw, med_float *co)
+#else
+MIPFBFW(med_idt* fid,
+        char* name, unsigned int bidon1, med_int* lon1,
+        med_int* it, med_int* nc, med_int* pw, med_float* co)
+#endif
+
 #else
 med_int 
 nmipfbfw(med_idt *fid,
@@ -114,10 +129,17 @@ nmipfbfw(med_idt *fid,
 
 
 #ifdef PPRO_NT
-med_int 
-MIPFBFR(med_idt *fid,
-                  char *name,  unsigned int bidon1, med_int *lon1,
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MIPFBFR(med_idt *fid,
+                  char *name, med_int *lon1,
 		  med_int *it, med_int *nc, med_int *pw, med_float *co)
+#else
+MIPFBFR(med_idt* fid,
+        char* name, unsigned int bidon1, med_int* lon1,
+        med_int* it, med_int* nc, med_int* pw, med_float* co)
+#endif
+
 #else
 med_int 
 nmipfbfr(med_idt *fid,
@@ -165,11 +187,19 @@ nmipfnip(med_idt *fid)
 
 
 #ifdef PPRO_NT
-med_int 
-MIPFIIN(med_idt *fid,
-                  char *name,  unsigned int bidon1, med_int *lon1,
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MIPFIIN(med_idt *fid,
+                  char *name, med_int *lon1,
 		  med_int *gtype, med_int *cnode, med_int *nbf, med_int *nvar,
 		  med_int *mdeg, med_int *nmaxc)
+#else
+MIPFIIN(med_idt* fid,
+        char* name, unsigned int bidon1, med_int* lon1,
+        med_int* gtype, med_int* cnode, med_int* nbf, med_int* nvar,
+        med_int* mdeg, med_int* nmaxc)
+#endif
+
 #else
 med_int 
 nmipfiin(med_idt *fid,
@@ -208,11 +238,19 @@ nmipfiin(med_idt *fid,
 
 
 #ifdef PPRO_NT
-med_int 
-MIPFIPI(med_idt *fid, med_int *it,
-                  char *name,  unsigned int bidon1,
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MIPFIPI(med_idt *fid, med_int *it,
+                  char *name,
 		  med_int *gtype, med_int *cnode, med_int *nbf, med_int *nvar,
 		  med_int *mdeg, med_int *nmaxc)
+#else
+MIPFIPI(med_idt* fid, med_int* it,
+        char* name, unsigned int bidon1,
+        med_int* gtype, med_int* cnode, med_int* nbf, med_int* nvar,
+        med_int* mdeg, med_int* nmaxc)
+#endif
+
 #else
 med_int 
 nmipfipi(med_idt *fid, med_int *it, char *name,
@@ -245,10 +283,17 @@ nmipfipi(med_idt *fid, med_int *it, char *name,
 
 
 #ifdef PPRO_NT
-med_int 
-MIPFCSZ(med_idt *fid, 
-                  char *name,  unsigned int bidon1, med_int *lon1,
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MIPFCSZ(med_idt *fid,
+                  char *name, med_int *lon1,
 		  med_int *it)
+#else
+MIPFCSZ(med_idt* fid,
+        char* name, unsigned int bidon1, med_int* lon1,
+        med_int* it)
+#endif
+
 #else
 med_int 
 nmipfcsz(med_idt *fid, 

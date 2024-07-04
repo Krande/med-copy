@@ -40,8 +40,14 @@ From Fortran call of following C functions :
 
 #ifdef PPRO_NT
 med_int
-MPFFPRW(med_idt *fid, char *pname, unsigned int bidon1, med_int *pnamelen,
+#if ASTER_PLATFORM_MSVC64
+  MPFFPRW(med_idt *fid, char *pname, med_int *pnamelen,
 		  med_int *psize, med_int *profil)
+#else
+MPFFPRW(med_idt* fid, char* pname, unsigned int bidon1, med_int* pnamelen,
+        med_int* psize, med_int* profil)
+#endif
+
 #else
 med_int
 nmpffprw(med_idt *fid, char *pname, med_int *pnamelen, med_int *psize, med_int *profil)
@@ -83,9 +89,15 @@ nmpffnpf(med_idt *fid)
 
 
 #ifdef PPRO_NT
-med_int 
-MPFFPFI(med_idt *fid, med_int *it, char*pname, unsigned int bidon1, 
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MPFFPFI(med_idt *fid, med_int *it, char*pname,
 		  med_int *psize)
+#else
+MPFFPFI(med_idt* fid, med_int* it, char* pname, unsigned int bidon1,
+        med_int* psize)
+#endif
+
 #else
 med_int 
 nmpffpfi(med_idt *fid, med_int *it, char*pname, med_int *psize)
@@ -106,9 +118,15 @@ nmpffpfi(med_idt *fid, med_int *it, char*pname, med_int *psize)
 
 
 #ifdef PPRO_NT
-med_int 
-MPFFPSN(med_idt *fid, char*pname, unsigned int bidon1, med_int *pnamelen, 
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MPFFPSN(med_idt *fid, char*pname, med_int *pnamelen,
 		  med_int *psize)
+#else
+MPFFPSN(med_idt* fid, char* pname, unsigned int bidon1, med_int* pnamelen,
+        med_int* psize)
+#endif
+
 #else
 med_int 
 nmpffpsn(med_idt *fid, char*pname, med_int *pnamelen, med_int *psize)
@@ -138,8 +156,14 @@ nmpffpsn(med_idt *fid, char*pname, med_int *pnamelen, med_int *psize)
 
 #ifdef PPRO_NT
 med_int
-MPFFPRR(med_idt *fid, char *pname, unsigned int bidon1, med_int *pnamelen,
+#if ASTER_PLATFORM_MSVC64
+  MPFFPRR(med_idt *fid, char *pname, med_int *pnamelen,
 		  med_int *profil)
+#else
+MPFFPRR(med_idt* fid, char* pname, unsigned int bidon1, med_int* pnamelen,
+        med_int* profil)
+#endif
+
 #else
 med_int
 nmpffprr(med_idt *fid, char *pname, med_int *pnamelen, med_int *profil)

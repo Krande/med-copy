@@ -46,14 +46,25 @@ From Fortran call of following C functions :
 
 
 #ifdef PPRO_NT
-med_int 
-MSDFJCR(med_idt *fid,
-                   char *lmname,  unsigned int bidon1, med_int *lon1,
-                   char *jname,   unsigned int bidon2, med_int *lon2, 
-                   char *desc, unsigned int bidon3, med_int *lon3,
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MSDFJCR(med_idt *fid,
+                   char *lmname, med_int *lon1,
+                   char *jname, med_int *lon2,
+                   char *desc, med_int *lon3,
 		   med_int *dom,
-		   char *rmname,  unsigned int bidon4, med_int *lon4
+		   char *rmname, med_int *lon4
 		   )
+#else
+MSDFJCR(med_idt* fid,
+        char* lmname, unsigned int bidon1, med_int* lon1,
+        char* jname, unsigned int bidon2, med_int* lon2,
+        char* desc, unsigned int bidon3, med_int* lon3,
+        med_int* dom,
+        char* rmname, unsigned int bidon4, med_int* lon4
+)
+#endif
+
 #else
 med_int 
 nmsdfjcr(med_idt *fid, 
@@ -92,14 +103,25 @@ nmsdfjcr(med_idt *fid,
 
 
 #ifdef PPRO_NT
-med_int 
-MSDFCRW(med_idt *fid, 
-		  char *maa_local,unsigned int bidon1, med_int *lon1,
-		  char *jn,unsigned int bidon2, med_int *lon2, 
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MSDFCRW(med_idt *fid,
+		  char *maa_local, med_int *lon1,
+		  char *jn, med_int *lon2,
 		  med_int *numdt, med_int *numit,
 		  med_int * typ_ent_local, med_int * typ_geo_local,
 		  med_int * typ_ent_distant, med_int * typ_geo_distant,
 		  med_int *n, med_int *corrtab)
+#else
+MSDFCRW(med_idt* fid,
+        char* maa_local, unsigned int bidon1, med_int* lon1,
+        char* jn, unsigned int bidon2, med_int* lon2,
+        med_int* numdt, med_int* numit,
+        med_int* typ_ent_local, med_int* typ_geo_local,
+        med_int* typ_ent_distant, med_int* typ_geo_distant,
+        med_int* n, med_int* corrtab)
+#endif
+
 #else
 med_int 
 nmsdfcrw (med_idt *fid, 
@@ -145,9 +167,15 @@ nmsdfcrw (med_idt *fid,
 
 
 #ifdef PPRO_NT
-med_int 
-MSDFNJN(med_idt *fid,
-                  char *maa,  unsigned int bidon1, med_int *lon1)
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MSDFNJN(med_idt *fid,
+                  char *maa, med_int *lon1)
+#else
+MSDFNJN(med_idt* fid,
+        char* maa, unsigned int bidon1, med_int* lon1)
+#endif
+
 #else
 med_int  
 nmsdfnjn(med_idt *fid, 
@@ -176,13 +204,23 @@ nmsdfnjn(med_idt *fid,
 
 
 #ifdef PPRO_NT
-med_int 
-MSDFJNI(med_idt *fid,
-                  char *maa, unsigned int bidon1, med_int *lon1,
-		  med_int *ind, char *jname, unsigned int bidon2,
-		  char *desc,unsigned int bidon3,
-		  med_int *dom,char *rname,unsigned int bidon4,
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MSDFJNI(med_idt *fid,
+                  char *maa, med_int *lon1,
+		  med_int *ind, char *jname,
+		  char *desc,
+		  med_int *dom,char *rname,
 		  med_int *nstep, med_int *ncor)
+#else
+MSDFJNI(med_idt* fid,
+        char* maa, unsigned int bidon1, med_int* lon1,
+        med_int* ind, char* jname, unsigned int bidon2,
+        char* desc, unsigned int bidon3,
+        med_int* dom, char* rname, unsigned int bidon4,
+        med_int* nstep, med_int* ncor)
+#endif
+
 #else
 med_int
 nmsdfjni(med_idt *fid,
@@ -227,14 +265,25 @@ nmsdfjni(med_idt *fid,
 
 
 #ifdef PPRO_NT
-med_int 
-MSDFSZI(med_idt *fid,
-		  char *maa, unsigned int bidon1, med_int *lon1,
-		  char *jname, unsigned int bidon2, med_int *lon2,
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MSDFSZI(med_idt *fid,
+		  char *maa, med_int *lon1,
+		  char *jname, med_int *lon2,
 		  med_int *numdt, med_int *numit, med_int *it,
 		  med_int * typ_ent_local, med_int * typ_geo_local,
 		  med_int * typ_ent_distant, med_int * typ_geo_distant,
 		  med_int *ncor)
+#else
+MSDFSZI(med_idt* fid,
+        char* maa, unsigned int bidon1, med_int* lon1,
+        char* jname, unsigned int bidon2, med_int* lon2,
+        med_int* numdt, med_int* numit, med_int* it,
+        med_int* typ_ent_local, med_int* typ_geo_local,
+        med_int* typ_ent_distant, med_int* typ_geo_distant,
+        med_int* ncor)
+#endif
+
 #else
 med_int 
 nmsdfszi(med_idt *fid,
@@ -286,14 +335,25 @@ nmsdfszi(med_idt *fid,
 
 
 #ifdef PPRO_NT
-med_int 
-MSDFCSZ(med_idt *fid,
-		  char *maa, unsigned int bidon1, med_int *lon1,
-		  char *jname, unsigned int bidon2, med_int *lon2,
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MSDFCSZ(med_idt *fid,
+		  char *maa, med_int *lon1,
+		  char *jname, med_int *lon2,
 		  med_int *numdt, med_int *numit, 
 		  med_int * typ_ent_local, med_int * typ_geo_local,
 		  med_int * typ_ent_distant, med_int * typ_geo_distant,
 		  med_int *ncor)
+#else
+MSDFCSZ(med_idt* fid,
+        char* maa, unsigned int bidon1, med_int* lon1,
+        char* jname, unsigned int bidon2, med_int* lon2,
+        med_int* numdt, med_int* numit,
+        med_int* typ_ent_local, med_int* typ_geo_local,
+        med_int* typ_ent_distant, med_int* typ_geo_distant,
+        med_int* ncor)
+#endif
+
 #else
 med_int 
 nmsdfcsz(med_idt *fid,
@@ -340,14 +400,25 @@ nmsdfcsz(med_idt *fid,
 
 
 #ifdef PPRO_NT
-med_int 
-MSDFCRR(med_idt *fid, 
-		  char *maa_local,unsigned int bidon1, med_int *lon1,
-		  char *jn,unsigned int bidon2, med_int *lon2, 
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MSDFCRR(med_idt *fid,
+		  char *maa_local, med_int *lon1,
+		  char *jn, med_int *lon2,
 		  med_int *numdt, med_int *numit,
 		  med_int * typ_ent_local, med_int * typ_geo_local,
 		  med_int * typ_ent_distant, med_int * typ_geo_distant,
 		  med_int *corrtab)
+#else
+MSDFCRR(med_idt* fid,
+        char* maa_local, unsigned int bidon1, med_int* lon1,
+        char* jn, unsigned int bidon2, med_int* lon2,
+        med_int* numdt, med_int* numit,
+        med_int* typ_ent_local, med_int* typ_geo_local,
+        med_int* typ_ent_distant, med_int* typ_geo_distant,
+        med_int* corrtab)
+#endif
+
 #else
 med_int 
 nmsdfcrr (med_idt *fid, 
@@ -392,12 +463,21 @@ nmsdfcrr (med_idt *fid,
 
 
 #ifdef PPRO_NT
-med_int 
-MSDFCSI(med_idt *fid,
-                  char *maa, unsigned int bidon1, med_int *lon1,
-		  char *jname, unsigned int bidon2, med_int *lon2,
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MSDFCSI(med_idt *fid,
+                  char *maa, med_int *lon1,
+		  char *jname, med_int *lon2,
 		  med_int *ind, med_int *numdt, med_int *numit,
 		  med_int *ncor)
+#else
+MSDFCSI(med_idt* fid,
+        char* maa, unsigned int bidon1, med_int* lon1,
+        char* jname, unsigned int bidon2, med_int* lon2,
+        med_int* ind, med_int* numdt, med_int* numit,
+        med_int* ncor)
+#endif
+
 #else
 med_int 
 nmsdfcsi(med_idt *fid,

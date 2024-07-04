@@ -74,7 +74,12 @@ nmlbfnuv(med_int* const major,
 
 #ifdef PPRO_NT
 med_int
-MLBFSTV(char* const medversion, unsigned int bidon, med_int *len)
+#if ASTER_PLATFORM_MSVC64
+  MLBFSTV(char* const medversion, med_int *len)
+#else
+MLBFSTV(char* const medversion, unsigned int bidon, med_int* len)
+#endif
+
 #else
 med_int
 nmlbfstv(char* const medversion, med_int *len)
@@ -114,7 +119,12 @@ nmlbfhnv(med_int* const major,
 
 #ifdef PPRO_NT
 med_int
-MLBFHSV(char* const hdfversion, unsigned int bidon, med_int *len)
+#if ASTER_PLATFORM_MSVC64
+  MLBFHSV(char* const hdfversion, med_int *len)
+#else
+MLBFHSV(char* const hdfversion, unsigned int bidon, med_int* len)
+#endif
+
 #else
 med_int
 nmlbfhsv(char* const hdfversion, med_int *len)

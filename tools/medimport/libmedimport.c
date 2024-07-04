@@ -58,7 +58,7 @@ int HAVE_MEDimport=1;
 #include <2.3.6/med23v30_proto.h>
 #include "2.3.6/med23v30_misc.h"
 
-#ifdef PPRO_NT
+#if defined(PPRO_NT) || defined(ASTER_PLATFORM_MSVC64)
 # include <stdlib.h>
 #else
 # include <libgen.h>
@@ -107,7 +107,7 @@ int MEDimport(char * filein, char *  fileout) {
   char chemin_liens[MED_TAILLE_LIENS+1];
   char version[9];
   int MAJ_21_22 = 0, MAJ_231_232 = 0, MAJ_236_300 = 0, MAJ_300_310 = 0, MAJ_310_320 = 0, MAJ_320_330 = 0, MAJ_400_410 = 0 ;
-#ifdef PPRO_NT
+#if defined(PPRO_NT) || defined(ASTER_PLATFORM_MSVC64)
   char *drive, *dir, *ext;
 #endif
   unsigned char reponse='o';
@@ -124,7 +124,7 @@ int MEDimport(char * filein, char *  fileout) {
     tmp          = (char *) malloc(sizeof(char)*(_fileoutsize+1));
     strcpy(tmp,filein);
     strcat(tmp,PACKAGE_VERSION);
-#ifdef PPRO_NT
+#if defined(PPRO_NT) || defined(ASTER_PLATFORM_MSVC64)
     _splitpath( tmp, drive, dir, _fileout, ext );
 #else
     _fileout     = basename(tmp);

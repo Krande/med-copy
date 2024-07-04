@@ -78,7 +78,7 @@ extern "C" {
 }
 #endif
 
-#ifdef PPRO_NT
+#if defined(PPRO_NT) || defined(ASTER_PLATFORM_MSVC64)
 #define F_OK 0
 #define snprintf _snprintf
 #else

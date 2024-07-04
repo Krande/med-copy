@@ -44,10 +44,17 @@ From Fortran call of following C functions :
 #define nmprfnpr F77_FUNC(mprfnpr,MPRFNPR)
 
 #ifdef PPRO_NT
-med_int 
-MPRFCRE(med_idt *fid, char *pname, unsigned int bidon1, med_int *lon1,
-                  med_int *type, char *desc, unsigned int bidon2, med_int *lon2,
-		  char *dtunit, unsigned int bidon3, med_int *lon3)
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MPRFCRE(med_idt *fid, char *pname, med_int *lon1,
+                  med_int *type, char *desc, med_int *lon2,
+		  char *dtunit, med_int *lon3)
+#else
+MPRFCRE(med_idt* fid, char* pname, unsigned int bidon1, med_int* lon1,
+        med_int* type, char* desc, unsigned int bidon2, med_int* lon2,
+        char* dtunit, unsigned int bidon3, med_int* lon3)
+#endif
+
 #else
 med_int 
 nmprfcre(med_idt *fid, char *pname, med_int *lon1,
@@ -83,9 +90,16 @@ nmprfcre(med_idt *fid, char *pname, med_int *lon1,
 
 #ifdef PPRO_NT
 med_int
-MPRFRVW(med_idt *fid, char *name, unsigned int bidon1, med_int *namelen,
+#if ASTER_PLATFORM_MSVC64
+  MPRFRVW(med_idt *fid, char *name, med_int *namelen,
 		  med_int *numdt, med_int *numit, med_float *dt,
 		  med_float *val)
+#else
+MPRFRVW(med_idt* fid, char* name, unsigned int bidon1, med_int* namelen,
+        med_int* numdt, med_int* numit, med_float* dt,
+        med_float* val)
+#endif
+
 #else
 med_int
 nmprfrvw(med_idt *fid, char *name, med_int *namelen,
@@ -116,9 +130,16 @@ nmprfrvw(med_idt *fid, char *name, med_int *namelen,
 
 #ifdef PPRO_NT
 med_int
-MPRFIVW(med_idt *fid, char *name, unsigned int bidon1, med_int *namelen,
+#if ASTER_PLATFORM_MSVC64
+  MPRFIVW(med_idt *fid, char *name, med_int *namelen,
 		  med_int *numdt, med_int *numit, med_float *dt,
 		  med_int *val)
+#else
+MPRFIVW(med_idt* fid, char* name, unsigned int bidon1, med_int* namelen,
+        med_int* numdt, med_int* numit, med_float* dt,
+        med_int* val)
+#endif
+
 #else
 med_int
 nmprfivw(med_idt *fid, char *name, med_int *namelen,
@@ -150,8 +171,14 @@ nmprfivw(med_idt *fid, char *name, med_int *namelen,
 
 #ifdef PPRO_NT
 med_int
-MPRFRVR(med_idt *fid, char *name, unsigned int bidon1, med_int *namelen,
+#if ASTER_PLATFORM_MSVC64
+  MPRFRVR(med_idt *fid, char *name, med_int *namelen,
 		  med_int *numdt, med_int *numit, med_float *val)
+#else
+MPRFRVR(med_idt* fid, char* name, unsigned int bidon1, med_int* namelen,
+        med_int* numdt, med_int* numit, med_float* val)
+#endif
+
 #else
 med_int
 nmprfrvr(med_idt *fid, char *name, med_int *namelen,
@@ -180,8 +207,14 @@ nmprfrvr(med_idt *fid, char *name, med_int *namelen,
 
 #ifdef PPRO_NT
 med_int
-MPRFIVR(med_idt *fid, char *name, unsigned int bidon1, med_int *namelen,
+#if ASTER_PLATFORM_MSVC64
+  MPRFIVR(med_idt *fid, char *name, med_int *namelen,
 		  med_int *numdt, med_int *numit, med_int *val)
+#else
+MPRFIVR(med_idt* fid, char* name, unsigned int bidon1, med_int* namelen,
+        med_int* numdt, med_int* numit, med_int* val)
+#endif
+
 #else
 med_int
 nmprfivr(med_idt *fid, char *name, med_int *namelen,
@@ -225,10 +258,17 @@ nmprfnpr(med_idt *fid)
 
 
 #ifdef PPRO_NT
-med_int 
-MPRFPRI(med_idt *fid, med_int *it, char *name, unsigned int bidon1, 
-		  med_int *type, char *desc, unsigned int bidon2,
-		  char *dtunit, unsigned int bidon3, med_int *nstep) 
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MPRFPRI(med_idt *fid, med_int *it, char *name,
+		  med_int *type, char *desc,
+		  char *dtunit, med_int *nstep)
+#else
+MPRFPRI(med_idt* fid, med_int* it, char* name, unsigned int bidon1,
+        med_int* type, char* desc, unsigned int bidon2,
+        char* dtunit, unsigned int bidon3, med_int* nstep)
+#endif
+
 #else
 med_int 
 nmprfpri(med_idt *fid, med_int *it, char *name,  
@@ -262,11 +302,19 @@ nmprfpri(med_idt *fid, med_int *it, char *name,
 
 
 #ifdef PPRO_NT
-med_int 
-MPRFPIN(med_idt *fid, char *name, unsigned int bidon1, med_int *namelen,
-		  med_int *type, char *desc, unsigned int bidon2,
-		  char *dtunit, unsigned int bidon3, 
-		  med_int *nstep) 
+med_int
+#if ASTER_PLATFORM_MSVC64
+  MPRFPIN(med_idt *fid, char *name, med_int *namelen,
+		  med_int *type, char *desc,
+		  char *dtunit,
+		  med_int *nstep)
+#else
+MPRFPIN(med_idt* fid, char* name, unsigned int bidon1, med_int* namelen,
+        med_int* type, char* desc, unsigned int bidon2,
+        char* dtunit, unsigned int bidon3,
+        med_int* nstep)
+#endif
+
 #else
 med_int 
 nmprfpin(med_idt *fid, char *name, med_int *namelen,
@@ -306,8 +354,14 @@ nmprfpin(med_idt *fid, char *name, med_int *namelen,
 
 #ifdef PPRO_NT
 med_int
-MPRFCSI(med_idt *fid, char* name, unsigned int bidon1, med_int *namelen,
+#if ASTER_PLATFORM_MSVC64
+  MPRFCSI(med_idt *fid, char* name, med_int *namelen,
 		  med_int *it, med_int *numdt, med_int *numit, med_float *dt)
+#else
+MPRFCSI(med_idt* fid, char* name, unsigned int bidon1, med_int* namelen,
+        med_int* it, med_int* numdt, med_int* numit, med_float* dt)
+#endif
+
 #else
 med_int
 nmprfcsi(med_idt *fid, char *name, med_int *namelen,

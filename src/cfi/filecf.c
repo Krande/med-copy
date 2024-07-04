@@ -304,10 +304,17 @@ nmfifnvr(const med_idt const *fid,
 
 #ifdef PPRO_NT
 med_int
-MFIFSVR(const med_idt const *fid,
+#if ASTER_PLATFORM_MSVC64
+  MFIFSVR(const med_idt const *fid,
 		  char* const medversion, 
-		  const unsigned int bidon, 
 		  const med_int const *len)
+#else
+MFIFSVR(const med_idt const* fid,
+        char* const medversion,
+        const unsigned int bidon,
+        const med_int const* len)
+#endif
+
 #else
 med_int
 nmfifsvr(const med_idt const *fid,

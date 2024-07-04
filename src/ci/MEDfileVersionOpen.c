@@ -20,7 +20,7 @@
 #include <med_config.h>
 #include <med_outils.h>
 
-#ifdef PPRO_NT
+#if defined(PPRO_NT) || defined(ASTER_PLATFORM_MSVC64)
 #define F_OK 0
 #else
 #include <unistd.h>
