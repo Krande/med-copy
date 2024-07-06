@@ -149,6 +149,16 @@ IF(CMAKE_Fortran_COMPILER_WORKS)
             EXPORT ${_export_group}
             RUNTIME DESTINATION bin
             ARCHIVE DESTINATION lib${LIB_SUFFIX})
+
+    # Include PDB files in installation for debugging
+    if (MSVC AND CMAKE_BUILD_TYPE MATCHES "Debug")
+      foreach(target medfwrap med medC)
+        install(FILES "$<TARGET_FILE_DIR:${target}>/${target}.pdb"
+                DESTINATION bin
+                CONFIGURATIONS ${config})
+      endforeach()
+    endif()
+
   ENDIF()
 
   ######### Static Libraries ##########
