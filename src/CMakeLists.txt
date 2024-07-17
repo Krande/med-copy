@@ -151,7 +151,7 @@ IF(CMAKE_Fortran_COMPILER_WORKS)
             ARCHIVE DESTINATION lib${LIB_SUFFIX})
 
     # Include PDB files in installation for debugging
-    if (MSVC AND CMAKE_BUILD_TYPE MATCHES "Debug")
+    if (MSVC AND (CMAKE_BUILD_TYPE MATCHES "Debug" OR CMAKE_BUILD_TYPE MATCHES "RelWithDebInfo"))
       foreach(target medfwrap med medC)
         install(FILES "$<TARGET_FILE_DIR:${target}>/${target}.pdb"
                 DESTINATION bin

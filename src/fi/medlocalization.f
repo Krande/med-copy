@@ -18,7 +18,7 @@ c
 c
 c
       subroutine mlclow(fid,lname,gtype,sdim,ecoo,swm,nip,
-     &                  ipcoo, wght, giname, isname, cret)
+     & ipcoo, wght, giname, isname, cret) BIND(C, NAME='MLCLOW')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mlclow
 c
       implicit none
@@ -37,7 +37,7 @@ c
 c
 c
 c
-      subroutine mlcnlc(fid,n,cret)
+      subroutine mlcnlc(fid,n,cret) BIND(C, NAME='MLCNLC')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mlcnlc
 c
       implicit none
@@ -60,7 +60,7 @@ c
 c
 c
       subroutine mlclci(fid, it, lname, gtype, sdim, nip,
-     &     giname, isname, nsmc, sgtype, cret)
+     &     giname, isname, nsmc, sgtype, cret) BIND(C, NAME='MLCLCI')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mlclci
 c
       implicit none
@@ -81,7 +81,7 @@ c
 c
 c
       subroutine mlclni(fid, lname, gtype, sdim, nip,
-     &     giname, isname, nsmc, sgtype, cret)
+     &     giname, isname, nsmc, sgtype, cret) BIND(C, NAME='MLCLNI')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mlclni
 c
       implicit none
@@ -102,7 +102,8 @@ c
 c
 c
 
-      subroutine mlclor(fid,lname,swm,ecoo,ipcoo, wght, cret)
+      subroutine mlclor(fid,lname,swm,ecoo,ipcoo, wght,
+     & cret) BIND(C, NAME='MLCLOR')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mlclor
 c
       implicit none

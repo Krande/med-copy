@@ -91,9 +91,9 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_INSTALL_PREFIX": "$env{LIBRARY_PREFIX}",
-        "CMAKE_Fortran_FLAGS": "/Od /debug /Zi /nologo /fpp /fixed /dll /MD /4I8 /4R8 /real-size:64 /integer-size:64 /assume:byterecl,aligned_dummy_args,dummy_aliases,writeable_strings /4L132 /check:stack /check:bound /check:pointer /fpe:0",
-        "CMAKE_C_FLAGS": "/nologo /Od /Zi -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
-        "CMAKE_CXX_FLAGS": "/nologo /Od /Zi /EHsc -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
+        "CMAKE_Fortran_FLAGS": "/Od /debug /Zi /nologo /fpp /fixed /dll /MD /4I8 /4R8 /real-size:64 /integer-size:64 /assume:byterecl,aligned_dummy_args,dummy_aliases,writeable_strings /4L132 /check:stack /check:bound /check:pointer /fpe:0 /traceback",
+        "CMAKE_C_FLAGS": "/nologo /MDd /Od /Zi -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
+        "CMAKE_CXX_FLAGS": "/nologo /MDd /Od /Zi -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
         "MEDFILE_BUILD_TESTS": "OFF",
         "CMAKE_VERBOSE_MAKEFILE": "ON",
         "CMAKE_EXE_LINKER_FLAGS": "/DEBUG /INCREMENTAL:NO",
