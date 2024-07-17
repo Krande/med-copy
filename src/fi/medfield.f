@@ -266,7 +266,7 @@ c
 c
 c
       subroutine mfdfin(fid, fname, mname, lmesh, type, 
-     &                  cname, cunit, dtunit, nc, cret)
+     & cname, cunit, dtunit, nc, cret) BIND(C, NAME='MFDFIN')
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfdfin
 c
       implicit none
