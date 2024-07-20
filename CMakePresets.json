@@ -37,13 +37,17 @@
       ],
       "hidden": true,
       "environment": {
-        "LIBRARY_PREFIX": "$env{PREFIX}/Library"
+        "LIBRARY_PREFIX": "$env{PREFIX}/Library",
+        "CFLAGS": "/nologo",
+        "CXXFLAGS": "/nologo",
+        "FCFLAGS": "/nologo /fpp /fixed /dll /MD /4I8 /4R8 /real-size:64 /integer-size:64 /assume:byterecl,aligned_dummy_args,dummy_aliases,writeable_strings /4L132 /check:stack /check:bound /check:pointer /fpe:0"
       },
       "cacheVariables": {
-        "CMAKE_Fortran_COMPILER": "$env{FC}",
         "MED_MEDINT_TYPE": "long long",
-        "CMAKE_C_FLAGS": "/MD",
-        "CMAKE_CXX_FLAGS": "/MD",
+        "MEDFILE_BUILD_TESTS": "OFF",
+        "CMAKE_VERBOSE_MAKEFILE": "ON",
+        "MEDFILE_BUILD_CUSTOM_TESTS": "OFF",
+        "CMAKE_INSTALL_PREFIX": "$env{LIBRARY_PREFIX}",
         "CMAKE_PREFIX_PATH": "$env{PREFIX};$env{LIBRARY_PREFIX};$env{LIBRARY_PREFIX}/include;$env{LIBRARY_PREFIX}/lib;$env{LIBRARY_PREFIX}/bin",
         "HDF5_ROOT_DIR": "$env{LIBRARY_PREFIX}"
       }
@@ -69,7 +73,7 @@
       }
     },
     {
-      "name": "win-msvc-intel-fortran",
+      "name": "win-msvc-intel-fortran-debug",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}",
       "inherits": [
@@ -77,7 +81,6 @@
       ],
       "hidden": false,
       "environment": {
-        "LIBRARY_PREFIX": "$env{PREFIX}/Library",
         "CC": "cl.exe",
         "CXX": "cl.exe",
         "FC": "ifx.exe",
@@ -90,14 +93,34 @@
       },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_INSTALL_PREFIX": "$env{LIBRARY_PREFIX}",
-        "CMAKE_Fortran_FLAGS": "/Od /debug /Zi /nologo /fpp /fixed /dll /MD /4I8 /4R8 /real-size:64 /integer-size:64 /assume:byterecl,aligned_dummy_args,dummy_aliases,writeable_strings /4L132 /check:stack /check:bound /check:pointer /fpe:0 /traceback",
-        "CMAKE_C_FLAGS": "/nologo /MDd /Od /Zi -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
-        "CMAKE_CXX_FLAGS": "/nologo /MDd /Od /Zi -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
-        "MEDFILE_BUILD_TESTS": "OFF",
-        "CMAKE_VERBOSE_MAKEFILE": "ON",
-        "CMAKE_EXE_LINKER_FLAGS": "/DEBUG /INCREMENTAL:NO",
-        "MEDFILE_BUILD_CUSTOM_TESTS": "OFF"
+        "CMAKE_Fortran_FLAGS": "$env{FCFLAGS} /Od /debug /Zi /check:stack /check:bound /check:pointer /fpe:0 /traceback",
+        "CMAKE_C_FLAGS": "$env{CFLAGS} /MDd /Od /Zi -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
+        "CMAKE_CXX_FLAGS": "$env{CXXFLAGS} /MDd /Od /Zi -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
+        "CMAKE_EXE_LINKER_FLAGS": "/DEBUG /INCREMENTAL:NO"
+      }
+    },{
+      "name": "win-msvc-intel-fortran-release",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "inherits": [
+        "win-shared"
+      ],
+      "hidden": false,
+      "environment": {
+        "CC": "cl.exe",
+        "CXX": "cl.exe",
+        "FC": "ifx.exe"
+      },
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "Visual Studio (MSVC) with Intel Fortran"
+        }
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_Fortran_FLAGS": "$env{FCFLAGS} /EHa",
+        "CMAKE_C_FLAGS": "$env{CFLAGS} /MD",
+        "CMAKE_CXX_FLAGS": "$env{CXXFLAGS} /MD"
       }
     },
     {
