@@ -118,7 +118,7 @@
       },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "CMAKE_Fortran_FLAGS": "$env{FCFLAGS} /EHa",
+        "CMAKE_Fortran_FLAGS": "$env{FCFLAGS}",
         "CMAKE_C_FLAGS": "$env{CFLAGS} /MD",
         "CMAKE_CXX_FLAGS": "$env{CXXFLAGS} /MD"
       }
