@@ -28,10 +28,8 @@ c
       integer access
       integer major, minor, rel
       integer*8 mfifvop
-      integer len_name  ! Local variable to hold length
 c
-      len_name = len_trim(name)  ! Get the trimmed length of the name
-      fid = mfifvop(name, access, major, minor, rel, len_name)
+      fid = mfifvop(name, access, major, minor, rel, len(name))
       if (fid.lt.0) then
          cret = fid
       else
@@ -51,10 +49,8 @@ c
       integer   cret
       integer access
       integer*8 mfifope
-      integer len_name  ! Local variable to hold length
 c
-      len_name = len_trim(name)  ! Get the trimmed length of the name
-      fid = mfifope(name, access, len_name)
+      fid = mfifope(name, access, len(name))
       if (fid.lt.0) then
          cret = fid
       else

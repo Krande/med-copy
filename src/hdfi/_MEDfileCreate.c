@@ -24,6 +24,11 @@
 #include <string.h>
 #include "med_filechar.h"
 
+#ifdef ASTER_PLATFORM_MSVC64
+#include <io.h>
+#include <direct.h>
+#endif
+
 /*
  * - Nom de la fonction : _MEDfichierCreer
  * - Description : creation d'un fichier HDF
@@ -78,6 +83,21 @@ med_idt _MEDfileCreate(const char * const filename, const med_access_mode access
     _h518medfileMMN[MED_FILE_H518_MAJOR  ]= _i8_major;
     _h518medfileMMN[MED_FILE_H518_MINOR  ]= _i8_minor;
     _h518medfileMMN[MED_FILE_H518_RELEASE]= _i8_release; /* 0 */
+#ifdef ASTER_PLATFORM_MSVC64
+    // If "filename" is in a non-existing directory, fopen will return NULL. So filepath should be created first.
+    // check if the directory exists, and if not create it
+    char *filepath = _strdup(filename);
+    char *last_slash = strrchr(filepath, '/');
+    if (last_slash != NULL) {
+      *last_slash = '\0';
+      if (_access(filepath, 0) == -1) {
+        if (_mkdir(filepath) == -1) {
+          MED_ERR_(_fid, MED_ERR_CREATE, MED_ERR_FILE, filepath);
+          goto ERROR;
+        }
+      }
+    }
+#endif
 
     _fp = fopen(filename, "wb");
     if(!_fp) {
