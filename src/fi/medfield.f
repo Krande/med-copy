@@ -17,8 +17,13 @@ C*
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mfdcre(fid,fname,ftype,ncomp,cname,cunit,
      &                  dtunit,mname,cret) BIND(C, NAME='MFDCRE')
+#else
+      subroutine mfdcre(fid,fname,ftype,ncomp,cname,cunit,
+     &                  dtunit,mname,cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfdcre
 c
       implicit none
@@ -80,10 +85,17 @@ c
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mfdrpw(fid,fname,numdt,numit,dt,
      &                  etype,gtype,
      &                  stm,pname,lname,
      &                  swm,cs,n,val,cret) BIND(C, NAME='MFDRPW')
+#else
+      subroutine mfdrpw(fid,fname,numdt,numit,dt,
+     &                  etype,gtype,
+     &                  stm,pname,lname,
+     &                  swm,cs,n,val,cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfdrpw
 c
       implicit none
@@ -265,8 +277,13 @@ c
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mfdfin(fid, fname, mname, lmesh, type, 
      & cname, cunit, dtunit, nc, cret) BIND(C, NAME='MFDFIN')
+#else
+      subroutine mfdfin(fid, fname, mname, lmesh, type,
+     & cname, cunit, dtunit, nc, cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfdfin
 c
       implicit none

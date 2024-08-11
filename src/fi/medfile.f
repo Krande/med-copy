@@ -15,9 +15,13 @@ C*  You should have received a copy of the GNU Lesser General Public License
 C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C*
 
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mfivop(fid, name, access, major, minor, rel,
      & cret) BIND(C, NAME='MFIVOP')
+#else
+      subroutine mfivop(fid, name, access, major, minor, rel,
+     & cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfivop
 c
       implicit none
@@ -38,8 +42,11 @@ c
 c      
       return
       end
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mfiope(fid, name, access, cret) BIND(C, NAME='MFIOPE')
+#else
+      subroutine mfiope(fid, name, access, cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfiope
 c
       implicit none
@@ -61,8 +68,11 @@ c
       end
 
 
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mfinam(fid, name, cret) BIND(C, NAME='MFINAM')
+#else
+      subroutine mfinam(fid, name, cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfinam
 c
       implicit none
@@ -78,8 +88,11 @@ c
       end
 
 
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mficlo(fid, cret) BIND(C, NAME='MFICLO')
+#else
+      subroutine mficlo(fid, cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mficlo
 c
       implicit none
@@ -95,8 +108,11 @@ c
       end
 
 
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mficow(fid,cmt,cret) BIND(C, NAME='MFICOW')
+#else
+      subroutine mficow(fid,cmt,cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mficow
 c
       implicit none
@@ -112,9 +128,12 @@ c
       return
       end
 
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mficor(fid,cmt,cret) BIND(C, NAME='MFICOR')
-c     DEC$ ATTRIBUTES DLLEXPORT :: mficor 
+#else
+      subroutine mficor(fid,cmt,cret)
+#endif
+c     DEC$ ATTRIBUTES DLLEXPORT :: mficor
 c
       implicit none
       save
@@ -130,9 +149,13 @@ c
       end
 
 
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine  mfinvr(fid,major,minor,rel,
      & cret) BIND(C, NAME='MFINVR')
+#else
+      subroutine  mfinvr(fid,major,minor,rel,
+     & cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfinvr
 c
       implicit none
@@ -148,8 +171,11 @@ c
       return
       end
 
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mfisvr(fid,version,cret) BIND(C, NAME='MFISVR')
+#else
+      subroutine mfisvr(fid,version,cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfisvr
 c
       implicit none
@@ -168,7 +194,11 @@ c
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mficom(fname,hdfok,medok,cret) BIND(C, NAME='MFICOM')
+#else
+      subroutine mficom(fname,hdfok,medok,cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mficom
 c
       implicit none
@@ -184,9 +214,13 @@ c
       return
       end
 
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mfiomn(fid, fname, class, mid,
      & cret) BIND(C, NAME='MFIOMN')
+#else
+      subroutine mfiomn(fid, fname, class, mid,
+     & cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfiomn
 c
       implicit none
@@ -210,7 +244,11 @@ c
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mfioun(fid, mid, class, cret) BIND(C, NAME='MFIOUN')
+#else
+      subroutine mfioun(fid, mid, class, cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfioun
 c
       implicit none
@@ -225,9 +263,13 @@ c
       return
       end
 
-      
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mfioex(fid, class, oname, oexist,
      & cret) BIND(C, NAME='MFIOEX')
+#else
+      subroutine mfioex(fid, class, oname, oexist,
+     & cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfioex
 c
       implicit none
@@ -243,9 +285,13 @@ c
       return
       end
 
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mfiexi(fname, access, fexist, accok,
      & cret) BIND(C, NAME='MFIEXI')
+#else
+      subroutine mfiexi(fname, access, fexist, accok,
+     & cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfioex
 c
       implicit none

@@ -14,10 +14,15 @@ C*
 C*  You should have received a copy of the GNU Lesser General Public License
 C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mmhcre(fid, name, sdim, mdim, mtype, desc, dtunit,
      &                  stype, atype, aname, aunit,
      & cret) BIND(C, NAME='MMHCRE')
+#else
+      subroutine mmhcre(fid, name, sdim, mdim, mtype, desc, dtunit,
+     &                  stype, atype, aname, aunit,
+     & cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcre
 c
       implicit none
@@ -295,8 +300,13 @@ c
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine  mmhcow( fid , name, numdt, numit, dt, 
      &                    swm, n, coo, cret) BIND(C, NAME='MMHCOW')
+#else
+      subroutine  mmhcow( fid , name, numdt, numit, dt,
+     &                    swm, n, coo, cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcow
 c
       implicit none
@@ -422,8 +432,13 @@ c
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine  mmhenw(fid,name,numdt,numit,entype,geotype, 
      &                   n,num,cret) BIND(C, NAME='MMHENW')
+#else
+      subroutine  mmhenw(fid,name,numdt,numit,entype,geotype,
+     &                   n,num,cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mmhenw
 c
       implicit none
@@ -464,8 +479,13 @@ c
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine  mmhfnw(fid,name,numdt,numit,entype,geotype, 
      &                   n,num,cret) BIND(C, NAME='MMHFNW')
+#else
+      subroutine  mmhfnw(fid,name,numdt,numit,entype,geotype,
+     &                   n,num,cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mmhfnw
 c
       implicit none
@@ -576,8 +596,13 @@ c
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine  mmhcyw(fid,name,numdt,numit,dt,entype,geotype, 
      &                   cmode,swm,n,con,cret) BIND(C, NAME='MMHCYW')
+#else
+      subroutine  mmhcyw(fid,name,numdt,numit,dt,entype,geotype,
+     &                   cmode,swm,n,con,cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcyw
 c
       implicit none

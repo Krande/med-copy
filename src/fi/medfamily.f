@@ -14,9 +14,13 @@ C*
 C*  You should have received a copy of the GNU Lesser General Public License
 C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mfacre(fid, name, fname, fnum, ngro, gname,
      & cret) BIND(C, NAME='MFACRE')
+#else
+      subroutine mfacre(fid, name, fname, fnum, ngro, gname,
+     & cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mfacre
 c
       implicit none

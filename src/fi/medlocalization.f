@@ -17,8 +17,13 @@ C*
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mlclow(fid,lname,gtype,sdim,ecoo,swm,nip,
      & ipcoo, wght, giname, isname, cret) BIND(C, NAME='MLCLOW')
+#else
+      subroutine mlclow(fid,lname,gtype,sdim,ecoo,swm,nip,
+     & ipcoo, wght, giname, isname, cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mlclow
 c
       implicit none
@@ -37,7 +42,11 @@ c
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mlcnlc(fid,n,cret) BIND(C, NAME='MLCNLC')
+#else
+      subroutine mlcnlc(fid,n,cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mlcnlc
 c
       implicit none
@@ -59,8 +68,13 @@ c
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mlclci(fid, it, lname, gtype, sdim, nip,
      &     giname, isname, nsmc, sgtype, cret) BIND(C, NAME='MLCLCI')
+#else
+      subroutine mlclci(fid, it, lname, gtype, sdim, nip,
+     &     giname, isname, nsmc, sgtype, cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mlclci
 c
       implicit none
@@ -80,8 +94,13 @@ c
 c
 c
 c
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mlclni(fid, lname, gtype, sdim, nip,
      &     giname, isname, nsmc, sgtype, cret) BIND(C, NAME='MLCLNI')
+#else
+      subroutine mlclni(fid, lname, gtype, sdim, nip,
+     &     giname, isname, nsmc, sgtype, cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mlclni
 c
       implicit none
@@ -101,9 +120,13 @@ c
 c
 c
 c
-
+#ifdef ASTER_PLATFORM_MSVC64
       subroutine mlclor(fid,lname,swm,ecoo,ipcoo, wght,
      & cret) BIND(C, NAME='MLCLOR')
+#else
+      subroutine mlclor(fid,lname,swm,ecoo,ipcoo, wght,
+     & cret)
+#endif
 c     DEC$ ATTRIBUTES DLLEXPORT :: mlclor
 c
       implicit none
