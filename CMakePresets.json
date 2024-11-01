@@ -1,25 +1,17 @@
 {
   "version": 6,
-  "include": [
-    ".env.json"
-  ],
   "configurePresets": [
     {
       "name": "shared",
       "hidden": true,
-      "inherits": [
-        "env-vars"
-      ],
       "warnings": {
         "dev": false
       },
       "environment": {
-        "PREFIX": "$env{MED_PREFIX}"
+        "PREFIX": "${sourceDir}/.pixi/envs/default",
+        "LIBRARY_PREFIX": "${sourceDir}/.pixi/envs/default/Library"
       },
       "cacheVariables": {
-        "CMAKE_GENERATOR_PLATFORM": "",
-        "CMAKE_GENERATOR_TOOLSET": "",
-
         "MED_MEDINT_TYPE": "long long",
         "MEDFILE_INSTALL_DOC": "OFF",
         "MEDFILE_BUILD_PYTHON": "ON",
@@ -37,10 +29,9 @@
       ],
       "hidden": true,
       "environment": {
-        "LIBRARY_PREFIX": "$env{PREFIX}/Library",
         "CFLAGS": "/nologo",
         "CXXFLAGS": "/nologo",
-        "FCFLAGS": "/nologo /fpp /fixed /dll /MD /4I8 /4R8 /real-size:64 /integer-size:64 /assume:byterecl,aligned_dummy_args,dummy_aliases,writeable_strings /4L132 /check:stack /check:bound /check:pointer /fpe:0"
+        "FCFLAGS": "/nologo /fpp /fixed /dll /MD /4I8 /4R8 /assume:byterecl,aligned_dummy_args,dummy_aliases,writeable_strings /4L132 /check:stack /check:bound /check:pointer /fpe:0"
       },
       "cacheVariables": {
         "MED_MEDINT_TYPE": "long long",
@@ -81,9 +72,6 @@
       ],
       "hidden": false,
       "environment": {
-        "CC": "cl.exe",
-        "CXX": "cl.exe",
-        "FC": "ifx.exe",
         "LDFLAGS": "/DEBUG /INCREMENTAL:NO"
       },
       "vendor": {

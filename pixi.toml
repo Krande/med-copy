@@ -1,0 +1,24 @@
+[project]
+name = "libmed"
+version = "17.1.12"
+description = "A pixi project for building the windows variant of code aster"
+channels = ["https://repo.prefix.dev/code-aster", "conda-forge"]
+platforms = ["win-64", "linux-64"]
+
+[dependencies]
+python = "3.12"
+hdf5 = "1.14.5"
+vswhere = "*"
+cmake = "*"
+make = "*"
+zlib = "*"
+ninja = "*"
+swig = "4.2.1"
+libxml2 = "*"
+
+[tasks]
+build = {cmd = ["cmake", "--preset", "win-msvc-intel-fortran-debug", "-B", "build/msvc-ifx", "--fresh"], description = "Build the project"}
+install = { cmd = ["ninja", "-C", "build/msvc-ifx", "install"], description = "Install the project" }
+
+[target.win-64.activation]
+scripts = ["activate.bat", "activate_intel.bat"]

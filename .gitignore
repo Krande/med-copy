@@ -1,6 +1,6 @@
 .idea/
 cmake-build*/
 build/
-.env.json
 .env
 .vs/
+.pixi/
