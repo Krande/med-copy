@@ -1181,7 +1181,7 @@ SWIG_Python_SetConstant(PyObject *d, const char *name, PyObject *obj) {
 /* Append a value to the result obj */
 
 SWIGINTERN PyObject*
-SWIG_Python_AppendOutput(PyObject* result, PyObject* obj) {
+SWIG_AppendOutput(PyObject* result, PyObject* obj) {
   if (!result) {
     result = obj;
   } else if (result == Py_None) {
@@ -23265,14 +23265,14 @@ SWIGINTERN PyObject *_wrap_MEDfieldValueAdvancedRd(PyObject *SWIGUNUSEDPARM(self
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
     Py_INCREF(o8);
-    resultobj=SWIG_Python_AppendOutput(resultobj, o8);
+    resultobj=SWIG_AppendOutput(resultobj, o8);
   }
   return resultobj;
 fail:
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
     Py_INCREF(o8);
-    resultobj=SWIG_Python_AppendOutput(resultobj, o8);
+    resultobj=SWIG_AppendOutput(resultobj, o8);
   }
   return NULL;
 }
@@ -23439,7 +23439,7 @@ SWIGINTERN PyObject *_wrap_MEDfieldValueWithProfileRd(PyObject *SWIGUNUSEDPARM(s
   if (alloc8 == SWIG_NEWOBJ) delete[] buf8;
   {
     Py_INCREF(o11);
-    resultobj=SWIG_Python_AppendOutput(resultobj, o11);
+    resultobj=SWIG_AppendOutput(resultobj, o11);
   }
   return resultobj;
 fail:
@@ -23447,7 +23447,7 @@ fail:
   if (alloc8 == SWIG_NEWOBJ) delete[] buf8;
   {
     Py_INCREF(o11);
-    resultobj=SWIG_Python_AppendOutput(resultobj, o11);
+    resultobj=SWIG_AppendOutput(resultobj, o11);
   }
   return NULL;
 }
@@ -23626,7 +23626,7 @@ SWIGINTERN PyObject *_wrap_MEDfield23ValueWithProfileRd(PyObject *SWIGUNUSEDPARM
   if (alloc9 == SWIG_NEWOBJ) delete[] buf9;
   {
     Py_INCREF(o12);
-    resultobj=SWIG_Python_AppendOutput(resultobj, o12);
+    resultobj=SWIG_AppendOutput(resultobj, o12);
   }
   return resultobj;
 fail:
@@ -23635,7 +23635,7 @@ fail:
   if (alloc9 == SWIG_NEWOBJ) delete[] buf9;
   {
     Py_INCREF(o12);
-    resultobj=SWIG_Python_AppendOutput(resultobj, o12);
+    resultobj=SWIG_AppendOutput(resultobj, o12);
   }
   return NULL;
 }
@@ -23781,14 +23781,14 @@ SWIGINTERN PyObject *_wrap_MEDfieldValueRd(PyObject *SWIGUNUSEDPARM(self), PyObj
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
     Py_INCREF(o9);
-    resultobj=SWIG_Python_AppendOutput(resultobj, o9);
+    resultobj=SWIG_AppendOutput(resultobj, o9);
   }
   return resultobj;
 fail:
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
     Py_INCREF(o9);
-    resultobj=SWIG_Python_AppendOutput(resultobj, o9);
+    resultobj=SWIG_AppendOutput(resultobj, o9);
   }
   return NULL;
 }
@@ -24000,9 +24000,9 @@ SWIGINTERN PyObject *_wrap_MEDfieldInfo(PyObject *SWIGUNUSEDPARM(self), PyObject
     resultobj=Py_None;
   }
   arg3[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg3));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg3));
   arg4[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg4));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg4));
   {
     PyObject *o, *o2, *o3;
     o = PyBool_FromLong(*arg5);
@@ -24021,7 +24021,7 @@ SWIGINTERN PyObject *_wrap_MEDfieldInfo(PyObject *SWIGUNUSEDPARM(self), PyObject
     /*      Py_DECREF(o2); */
     /*      Py_DECREF(o3); */
     /*  } */
-    resultobj=SWIG_Python_AppendOutput(resultobj, o);
+    resultobj=SWIG_AppendOutput(resultobj, o);
   }
   {
     PyObject *pmod, *pclass, *pargs, *pinst;
@@ -24038,19 +24038,19 @@ SWIGINTERN PyObject *_wrap_MEDfieldInfo(PyObject *SWIGUNUSEDPARM(self), PyObject
     pargs  = Py_BuildValue("(i)",*arg6);
     pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_field_type");
-    resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
+    resultobj=SWIG_AppendOutput(resultobj, pinst);
   }
   arg7[16*300] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg7));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg7));
   arg8[16*300] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg8));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg8));
   arg9[16] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg9));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg9));
   if (SWIG_IsTmpObj(res10)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg10)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg10)));
   } else {
     int new_flags = SWIG_IsNewObj(res10) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg10), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg10), SWIGTYPE_p_long, new_flags));
   }
   {
     
@@ -24131,22 +24131,22 @@ SWIGINTERN PyObject *_wrap_MEDfieldComputingStepInfo(PyObject *SWIGUNUSEDPARM(se
   }
   
   if (SWIG_IsTmpObj(res4)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg4)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg4)));
   } else {
     int new_flags = SWIG_IsNewObj(res4) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg4), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg4), SWIGTYPE_p_long, new_flags));
   }
   if (SWIG_IsTmpObj(res5)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg5)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg5)));
   } else {
     int new_flags = SWIG_IsNewObj(res5) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg5), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg5), SWIGTYPE_p_long, new_flags));
   }
   if (SWIG_IsTmpObj(res6)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_double((*arg6)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_double((*arg6)));
   } else {
     int new_flags = SWIG_IsNewObj(res6) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg6), SWIGTYPE_p_double, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg6), SWIGTYPE_p_double, new_flags));
   }
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
@@ -24249,34 +24249,34 @@ SWIGINTERN PyObject *_wrap_MEDfieldComputingStepMeshInfo(PyObject *SWIGUNUSEDPAR
   }
   
   if (SWIG_IsTmpObj(res4)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg4)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg4)));
   } else {
     int new_flags = SWIG_IsNewObj(res4) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg4), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg4), SWIGTYPE_p_long, new_flags));
   }
   if (SWIG_IsTmpObj(res5)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg5)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg5)));
   } else {
     int new_flags = SWIG_IsNewObj(res5) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg5), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg5), SWIGTYPE_p_long, new_flags));
   }
   if (SWIG_IsTmpObj(res6)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_double((*arg6)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_double((*arg6)));
   } else {
     int new_flags = SWIG_IsNewObj(res6) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg6), SWIGTYPE_p_double, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg6), SWIGTYPE_p_double, new_flags));
   }
   if (SWIG_IsTmpObj(res7)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg7)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg7)));
   } else {
     int new_flags = SWIG_IsNewObj(res7) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg7), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg7), SWIGTYPE_p_long, new_flags));
   }
   if (SWIG_IsTmpObj(res8)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg8)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg8)));
   } else {
     int new_flags = SWIG_IsNewObj(res8) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg8), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg8), SWIGTYPE_p_long, new_flags));
   }
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
@@ -24403,31 +24403,31 @@ SWIGINTERN PyObject *_wrap_MEDfield23ComputingStepMeshInfo(PyObject *SWIGUNUSEDP
   }
   
   if (SWIG_IsTmpObj(res4)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg4)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg4)));
   } else {
     int new_flags = SWIG_IsNewObj(res4) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg4), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg4), SWIGTYPE_p_long, new_flags));
   }
   if (SWIG_IsTmpObj(res5)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg5)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg5)));
   } else {
     int new_flags = SWIG_IsNewObj(res5) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg5), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg5), SWIGTYPE_p_long, new_flags));
   }
   if (SWIG_IsTmpObj(res6)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_double((*arg6)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_double((*arg6)));
   } else {
     int new_flags = SWIG_IsNewObj(res6) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg6), SWIGTYPE_p_double, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg6), SWIGTYPE_p_double, new_flags));
   }
   if (SWIG_IsTmpObj(res7)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg7)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg7)));
   } else {
     int new_flags = SWIG_IsNewObj(res7) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg7), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg7), SWIGTYPE_p_long, new_flags));
   }
   arg8[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg8));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg8));
   {
     PyObject *o, *o2, *o3;
     o = PyBool_FromLong(*arg9);
@@ -24446,19 +24446,19 @@ SWIGINTERN PyObject *_wrap_MEDfield23ComputingStepMeshInfo(PyObject *SWIGUNUSEDP
     /*      Py_DECREF(o2); */
     /*      Py_DECREF(o3); */
     /*  } */
-    resultobj=SWIG_Python_AppendOutput(resultobj, o);
+    resultobj=SWIG_AppendOutput(resultobj, o);
   }
   if (SWIG_IsTmpObj(res10)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg10)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg10)));
   } else {
     int new_flags = SWIG_IsNewObj(res10) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg10), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg10), SWIGTYPE_p_long, new_flags));
   }
   if (SWIG_IsTmpObj(res11)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg11)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg11)));
   } else {
     int new_flags = SWIG_IsNewObj(res11) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg11), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg11), SWIGTYPE_p_long, new_flags));
   }
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
@@ -24665,7 +24665,7 @@ SWIGINTERN PyObject *_wrap_MEDfieldInfoByName(PyObject *SWIGUNUSEDPARM(self), Py
   }
   
   arg3[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg3));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg3));
   {
     PyObject *o, *o2, *o3;
     o = PyBool_FromLong(*arg4);
@@ -24684,7 +24684,7 @@ SWIGINTERN PyObject *_wrap_MEDfieldInfoByName(PyObject *SWIGUNUSEDPARM(self), Py
     /*      Py_DECREF(o2); */
     /*      Py_DECREF(o3); */
     /*  } */
-    resultobj=SWIG_Python_AppendOutput(resultobj, o);
+    resultobj=SWIG_AppendOutput(resultobj, o);
   }
   {
     PyObject *pmod, *pclass, *pargs, *pinst;
@@ -24701,19 +24701,19 @@ SWIGINTERN PyObject *_wrap_MEDfieldInfoByName(PyObject *SWIGUNUSEDPARM(self), Py
     pargs  = Py_BuildValue("(i)",*arg5);
     pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_field_type");
-    resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
+    resultobj=SWIG_AppendOutput(resultobj, pinst);
   }
   arg6[16*300] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg6));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg6));
   arg7[16*300] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg7));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg7));
   arg8[16] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg8));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg8));
   if (SWIG_IsTmpObj(res9)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg9)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg9)));
   } else {
     int new_flags = SWIG_IsNewObj(res9) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg9), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg9), SWIGTYPE_p_long, new_flags));
   }
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
@@ -24839,18 +24839,18 @@ SWIGINTERN PyObject *_wrap_MEDfieldnValueWithProfileByName(PyObject *SWIGUNUSEDP
   
   
   if (SWIG_IsTmpObj(res9)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg9)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg9)));
   } else {
     int new_flags = SWIG_IsNewObj(res9) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg9), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg9), SWIGTYPE_p_long, new_flags));
   }
   arg10[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg10));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg10));
   if (SWIG_IsTmpObj(res11)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg11)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg11)));
   } else {
     int new_flags = SWIG_IsNewObj(res11) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg11), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg11), SWIGTYPE_p_long, new_flags));
   }
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   if (alloc7 == SWIG_NEWOBJ) delete[] buf7;
@@ -24985,20 +24985,20 @@ SWIGINTERN PyObject *_wrap_MEDfieldnValueWithProfile(PyObject *SWIGUNUSEDPARM(se
   resultobj = SWIG_From_long(static_cast< long >(result));
   
   arg9[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg9));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg9));
   if (SWIG_IsTmpObj(res10)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg10)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg10)));
   } else {
     int new_flags = SWIG_IsNewObj(res10) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg10), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg10), SWIGTYPE_p_long, new_flags));
   }
   arg11[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg11));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg11));
   if (SWIG_IsTmpObj(res12)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg12)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg12)));
   } else {
     int new_flags = SWIG_IsNewObj(res12) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg12), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg12), SWIGTYPE_p_long, new_flags));
   }
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
@@ -25228,20 +25228,20 @@ SWIGINTERN PyObject *_wrap_MEDfield23nValueWithProfile(PyObject *SWIGUNUSEDPARM(
   
   
   arg10[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg10));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg10));
   if (SWIG_IsTmpObj(res11)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg11)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg11)));
   } else {
     int new_flags = SWIG_IsNewObj(res11) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg11), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg11), SWIGTYPE_p_long, new_flags));
   }
   arg12[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg12));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg12));
   if (SWIG_IsTmpObj(res13)) {
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_From_int((*arg13)));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_From_int((*arg13)));
   } else {
     int new_flags = SWIG_IsNewObj(res13) ? (SWIG_POINTER_OWN |  0 ) :  0 ;
-    resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg13), SWIGTYPE_p_long, new_flags));
+    resultobj = SWIG_AppendOutput(resultobj, SWIG_NewPointerObj((void*)(arg13), SWIGTYPE_p_long, new_flags));
   }
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   if (alloc7 == SWIG_NEWOBJ) delete[] buf7;
@@ -25350,9 +25350,9 @@ SWIGINTERN PyObject *_wrap_MEDfieldnProfile(PyObject *SWIGUNUSEDPARM(self), PyOb
   resultobj = SWIG_From_long(static_cast< long >(result));
   
   arg7[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg7));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg7));
   arg8[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg8));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg8));
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   return resultobj;
 fail:
@@ -25458,11 +25458,11 @@ SWIGINTERN PyObject *_wrap_MEDfield23nProfile(PyObject *SWIGUNUSEDPARM(self), Py
   resultobj = SWIG_From_long(static_cast< long >(result));
   
   arg8[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg8));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg8));
   arg9[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg9));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg9));
   arg10[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg10));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg10));
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   return resultobj;
 fail:
@@ -25645,7 +25645,7 @@ SWIGINTERN PyObject *_wrap_MEDfieldInterpInfo(PyObject *SWIGUNUSEDPARM(self), Py
   }
   
   arg4[64] = 0;  
-  resultobj = SWIG_Python_AppendOutput(resultobj, SWIG_FromCharPtr(arg4));
+  resultobj = SWIG_AppendOutput(resultobj, SWIG_FromCharPtr(arg4));
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   return resultobj;
 fail:
@@ -25817,20 +25817,20 @@ SWIGINTERN PyObject *_wrap_MEDfieldEntityType(PyObject *SWIGUNUSEDPARM(self), Py
     pargs  = Py_BuildValue("(i)",*arg5);
     pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_entity_type");
-    resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
+    resultobj=SWIG_AppendOutput(resultobj, pinst);
   }
   
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
     Py_INCREF(o6);
-    resultobj=SWIG_Python_AppendOutput(resultobj, o6);
+    resultobj=SWIG_AppendOutput(resultobj, o6);
   }
   return resultobj;
 fail:
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
     Py_INCREF(o6);
-    resultobj=SWIG_Python_AppendOutput(resultobj, o6);
+    resultobj=SWIG_AppendOutput(resultobj, o6);
   }
   return NULL;
 }
@@ -26010,14 +26010,14 @@ SWIGINTERN PyObject *_wrap_MEDfieldGeometryType(PyObject *SWIGUNUSEDPARM(self), 
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
     Py_INCREF(o7);
-    resultobj=SWIG_Python_AppendOutput(resultobj, o7);
+    resultobj=SWIG_AppendOutput(resultobj, o7);
   }
   return resultobj;
 fail:
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   {
     Py_INCREF(o7);
-    resultobj=SWIG_Python_AppendOutput(resultobj, o7);
+    resultobj=SWIG_AppendOutput(resultobj, o7);
   }
   return NULL;
 }

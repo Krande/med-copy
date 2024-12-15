@@ -22,7 +22,7 @@
    /*      Py_DECREF(o2); */
    /*      Py_DECREF(o3); */
    /*  } */
-  $result=SWIG_Python_AppendOutput($result, o);
+  $result=SWIG_AppendOutput($result, o);
 }
 
 %typemap(in,numinputs=0) med_bool *(med_bool temp) {
