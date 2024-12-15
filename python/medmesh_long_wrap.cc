@@ -22757,7 +22757,7 @@ SWIGINTERN PyObject *_wrap_MEDmeshInfoByName(PyObject *SWIGUNUSEDPARM(self), PyO
     if (pclass == NULL) printf("%s\n","Can't get class med_mesh_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg5);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_mesh_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }
@@ -22778,7 +22778,7 @@ SWIGINTERN PyObject *_wrap_MEDmeshInfoByName(PyObject *SWIGUNUSEDPARM(self), PyO
     if (pclass == NULL) printf("%s\n","Can't get class med_sorting_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg8);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_sorting_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }
@@ -22801,7 +22801,7 @@ SWIGINTERN PyObject *_wrap_MEDmeshInfoByName(PyObject *SWIGUNUSEDPARM(self), PyO
     if (pclass == NULL) printf("%s\n","Can't get class med_axis_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg10);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_axis_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }
@@ -22947,7 +22947,7 @@ SWIGINTERN PyObject *_wrap_MEDmeshInfo(PyObject *SWIGUNUSEDPARM(self), PyObject 
     if (pclass == NULL) printf("%s\n","Can't get class med_mesh_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg6);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_mesh_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }
@@ -22968,7 +22968,7 @@ SWIGINTERN PyObject *_wrap_MEDmeshInfo(PyObject *SWIGUNUSEDPARM(self), PyObject 
     if (pclass == NULL) printf("%s\n","Can't get class med_sorting_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg9);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_sorting_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }
@@ -22991,7 +22991,7 @@ SWIGINTERN PyObject *_wrap_MEDmeshInfo(PyObject *SWIGUNUSEDPARM(self), PyObject 
     if (pclass == NULL) printf("%s\n","Can't get class med_axis_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg11);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_axis_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }
@@ -23281,7 +23281,7 @@ SWIGINTERN PyObject *_wrap_MEDmeshGridTypeRd(PyObject *SWIGUNUSEDPARM(self), PyO
     if (pclass == NULL) printf("%s\n","Can't get class med_grid_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg3);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_grid_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }
@@ -24336,7 +24336,7 @@ SWIGINTERN PyObject *_wrap_MEDmeshSortingTypeRd(PyObject *SWIGUNUSEDPARM(self), 
     if (pclass == NULL) printf("%s\n","Can't get class med_sorting_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg3);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_sorting_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }
@@ -29667,7 +29667,7 @@ SWIGINTERN PyObject *_wrap_MEDsupportMeshInfoByName(PyObject *SWIGUNUSEDPARM(sel
     if (pclass == NULL) printf("%s\n","Can't get class med_axis_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg6);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_axis_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }
@@ -29792,7 +29792,7 @@ SWIGINTERN PyObject *_wrap_MEDsupportMeshInfo(PyObject *SWIGUNUSEDPARM(self), Py
     if (pclass == NULL) printf("%s\n","Can't get class med_axis_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg7);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_axis_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }

@@ -23227,7 +23227,7 @@ SWIGINTERN PyObject *_wrap_MEDequivalenceCorrespondenceSizeInfo(PyObject *SWIGUN
     if (pclass == NULL) printf("%s\n","Can't get class med_entity_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg7);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_entity_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }

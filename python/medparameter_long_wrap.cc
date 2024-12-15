@@ -22699,7 +22699,7 @@ SWIGINTERN PyObject *_wrap_MEDparameterInfo(PyObject *SWIGUNUSEDPARM(self), PyOb
     if (pclass == NULL) printf("%s\n","Can't get class med_parameter_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg4);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_parameter_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }
@@ -22798,7 +22798,7 @@ SWIGINTERN PyObject *_wrap_MEDparameterInfoByName(PyObject *SWIGUNUSEDPARM(self)
     if (pclass == NULL) printf("%s\n","Can't get class med_parameter_type");
     Py_DECREF(pmod);
     pargs  = Py_BuildValue("(i)",*arg3);
-    pinst  = PyEval_CallObject(pclass, pargs);
+    pinst  = PyObject_Call(pclass, pargs, NULL);
     if (pinst == NULL) printf("%s\n","Can't instanciate class med_parameter_type");
     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
   }

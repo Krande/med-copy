@@ -109,7 +109,7 @@ Type.__repr__= lambda self: #Type +"("+str(self.val)+")"
   if (pclass == NULL) printf("%s\n","Can't get class $1_basetype");
   Py_DECREF(pmod);
   pargs  = Py_BuildValue("(i)",*$1);
-  pinst  = PyEval_CallObject(pclass, pargs);
+  pinst  = PyObject_Call(pclass, pargs, NULL);
   if (pinst == NULL) printf("%s\n","Can't instanciate class $1_basetype");
   $result=SWIG_Python_AppendOutput($result, pinst);
 }
