@@ -2,23 +2,53 @@
 name = "libmed"
 version = "17.1.12"
 description = "A pixi project for building the windows variant of code aster"
-channels = ["https://repo.prefix.dev/code-aster", "conda-forge"]
+channels = ["conda-forge"]
 platforms = ["win-64", "linux-64"]
 
-[dependencies]
-python = "3.12"
-hdf5 = "1.14.5"
-vswhere = "*"
+[environments]
+local = ["local"]
+local-win = ["local-win", "local"]
+local-unix = ["local-unix", "local"]
+conda = ["conda"]
+
+[feature.conda]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64"]
+dependencies = {rattler-build = "*"}
+
+[feature.local.dependencies]
+python = "3.13"
 cmake = "*"
 make = "*"
 zlib = "*"
 ninja = "*"
-swig = "4.2.1"
+swig = "4.3"
 libxml2 = "*"
 
-[tasks]
+[feature.local-win]
+platforms = ["win-64"]
+
+[feature.local-unix]
+platforms = ["linux-64"]
+
+[feature.local-win.dependencies]
+vswhere = "*"
+hdf5 = "1.14.4"
+
+[feature.local-unix.dependencies]
+hdf5 = "1.14.4"
+
+[feature.local-unix.tasks]
+build = {cmd = ["cmake", "--preset", "gcc-ninja-debug", "-B", "build/unix-gcc", "--fresh"], description = "Build the project"}
+install = { cmd = ["ninja", "-C", "build/unix-gcc", "install"], description = "Install the project" }
+
+[feature.local-win.tasks]
 build = {cmd = ["cmake", "--preset", "win-msvc-intel-fortran-debug", "-B", "build/msvc-ifx", "--fresh"], description = "Build the project"}
 install = { cmd = ["ninja", "-C", "build/msvc-ifx", "install"], description = "Install the project" }
+
+[feature.conda.tasks]
+cbuild = {cmd = ["rattler-build", "build","-r", "conda/recipe.yaml", "-c", "https://repo.prefix.dev/code-aster", "-c", "conda-forge"] }
+ctest = {cmd = ["rattler-build", "test"]}
 
 [target.win-64.activation]
 scripts = ["activate.bat", "activate_intel.bat"]

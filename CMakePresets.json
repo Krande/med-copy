@@ -7,10 +7,6 @@
       "warnings": {
         "dev": false
       },
-      "environment": {
-        "PREFIX": "${sourceDir}/.pixi/envs/default",
-        "LIBRARY_PREFIX": "${sourceDir}/.pixi/envs/default/Library"
-      },
       "cacheVariables": {
         "MED_MEDINT_TYPE": "long long",
         "MEDFILE_INSTALL_DOC": "OFF",
@@ -29,6 +25,8 @@
       ],
       "hidden": true,
       "environment": {
+        "PREFIX": "${sourceDir}/.pixi/envs/default",
+        "LIBRARY_PREFIX": "${sourceDir}/.pixi/envs/default/Library",
         "CFLAGS": "/nologo",
         "CXXFLAGS": "/nologo",
         "FCFLAGS": "/nologo /fpp /fixed /dll /MD /4I8 /4R8 /assume:byterecl,aligned_dummy_args,dummy_aliases,writeable_strings /4L132 /check:stack /check:bound /check:pointer /fpe:0"
@@ -86,7 +84,8 @@
         "CMAKE_CXX_FLAGS": "$env{CXXFLAGS} /MDd /Od /Zi -DSWIG_PYTHON_INTERPRETER_NO_DEBUG=1",
         "CMAKE_EXE_LINKER_FLAGS": "/DEBUG /INCREMENTAL:NO"
       }
-    },{
+    },
+    {
       "name": "win-msvc-intel-fortran-release",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}",
@@ -112,10 +111,19 @@
       }
     },
     {
+      "name": "unix-shared",
+      "inherits": "shared",
+      "environment": {
+        "PREFIX": "${sourceDir}/.pixi/envs/local-unix"
+      }
+    },
+    {
       "name": "gcc-ninja-debug",
       "description": "Using gcc",
       "generator": "Ninja",
-      "inherits": "shared",
+      "inherits": [
+        "unix-shared"
+      ],
       "hidden": false,
       "environment": {
         "INSTALL_PREFIX": "$env{MED_PREFIX}"
@@ -124,7 +132,6 @@
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_VERBOSE_MAKEFILE": "ON",
         "HDF5_ROOT_DIR": "$env{PREFIX}",
-        "HDF5_VERSION": "1.14.4.3",
         "HDF5_INCLUDE_DIRS": "$env{PREFIX}/include",
         "MED_MEDINT_TYPE": "long",
         "CMAKE_PREFIX_PATH": "$env{PREFIX}:$env{PREFIX}/include:$env{PREFIX}/lib:$env{PREFIX}/bin",
@@ -132,9 +139,7 @@
         "CMAKE_C_FLAGS": "-march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -O0 -fno-plt -ffunction-sections -pipe -isystem $env{PREFIX}/include",
         "CMAKE_CXX_FLAGS": "-fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O0 -ffunction-sections -pipe -isystem $env{PREFIX}/include",
         "CMAKE_Fortran_FLAGS": "-fdefault-integer-8 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O0 -ffunction-sections -pipe -isystem $env{PREFIX}/include $env{FFLAGS}",
-        "CMAKE_INSTALL_PREFIX": "$env{INSTALL_PREFIX}",
-        "Python_FIND_VIRTUALENV": "FIRST",
-        "Python_FIND_STRATEGY": "LOCATION",
+        "CMAKE_INSTALL_PREFIX": "$env{PREFIX}",
         "Python_ROOT_DIR": "$env{PREFIX}"
       }
     }

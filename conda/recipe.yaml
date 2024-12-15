@@ -1,0 +1,87 @@
+schema_version: 1
+
+context:
+  name: libmed
+  version: 4.1.1
+  build: 200
+  mpi_prefix: nompi
+  build_type: debug
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  path: ..
+
+build:
+  number: ${{ build }}
+  string: py${{ CONDA_PY }}_${{ mpi_prefix }}_${{ build_type }}_h${{ PKG_HASH }}_${{ build }}
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - if: not win
+      then:
+      - ${{ compiler('fortran') }}
+      - make
+    - swig >=4.0.2
+    - cmake
+    - if: win
+      then: ninja
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+  host:
+    - python
+    - hdf5
+    - zlib
+    - if: "mpi != \"nompi\""
+      then: ${{ mpi }}
+  run:
+    - python
+    - if: "mpi != \"nompi\""
+      then: ${{ mpi }}
+    - ${{ pin_compatible('hdf5', upper_bound='x.x') }}
+  run_exports:
+    - ${{ pin_subpackage(name, upper_bound='x.x') }}
+
+tests:
+  - python:
+      imports:
+        - med
+      pip_check: false
+  - files:
+      recipe:
+        - if: win
+          then: test_symbols.bat
+    requirements:
+      run:
+        - ${{ compiler('c') }}
+        - ${{ compiler('cxx') }}
+    script:
+      - if: unix
+        then: test -f ${PREFIX}/lib/libmed${SHLIB_EXT}
+      - if: linux
+        then: nm ${PREFIX}/lib/libmedC.so | grep MEDlibraryNumVersion
+      - if: win
+        then: test_symbols.bat
+
+about:
+  license: LGPL-3.0-only
+  license_file: COPYING
+  summary: MED - interoperable format for data interchange between mesh based solvers.
+  description: |
+    The purpose of the MED module is to provide a standard for storing and recovering computer data associated to numerical meshes and fields, and to facilitate the exchange between codes and solvers.
+  homepage: https://www.salome-platform.org/user-section/about/med
+  repository: https://git.salome-platform.org/gitweb/?p=modules/med.git;a=summary
+  documentation: http://www.salome-platform.org/
+
+extra:
+  recipe-maintainers:
+    - Krande
+    - ldallolio
+    - looooo
+    - ldallolio-irt
