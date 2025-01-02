@@ -62,7 +62,9 @@ vc:
     then: 14
 
 python:
+  - 3.9
   - 3.12
+  - 3.13
 
 mpi:
   - nompi
