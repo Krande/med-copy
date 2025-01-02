@@ -6,6 +6,7 @@ context:
   build: 200
   mpi_prefix: nompi
   build_type: debug
+  pyvar: ${{ python | replace('.', '') }}
 
 package:
   name: ${{ name }}
@@ -16,7 +17,7 @@ source:
 
 build:
   number: ${{ build }}
-  string: py${{ CONDA_PY }}_${{ mpi_prefix }}_${{ build_type }}_h${{ PKG_HASH }}_${{ build }}
+  string: py${{ pyvar }}_${{ mpi_prefix }}_${{ build_type }}_h${{ hash }}_${{ build }}
 
 requirements:
   build:
@@ -57,7 +58,8 @@ tests:
       recipe:
         - if: win
           then: test_symbols.bat
-        - tests/custom/python/**
+      source:
+        - tests_custom/python/**
     requirements:
       run:
         - ${{ compiler('c') }}
@@ -68,7 +70,7 @@ tests:
         then: test -f ${PREFIX}/lib/libmed${SHLIB_EXT}
       - if: linux
         then: nm ${PREFIX}/lib/libmedC.so | grep MEDlibraryNumVersion
-      - pytest -v tests/custom/python
+      - pytest -v tests_custom/python
 
 about:
   license: LGPL-3.0-only
