@@ -1,0 +1,74 @@
+name: ci-build-and-test
+
+# bump 1
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - conda-dev
+#    - donotrun
+env:
+  CONDA_FILE: ""
+  OUTPUT_DIR: "${{ github.workspace }}\\test_output"
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: '1'
+
+      - uses: ./.github/actions/install-intel-fortran
+        if: ${{ runner.os == 'Windows' }}
+        with:
+          version: 2025.0.0
+          activate: false
+
+      - uses: prefix-dev/setup-pixi@v0.8.1
+        with:
+          pixi-version: v0.39.2
+          cache: true
+
+      - name: Build
+        shell: bash
+        run: |
+          pixi run cbuild --no-test
+
+      - name: If failed build, upload log
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: BuildLog-${{ runner.os }}-${{ github.run_id }}
+          path: ${{ github.workspace }}/output/bld
+
+      - name: Find the outputted .conda file and set it as an output
+        run: |
+          import pathlib
+          import os
+          
+          output_dir = pathlib.Path("output").resolve()
+          conda_files = list(output_dir.rglob("*.conda"))
+          if len(conda_files) != 1:
+              raise ValueError(f"Expected 1 .conda file, found {len(conda_files)}")
+          conda_file = conda_files[0]
+          with open(os.environ["GITHUB_ENV"], "a") as env_file:
+                env_file.write(f"CONDA_FILE={conda_file.as_posix()}\n")
+
+        shell: pixi run python {0}
+
+      - name: run rattler test
+        if: ${{ runner.os == 'Windows' }}
+        continue-on-error: true # Prevent the workflow from failing
+        run: |
+          pixi run ctest --package-file ${{ env.CONDA_FILE }}
+
+      - name: run rattler test
+        if: ${{ runner.os != 'Windows' }}
+        continue-on-error: true # Prevent the workflow from failing
+        run: |
+          pixi run ctest --package-file ${{ env.CONDA_FILE }}

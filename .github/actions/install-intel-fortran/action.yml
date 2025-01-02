@@ -1,0 +1,94 @@
+name: "Setup Intel Fortran"
+description: "Setup Intel Fortran compiler"
+
+inputs:
+  version:
+    description: "Version of intel fortran. Currently supports only v2025.0.0"
+    required: false
+  activate:
+    description: "Activate oneAPI environment"
+    required: false
+    default: 'false'
+outputs:
+  fc:
+    description: "Path to Fortran compiler"
+    value: ${{ steps.outputs.outputs.fc }}
+
+runs:
+  using: "composite"
+  steps:
+    # On Windows runners the Intel toolchain is very slow to install,
+    # setup caching with daily key rotation. Steps are also needed to
+    # activate the oneAPI environment.
+    - name: Set oneAPI install dir
+      id: oneapi-root
+      if: runner.os == 'Windows'
+      shell: bash
+      run: echo "ONEAPI_ROOT=C:\Program Files (x86)\Intel\oneAPI" >> "$GITHUB_ENV"
+
+    - name: Get date
+      if: runner.os == 'Windows'
+      id: get-date
+      shell: bash
+      run: echo "date=$(/bin/date -u "+%Y%m%d")" >> "$GITHUB_OUTPUT"
+
+    - name: Restore cache
+      if: runner.os == 'Windows'
+      id: cache
+      uses: actions/cache/restore@v4
+      with:
+        path: ${{ env.ONEAPI_ROOT }}
+        key: ${{ runner.os }}-intel-fortran-${{ inputs.version }}
+
+
+    # Set up the selected toolchain or compiler
+    - name: Setup toolchain
+      id: setup
+      if: steps.cache.outputs.cache-hit != 'true'
+      shell: bash
+      env:
+        VERSION: ${{ inputs.version }}
+      run: |
+        echo 'CACHE-HIT="${{ steps.cache.outputs.cache-hit }}"'
+        action_path=$(echo '/${{ github.action_path }}' | sed -e 's/\\/\//g' -e 's/://')
+        
+        "$GITHUB_ACTION_PATH/install-intel-fortran.bat"
+        
+        echo "FC=${FC}" >> $GITHUB_ENV
+        echo "INTEL_FORTRAN_VERSION=${VERSION}.1162" >> $GITHUB_ENV
+        
+    # save oneAPI cache and activate environment
+    - name: Save cache
+      if: runner.os == 'Windows' && steps.cache.outputs.cache-hit != 'true'
+      uses: actions/cache/save@v4
+      with:
+        path: ${{ env.ONEAPI_ROOT }}
+        key: ${{ steps.cache.outputs.cache-primary-key }}
+
+    - name: Activate oneAPI
+      if: runner.os == 'Windows' && inputs.activate == 'true'
+      shell: cmd
+      run: |
+        ver | findstr /i "10\.0\.17" && set VS2019INSTALLDIR=C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise
+        ver | findstr /i "10\.0\.20" && set VS2022INSTALLDIR=C:\Program Files\Microsoft Visual Studio\2022\Enterprise
+        for /f "tokens=* usebackq" %%f in (`dir /b "%ONEAPI_ROOT%\compiler\" ^| findstr /V latest ^| sort`) do @set "LATEST=%%f"
+        :: this script fails when install location is not the default
+        call "%ONEAPI_ROOT%\compiler\%LATEST%\env\vars.bat"
+        set | findstr /c:"oneAPI" >> "%GITHUB_ENV%"
+
+    - name: Set outputs and env vars
+      shell: bash
+      id: outputs
+      run: |
+        # Intel compilers may have restored from cache so env vars may not be set
+        if [[ "$RUNNER_OS" == "Windows" ]]; then
+          FC=ifx
+          echo SETVARS_COMPLETED=1>>$GITHUB_ENV
+        fi
+
+        # set env vars
+        echo FC=$FC>>$GITHUB_ENV
+        echo "INTEL_FORTRAN_VERSION=${VERSION}.1162" >> $GITHUB_ENV
+
+        # set action outputs
+        echo fc=$FC>>$GITHUB_OUTPUT
