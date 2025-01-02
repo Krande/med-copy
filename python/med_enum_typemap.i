@@ -111,7 +111,7 @@ Type.__repr__= lambda self: #Type +"("+str(self.val)+")"
   pargs  = Py_BuildValue("(i)",*$1);
   pinst  = PyObject_Call(pclass, pargs, NULL);
   if (pinst == NULL) printf("%s\n","Can't instanciate class $1_basetype");
-  $result=SWIG_AppendOutput($result, pinst);
+  $result=SWIG_Python_AppendOutput($result, pinst);
 }
 
 %typemap(in,numinputs=0) TypeEnum * (TypeEnum temp) {
