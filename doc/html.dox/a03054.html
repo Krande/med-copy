@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MED fichier: f/test22.f</title>
+<title>MED fichier: c/test19.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,161 +39,170 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">f/test22.f</div>  </div>
+<div class="title">c/test19.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">C*  This file is part of MED.</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">C*</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">C*  COPYRIGHT (C) 1999 - 2021  EDF R&amp;D, CEA/DEN</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">C*  MED is free software: you can redistribute it and/or modify</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">C*  it under the terms of the GNU Lesser General Public License as published by</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">C*  the Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">C*  (at your option) any later version.</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">C*</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">C*  MED is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">C*  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">C*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">C*  GNU Lesser General Public License for more details.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">C*</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">C*  You should have received a copy of the GNU Lesser General Public License</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">C*  along with MED.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">C*</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">C******************************************************************************</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">C* - Nom du fichier : test22.f</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">C*</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">C* - Description : lecture des valeurs scalaires numeriques dans un fichier MED</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">C ******************************************************************************</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keyword">program</span> <a class="code" href="a00938_aa54bff56356f6b6020b255c3d9ec9e46.html#aa54bff56356f6b6020b255c3d9ec9e46">test22</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">C     </span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordtype">implicit none</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      include <span class="stringliteral">&#39;med.hf&#39;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="keywordtype">integer*8</span> fid</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keywordtype">integer</span> cret</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      <span class="keywordtype">character*16</span> dtunit</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <span class="keywordtype">character*64</span> nom</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      <span class="keywordtype">character*200</span> desc</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      <span class="keywordtype">integer</span> vali</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      real*8 valr,dt</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keywordtype">integer</span> n,npdt,i,j,<span class="keywordtype">type</span>,numdt,numo</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">C     </span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">C     Ouverture du fichier test21.med en lecture seule</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="keyword">call </span><a class="code" href="a02336_ga68bd28216f39b6aac3f3cdeb58ca0343.html#ga68bd28216f39b6aac3f3cdeb58ca0343">mfiope</a>(fid,<span class="stringliteral">&#39;test21.med&#39;</span>,med_acc_rdonly, cret)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      print *,cret</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">if</span> (cret .ne. 0 ) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;         print *,<span class="stringliteral">&#39;Erreur ouverture du fichier&#39;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         <span class="keyword">call </span>efexit(-1)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordflow">      endif</span>      </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      print *,<span class="stringliteral">&#39;Ouverture du fichier test21.med&#39;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">C     Lecture du nombre de variable scalaire</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keyword">call  </span><a class="code" href="a02343_gaf88169a747c4a7ffaca0fc083559a426.html#gaf88169a747c4a7ffaca0fc083559a426">mprnpr</a>(fid,n,cret)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      print *,cret</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">if</span> (cret .ne. 0 ) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;         print *,<span class="stringliteral">&#39;Erreur lecture du nombre de variable&#39;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;         <span class="keyword">call </span>efexit(-1)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordflow">      endif</span>      </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      print *,<span class="stringliteral">&#39;Nombre de variables scalaires : &#39;</span>,n</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">C     Lecture des infos (type,description) propres </span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">C     a chaque variable</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keywordflow">do</span> 10 i=1,n</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;         <span class="keyword">call </span><a class="code" href="a02343_ga083e501688dc8837df590d757b55d9e2.html#ga083e501688dc8837df590d757b55d9e2">mprpri</a>(fid,i,nom,<span class="keywordtype">type</span>,desc, </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;     &amp;               dtunit,npdt,cret)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;         print *,cret</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;         <span class="keywordflow">if</span> (cret .ne. 0 ) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            print *,<span class="stringliteral">&#39;Erreur lecture des infos&#39;</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keyword">call </span>efexit(-1)</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordflow">         endif</span>      </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;         print *,<span class="stringliteral">&#39;- Scalaire de nom : &#39;</span>,nom</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;         <span class="keywordflow">if</span> (type.eq.<a class="code" href="a02309_a6909a8bd37af6035c6175b6daba8efa7.html#a6909a8bd37af6035c6175b6daba8efa7">med_float64</a>) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            print *,<span class="stringliteral">&#39;  de type flottant&#39;</span> </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;         <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            print *,<span class="stringliteral">&#39;  de type entier&#39;</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordflow">         endif</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;         print *,<span class="stringliteral">&#39;  Description associee : &#39;</span>,desc</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         print *,<span class="stringliteral">&#39;  Nombre de valeurs : &#39;</span>,npdt</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;         print *,<span class="stringliteral">&#39;  Unite : &#39;</span>,dtunit</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">C     Pour chaque scalaire, on regarde les valeurs associees</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">C     eventuellement a un pas de temps et/ou un numero d&#39;ordre </span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         <span class="keywordflow">do</span> 20 j=1,npdt</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keyword">call </span><a class="code" href="a02343_gacf53fc579ae1662afb46bdaadb1fec1c.html#gacf53fc579ae1662afb46bdaadb1fec1c">mprcsi</a>(fid,nom,j,numdt,numo,dt,cret)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            print *,cret</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">if</span> (cret .ne. 0 ) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;               print *,<span class="stringliteral">&#39;Erreur infos pas de temps&#39;</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;               <span class="keyword">call </span>efexit(-1)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordflow">            endif</span>      </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            print *,<span class="stringliteral">&#39;   Valeur &#39;</span>, j</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">if</span> (numdt.eq.med_no_dt) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;               print *,<span class="stringliteral">&#39;     - Aucun pas de temps&#39;</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;               print *,<span class="stringliteral">&#39;     - Pas de temps de numero &#39;</span>,numdt</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;               print *,<span class="stringliteral">&#39;      de valeur : &#39;</span>,dt</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordflow">            endif</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">if</span> (numo.eq.med_no_it) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;               print *,<span class="stringliteral">&#39;     - Aucun numero ordre&#39;</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;               print *,<span class="stringliteral">&#39;     - Numero ordre : &#39;</span>,numo</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordflow">            endif</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> (type.eq.<a class="code" href="a02309_a6909a8bd37af6035c6175b6daba8efa7.html#a6909a8bd37af6035c6175b6daba8efa7">med_float64</a>) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">C           ** Lecture de la valeur flottante associee </span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">C           ** au pas de temps</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;               <span class="keyword">call </span><a class="code" href="a02343_ga6cc13c959d8ea207513234a4657d0800.html#ga6cc13c959d8ea207513234a4657d0800">mprrvr</a>(fid,nom,numdt,numo,valr,cret)</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;               print *,cret</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;               <span class="keywordflow">if</span> (cret .ne. 0 ) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                  print *,<span class="stringliteral">&#39;Erreur lecture valeur&#39;</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                  <span class="keyword">call </span>efexit(-1)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordflow">               endif</span>      </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;               print *,<span class="stringliteral">&#39;     - Valeur : &#39;</span>,valr</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">C           ** Lecture de la valeur entiere associee </span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">C           ** au pas de temps</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;               <span class="keyword">call </span><a class="code" href="a02343_ga3c46e70fcca8f18a78eb527e3f0c6cf1.html#ga3c46e70fcca8f18a78eb527e3f0c6cf1">mprivr</a>(fid,nom,numdt,numo,vali,cret)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;               print *,cret</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;               <span class="keywordflow">if</span> (cret .ne. 0 ) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                  print *,<span class="stringliteral">&#39;Erreur lecture valeur&#39;</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                  <span class="keyword">call </span>efexit(-1)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keywordflow">               endif</span>      </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;               print *,<span class="stringliteral">&#39;     - Valeur : &#39;</span>,vali</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keywordflow">            endif</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; 20      <span class="keywordflow">continue</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; 10   <span class="keywordflow">continue</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">C     Fermeture du fichier      </span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      <span class="keyword">call </span><a class="code" href="a02336_gabaf92f77da8cad332344587fca32c410.html#gabaf92f77da8cad332344587fca32c410">mficlo</a>(fid,cret)</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      print *,cret</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <span class="keywordflow">if</span> (cret .ne. 0 ) <span class="keywordflow">then</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;         print *,<span class="stringliteral">&#39;Erreur fermeture du fichier&#39;</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;         <span class="keyword">call </span>efexit(-1)</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keywordflow">      endif</span>      </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      print *,<span class="stringliteral">&#39;Fermeture du fichier test21.med&#39;</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">C</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      <span class="keyword">end</span></div>
+<div class="fragment"><div class="line"><span class="comment">/*  This file is part of MED.</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> *  COPYRIGHT (C) 1999 - 2025  EDF R&amp;D, CEA/DEN</span></div>
+<div class="line"><span class="comment"> *  MED is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><span class="comment"> *  it under the terms of the GNU Lesser General Public License as published by</span></div>
+<div class="line"><span class="comment"> *  the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><span class="comment"> *  (at your option) any later version.</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> *  MED is distributed in the hope that it will be useful,</span></div>
+<div class="line"><span class="comment"> *  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><span class="comment"> *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><span class="comment"> *  GNU Lesser General Public License for more details.</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> *  You should have received a copy of the GNU Lesser General Public License</span></div>
+<div class="line"><span class="comment"> *  along with MED.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">/******************************************************************************</span></div>
+<div class="line"><span class="comment"> * - Nom du fichier : test19.c</span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> * - Description : conversion groupes =&gt; famille </span></div>
+<div class="line"><span class="comment"> *</span></div>
+<div class="line"><span class="comment"> *****************************************************************************/</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="a02339.html">med.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#define MESGERR 1</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="a02345.html">med_utils.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#ifdef DEF_LECT_ECR</span></div>
+<div class="line"><span class="preprocessor">#define MODE_ACCES MED_ACC_RDWR</span></div>
+<div class="line"><span class="preprocessor">#elif DEF_LECT_AJOUT</span></div>
+<div class="line"><span class="preprocessor">#define MODE_ACCES MED_ACC_RDEXT</span></div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><span class="preprocessor">#define MODE_ACCES MED_ACC_CREAT</span></div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a name="a0"></a><a class="code" href="a03359_a3c04138a5bfe5d72780bb7e82a18e627.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv)</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">{</div>
+<div class="line">  <a class="code" href="a02339_afa4ec8284026c8c5545e5333475fb65a.html#afa4ec8284026c8c5545e5333475fb65a">med_idt</a> fid;</div>
+<div class="line">  <span class="keywordtype">char</span> maa[<a name="a1"></a><a class="code" href="a02339_a0ae989cbbfeecbb5296b3ceba8dab886.html#a0ae989cbbfeecbb5296b3ceba8dab886">MED_NAME_SIZE</a>+1] = <span class="stringliteral">&quot;maillage_test19&quot;</span>;</div>
+<div class="line">  <span class="keywordtype">char</span> desc[<a name="a2"></a><a class="code" href="a02339_ab69710ecf9f5257080a943579852d0f0.html#ab69710ecf9f5257080a943579852d0f0">MED_COMMENT_SIZE</a>+1]=<span class="stringliteral">&quot;un maillage pour test19.med&quot;</span>;</div>
+<div class="line">  <a class="code" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> mdim=2;</div>
+<div class="line">  <span class="comment">/* Donnees de tests pour MEDgro2FamCr() </span></div>
+<div class="line"><span class="comment">     Les noeuds/mailles sont numerotes de 1 a 5 et les</span></div>
+<div class="line"><span class="comment">     groupes de 1 a 3.</span></div>
+<div class="line"><span class="comment">     Au depart, on a :</span></div>
+<div class="line"><span class="comment">     - G1 : 1,2</span></div>
+<div class="line"><span class="comment">     - G2 : 3,4,6</span></div>
+<div class="line"><span class="comment">     - G3 : 1,4</span></div>
+<div class="line"><span class="comment">     Au retour, on foit avoir 4 familles de noeuds + 4 familles de mailles </span></div>
+<div class="line"><span class="comment">     + la famille 0 dans le fichier :</span></div>
+<div class="line"><span class="comment">     - F0 : 5       - groupes : aucun groupe par defaut (convention habituelle).</span></div>
+<div class="line"><span class="comment">     - F1 : 1       - groupes : G1,G3  </span></div>
+<div class="line"><span class="comment">     - F2 : 2       - groupes : G1</span></div>
+<div class="line"><span class="comment">     - F3 : 3,6     - groupes : G2</span></div>
+<div class="line"><span class="comment">     - F4 : 4       - groupes : G2,G3</span></div>
+<div class="line"><span class="comment">  */</span></div>
+<div class="line">  <a class="code" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> ngroup = 3;</div>
+<div class="line">  <a class="code" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> nent = 6;</div>
+<div class="line">  <span class="keywordtype">char</span> nom_groupes[<a name="a3"></a><a class="code" href="a02339_a1d420c1b5fb1b2933059b81a1f2e1491.html#a1d420c1b5fb1b2933059b81a1f2e1491">MED_LNAME_SIZE</a>*3+1];</div>
+<div class="line">  <span class="comment">/*                     0 1  2 3 4  5 6 */</span></div>
+<div class="line">  <a class="code" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> entites[7] = { 1,2, 3,4,6, 1,4};</div>
+<div class="line">  <a class="code" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> index[4] =   { 1,   3,     6,   8};</div>
+<div class="line">  <span class="keywordtype">int</span> i;</div>
+<div class="line">  <span class="keywordtype">char</span> nom_famille0[<a class="code" href="a02339_a0ae989cbbfeecbb5296b3ceba8dab886.html#a0ae989cbbfeecbb5296b3ceba8dab886">MED_NAME_SIZE</a>+1] = <span class="stringliteral">&quot;FAMILLE0&quot;</span>;</div>
+<div class="line">  <span class="comment">/* on fait la meme distribution pour des mailles */</span></div>
+<div class="line">  <a class="code" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> ngeo = 3;</div>
+<div class="line">  <a class="code" href="a02339_a1043613afc3cd2e24785dfc7c0452ab8.html#a1043613afc3cd2e24785dfc7c0452ab8">med_geometry_type</a> geo[3] = {<a name="a4"></a><a class="code" href="a02339_a29927daaa1a87f2129295a68264ad526.html#a29927daaa1a87f2129295a68264ad526">MED_SEG2</a>,<a name="a5"></a><a class="code" href="a02339_a4a1eb7ba296742a6f5eb8b5b23b39670.html#a4a1eb7ba296742a6f5eb8b5b23b39670">MED_TRIA3</a>,<a name="a6"></a><a class="code" href="a02339_a8924ab0dac0ab1a0c090e0d7fe842a8f.html#a8924ab0dac0ab1a0c090e0d7fe842a8f">MED_TETRA4</a>};</div>
+<div class="line">  <span class="comment">/* MED_SEG2 : M1,M2,M3 - MED_TRI3 : M4,M5 - MED_TETRA4 : M6 */</span></div>
+<div class="line">  <a class="code" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> index_geo[4] = {1,4,6,7};</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">/* Creation du fichier test19.med */</span></div>
+<div class="line">  <span class="keywordflow">if</span> ((fid = <a name="a7"></a><a class="code" href="a02351_ga9376a1654b7bf099c3f8941074c5fdfb.html#ga9376a1654b7bf099c3f8941074c5fdfb">MEDfileOpen</a>(<span class="stringliteral">&quot;test19.med&quot;</span>,<a name="a8"></a><a class="code" href="a03359_a29a43500a889d39744e184ece0d749be.html#a29a43500a889d39744e184ece0d749be">MODE_ACCES</a>)) &lt; 0) {</div>
+<div class="line">    <a name="a9"></a><a class="code" href="a02345_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a>(<span class="stringliteral">&quot;Erreur a la creation du fichier test19.med&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> -1;</div>
+<div class="line">  }</div>
+<div class="line">  printf(<span class="stringliteral">&quot;Creation du fichier test19.med \n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">/* Creation du maillage */</span></div>
+<div class="line">  <span class="keywordflow">if</span> (MEDmaaCr(fid,maa,mdim,<a name="a10"></a><a class="code" href="a02339_a821a4dd94c5c6b095318432bdec8d8a1.html#a821a4dd94c5c6b095318432bdec8d8a1a3719e53a4838d222f0a58148292fda41">MED_UNSTRUCTURED_MESH</a>,desc) &lt; 0) {</div>
+<div class="line">    <a class="code" href="a02345_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a>(<span class="stringliteral">&quot;Erreur a la creation du maillage&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> -1;</div>
+<div class="line">  }</div>
+<div class="line">  printf(<span class="stringliteral">&quot;Creation du maillage \n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">/* on teste la fonction MEDgro2fam() */</span></div>
+<div class="line">  <span class="comment">/* on definit les noms des groupes */</span></div>
+<div class="line">  strcpy(nom_groupes,<span class="stringliteral">&quot;GROUPE 1&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (i=8;i&lt;<a class="code" href="a02339_a1d420c1b5fb1b2933059b81a1f2e1491.html#a1d420c1b5fb1b2933059b81a1f2e1491">MED_LNAME_SIZE</a>;i++)</div>
+<div class="line">    nom_groupes[i] = <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line">  nom_groupes[<a class="code" href="a02339_a1d420c1b5fb1b2933059b81a1f2e1491.html#a1d420c1b5fb1b2933059b81a1f2e1491">MED_LNAME_SIZE</a>] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line">  strcat(nom_groupes,<span class="stringliteral">&quot;GROUPE 2&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (i=8;i&lt;<a class="code" href="a02339_a1d420c1b5fb1b2933059b81a1f2e1491.html#a1d420c1b5fb1b2933059b81a1f2e1491">MED_LNAME_SIZE</a>;i++)</div>
+<div class="line">    nom_groupes[<a class="code" href="a02339_a1d420c1b5fb1b2933059b81a1f2e1491.html#a1d420c1b5fb1b2933059b81a1f2e1491">MED_LNAME_SIZE</a>+i] = <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line">  nom_groupes[2*<a class="code" href="a02339_a1d420c1b5fb1b2933059b81a1f2e1491.html#a1d420c1b5fb1b2933059b81a1f2e1491">MED_LNAME_SIZE</a>] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line">  strcat(nom_groupes,<span class="stringliteral">&quot;GROUPE 3&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">for</span> (i=8;i&lt;<a class="code" href="a02339_a1d420c1b5fb1b2933059b81a1f2e1491.html#a1d420c1b5fb1b2933059b81a1f2e1491">MED_LNAME_SIZE</a>;i++)</div>
+<div class="line">    nom_groupes[2*<a class="code" href="a02339_a1d420c1b5fb1b2933059b81a1f2e1491.html#a1d420c1b5fb1b2933059b81a1f2e1491">MED_LNAME_SIZE</a>+i] = <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line">  nom_groupes[3*<a class="code" href="a02339_a1d420c1b5fb1b2933059b81a1f2e1491.html#a1d420c1b5fb1b2933059b81a1f2e1491">MED_LNAME_SIZE</a>] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">/* On cree la famille 0 */</span></div>
+<div class="line">  <span class="keywordflow">if</span> (MEDfamCr(fid,maa,nom_famille0,0,NULL,NULL,NULL,0,NULL,0) &lt; 0) {</div>
+<div class="line">    <a class="code" href="a02345_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a>(<span class="stringliteral">&quot;Erreur a la creation de la famille 0&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> -1;</div>
+<div class="line">  }</div>
+<div class="line">  printf(<span class="stringliteral">&quot;Creation de la famille 0 \n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">/* </span></div>
+<div class="line"><span class="comment">   * On definit et on archive les familles de noeuds dans test.19.med </span></div>
+<div class="line"><span class="comment">   */</span></div>
+<div class="line">  <span class="keywordflow">if</span> (MEDgro2famCr(fid,maa,nom_groupes,index,ngroup,entites,nent,</div>
+<div class="line">                   <a name="a11"></a><a class="code" href="a02339_aab0e957294723517d5c3641bb71b0470.html#aab0e957294723517d5c3641bb71b0470a074507163b07b6d764823a78c5c07f0f">MED_NODE</a>,NULL,NULL,0) &lt; 0) {</div>
+<div class="line">    <a class="code" href="a02345_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a>(<span class="stringliteral">&quot;Erreur a la creation des familles de noeuds &quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> -1;</div>
+<div class="line">  }</div>
+<div class="line">  printf(<span class="stringliteral">&quot;On constuit les familles de noeuds et on les stocke dans test19.med \n&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">/* </span></div>
+<div class="line"><span class="comment">   * On fait la meme chose pour des mailles de differents types </span></div>
+<div class="line"><span class="comment">   */</span></div>
+<div class="line">  <span class="keywordflow">if</span> (MEDgro2famCr(fid,maa,nom_groupes,index,ngroup,entites,nent,</div>
+<div class="line">                   <a name="a12"></a><a class="code" href="a02339_aab0e957294723517d5c3641bb71b0470.html#aab0e957294723517d5c3641bb71b0470a227d14957ec5f221685cb1d6ec3b6c67">MED_CELL</a>,geo,index_geo,ngeo) &lt; 0) {</div>
+<div class="line">    <a class="code" href="a02345_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a>(<span class="stringliteral">&quot;Erreur a la creation des familles d&#39;elements &quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> -1;</div>
+<div class="line">  }</div>
+<div class="line">  printf(<span class="stringliteral">&quot;On constuit les familles d&#39;elements et on les stocke dans test19.med \n&quot;</span>);  </div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">/* Fermeture du fichier */</span></div>
+<div class="line">  <span class="keywordflow">if</span> (MEDfermer(fid) &lt;0) {</div>
+<div class="line">    <a class="code" href="a02345_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a>(<span class="stringliteral">&quot;Erreur a la fermeture du fichier&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> -1;</div>
+<div class="line">  }</div>
+<div class="line">  printf(<span class="stringliteral">&quot;Fermeture du fichier \n&quot;</span>);</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
-<div class="ttc" id="aa02343_gaf88169a747c4a7ffaca0fc083559a426_html_gaf88169a747c4a7ffaca0fc083559a426"><div class="ttname"><a href="a02343_gaf88169a747c4a7ffaca0fc083559a426.html#gaf88169a747c4a7ffaca0fc083559a426">mprnpr</a></div><div class="ttdeci">subroutine mprnpr(fid, n, cret)</div><div class="ttdoc">Cette routine permet la lecture du nombre de paramètre numérique scalaire dans un fichier.</div><div class="ttdef"><b>Definition:</b> <a href="a02036_source.html#l00111">medparameter.f:111</a></div></div>
-<div class="ttc" id="aa02336_gabaf92f77da8cad332344587fca32c410_html_gabaf92f77da8cad332344587fca32c410"><div class="ttname"><a href="a02336_gabaf92f77da8cad332344587fca32c410.html#gabaf92f77da8cad332344587fca32c410">mficlo</a></div><div class="ttdeci">subroutine mficlo(fid, cret)</div><div class="ttdoc">Fermeture d'un fichier MED.</div><div class="ttdef"><b>Definition:</b> <a href="a02012_source.html#l00082">medfile.f:82</a></div></div>
-<div class="ttc" id="aa02343_ga6cc13c959d8ea207513234a4657d0800_html_ga6cc13c959d8ea207513234a4657d0800"><div class="ttname"><a href="a02343_ga6cc13c959d8ea207513234a4657d0800.html#ga6cc13c959d8ea207513234a4657d0800">mprrvr</a></div><div class="ttdeci">subroutine mprrvr(fid, name, numdt, numit, val, cret)</div><div class="ttdoc">Cette routine permet la lecture de la valeur d'un paramètre numérique scalaire.</div><div class="ttdef"><b>Definition:</b> <a href="a02036_source.html#l00075">medparameter.f:75</a></div></div>
-<div class="ttc" id="aa02336_ga68bd28216f39b6aac3f3cdeb58ca0343_html_ga68bd28216f39b6aac3f3cdeb58ca0343"><div class="ttname"><a href="a02336_ga68bd28216f39b6aac3f3cdeb58ca0343.html#ga68bd28216f39b6aac3f3cdeb58ca0343">mfiope</a></div><div class="ttdeci">subroutine mfiope(fid, name, access, cret)</div><div class="ttdoc">Ouverture d'un fichier MED.</div><div class="ttdef"><b>Definition:</b> <a href="a02012_source.html#l00042">medfile.f:42</a></div></div>
-<div class="ttc" id="aa00938_aa54bff56356f6b6020b255c3d9ec9e46_html_aa54bff56356f6b6020b255c3d9ec9e46"><div class="ttname"><a href="a00938_aa54bff56356f6b6020b255c3d9ec9e46.html#aa54bff56356f6b6020b255c3d9ec9e46">test22</a></div><div class="ttdeci">program test22</div><div class="ttdef"><b>Definition:</b> <a href="a00938_source.html#l00023">test22.f:23</a></div></div>
-<div class="ttc" id="aa02343_gacf53fc579ae1662afb46bdaadb1fec1c_html_gacf53fc579ae1662afb46bdaadb1fec1c"><div class="ttname"><a href="a02343_gacf53fc579ae1662afb46bdaadb1fec1c.html#gacf53fc579ae1662afb46bdaadb1fec1c">mprcsi</a></div><div class="ttdeci">subroutine mprcsi(fid, name, it, numdt, numit, dt, cret)</div><div class="ttdoc">Cette routine permet la lecture des informations relatives à une étape de calcul du paramètre numériq...</div><div class="ttdef"><b>Definition:</b> <a href="a02036_source.html#l00174">medparameter.f:174</a></div></div>
-<div class="ttc" id="aa02343_ga3c46e70fcca8f18a78eb527e3f0c6cf1_html_ga3c46e70fcca8f18a78eb527e3f0c6cf1"><div class="ttname"><a href="a02343_ga3c46e70fcca8f18a78eb527e3f0c6cf1.html#ga3c46e70fcca8f18a78eb527e3f0c6cf1">mprivr</a></div><div class="ttdeci">subroutine mprivr(fid, name, numdt, numit, val, cret)</div><div class="ttdoc">Cette routine permet la lecture de la valeur d'un paramètre numérique scalaire.</div><div class="ttdef"><b>Definition:</b> <a href="a02036_source.html#l00093">medparameter.f:93</a></div></div>
-<div class="ttc" id="aa02343_ga083e501688dc8837df590d757b55d9e2_html_ga083e501688dc8837df590d757b55d9e2"><div class="ttname"><a href="a02343_ga083e501688dc8837df590d757b55d9e2.html#ga083e501688dc8837df590d757b55d9e2">mprpri</a></div><div class="ttdeci">subroutine mprpri(fid, it, name, type, desc, dtunit, nstep, cret)</div><div class="ttdoc">Cette routine permet la lecture des informations relatives à un paramètre scalaire via un itérateur.</div><div class="ttdef"><b>Definition:</b> <a href="a02036_source.html#l00134">medparameter.f:134</a></div></div>
-<div class="ttc" id="aa02309_a6909a8bd37af6035c6175b6daba8efa7_html_a6909a8bd37af6035c6175b6daba8efa7"><div class="ttname"><a href="a02309_a6909a8bd37af6035c6175b6daba8efa7.html#a6909a8bd37af6035c6175b6daba8efa7">med_float64</a></div><div class="ttdeci">double med_float64</div><div class="ttdef"><b>Definition:</b> <a href="a02309_source.html#l00337">med.h:337</a></div></div>
+<div class="ttc" id="aa03359_a3c04138a5bfe5d72780bb7e82a18e627_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="a03359_a3c04138a5bfe5d72780bb7e82a18e627.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="a03359_source.html#l00050">3.0.8/test10.c:50</a></div></div>
+<div class="ttc" id="aa02339_a4a1eb7ba296742a6f5eb8b5b23b39670_html_a4a1eb7ba296742a6f5eb8b5b23b39670"><div class="ttname"><a href="a02339_a4a1eb7ba296742a6f5eb8b5b23b39670.html#a4a1eb7ba296742a6f5eb8b5b23b39670">MED_TRIA3</a></div><div class="ttdeci">#define MED_TRIA3</div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00207">med.h:207</a></div></div>
+<div class="ttc" id="aa02339_a29927daaa1a87f2129295a68264ad526_html_a29927daaa1a87f2129295a68264ad526"><div class="ttname"><a href="a02339_a29927daaa1a87f2129295a68264ad526.html#a29927daaa1a87f2129295a68264ad526">MED_SEG2</a></div><div class="ttdeci">#define MED_SEG2</div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00204">med.h:204</a></div></div>
+<div class="ttc" id="aa02339_ab69710ecf9f5257080a943579852d0f0_html_ab69710ecf9f5257080a943579852d0f0"><div class="ttname"><a href="a02339_ab69710ecf9f5257080a943579852d0f0.html#ab69710ecf9f5257080a943579852d0f0">MED_COMMENT_SIZE</a></div><div class="ttdeci">#define MED_COMMENT_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00080">med.h:80</a></div></div>
+<div class="ttc" id="aa02339_afa4ec8284026c8c5545e5333475fb65a_html_afa4ec8284026c8c5545e5333475fb65a"><div class="ttname"><a href="a02339_afa4ec8284026c8c5545e5333475fb65a.html#afa4ec8284026c8c5545e5333475fb65a">med_idt</a></div><div class="ttdeci">hid_t med_idt</div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00335">med.h:335</a></div></div>
+<div class="ttc" id="aa02345_a3756046b0a6a7e51b8eb544d0d77c17c_html_a3756046b0a6a7e51b8eb544d0d77c17c"><div class="ttname"><a href="a02345_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a></div><div class="ttdeci">#define MESSAGE(chaine)</div><div class="ttdef"><b>Definition:</b> <a href="a02345_source.html#l00324">med_utils.h:324</a></div></div>
+<div class="ttc" id="aa02345_html"><div class="ttname"><a href="a02345.html">med_utils.h</a></div></div>
+<div class="ttc" id="aa02339_aab0e957294723517d5c3641bb71b0470_html_aab0e957294723517d5c3641bb71b0470a227d14957ec5f221685cb1d6ec3b6c67"><div class="ttname"><a href="a02339_aab0e957294723517d5c3641bb71b0470.html#aab0e957294723517d5c3641bb71b0470a227d14957ec5f221685cb1d6ec3b6c67">MED_CELL</a></div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00146">med.h:146</a></div></div>
+<div class="ttc" id="aa02339_a88dc15143f934cc7b771bc89f46372dc_html_a88dc15143f934cc7b771bc89f46372dc"><div class="ttname"><a href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a></div><div class="ttdeci">int med_int</div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00346">med.h:346</a></div></div>
+<div class="ttc" id="aa02339_aab0e957294723517d5c3641bb71b0470_html_aab0e957294723517d5c3641bb71b0470a074507163b07b6d764823a78c5c07f0f"><div class="ttname"><a href="a02339_aab0e957294723517d5c3641bb71b0470.html#aab0e957294723517d5c3641bb71b0470a074507163b07b6d764823a78c5c07f0f">MED_NODE</a></div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00146">med.h:146</a></div></div>
+<div class="ttc" id="aa03359_a29a43500a889d39744e184ece0d749be_html_a29a43500a889d39744e184ece0d749be"><div class="ttname"><a href="a03359_a29a43500a889d39744e184ece0d749be.html#a29a43500a889d39744e184ece0d749be">MODE_ACCES</a></div><div class="ttdeci">#define MODE_ACCES</div><div class="ttdef"><b>Definition:</b> <a href="a03359_source.html#l00034">3.0.8/test10.c:34</a></div></div>
+<div class="ttc" id="aa02339_a821a4dd94c5c6b095318432bdec8d8a1_html_a821a4dd94c5c6b095318432bdec8d8a1a3719e53a4838d222f0a58148292fda41"><div class="ttname"><a href="a02339_a821a4dd94c5c6b095318432bdec8d8a1.html#a821a4dd94c5c6b095318432bdec8d8a1a3719e53a4838d222f0a58148292fda41">MED_UNSTRUCTURED_MESH</a></div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00134">med.h:134</a></div></div>
+<div class="ttc" id="aa02339_html"><div class="ttname"><a href="a02339.html">med.h</a></div></div>
+<div class="ttc" id="aa02339_a8924ab0dac0ab1a0c090e0d7fe842a8f_html_a8924ab0dac0ab1a0c090e0d7fe842a8f"><div class="ttname"><a href="a02339_a8924ab0dac0ab1a0c090e0d7fe842a8f.html#a8924ab0dac0ab1a0c090e0d7fe842a8f">MED_TETRA4</a></div><div class="ttdeci">#define MED_TETRA4</div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00214">med.h:214</a></div></div>
+<div class="ttc" id="aa02351_ga9376a1654b7bf099c3f8941074c5fdfb_html_ga9376a1654b7bf099c3f8941074c5fdfb"><div class="ttname"><a href="a02351_ga9376a1654b7bf099c3f8941074c5fdfb.html#ga9376a1654b7bf099c3f8941074c5fdfb">MEDfileOpen</a></div><div class="ttdeci">MEDC_EXPORT med_idt MEDfileOpen(const char *const filename, const med_access_mode accessmode)</div><div class="ttdoc">Ouverture d'un fichier MED.</div><div class="ttdef"><b>Definition:</b> <a href="a01613_source.html#l00042">MEDfileOpen.c:42</a></div></div>
+<div class="ttc" id="aa02339_a0ae989cbbfeecbb5296b3ceba8dab886_html_a0ae989cbbfeecbb5296b3ceba8dab886"><div class="ttname"><a href="a02339_a0ae989cbbfeecbb5296b3ceba8dab886.html#a0ae989cbbfeecbb5296b3ceba8dab886">MED_NAME_SIZE</a></div><div class="ttdeci">#define MED_NAME_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00082">med.h:82</a></div></div>
+<div class="ttc" id="aa02339_a1d420c1b5fb1b2933059b81a1f2e1491_html_a1d420c1b5fb1b2933059b81a1f2e1491"><div class="ttname"><a href="a02339_a1d420c1b5fb1b2933059b81a1f2e1491.html#a1d420c1b5fb1b2933059b81a1f2e1491">MED_LNAME_SIZE</a></div><div class="ttdeci">#define MED_LNAME_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00084">med.h:84</a></div></div>
+<div class="ttc" id="aa02339_a1043613afc3cd2e24785dfc7c0452ab8_html_a1043613afc3cd2e24785dfc7c0452ab8"><div class="ttname"><a href="a02339_a1043613afc3cd2e24785dfc7c0452ab8.html#a1043613afc3cd2e24785dfc7c0452ab8">med_geometry_type</a></div><div class="ttdeci">int med_geometry_type</div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00198">med.h:198</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 8 Octobre 2021 13:44:04 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 21 Mai 2025 19:18:30 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.16
 </small></address>

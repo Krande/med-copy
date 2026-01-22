@@ -19,7 +19,7 @@
 // Définir les tableaux de chaînes agrégées avant les définitions d'un typemap char *
 // Définition des typemaps char * :
 %med_char_typemaps(medmesh,\           ,MED_NAME_SIZE)
-%med_char_typemaps(medmesh,comment ,MED_COMMENT_SIZE)
+%med_char_typemaps(medmesh,description ,MED_COMMENT_SIZE)
 
 // SWIG SPECIFIQUE A MEDfileName : 
 // Seule fonction n'utilisant pas une chaïne fixe.
@@ -42,15 +42,15 @@
   $result = SWIG_FromCharPtrAndSize($2,$3);
 }
 %typemap(out,noblock=1) med_int MEDfileName {}
-  
+
 %feature("autodoc", "MEDfileName(fid) -> str") MEDfileName;
 // FIN SPECIFIQUE MEDfileName
 
 
 /* %cstring_bounded_output(char* const version,MED_NAME_SIZE); */
-/* %cstring_bounded_output(char* const comment,MED_COMMENT_SIZE); */
+/* %cstring_bounded_output(char* const description,MED_COMMENT_SIZE); */
 /* //%cstring_bounded_output(char* const filename,MED_PATHNAME_SIZE); */
-/* %cstring_bounded_mutable(const char * const comment,MED_COMMENT_SIZE); */
+/* %cstring_bounded_mutable(const char * const description,MED_COMMENT_SIZE); */
 
 //TODO : MED_MAX_CHFID_PATH
 //%cstring_bounded_mutable(const char * const chpath  ,MED_PATHNAME_SIZE);
@@ -59,14 +59,21 @@
 
 %include "medfile.h"
 
+// MEDfileComment{Rd,Wr,Exist) sont obsoletes
+// on les conserve pour l'instant
+/* %pythoncode{ */
+/* MEDfileCommentRd=MEDfileDescriptionRd */
+/* MEDfileCommentWr=MEDfileDescriptionWr */
+/* } */
+
 // Fin Du Mapping.
 
 // Liste des arguments apparaissant dans medfile.h
-//char* const comment
+//char* const description
 //char* const version
 //char* const filename
 //const char * const chpath
-//const char* const comment
+//const char* const description
 //const char* const filename
 //const char* const objectname,
 //const med_access_mode accessmode

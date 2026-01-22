@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -26,12 +26,12 @@
 
 med_err
 _MEDvisit(const med_idt fid, const char * const srcpath, const char * const dstpath,
-	  herr_t (*func)() )
+ 	  herr_t (*func)( hid_t g_id, const char *name, const H5L_info_t *info, void *op_data) ) 
 {
 
   med_err    _ret=-1;
   med_idt    _gid1=0,_gid2=0;
-  med_size   _n;
+  /* med_size   _n; */
 
   visitordatas _data;
 

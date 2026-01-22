@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -99,8 +99,8 @@ MEDC_EXPORT extern void  _MEDparameterInfoByName236(int dummy, ...);
 MEDC_EXPORT extern void  _MEDparameterValueRd30(int dummy, ...);
 MEDC_EXPORT extern void  _MEDparameterValueRd236(int dummy, ...);
 
-MEDC_EXPORT extern void  _MEDfileCommentRd30(int dummy, ...);
-MEDC_EXPORT extern void  _MEDfileCommentRd236(int dummy, ...);
+MEDC_EXPORT extern void  _MEDfileDescriptionRd30(int dummy, ...);
+MEDC_EXPORT extern void  _MEDfileDescriptionRd236(int dummy, ...);
 MEDC_EXPORT extern void  _MEDfileObjectsMount30(int dummy, ...);
 MEDC_EXPORT extern void  _MEDfileObjectsMount236(int dummy, ...);
 MEDC_EXPORT extern void  _MEDfileObjectsUnmount30(int dummy, ...);

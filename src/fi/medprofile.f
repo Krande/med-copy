@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -18,7 +18,7 @@ c
 c
 c
       subroutine mpfprw(fid,pname,psize,profil,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mpfprw
+cDEC$ ATTRIBUTES DLLEXPORT :: mpfprw
 c
       implicit none
       save
@@ -36,7 +36,7 @@ c
 c
 c
       subroutine mpfnpf(fid,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mpfnpf
+cDEC$ ATTRIBUTES DLLEXPORT :: mpfnpf
 c
       implicit none
       save
@@ -58,7 +58,7 @@ c
 c
 c
       subroutine mpfpfi(fid, it, pname, psize, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mpfpfi
+cDEC$ ATTRIBUTES DLLEXPORT :: mpfpfi
 c
       implicit none
       save
@@ -76,7 +76,7 @@ c
 c
 c
       subroutine mpfpsn(fid, pname, psize, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mpfpsn
+cDEC$ ATTRIBUTES DLLEXPORT :: mpfpsn
 c
       implicit none
       save
@@ -94,7 +94,7 @@ c
 c
 c
       subroutine mpfprr(fid,pname,profil,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mpfprr
+cDEC$ ATTRIBUTES DLLEXPORT :: mpfprr
 c
       implicit none
       save

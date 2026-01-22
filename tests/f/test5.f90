@@ -1,6 +1,6 @@
 !*  This file is part of MED.
 !*
-!*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+!*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 !*  MED is free software: you can redistribute it and/or modify
 !*  it under the terms of the GNU Lesser General Public License as published by
 !*  the Free Software Foundation, either version 3 of the License, or
@@ -155,7 +155,7 @@
          inunoe = .TRUE.
       endif
       
-!   ** Lecture des numeros de familles des noeuds                  **	   
+!   ** Lecture des numeros de familles des noeuds                  **      
       if (cret.eq.0) then
          call mmhfnr(fid,maa,MED_NO_DT,MED_NO_IT,MED_NODE,MED_NONE,nufano,cret)
       endif

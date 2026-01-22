@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -16,7 +16,7 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C
       subroutine mipcre(fid,name,gtype,cnode,nvar,
      &                  maxd,nmaxc,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mipcre
+cDEC$ ATTRIBUTES DLLEXPORT :: mipcre
 c
       implicit none
       save
@@ -35,7 +35,7 @@ c
 c
 c
       subroutine mipbfw(fid,name,it,nc,pw,co,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mipbfw
+cDEC$ ATTRIBUTES DLLEXPORT :: mipbfw
 c
       implicit none
       save
@@ -55,7 +55,7 @@ c
 c
 c
       subroutine mipbfr(fid,name,it,nc,pw,co,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mipbfr
+cDEC$ ATTRIBUTES DLLEXPORT :: mipbfr
 c
       implicit none
       save
@@ -76,7 +76,7 @@ c
 c
 c
       subroutine mipnip(fid,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mipnip
+cDEC$ ATTRIBUTES DLLEXPORT :: mipnip
 c
       implicit none
       save
@@ -99,7 +99,7 @@ c
 c
       subroutine mipiin(fid,name,gtype,cnode,nbf,nvar,
      &                  maxd,nmaxc,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mipiin
+cDEC$ ATTRIBUTES DLLEXPORT :: mipiin
 c
       implicit none
       save
@@ -119,7 +119,7 @@ c
 c
       subroutine mipipi(fid,it,name,gtype,cnode,nbf,nvar,
      &                  maxd,nmaxc,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mipipi
+cDEC$ ATTRIBUTES DLLEXPORT :: mipipi
 c
       implicit none
       save
@@ -139,7 +139,7 @@ c
 c
 c
       subroutine mipcsz(fid,name,it,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mipcsz
+cDEC$ ATTRIBUTES DLLEXPORT :: mipcsz
 c
       implicit none
       save

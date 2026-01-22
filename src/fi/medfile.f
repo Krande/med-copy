@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -17,7 +17,7 @@ C*
 
 
       subroutine mfivop(fid, name, access, major, minor, rel, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfivop
+cDEC$ ATTRIBUTES DLLEXPORT :: mfivop
 c
       implicit none
       save
@@ -39,7 +39,7 @@ c
       end
 
       subroutine mfiope(fid, name, access, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfiope
+cDEC$ ATTRIBUTES DLLEXPORT :: mfiope
 c
       implicit none
       save
@@ -62,7 +62,7 @@ c
 
 
       subroutine mfinam(fid, name, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfinam
+cDEC$ ATTRIBUTES DLLEXPORT :: mfinam
 c
       implicit none
       save
@@ -79,7 +79,7 @@ c
 
 
       subroutine mficlo(fid, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mficlo
+cDEC$ ATTRIBUTES DLLEXPORT :: mficlo
 c
       implicit none
       save
@@ -96,7 +96,7 @@ c
 
 
       subroutine mficow(fid,cmt,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mficow
+cDEC$ ATTRIBUTES DLLEXPORT :: mficow
 c
       implicit none
       save
@@ -113,7 +113,7 @@ c
 
 
       subroutine mficor(fid,cmt,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mficor 
+cDEC$ ATTRIBUTES DLLEXPORT :: mficor 
 c
       implicit none
       save
@@ -131,7 +131,7 @@ c
 
 
       subroutine  mfinvr(fid,major,minor,rel,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfinvr
+cDEC$ ATTRIBUTES DLLEXPORT :: mfinvr
 c
       implicit none
       save
@@ -148,7 +148,7 @@ c
 
 
       subroutine mfisvr(fid,version,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfisvr
+cDEC$ ATTRIBUTES DLLEXPORT :: mfisvr
 c
       implicit none
       save
@@ -167,7 +167,7 @@ c
 c
 c
       subroutine mficom(fname,hdfok,medok,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mficom
+cDEC$ ATTRIBUTES DLLEXPORT :: mficom
 c
       implicit none
       save
@@ -184,7 +184,7 @@ c
 
 
       subroutine mfiomn(fid, fname, class, mid, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfiomn
+cDEC$ ATTRIBUTES DLLEXPORT :: mfiomn
 c
       implicit none
       save
@@ -208,7 +208,7 @@ c
 c
 c
       subroutine mfioun(fid, mid, class, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfioun
+cDEC$ ATTRIBUTES DLLEXPORT :: mfioun
 c
       implicit none
       save
@@ -224,7 +224,7 @@ c
 
       
       subroutine mfioex(fid, class, oname, oexist, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfioex
+cDEC$ ATTRIBUTES DLLEXPORT :: mfioex
 c
       implicit none
       save
@@ -239,9 +239,59 @@ c
       return
       end
 
+      subroutine mfiodx(fid, class, oname, dexist, cret)
+cDEC$ ATTRIBUTES DLLEXPORT :: mfiodx
+c
+      implicit none
+      save
+c
+      character *(*) oname
+      integer*8 fid
+      integer  class, dexist, cret
+      integer mfifodx
+c
+      cret = mfifodx(fid, class, oname, len(oname), dexist)
+c      
+      return
+      end
+
+      subroutine mfiodw(fid, class, oname, desc, cret)
+cDEC$ ATTRIBUTES DLLEXPORT :: mfiodw
+c
+      implicit none
+      save
+c
+      integer*8 fid
+      integer  class, cret
+      character*(*) oname
+      character*(*) desc
+      integer mfifodw
+c
+      cret = mfifodw(fid, class, oname, len(oname), desc, len(desc))
+c      
+      return
+      end
+
+      subroutine mfiodr(fid, class, oname, desc, cret)
+cDEC$ ATTRIBUTES DLLEXPORT :: mfiodr
+c
+      implicit none
+      save
+c
+      integer*8 fid
+      integer  class, cret
+      character*(*) oname
+      character*(*) desc
+      integer mfifodr
+c
+      cret = mfifodr(fid, class, oname, len(oname), desc)
+c      
+      return
+      end
+
 
       subroutine mfiexi(fname, access, fexist, accok, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfioex
+cDEC$ ATTRIBUTES DLLEXPORT :: mfiexi
 c
       implicit none
       save

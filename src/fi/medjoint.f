@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -17,7 +17,7 @@ C
 
       subroutine msdjcr(fid,lmname,jname,des,dom,
      &                  rmname,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: MSDJCR
+cDEC$ ATTRIBUTES DLLEXPORT :: MSDJCR
 c
       implicit none
       save
@@ -48,7 +48,7 @@ c
       subroutine msdcrw(fid,lmname,jname,numdt,numit,
      &                  entlcl,geolcl,entdst,geodst,
      &                  n,corrtab,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msdcrw
+cDEC$ ATTRIBUTES DLLEXPORT :: msdcrw
 c
       implicit none
       save
@@ -69,7 +69,7 @@ c
 c
 c
       subroutine msdnjn(fid,maa,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msdnjn
+cDEC$ ATTRIBUTES DLLEXPORT :: msdnjn
 c
       implicit none
       save
@@ -94,7 +94,7 @@ c
 c
       subroutine msdjni(fid,lmname,ind,jname,des,dom,
      &                  rmname,nstep,ncor,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msdjni
+cDEC$ ATTRIBUTES DLLEXPORT :: msdjni
 c
       implicit none
       save
@@ -117,7 +117,7 @@ c
      &                  it,letype,lgtype,
      &                  retype,rgtype,
      &                  ncor,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msdszi
+cDEC$ ATTRIBUTES DLLEXPORT :: msdszi
 c
       implicit none
       save
@@ -144,7 +144,7 @@ c
      &                  letype,lgtype,
      &                  retype,rgtype,
      &                  ncor,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msdcsz 
+cDEC$ ATTRIBUTES DLLEXPORT :: msdcsz 
 c
       implicit none
       save
@@ -170,7 +170,7 @@ c
       subroutine msdcrr(fid,lmname,jname,numdt,numit,
      &                  entlcl,geolcl,entdst,geodst,
      &                  corrtab,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msdcrr
+cDEC$ ATTRIBUTES DLLEXPORT :: msdcrr
 c
       implicit none
       save
@@ -192,7 +192,7 @@ c
 c
       subroutine msdcsi(fid,mname,jname,ind,
      &                  numdt,numit,ncor,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msdcsi
+cDEC$ ATTRIBUTES DLLEXPORT :: msdcsi
 c
       implicit none
       save

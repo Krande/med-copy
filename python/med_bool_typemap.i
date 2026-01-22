@@ -22,7 +22,11 @@
    /*      Py_DECREF(o2); */
    /*      Py_DECREF(o3); */
    /*  } */
+#if defined(SWIG_GE_40300)
+  $result=SWIG_Python_AppendOutput($result, o, $isvoid);
+#else
   $result=SWIG_Python_AppendOutput($result, o);
+#endif
 }
 
 %typemap(in,numinputs=0) med_bool *(med_bool temp) {

@@ -64,7 +64,7 @@ SUFFIXES=  _Rd.sh _Rd.she _Wr.sh _Wr.shn
 # Inference rules can have only one target before the colon (POSIX)
 .c_Rd.sh: testRd.sh
 	${LN_S} -f $(srcdir)/testRd.sh $@
-# les scripts .she sont les mêmes que les scripts .sh en lecture  mais provoquent la supression du fichier current.med
+# les scripts .she sont les mêmes que les scripts .sh en lecture mais provoquent la supression du fichier current.med
 .c_Rd.she: testRd.sh
 	${LN_S} -f $(srcdir)/testRd.sh $@
 .c_Wr.sh: testWr.sh

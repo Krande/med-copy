@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 # /*  This file is part of MED.
 #  *
-#  *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+#  *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 #  *  MED is free software: you can redistribute it and/or modify
 #  *  it under the terms of the GNU Lesser General Public License as published by
 #  *  the Free Software Foundation, either version 3 of the License, or
@@ -30,11 +30,11 @@ from med.medmesh import *
 
 MODE_ACCES=MED_ACC_CREAT
 # /* la dimension du maillage */
-mdim = 2;
+mdim = 2
 # /* nom du maillage de longueur maxi MED_NAME_SIZE */
-maa  = "maa1";
+maa  = "maa1"
 # /* le nombre de noeuds */
-nnoe = 4;
+nnoe = 4
 # /* table des coordonnees (dimension * nombre de noeuds) */
 coo   = MEDFLOAT([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0])
 coo_2 = MEDFLOAT([0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0])

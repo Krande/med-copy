@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -32,25 +32,25 @@ using namespace std;
 
 extern "C"  int        _MEDtest8bits(uint8_t int_type,int offset) {
   return MEDtestBits(int_type,offset);
-};
+}
 
 extern "C"  void      _MEDset8bits(uint8_t * const int_type,int offset) {
   MEDsetBits(*int_type,offset);
-};
+}
 
 extern "C"  uint8_t    _MEDnSet8bits(uint8_t int_type) {
   return MEDnSetBits(int_type);
-};
+}
 
 
 extern "C"  int        _MEDtest32bits(uint32_t int_type,int offset) {
   return MEDtestBits(int_type,offset);
-};
+}
 
 extern "C"  void      _MEDset32bits(uint32_t * const int_type,int offset) {
   MEDsetBits(*int_type,offset);
-};
+}
 
 extern "C"  uint32_t    _MEDnSet32bits(uint32_t int_type) {
   return MEDnSetBits(int_type);
-};
+}

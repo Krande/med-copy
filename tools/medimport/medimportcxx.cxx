@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -19,16 +19,16 @@
 #include <exception>
 #include <iostream>
 
-int main(int argc, char *argv[]) {
+int main(int argc, const char *argv[]) {
 
-  char * fileOut;
+  const char * fileOut="";
   int    ret;
 
   if ( (argc > 3) || (argc < 2) ) {
     std::cerr << "Nombre de parametre incorrect : medimport filein [fileout]" << std::endl;
     return -1;
   }
-  if (argc == 2 ) fileOut=""; else fileOut=argv[2];
+  if (argc != 2 ) fileOut=argv[2];
 
   try {
     ret = MEDimport(argv[1], fileOut) ;

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MED fichier: Référence du fichier medfilter.f</title>
+<title>MED fichier: Référence du fichier MEDsubdomainJointInfo.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,38 +38,72 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_21ff39c74838e10d1b918a45b9d185d5.html">src</a></li><li class="navelem"><a class="el" href="dir_dbd2ee24887c28c24b530cac4c2c97c8.html">fi</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_21ff39c74838e10d1b918a45b9d185d5.html">src</a></li><li class="navelem"><a class="el" href="dir_48027acf4688ac8b76ff5eb90d59af4a.html">ci</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Fonctions/Subroutines</a>  </div>
+<a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
-<div class="title">Référence du fichier medfilter.f</div>  </div>
+<div class="title">Référence du fichier MEDsubdomainJointInfo.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;<a class="el" href="a02339_source.html">med.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="a02342_source.html">med_config.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="a01346_source.html">med_outils.h</a>&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de MEDsubdomainJointInfo.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="a02016.jpg" border="0" usemap="#MEDsubdomainJointInfo_8c" alt=""/></div>
+<map name="MEDsubdomainJointInfo_8c" id="MEDsubdomainJointInfo_8c">
+<area shape="rect" title=" " alt="" coords="1345,5,1521,32"/>
+<area shape="rect" href="a02339.html" title=" " alt="" coords="1281,229,1339,256"/>
+<area shape="rect" href="a02342.html" title=" " alt="" coords="1076,229,1176,256"/>
+<area shape="rect" href="a01346.html" title=" " alt="" coords="1385,80,1481,107"/>
+<area shape="rect" title=" " alt="" coords="1737,229,1801,256"/>
+<area shape="rect" title=" " alt="" coords="1807,80,1872,107"/>
+<area shape="rect" title=" " alt="" coords="1281,304,1339,331"/>
+<area shape="rect" href="a01349.html" title=" " alt="" coords="911,304,1005,331"/>
+<area shape="rect" href="a01373.html" title=" " alt="" coords="901,453,1015,480"/>
+<area shape="rect" href="a01406.html" title=" " alt="" coords="5,379,97,405"/>
+<area shape="rect" href="a01391.html" title=" " alt="" coords="122,379,197,405"/>
+<area shape="rect" href="a01418.html" title=" " alt="" coords="221,379,311,405"/>
+<area shape="rect" href="a01385.html" title=" " alt="" coords="335,379,418,405"/>
+<area shape="rect" href="a01382.html" title=" " alt="" coords="443,379,535,405"/>
+<area shape="rect" href="a01376.html" title=" " alt="" coords="559,379,685,405"/>
+<area shape="rect" href="a01433.html" title=" " alt="" coords="709,379,831,405"/>
+<area shape="rect" href="a01427.html" title=" " alt="" coords="855,379,949,405"/>
+<area shape="rect" href="a01397.html" title=" " alt="" coords="973,379,1055,405"/>
+<area shape="rect" href="a01412.html" title=" " alt="" coords="1079,379,1202,405"/>
+<area shape="rect" href="a01409.html" title=" " alt="" coords="1227,379,1305,405"/>
+<area shape="rect" href="a01430.html" title=" " alt="" coords="1329,379,1467,405"/>
+<area shape="rect" href="a01424.html" title=" " alt="" coords="1491,379,1607,405"/>
+<area shape="rect" href="a01403.html" title=" " alt="" coords="1631,379,1722,405"/>
+<area shape="rect" href="a01352.html" title=" " alt="" coords="1145,155,1243,181"/>
+<area shape="rect" title=" " alt="" coords="1660,155,1731,181"/>
+<area shape="rect" href="a01343.html" title=" " alt="" coords="1429,155,1522,181"/>
+<area shape="rect" href="a01337.html" title=" " alt="" coords="1267,155,1353,181"/>
+<area shape="rect" href="a02345.html" title=" " alt="" coords="1547,155,1636,181"/>
+<area shape="rect" title=" " alt="" coords="1415,229,1485,256"/>
+<area shape="rect" href="a01331.html" title=" " alt="" coords="1509,229,1609,256"/>
+<area shape="rect" href="a01328.html" title=" " alt="" coords="1633,229,1713,256"/>
+</map>
+</div>
+</div>
 <p><a href="a02015_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Fonctions/Subroutines</h2></td></tr>
-<tr class="memitem:gaa66afba0490f4d46eb35bdca621a7a8c"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02337_gaa66afba0490f4d46eb35bdca621a7a8c.html#gaa66afba0490f4d46eb35bdca621a7a8c">mfrcre</a> (fid, nent, nvent, ncent, cs, swm, stm, pname, fltas, flta, flt, cret)</td></tr>
-<tr class="memdesc:gaa66afba0490f4d46eb35bdca621a7a8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée une selection d'entités grâce a un tableau d'index <em>filterarray</em> de taille <em>filterarraysize</em>. Initialisé en sortie de fonction, le filtre <em>filter</em> sera utilisé pour lire/écrire des valeurs associées à ces entités. Ces valeurs peuvent être des coordonnées, des connectivités des valeurs de champs résultats mais aussi des numéros de familles, des noms ou numéros optionnels.  <a href="a02337_gaa66afba0490f4d46eb35bdca621a7a8c.html#gaa66afba0490f4d46eb35bdca621a7a8c">Plus de détails...</a><br /></td></tr>
-<tr class="separator:gaa66afba0490f4d46eb35bdca621a7a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabc69b90f5af8c5aca1dbd4b685b5a953"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02337_gabc69b90f5af8c5aca1dbd4b685b5a953.html#gabc69b90f5af8c5aca1dbd4b685b5a953">mfrall</a> (nflt, flt, cret)</td></tr>
-<tr class="memdesc:gabc69b90f5af8c5aca1dbd4b685b5a953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alloue un tableau de filtres de taille <em>nfilter</em>.  <a href="a02337_gabc69b90f5af8c5aca1dbd4b685b5a953.html#gabc69b90f5af8c5aca1dbd4b685b5a953">Plus de détails...</a><br /></td></tr>
-<tr class="separator:gabc69b90f5af8c5aca1dbd4b685b5a953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad95791e5fe16d7d6c7b99ef5f39923e2"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02337_gad95791e5fe16d7d6c7b99ef5f39923e2.html#gad95791e5fe16d7d6c7b99ef5f39923e2">mfrdea</a> (nflt, flt, cret)</td></tr>
-<tr class="memdesc:gad95791e5fe16d7d6c7b99ef5f39923e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desalloue un tableau de filtre de taille <em>nfilter</em>.  <a href="a02337_gad95791e5fe16d7d6c7b99ef5f39923e2.html#gad95791e5fe16d7d6c7b99ef5f39923e2">Plus de détails...</a><br /></td></tr>
-<tr class="separator:gad95791e5fe16d7d6c7b99ef5f39923e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga160e0f69194873d2265bc7eed58cf74c"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02337_ga160e0f69194873d2265bc7eed58cf74c.html#ga160e0f69194873d2265bc7eed58cf74c">mfrblc</a> (fid, nent, nvent, ncent, cs, swm, stm, pname, start, stride, count, bsize, lbsize, flt, cret)</td></tr>
-<tr class="memdesc:ga160e0f69194873d2265bc7eed58cf74c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un filtre en selectionnant par blocs les entités pour lesquelles on veut lire/écrire des valeurs. Cette sélection permet une lecture/écriture avancée vers/depuis les emplacements mémoire sélectionnés. Elle s'utilise aussi bien en mode séquentiel qu'en mode parallèle (un ou plusieurs processus).  <a href="a02337_ga160e0f69194873d2265bc7eed58cf74c.html#ga160e0f69194873d2265bc7eed58cf74c">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ga160e0f69194873d2265bc7eed58cf74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Fonctions</h2></td></tr>
+<tr class="memitem:ga25a6e4dff83d09a8f46ed161136bf44c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a02339_abd29d7c6abaef5da2a5ed1b73464f0ba.html#abd29d7c6abaef5da2a5ed1b73464f0ba">med_err</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02361_ga25a6e4dff83d09a8f46ed161136bf44c.html#ga25a6e4dff83d09a8f46ed161136bf44c">MEDsubdomainJointInfo</a> (const <a class="el" href="a02339_afa4ec8284026c8c5545e5333475fb65a.html#afa4ec8284026c8c5545e5333475fb65a">med_idt</a> fid, const char *const localmeshname, const int jointit, char *const jointname, char *const <a class="el" href="a01391_a983b441e1238aaad5e971f903d900687.html#a983b441e1238aaad5e971f903d900687">description</a>, <a class="el" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> *const domainnumber, char *const remotemeshname, <a class="el" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> *const nstep, <a class="el" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> *const nocstpncorrespondence)</td></tr>
+<tr class="memdesc:ga25a6e4dff83d09a8f46ed161136bf44c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine permet de lire les informations sur un joint dans un maillage.  <a href="a02361_ga25a6e4dff83d09a8f46ed161136bf44c.html#ga25a6e4dff83d09a8f46ed161136bf44c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga25a6e4dff83d09a8f46ed161136bf44c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 8 Octobre 2021 13:44:08 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 21 Mai 2025 19:18:34 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.16
 </small></address>

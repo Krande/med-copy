@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -16,7 +16,7 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C*
 
       subroutine efchac(fid,cha,type,comp,unit,ncomp,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efchac
+cDEC$ ATTRIBUTES DLLEXPORT :: efchac
 c
       implicit none
       save
@@ -64,7 +64,7 @@ c
       subroutine efchie(fid,maa,cha,val,interlace,n,locname,numco,
      1                  profil,pflmod,typent,typgeo,numdt,dtunit,
      1                  dt,numo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efchie 
+cDEC$ ATTRIBUTES DLLEXPORT :: efchie 
 c
       implicit none
       save
@@ -94,7 +94,7 @@ c
      1                  profil,pflmod,
      1                  typent,typgeo,
      1                  numdt, numo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efchal
+cDEC$ ATTRIBUTES DLLEXPORT :: efchal
 c
       implicit none
       save
@@ -120,7 +120,7 @@ c
      1                  profil,pflmod,
      1                  typent,typgeo,
      1                  numdt, numo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efchil
+cDEC$ ATTRIBUTES DLLEXPORT :: efchil
 c
       implicit none
       save
@@ -141,7 +141,7 @@ c
 c
 c
       subroutine efchai(fid,ind,cha,type,comp,unit,ncomp,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efchai
+cDEC$ ATTRIBUTES DLLEXPORT :: efchai
 c
       implicit none
       save
@@ -158,7 +158,7 @@ c
       end
 c
       subroutine efncha(fid,ind,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efncha
+cDEC$ ATTRIBUTES DLLEXPORT :: efncha
 c
       implicit none
       save
@@ -180,7 +180,7 @@ c
 
       subroutine efnval(fid,cha,typent,typgeo,numdt,numo,maa,pflmod,
      1     n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnval
+cDEC$ ATTRIBUTES DLLEXPORT :: efnval
 c
       implicit none
       save
@@ -207,7 +207,7 @@ C Nouvelles routines pour MED V2.1
 
 
       subroutine efnpdt(fid,cha,type,geo,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnpdt
+cDEC$ ATTRIBUTES DLLEXPORT :: efnpdt
 c
       implicit none
       save
@@ -231,7 +231,7 @@ c
 
       subroutine efpdti(fid,cha,typent,typgeo,ind,ngauss,
      1                  numdt,numo,dtunit,dt,maa,local,nmaa,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efpdti
+cDEC$ ATTRIBUTES DLLEXPORT :: efpdti
 c
       implicit none
       save
@@ -253,7 +253,7 @@ c
 c     NOUVELLE ROUTINE MED2.2
 
       subroutine efnref(fid,cha,typent,typgeo,numdt,numo,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnref 
+cDEC$ ATTRIBUTES DLLEXPORT :: efnref 
 c
       implicit none
       save
@@ -279,7 +279,7 @@ c
 
       subroutine efrefi(fid,cha, typent, typgeo, indice, numdt, numo,
      1                  maa, local, ngauss, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efrefi
+cDEC$ ATTRIBUTES DLLEXPORT :: efrefi
 c
       implicit none
       save
@@ -305,7 +305,7 @@ c
 c
 
       subroutine efliee(fid,lienval,maa,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efliee
+cDEC$ ATTRIBUTES DLLEXPORT :: efliee
       integer*8 fid
       integer  cret
       character *(*) lienval, maa
@@ -320,7 +320,7 @@ c
 
 
       subroutine efnlie(fid,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnlie
+cDEC$ ATTRIBUTES DLLEXPORT :: efnlie
 c
       implicit none
       save
@@ -341,7 +341,7 @@ c
       end
 
       subroutine efliei( fid , indice , maa , n , cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efliei
+cDEC$ ATTRIBUTES DLLEXPORT :: efliei
 c
       implicit none
       save
@@ -359,7 +359,7 @@ c
       end
 
       subroutine efnvli(fid,maa,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnvli
+cDEC$ ATTRIBUTES DLLEXPORT :: efnvli
 c
       implicit none
       save
@@ -382,7 +382,7 @@ c
 c
 
       subroutine efliel(fid,lienval,n,maa,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efliel
+cDEC$ ATTRIBUTES DLLEXPORT :: efliel
 c
       implicit none
       save

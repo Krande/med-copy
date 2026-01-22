@@ -4,7 +4,7 @@
 "fidDes=résultat i.e. l'identificateur entier (ID) retourné sera utilisé par les routines de l'API pour accéder au contenu du fichier." \
 "filename=Nom du fichier." \
 "filenamesize=Taille du Nom du fichier (avec le chemin d'accès)." \
-"comment=Descripteur du fichier." \
+"description=Descripteur du fichier." \
 "accessmode=Mode d'acces au fichier." \
 "hdfok=Indicateur booléen indiquant si la bibliothèque HDF est compatible avec cette bibliothèque MED." \
 "medok=Indicateur booléen indiquant si le fichier est un fichier MED compatible avec la bibliothèque." \
@@ -14,17 +14,19 @@
 "medversion=Numéro de version défini dans une chaîne de caractères." \
 "mountfilename=Nom du fichier à monter." \
 "mid=Identificateur du fichier à démonter." \
-"medclass=Type d'objet de haut niveau MED (champ ou maillage)". \
+"medclass=Type d'objet de haut niveau MED (champ, maillage, ...)". \
 "mountId=Identificateur du fichier monté." \
 "chfid=Identificateur du fichier à monter (fichier enfant)." \
 "chpath=Chemin à partir duquel se trouve la structure au format MED à monter dans le fichier hôte (parent)." \
 "error=retour négatif en cas d'erreur (#MED_ERR_HOWTO), Zéro sinon." \
 "memfile=fichier mémoire." \
 "filesync=synchronise ou non le fichier mémoire avec un fichier disque." \
-"objectname=nom de l'objet a traiter de type medclass." \
-"objectexist=indique l'existence d'un objet de type medclass." \
+"objectname=nom de l'objet a traiter de type \a medclass." \
+"objectexist=indique l'existence d'un objet de type \a medclass." \
+"descriptionexist=indique l'existence d'une description pour l'objet \a objectname de type \a medclass." \
 "fileexist=indique l'existence d'un fichier." \
-"accessok=indique l'adéquation des droits effectifs avec le mode d'accès demandé ." \
+"accessok=indique l'adéquation des droits effectifs avec le mode d'accès demandé." \
+"medpath=identifie un objet med par l'intermédiaire d'une succession de medpath.nname noms stockés dans medpath.name[]." \
 \
 "MEDfileOpenBrief=Ouverture d'un fichier MED." \
 "MEDfileOpenDetails=\MEDfileOpenBrief" \
@@ -50,16 +52,25 @@ Le nom de fichier contient le chemin d'accès. \
 \li Si un processus veut travailler indépendament des autres il doit également ouvrir le fichier via \ref MEDfileOpen pour avoir un descripteur séquentiel. " \
 "MEDfileCloseBrief=Fermeture d'un fichier MED." \
 "MEDfileCloseDetails=Cette routine permet de fermer un fichier MED. En cas d'accès en écriture, la garantie que les données sont physiquement écrites dans le fichier, n'est donnée que suite à l'exécution de cette routine." \
-"MEDfileCommentWrDetails=Cette routine permet d'écrire un descripteur dans un fichier MED. Ce descripteur est une chaîne de caratères de MED_COMMENT_SIZE (200) caractères" \
-"MEDfileCommentWrBrief=Ecriture d'un descripteur dans un fichier MED." \
-"MEDfileCommentRdDetails=Cette routine permet de lire un descripteur dans un fichier MED. Ce descripteur est une chaîne de caratères de MED_COMMENT_SIZE (200) caractères" \
-"MEDfileCommentRdBrief=Lecture d'un descripteur dans un fichier MED." \
+\
+\
+\
+"MEDfileDescriptionWrDetails=Cette routine permet d'écrire un descripteur dans un fichier MED. Ce descripteur est une chaîne de caratères de MED_COMMENT_SIZE (200) caractères" \
+"MEDfileDescriptionWrBrief=Ecriture d'un descripteur dans un fichier MED." \
+"MEDfileDescriptionRdDetails=Cette routine permet de lire un descripteur dans un fichier MED. Ce descripteur est une chaîne de caratères de MED_COMMENT_SIZE (200) caractères" \
+"MEDfileDescriptionRdBrief=Lecture d'un descripteur dans un fichier MED." \
+\
+\
+\
 "MEDfileCompatibilityDetails=Cette routine permet de vérifier la compatibilité du fichier passé en argument avec les bibliothèques HDF et MED utilisées : <ul><li>Le fichier doit être un fichier HDF et dans une version d'HDF utilisable par la bibliothèque MED pour que \a hdfok soit vrai.</li><li>Le fichier doit être dans une version MED utilisable par la bibliothèque MED (Majeur du fichier égal à celui de la bibliothèque et mineur du fichier inférieur ou égal à celui de la bibliothèque quelque soit la valeur release).</li></ul>" \
 "MEDfileCompatibilityBrief=Vérification de la compatibilité d'un fichier avec HDF et MED." \
 "MEDfileNumVersionRdDetails=Cette routine lit le numéro de version de la bibliothèque MED qui a été utilisée pour créer le fichier auquel on accède via le paramètre fid. Le numéro de version est renvoyé sous la forme de trois entiers : numéro de version majeur, numéro de version mineur, numéro de relase" \
 "MEDfileNumVersionRdBrief=Lecture du numéro de version de la bibliothèque MED utilisée pour créer le fichier." \
 "MEDfileStrVersionRdDetails=Cette routine lit le numéro de version de la bibliothèque MED qui a été utilisée pour créer le fichier auquel on accède via le paramètre fid. Le numéro de version est renvoyé sous la forme d'une chaîne de 9 caractères sous la forme "MED-M.m.r". Exemple de chaîne renvoyé : 'MED-3.0.0'." \
 "MEDfileStrVersionRdBrief=Lecture du numéro de version de la bibliothèque MED utilisée pour créer le fichier (renvoyé sous la forme d'une chaîne de caractères)." \
+\
+\
+\
 "MEDfileObjectsMountDetails=Cette routine permet de monter dans le fichier courant un type de données (exemples les maillages, les champs) d'un autre fichier MED. Cette routine est utile par exemple quand les champs et les maillages d'une étude se situent dans des fichiers différents. Une fois le montage effectué, l'accès aux données montées est transparent." \
 "MEDfileObjectsMountBrief=Cette routine permet de monter dans le fichier courant un type de données (exemples les maillages, les champs) d'un autre fichier MED." \
 "MEDfileObjectsUnmountDetails=Cette routine permet désactiver un point de montage." \
@@ -67,8 +78,38 @@ Le nom de fichier contient le chemin d'accès. \
 "MEDfileObjectsMountByIdBrief=Cette routine permet le montage d'une collection d'objets de type \a medclass dans le fichier associé à \a fid." \
 "MEDfileObjectsMountByIdDetails=\MEDfileObjectsMountByIdBrief La collection au format MED est encapsulée dans un fichier HDF associé à \a chfid à partir du chemin \a chpath." \
 \
-"MEDfileObjectExistBrief=Interroge le fichier \a fid pour tester l'existence de l'objet \a objectname de type \a medclass." \
+"MEDfileObjectExistBrief=Interroge le fichier \a fid pour tester l'existence de l'objet \a objectname de type #med_class." \
 "MEDfileObjectExistDetails=\MEDfileObjectExistBrief" \
+\
+\
+\
+"MEDfileObjectDescriptionExistBrief=Interroge le fichier \a fid pour tester l'existence d'une description associée à l'objet \a objectname de type #med_class." \
+"MEDfileObjectDescriptionExistDetails=\MEDfileObjectDescriptionExistBrief" \
+"MEDfileObjectDescriptionWrBrief=Ecrit une description associée à l'objet \a objectname de type  #med_class dans le fichier \a fid ." \
+"MEDfileObjectDescriptionWrDetails=\MEDfileObjectDescriptionWrBrief" \
+"MEDfileObjectDescriptionRdBrief=Lit une description associée à l'objet \a objectname de type #med_class dans le fichier \a fid ." \
+"MEDfileObjectDescriptionRdDetails=\MEDfileObjectDescriptionRdBrief" \
+"MEDfileObjectDescriptionRem= Les classes d'objets MED utilisables sont : <ul><li>MED_MESH</li><li>MED_FIELD</li><li>MED_MESH_SUPPORT</li><li>MED_ELSTRUCT</li><li>MED_EQUIVALENCE</li><li>MED_LOCALIZATION</li><li>MED_PROFILE</li><li>MED_INTERPOLATION</li><li>MED_NUMERICAL_DATA</li><li>MED_FILE</li></ul>" \
+\
+\
+\
+"MEDfileObjectDescriptionExistByPathBrief=Interroge le fichier \a fid pour tester l'existence d'une description associée à l'objet accessible par le chemin #med_path." \
+"MEDfileObjectDescriptionExistByPathDetails=\MEDfileObjectDescriptionExistByPathBrief" \
+"MEDfileObjectDescriptionWrByPathBrief=Ecrit une description associée à l'objet accessible par le chemin #med_path dans le fichier \a fid ." \
+"MEDfileObjectDescriptionWrByPathDetails=\MEDfileObjectDescriptionWrByPathBrief" \
+"MEDfileObjectDescriptionRdByPathBrief=Lit une description associée à l'objet \a objectname accessible par le chemin #med_path dans le fichier \a fid ." \
+"MEDfileObjectDescriptionRdByPathDetails=\MEDfileObjectDescriptionRdByPathBrief" \
+"MEDfileObjectDescriptionPathRem1= \par Classes d'objets concernées: ^^\
+Les classes d'objets MED utilisables sont : <ul><li>MED_MESH</li><li>MED_FAMILY</li><li>MED_GROUP</li><li>MED_FIELD</li><li>MED_MESH_SUPPORT</li><li>MED_ELSTRUCT</li><li>MED_EQUIVALENCE</li><li>MED_LOCALIZATION</li><li>MED_PROFILE</li><li>MED_INTERPOLATION</li><li>MED_NUMERICAL_DATA</li><li>MED_JOINT</li><li>MED_FILE</li></ul>" \
+"MEDfileObjectDescriptionPathRem2= \par Utilisation de \a medpath:  ^^\
+<ul><li>\a medpath.nname indique le nombre de noms composants le chemin d'accès. \ 
+nname == 1 sauf pour MED_FAMILY_{NODE,ELEM], MED_GROUP et MED_JOINT où nname == 2.</li>\
+    <li>\a medpath.name[medpath.nname]: Indique les noms composants le chemin d'accès. \
+Si nname == 1, name[0] déclare le nom de l'objet concerné. \
+Si nname == 2, name[0] déclare le maillage associée pour l'objet de nom name[1].</li></ul>" \
+"MEDfileObjectDescriptionPathRem= \MEDfileObjectDescriptionPathRem1 \MEDfileObjectDescriptionPathRem2" \
+\
+\
 \
 "MEDfileExistBrief=Interroge l'existence d'un fichier de nom \a filename et la possibilité de l'ouvrir selon le mode d'accès \a accessmode." \
 "MEDfileExistDetails=\MEDfileExistBrief \
@@ -91,7 +132,35 @@ Une fois le fichier mémoire fermé par \ref MEDfileClose, le fichier mémoire r
 	L'utilisateur a pré-alloué un emplacement d'acceuil au fichier mémoire, cet emplacement sera utilisé par MED dans les différentes fonctions de l'API. Si la taille réservée est insuffisante, MED réallouera la taille nécessaire et mettra à jour le champ \a memfile.app_image_size. Ce mécanisme  suppose que l'utilisateur n'utilise pas d'alias du pointeur \a memfile.app_image_ptr de façon concurrente à MED.\n Il est de la responsabilité de l'utilisateur de prendre connaissance des eventuels changements de taille et de valeur du pointeur.\n\
 	Après l'appel à \ref MEDfileClose, MED  n'utilise plus l'image mémoire. Il est possible de vérifier qu'il n'existe plus d'accès à l'image mémoire en s'assurant que \a memfile.fapl_ref_count et \a memfile.vfd_ref_count sont tous les deux nuls. " \
 \
-"MEDmemFileOpenNote2=\par Gestion des droits et fichier disque ^^\
+\
+\
+"MEDmemFileOpenNote2=\par Gestion des versions et fichier disque ^^\
+\
+\n	Si le paramètre \a syncfile est à #MED_FALSE, \ref MEDmemFileOpen ne s'occupera pas de la présence d'un fichier disque de même nom que l'image mémoire et la version du modèle utilisé dépend du mode d'accès et de la version du modèle du fichier mémoire (s'il est fourni).\
+\n	Si le paramètre syncfile est à #MED_TRUE, \ref MEDmemFileOpen gardera la cohérence entre le fichier disque crée ou déjà présent et l'image mémoire, la version du modèle utilisé dépend de la réutilisation d'un fichier existant, du mode d'accès demandé et de la version du modèle du fichier mémoire (s'il est fourni).\
+\
+\li Mode #MED_ACC_RDEXT : Mode interdit.\
+\li Mode #MED_ACC_CREAT :\
+\
+\n Si \a filesync == #MED_FALSE : Un nouvel accès \a fid au fichier mémoire \a memfile est crée, aucun fichier disque n'est utilisé (un fichier disque de même nom peut exister mais ne sera pas utilisé). Si le fichier mémoire possédait une image MED valide, elle sera réinitialisée. Le modèle interne utilisé sera celui de la version courante de MED.\
+\
+\n Si \a filesync == #MED_TRUE : Un nouvel accès \a fid au fichier mémoire \a memfile est crée, un nouveau fichier disque de même nom est également crée (un fichier disque de même nom peut déjà exister, il sera alors écrasé). Tous les appels MED seront effectués en mémoire et sur le fichier jusqu'à l'appel de \ref MEDfileClose (pas forcément de façon synchrone jusqu'à la fermeture). Le modèle interne utilisé sera celui de la version courante de MED.\
+\
+\li Mode #MED_ACC_RDWR :\
+\
+\n Si \a filesync == #MED_FALSE : Un nouvel accès \a fid au fichier mémoire \a memfile existant et valide est crée qu'un fichier disque de même nom existe ou non. Les appels MED seront effectués uniquement en mémoire. Le modèle interne utilisé sera celui du fichier mémoire.\
+\
+\n Si \a filesync == #MED_TRUE : Un nouvel accès \a fid au fichier mémoire \a memfile est crée.\
+S'il n'existe pas de fichier disque de même nom, l'image memfile doit exister et être valide; un fichier disque de même nom est crée et maintenu en cohérence (il faut au moins un appel MED en écriture/création pour que la synchronisation du fichier se fasse). Le modèle interne utilisé sera celui du fichier mémoire.\
+S'il existe un fichier disque de même nom, l'image \a memfile est réinitialisée par le contenu du fichier. La cohérence est maintenue entre fichier mémoire et fichier disque. Le modèle interne utilisé sera celui du fichier.\
+\
+\li Mode #MED_ACC_RDONLY :\
+\
+\n \a filesync = #MED_TRUE | #MED_FALSE : Le fichier mémoire est initialisé à partir d'un fichier disque de même nom (forcément existant). Les appels MED en lecture seront effectués uniquement en mémoire, le fichier restera dans son état intial. Le modèle interne utilisé sera celui du fichier. Les appels MED en écriture échoueront." \
+\
+\
+\
+"MEDmemFileOpenNote3=\par Gestion des droits et fichier disque ^^\
 \
 \n	Si le paramètre \a syncfile est à #MED_FALSE, \ref MEDmemFileOpen ne s'occupera pas de la présence d'un fichier disque de même nom que l'image mémoire.\
 \n	Si le paramètre syncfile est à #MED_TRUE, \ref MEDmemFileOpen gardera la cohérence entre le fichier disque crée ou déjà présent et l'image mémoire en fonction du mode d'accès demandé.\

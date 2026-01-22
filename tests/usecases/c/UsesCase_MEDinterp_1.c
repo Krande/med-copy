@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -30,20 +30,20 @@
 int main (int argc, char **argv) {
   med_idt fid;
   char interpname[MED_NAME_SIZE+1] = "MED_TRIA3 interpolation family";
-  const med_int nvariable=2;
-  const med_int maxdegree=1;
-  const med_int nmaxcoefficient=3;
-  const med_int         ncoefficient1_1 = 3;
-  const med_int   const power1_1[]         = {0,0,1,0,0,1};
-  const med_float const coefficient1_1[]   = {1,-1,-1};
+  const med_int   nvariable        =2;
+  const med_int   maxdegree        =1;
+  const med_int   nmaxcoefficient  =3;
+  const med_int   ncoefficient1_1  = 3;
+  const med_int   power1_1[]       = {0,0,1,0,0,1};
+  const med_float coefficient1_1[] = {1,-1,-1};
 
-  const med_int         ncoefficient1_2 = 1;
-  const med_int   const power1_2[]         = {1,0};
-  const med_float const coefficient1_2[]   = {1};
+  const med_int   ncoefficient1_2  = 1;
+  const med_int   power1_2[]       = {1,0};
+  const med_float coefficient1_2[] = {1};
 
-  const med_int         ncoefficient1_3 = 1;
-  const med_int   const power1_3[]         = {0,1};
-  const med_float const coefficient1_3[]   = {1};
+  const med_int   ncoefficient1_3  = 1;
+  const med_int   power1_3[]       = {0,1};
+  const med_float coefficient1_3[] = {1};
   int ret=-1;
 
   /* file creation */

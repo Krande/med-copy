@@ -6,11 +6,14 @@ if MED_SWIG_INT64
 AM_CPPFLAGS += -DSWIGWORDSIZE64
 endif
 
+if MED_SWIG_GE_40300
+AM_CPPFLAGS += -DSWIG_GE_40300
+endif
 
-#SWIG_PYTHON_OPT += -keyword
-SWIG_PYTHON_OPT += -c++ 
+#AX_SWIG_PYTHON_OPT += -keyword
+AX_SWIG_PYTHON_OPT += -c++ 
 #-relativeimport -py3
-#-debug-module 4 -debug-tmsearch -debug-tmused
+#AX_SWIG_PYTHON_OPT += -debug-module 4 -debug-tmsearch -debug-tmused
 
 swigdir    = $(includedir)/swig
 
@@ -30,7 +33,7 @@ AM_LDLFLAGS             = -shared
 AM_CFLAGS               = -shared
 
 swig_runtime.h:
-	$(SWIG) $(SWIG_PYTHON_OPT) $(AM_CPPFLAGS) $(SWIGFLAGS) -external-runtime $@
+	$(SWIG) $(AX_SWIG_PYTHON_OPT) $(AM_CPPFLAGS) $(SWIGFLAGS) -external-runtime $@
 
 # Rules to build *.py, *_wrap.c  and *_module.i.dep from a *_module.i file
 SUFFIXES = _int_wrap.cc _long_wrap.cc _module.i _module.i.dep .py _int.py _long.py
@@ -60,19 +63,19 @@ STARBASENAME=`expr $* : '.*/\(.*\)' '|' $*`
 
 _module.i_int_wrap.cc:
 if AMDEP
-	$(SWIG) $(SWIG_PYTHON_OPT) $(DEFS) $(AM_CPPFLAGS) $(SWIGFLAGS) -MT $@ -MM $< > $(DEPDIR)/$(STARBASENAME)_module.i.dep.tmp
+	$(SWIG) $(AX_SWIG_PYTHON_OPT) $(DEFS) $(AM_CPPFLAGS) $(SWIGFLAGS) -MT $@ -MM $< > $(DEPDIR)/$(STARBASENAME)_module.i.dep.tmp
 	mv $(DEPDIR)/$(STARBASENAME)_module.i.dep.tmp $(DEPDIR)/$(STARBASENAME)_module.i.dep
 endif
-	$(SWIG) $(SWIG_PYTHON_OPT) $(DEFS) $(AM_CPPFLAGS) $(SWIGFLAGS) -o $@.tmp $<
+	$(SWIG) $(AX_SWIG_PYTHON_OPT) $(DEFS) $(AM_CPPFLAGS) $(SWIGFLAGS) -o $@.tmp $<
 	mv $*.py $*_int.py
 	mv $@.tmp $@
 
 _module.i_long_wrap.cc:
 if AMDEP
-	$(SWIG) $(SWIG_PYTHON_OPT) $(DEFS) $(AM_CPPFLAGS) $(SWIGFLAGS) -MT $@ -MM $< > $(DEPDIR)/$(STARBASENAME)_module.i.dep.tmp
+	$(SWIG) $(AX_SWIG_PYTHON_OPT) $(DEFS) $(AM_CPPFLAGS) $(SWIGFLAGS) -MT $@ -MM $< > $(DEPDIR)/$(STARBASENAME)_module.i.dep.tmp
 	mv $(DEPDIR)/$(STARBASENAME)_module.i.dep.tmp $(DEPDIR)/$(STARBASENAME)_module.i.dep
 endif
-	$(SWIG) $(SWIG_PYTHON_OPT) $(DEFS) $(AM_CPPFLAGS) $(SWIGFLAGS) -o ${@}.tmp $<
+	$(SWIG) $(AX_SWIG_PYTHON_OPT) $(DEFS) $(AM_CPPFLAGS) $(SWIGFLAGS) -o ${@}.tmp $<
 	mv $*.py $*_long.py
 	mv ${@}.tmp ${@}
 
@@ -130,11 +133,11 @@ pkgpyexec_LTLIBRARIES     += _medlibrary.la
 _medlibrary_la_LDFLAGS         = -module -no-undefined
 #_medlibrary_la_LDFLAGS = -avoid-version -module
 _medlibrary_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medlibrary_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medlibrary_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medlibrary_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medlibrary_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medlibrary_la_CXXFLAGS        = $(AM_CFLAGS)
-_medlibrary_la_SOURCES  = medlibrary_@LONG_OR_INT@_wrap.cc swig_runtime.h
+_medlibrary_la_SOURCES         = medlibrary_@LONG_OR_INT@_wrap.cc swig_runtime.h
 _medlibrary_la_SOURCES         += medlibrary_module.i
 
 swig_DATA               += medlibrary_module.i
@@ -151,7 +154,7 @@ pkgpyexec_LTLIBRARIES     += _medfile.la
 
 _medfile_la_LDFLAGS         = -module -no-undefined
 _medfile_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medfile_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medfile_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medfile_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medfile_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medfile_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -173,7 +176,7 @@ pkgpyexec_LTLIBRARIES     += _medenum.la
 _medenum_la_LDFLAGS         = -module -no-undefined
 
 _medenum_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medenum_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medenum_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medenum_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medenum_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medenum_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -196,7 +199,7 @@ pkgpyexec_LTLIBRARIES     += _medmesh.la
 _medmesh_la_LDFLAGS         = -module -no-undefined
 
 _medmesh_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medmesh_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medmesh_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medmesh_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medmesh_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medmesh_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -219,7 +222,7 @@ pkgpyexec_LTLIBRARIES     += _medfield.la
 _medfield_la_LDFLAGS         = -module -no-undefined
 
 _medfield_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medfield_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medfield_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medfield_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medfield_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medfield_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -241,7 +244,7 @@ pkgpyexec_LTLIBRARIES     += _medfamily.la
 _medfamily_la_LDFLAGS         = -module -no-undefined
 
 _medfamily_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medfamily_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medfamily_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medfamily_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medfamily_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medfamily_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -255,7 +258,7 @@ medfamily_@LONG_OR_INT@_wrap.cc : $(MED_SWIG_SRC)
 
 # if AMDEP
 # $(DEPDIR)/medfamily_module.i.dep: medfamily_module.i
-# 	$(SWIG) $(SWIG_PYTHON_OPT) $(DEFS) $(AM_CPPFLAGS) $(SWIGFLAGS) -MT $@ -MM $< > $(DEPDIR)/$(STARBASENAME)_module.i.dep.tmp
+# 	$(SWIG) $(AX_SWIG_PYTHON_OPT) $(DEFS) $(AM_CPPFLAGS) $(SWIGFLAGS) -MT $@ -MM $< > $(DEPDIR)/$(STARBASENAME)_module.i.dep.tmp
 # 	mv $(DEPDIR)/$(STARBASENAME)_module.i.dep.tmp $(DEPDIR)/$(STARBASENAME)_module.i.dep
 # endif
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/medfamily_module.i.dep # am--include-marker @am__quote@
@@ -268,7 +271,7 @@ pkgpyexec_LTLIBRARIES     += _medequivalence.la
 _medequivalence_la_LDFLAGS         = -module -no-undefined
 
 _medequivalence_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medequivalence_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medequivalence_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medequivalence_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medequivalence_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medequivalence_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -291,7 +294,7 @@ pkgpyexec_LTLIBRARIES     += _medenumtest.la
 _medenumtest_la_LDFLAGS         = -module -no-undefined
 
 _medenumtest_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medenumtest_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medenumtest_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medenumtest_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medenumtest_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medenumtest_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -313,7 +316,7 @@ pkgpyexec_LTLIBRARIES     += _medprofile.la
 _medprofile_la_LDFLAGS         = -module -no-undefined
 
 _medprofile_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medprofile_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medprofile_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medprofile_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medprofile_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medprofile_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -335,7 +338,7 @@ pkgpyexec_LTLIBRARIES     += _medlocalization.la
 _medlocalization_la_LDFLAGS         = -module -no-undefined
 
 _medlocalization_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medlocalization_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medlocalization_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medlocalization_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medlocalization_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medlocalization_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -357,7 +360,7 @@ pkgpyexec_LTLIBRARIES     += _medlink.la
 _medlink_la_LDFLAGS         = -module -no-undefined
 
 _medlink_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medlink_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medlink_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medlink_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medlink_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medlink_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -379,7 +382,7 @@ pkgpyexec_LTLIBRARIES     += _medparameter.la
 _medparameter_la_LDFLAGS         = -module -no-undefined
 
 _medparameter_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medparameter_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medparameter_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medparameter_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medparameter_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medparameter_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -401,7 +404,7 @@ pkgpyexec_LTLIBRARIES     += _medfilter.la
 _medfilter_la_LDFLAGS         = -module -no-undefined
 
 _medfilter_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medfilter_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medfilter_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medfilter_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medfilter_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medfilter_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -423,7 +426,7 @@ pkgpyexec_LTLIBRARIES     += _medsubdomain.la
 _medsubdomain_la_LDFLAGS         = -module -no-undefined
 
 _medsubdomain_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medsubdomain_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medsubdomain_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medsubdomain_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medsubdomain_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medsubdomain_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -445,7 +448,7 @@ pkgpyexec_LTLIBRARIES     += _medinterp.la
 _medinterp_la_LDFLAGS         = -module -no-undefined
 
 _medinterp_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medinterp_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medinterp_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medinterp_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medinterp_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medinterp_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -467,7 +470,7 @@ pkgpyexec_LTLIBRARIES     += _medstructelement.la
 _medstructelement_la_LDFLAGS         = -module -no-undefined
 
 _medstructelement_la_LIBADD          = $(top_builddir)/src/libmed.la
-_medstructelement_la_CPPFLAGS        = $(SWIG_PYTHON_CPPFLAGS)
+_medstructelement_la_CPPFLAGS        = $(AX_SWIG_PYTHON_CPPFLAGS)
 _medstructelement_la_CPPFLAGS       += $(PYTHON_CPPFLAGS)
 _medstructelement_la_CPPFLAGS       += $(AM_CPPFLAGS)
 _medstructelement_la_CXXFLAGS        = $(AM_CFLAGS)
@@ -532,7 +535,7 @@ DISTCLEANFILES+=\
 ./medprofile_long.py            \
 ./medlocalization_long.py       \
 ./medlibrary_long_wrap.cc       \
-./medlongerp_long.py            \
+./medinterp_long.py             \
 ./medlocalization_long_wrap.cc  \
 ./medequivalence_long_wrap.cc   \
 ./medlink_long_wrap.cc          \
@@ -540,13 +543,18 @@ DISTCLEANFILES+=\
 ./medfamily_long_wrap.cc        \
 ./medsubdomain_long.py          \
 ./medmesh_long_wrap.cc          \
-./medlongerp_long_wrap.cc       \
+./medinterp_long_wrap.cc        \
 ./medfield_long_wrap.cc         \
 ./medparameter_long.py          \
 ./medfile_long.py               \
 ./medenum_long.py               \
 ./medenum_long_wrap.cc          \
 ./medprofile_long_wrap.cc       \
-./medfilter_long.py
+./medfilter_long.py             \
+./medstructelement_int.py       \
+./medstructelement_int_wrap.cc  \
+./medstructelement_long.py      \
+./medstructelement_long_wrap.cc \
+./swig_runtime.h
 
 DISTCLEANFILES+= $(local_depfiles)

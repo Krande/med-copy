@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MED fichier: Référence du fichier Test_MEDinterpInfo.c</title>
+<title>MED fichier: Référence du fichier medstructelement.f</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,70 +38,89 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_a772e3069001940b0633c6a305062f73.html">tests</a></li><li class="navelem"><a class="el" href="dir_ca55358fdb01021501cf562e880f32e7.html">unittests</a></li><li class="navelem"><a class="el" href="dir_2db6a5dddb6a3671c4b40518fcb87ef8.html">c</a></li><li class="navelem"><a class="el" href="dir_fa1d0f2f50e5627b1b6ab1d77bb24a45.html">MEDinterp</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_21ff39c74838e10d1b918a45b9d185d5.html">src</a></li><li class="navelem"><a class="el" href="dir_dbd2ee24887c28c24b530cac4c2c97c8.html">fi</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Fonctions</a>  </div>
+<a href="#func-members">Fonctions/Subroutines</a>  </div>
   <div class="headertitle">
-<div class="title">Référence du fichier Test_MEDinterpInfo.c</div>  </div>
+<div class="title">Référence du fichier medstructelement.f</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="a02309_source.html">med.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="a02315_source.html">med_utils.h</a>&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Graphe des dépendances par inclusion de Test_MEDinterpInfo.c:</div>
-<div class="dyncontent">
-<div class="center"><img src="a02076.jpg" border="0" usemap="#Test__MEDinterpInfo_8c" alt=""/></div>
-<map name="Test__MEDinterpInfo_8c" id="Test__MEDinterpInfo_8c">
-<area shape="rect" title=" " alt="" coords="1327,5,1477,32"/>
-<area shape="rect" href="a02309.html" title=" " alt="" coords="826,80,885,107"/>
-<area shape="rect" href="a02315.html" title=" " alt="" coords="1357,80,1447,107"/>
-<area shape="rect" title=" " alt="" coords="1471,80,1536,107"/>
-<area shape="rect" title=" " alt="" coords="725,155,783,181"/>
-<area shape="rect" href="a01343.html" title=" " alt="" coords="808,155,903,181"/>
-<area shape="rect" href="a01367.html" title=" " alt="" coords="798,304,913,331"/>
-<area shape="rect" href="a01400.html" title=" " alt="" coords="23,229,117,256"/>
-<area shape="rect" href="a01385.html" title=" " alt="" coords="141,229,215,256"/>
-<area shape="rect" href="a01412.html" title=" " alt="" coords="239,229,330,256"/>
-<area shape="rect" href="a01379.html" title=" " alt="" coords="354,229,437,256"/>
-<area shape="rect" href="a01376.html" title=" " alt="" coords="461,229,554,256"/>
-<area shape="rect" href="a01370.html" title=" " alt="" coords="579,229,705,256"/>
-<area shape="rect" href="a01427.html" title=" " alt="" coords="729,229,851,256"/>
-<area shape="rect" href="a01421.html" title=" " alt="" coords="875,229,969,256"/>
-<area shape="rect" href="a01391.html" title=" " alt="" coords="993,229,1075,256"/>
-<area shape="rect" href="a01406.html" title=" " alt="" coords="1099,229,1222,256"/>
-<area shape="rect" href="a01403.html" title=" " alt="" coords="1247,229,1325,256"/>
-<area shape="rect" href="a01424.html" title=" " alt="" coords="1349,229,1487,256"/>
-<area shape="rect" href="a01418.html" title=" " alt="" coords="1511,229,1627,256"/>
-<area shape="rect" href="a01397.html" title=" " alt="" coords="1651,229,1742,256"/>
-<area shape="rect" title=" " alt="" coords="1317,155,1381,181"/>
-<area shape="rect" href="a01325.html" title=" " alt="" coords="1405,155,1505,181"/>
-<area shape="rect" href="a01322.html" title=" " alt="" coords="1529,155,1609,181"/>
-</map>
-</div>
-</div>
+
 <p><a href="a02075_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a8e315da8f14d473c025c8a1f6af2f979"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02075_a8e315da8f14d473c025c8a1f6af2f979.html#a8e315da8f14d473c025c8a1f6af2f979">MESGERR</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a8e315da8f14d473c025c8a1f6af2f979"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29a43500a889d39744e184ece0d749be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02075_a29a43500a889d39744e184ece0d749be.html#a29a43500a889d39744e184ece0d749be">MODE_ACCES</a>&#160;&#160;&#160;<a class="el" href="a02309_adcd0322de9fec3b5e199ffeda3f44c85.html#adcd0322de9fec3b5e199ffeda3f44c85aa23dd1c18b596924d5f50c8402b84c8e">MED_ACC_CREAT</a></td></tr>
-<tr class="separator:a29a43500a889d39744e184ece0d749be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Fonctions</h2></td></tr>
-<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02075_a3c04138a5bfe5d72780bb7e82a18e627.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
-<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Fonctions/Subroutines</h2></td></tr>
+<tr class="memitem:ga80f3a277c487989f3dabcdf442005ba2"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_ga80f3a277c487989f3dabcdf442005ba2.html#ga80f3a277c487989f3dabcdf442005ba2">msecre</a> (fid, mname, mdim, smname, setype, sgtype, etype, cret)</td></tr>
+<tr class="memdesc:ga80f3a277c487989f3dabcdf442005ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine permet de créer un nouveau modèle d'éléments de structure dans un fichier MED.  <a href="a02375_ga80f3a277c487989f3dabcdf442005ba2.html#ga80f3a277c487989f3dabcdf442005ba2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga80f3a277c487989f3dabcdf442005ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae14abb17891b6f1f480ebc88c6e080a6"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_gae14abb17891b6f1f480ebc88c6e080a6.html#gae14abb17891b6f1f480ebc88c6e080a6">msense</a> (fid, n, cret)</td></tr>
+<tr class="memdesc:gae14abb17891b6f1f480ebc88c6e080a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine renvoie le nombre de modèles d'éléments de structure.  <a href="a02375_gae14abb17891b6f1f480ebc88c6e080a6.html#gae14abb17891b6f1f480ebc88c6e080a6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gae14abb17891b6f1f480ebc88c6e080a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade1dab05fe45f14eb5bac31d4fd6cad5"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_gade1dab05fe45f14eb5bac31d4fd6cad5.html#gade1dab05fe45f14eb5bac31d4fd6cad5">msesei</a> (fid, it, mname, mgtype, mdim, smname, setype, snnode, sncell, sgtype, ncatt, ap, nvatt, cret)</td></tr>
+<tr class="memdesc:gade1dab05fe45f14eb5bac31d4fd6cad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine décrit les caractéristiques d'un modèle d'élément de structure par itération.  <a href="a02375_gade1dab05fe45f14eb5bac31d4fd6cad5.html#gade1dab05fe45f14eb5bac31d4fd6cad5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gade1dab05fe45f14eb5bac31d4fd6cad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga828b9c113fbc1ebee646a89fadfd5704"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_ga828b9c113fbc1ebee646a89fadfd5704.html#ga828b9c113fbc1ebee646a89fadfd5704">msesin</a> (fid, mname, mgtype, mdim, smname, setype, snnode, sncell, sgtype, ncatt, ap, nvatt, cret)</td></tr>
+<tr class="memdesc:ga828b9c113fbc1ebee646a89fadfd5704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine décrit les caractéristiques d'un modèle d'élément de structure à partir de son nom.  <a href="a02375_ga828b9c113fbc1ebee646a89fadfd5704.html#ga828b9c113fbc1ebee646a89fadfd5704">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga828b9c113fbc1ebee646a89fadfd5704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43e688e823d3ddd0c1c559451a3894ae"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_ga43e688e823d3ddd0c1c559451a3894ae.html#ga43e688e823d3ddd0c1c559451a3894ae">msesen</a> (fid, mgtype, mname, cret)</td></tr>
+<tr class="memdesc:ga43e688e823d3ddd0c1c559451a3894ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine renvoie le nom du modèle d'éléments de structure associé au type <em>mgeotype</em>.  <a href="a02375_ga43e688e823d3ddd0c1c559451a3894ae.html#ga43e688e823d3ddd0c1c559451a3894ae">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga43e688e823d3ddd0c1c559451a3894ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83627d3323d4af0d0546f5585fdd7fcb"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_ga83627d3323d4af0d0546f5585fdd7fcb.html#ga83627d3323d4af0d0546f5585fdd7fcb">msesgt</a> (fid, mname, gtype, cret)</td></tr>
+<tr class="memdesc:ga83627d3323d4af0d0546f5585fdd7fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine renvoie le type géométrique <em>mgeotype</em> associé au modèle d'éléments de structure de nom <em>modelname</em>.  <a href="a02375_ga83627d3323d4af0d0546f5585fdd7fcb.html#ga83627d3323d4af0d0546f5585fdd7fcb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga83627d3323d4af0d0546f5585fdd7fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f7862f73c77451fda10a80f4c18f35f"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_ga5f7862f73c77451fda10a80f4c18f35f.html#ga5f7862f73c77451fda10a80f4c18f35f">msevac</a> (fid, mname, aname, atype, anc, cret)</td></tr>
+<tr class="memdesc:ga5f7862f73c77451fda10a80f4c18f35f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine déclare la présence d'un attribut caractéristique variable attaché aux éléments de type <em>modelname</em>.  <a href="a02375_ga5f7862f73c77451fda10a80f4c18f35f.html#ga5f7862f73c77451fda10a80f4c18f35f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5f7862f73c77451fda10a80f4c18f35f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad486929c2cd06de83990ad45823fc3cf"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_gad486929c2cd06de83990ad45823fc3cf.html#gad486929c2cd06de83990ad45823fc3cf">msevni</a> (fid, mname, aname, atype, anc, cret)</td></tr>
+<tr class="memdesc:gad486929c2cd06de83990ad45823fc3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine décrit les caractéristiques d'un attribut variable de modèle d'élément de structure à partir de son nom.  <a href="a02375_gad486929c2cd06de83990ad45823fc3cf.html#gad486929c2cd06de83990ad45823fc3cf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gad486929c2cd06de83990ad45823fc3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7890c940eaa1f8c6d53f6893d0543ba"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_gae7890c940eaa1f8c6d53f6893d0543ba.html#gae7890c940eaa1f8c6d53f6893d0543ba">msevai</a> (fid, mname, it, aname, atype, anc, cret)</td></tr>
+<tr class="memdesc:gae7890c940eaa1f8c6d53f6893d0543ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine décrit les caractéristiques d'un attribut variable de modèle d'élément de structure par itération.  <a href="a02375_gae7890c940eaa1f8c6d53f6893d0543ba.html#gae7890c940eaa1f8c6d53f6893d0543ba">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gae7890c940eaa1f8c6d53f6893d0543ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab1cd10c94f2ebafc51805c5490597253"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_gab1cd10c94f2ebafc51805c5490597253.html#gab1cd10c94f2ebafc51805c5490597253">mseasz</a> (atype, size, cret)</td></tr>
+<tr class="memdesc:gab1cd10c94f2ebafc51805c5490597253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine renvoie la taille en octets du type élémentaire <em>atttype</em>.  <a href="a02375_gab1cd10c94f2ebafc51805c5490597253.html#gab1cd10c94f2ebafc51805c5490597253">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gab1cd10c94f2ebafc51805c5490597253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga60f2d448a1b86749c7049e0ed3cea3bd"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_ga60f2d448a1b86749c7049e0ed3cea3bd.html#ga60f2d448a1b86749c7049e0ed3cea3bd">mseraw</a> (fid, mname, aname, atype, anc, setype, val, cret)</td></tr>
+<tr class="memdesc:ga60f2d448a1b86749c7049e0ed3cea3bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine définit un attribut caractéristique constant d'un modèle d'éléments de structure. Les valeurs sont reelles.  <a href="a02375_ga60f2d448a1b86749c7049e0ed3cea3bd.html#ga60f2d448a1b86749c7049e0ed3cea3bd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga60f2d448a1b86749c7049e0ed3cea3bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37c2870b9d3ae0a4f240dc8f2d6547db"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_ga37c2870b9d3ae0a4f240dc8f2d6547db.html#ga37c2870b9d3ae0a4f240dc8f2d6547db">mseiaw</a> (fid, mname, aname, atype, anc, setype, val, cret)</td></tr>
+<tr class="memdesc:ga37c2870b9d3ae0a4f240dc8f2d6547db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine définit un attribut caractéristique constant d'un modèle d'éléments de structure. Les valeurs sont entieres.  <a href="a02375_ga37c2870b9d3ae0a4f240dc8f2d6547db.html#ga37c2870b9d3ae0a4f240dc8f2d6547db">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga37c2870b9d3ae0a4f240dc8f2d6547db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e1629648a6de4834329c3bd5dc3d92c"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_ga4e1629648a6de4834329c3bd5dc3d92c.html#ga4e1629648a6de4834329c3bd5dc3d92c">msesaw</a> (fid, mname, aname, atype, anc, setype, val, cret)</td></tr>
+<tr class="memdesc:ga4e1629648a6de4834329c3bd5dc3d92c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine définit un attribut caractéristique constant d'un modèle d'éléments de structure. Les valeurs sont des chaines de caracteres.  <a href="a02375_ga4e1629648a6de4834329c3bd5dc3d92c.html#ga4e1629648a6de4834329c3bd5dc3d92c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga4e1629648a6de4834329c3bd5dc3d92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafb90ddf463c56822261e1e0a3f49340e"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_gafb90ddf463c56822261e1e0a3f49340e.html#gafb90ddf463c56822261e1e0a3f49340e">mserpw</a> (fid, mname, aname, atype, anc, setype, pname, val, cret)</td></tr>
+<tr class="memdesc:gafb90ddf463c56822261e1e0a3f49340e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine définit un attribut caractéristique constant d'un modèle d'éléments de structure. Les valeurs sont reelles.  <a href="a02375_gafb90ddf463c56822261e1e0a3f49340e.html#gafb90ddf463c56822261e1e0a3f49340e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gafb90ddf463c56822261e1e0a3f49340e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9bdd31f4d8ed07c9f0fc96f340d9234d"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_ga9bdd31f4d8ed07c9f0fc96f340d9234d.html#ga9bdd31f4d8ed07c9f0fc96f340d9234d">mseipw</a> (fid, mname, aname, atype, anc, setype, pname, val, cret)</td></tr>
+<tr class="memdesc:ga9bdd31f4d8ed07c9f0fc96f340d9234d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine définit un attribut caractéristique constant d'un modèle d'éléments de structure. Les valeurs sont entieres.  <a href="a02375_ga9bdd31f4d8ed07c9f0fc96f340d9234d.html#ga9bdd31f4d8ed07c9f0fc96f340d9234d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga9bdd31f4d8ed07c9f0fc96f340d9234d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga802fc8379d73d146d0771518f8da150a"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_ga802fc8379d73d146d0771518f8da150a.html#ga802fc8379d73d146d0771518f8da150a">msespw</a> (fid, mname, aname, atype, anc, setype, pname, val, cret)</td></tr>
+<tr class="memdesc:ga802fc8379d73d146d0771518f8da150a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine définit un attribut caractéristique constant d'un modèle d'éléments de structure. Les valeurs sont des chaines de caracteres.  <a href="a02375_ga802fc8379d73d146d0771518f8da150a.html#ga802fc8379d73d146d0771518f8da150a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga802fc8379d73d146d0771518f8da150a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad53403a1961254a1356c70c375c12cf6"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_gad53403a1961254a1356c70c375c12cf6.html#gad53403a1961254a1356c70c375c12cf6">msecni</a> (fid, mname, aname, atype, anc, setype, pname, psize, cret)</td></tr>
+<tr class="memdesc:gad53403a1961254a1356c70c375c12cf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine décrit les caractéristiques d'un attribut constant de modèle d'élément de structure à partir de son nom.  <a href="a02375_gad53403a1961254a1356c70c375c12cf6.html#gad53403a1961254a1356c70c375c12cf6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gad53403a1961254a1356c70c375c12cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8857ccbcfc7ff55deb000b9b19d5d63"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_gad8857ccbcfc7ff55deb000b9b19d5d63.html#gad8857ccbcfc7ff55deb000b9b19d5d63">msecai</a> (fid, mname, it, aname, atype, anc, setype, pname, psize, cret)</td></tr>
+<tr class="memdesc:gad8857ccbcfc7ff55deb000b9b19d5d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine décrit les caractéristiques d'un attribut constant de modèle d'élément de structure par itération.  <a href="a02375_gad8857ccbcfc7ff55deb000b9b19d5d63.html#gad8857ccbcfc7ff55deb000b9b19d5d63">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gad8857ccbcfc7ff55deb000b9b19d5d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga51727887d739a3b3732ba470e596ce3f"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_ga51727887d739a3b3732ba470e596ce3f.html#ga51727887d739a3b3732ba470e596ce3f">mserar</a> (fid, mname, aname, val, cret)</td></tr>
+<tr class="memdesc:ga51727887d739a3b3732ba470e596ce3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine lit la valeur d'un attribut caractéristique constant d'un modèle d'éléments de structure. Les valeurs lues sont reelles.  <a href="a02375_ga51727887d739a3b3732ba470e596ce3f.html#ga51727887d739a3b3732ba470e596ce3f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga51727887d739a3b3732ba470e596ce3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d106f2ce183a5d1bab0bceddf5ca8fd"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_ga3d106f2ce183a5d1bab0bceddf5ca8fd.html#ga3d106f2ce183a5d1bab0bceddf5ca8fd">mseiar</a> (fid, mname, aname, val, cret)</td></tr>
+<tr class="memdesc:ga3d106f2ce183a5d1bab0bceddf5ca8fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine lit la valeur d'un attribut caractéristique constant d'un modèle d'éléments de structure. Les valeurs lues sont entieres.  <a href="a02375_ga3d106f2ce183a5d1bab0bceddf5ca8fd.html#ga3d106f2ce183a5d1bab0bceddf5ca8fd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga3d106f2ce183a5d1bab0bceddf5ca8fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaae3d520c36392441c49f4ae22aa06285"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02375_gaae3d520c36392441c49f4ae22aa06285.html#gaae3d520c36392441c49f4ae22aa06285">msesar</a> (fid, mname, aname, val, cret)</td></tr>
+<tr class="memdesc:gaae3d520c36392441c49f4ae22aa06285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine lit la valeur d'un attribut caractéristique constant d'un modèle d'éléments de structure. Les valeurs lues sont des chaines de caracteres.  <a href="a02375_gaae3d520c36392441c49f4ae22aa06285.html#gaae3d520c36392441c49f4ae22aa06285">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gaae3d520c36392441c49f4ae22aa06285"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 8 Octobre 2021 13:44:10 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 21 Mai 2025 19:18:33 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.16
 </small></address>

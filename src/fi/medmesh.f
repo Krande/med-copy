@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -17,7 +17,7 @@ C
 
       subroutine mmhcre(fid, name, sdim, mdim, mtype, desc, dtunit,
      &                  stype, atype, aname, aunit, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcre
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhcre
 c
       implicit none
       save
@@ -38,7 +38,7 @@ c
 c
 c
       subroutine mmhnmh( fid , n , cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhnmh
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhnmh
 c
       implicit none
       save
@@ -61,7 +61,7 @@ c
 c
 c
       subroutine mmhnax( fid , it, naxis, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhnax
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhnax
 c
       implicit none
       save
@@ -83,7 +83,7 @@ c
 c
 c
       subroutine  mmhnan( fid , name, naxis, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhnan
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhnan
 c
       implicit none
       save
@@ -107,7 +107,7 @@ c
 c
       subroutine mmhmii(fid, it, name, sdim, mdim, mtype, desc, dtunit,
      &                  stype, nstep, atype, aname, aunit, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhmii
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhmii
 c
       implicit none
       save
@@ -127,7 +127,7 @@ c
 c
       subroutine mmhmin(fid, name, sdim, mdim, mtype, desc, dtunit,
      &                  stype, nstep, atype, aname, aunit, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhmin
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhmin
 c
       implicit none
       save
@@ -147,7 +147,7 @@ c
 c
 c
       subroutine  mmhunw( fid , name, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhunw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhunw
 c
       implicit none
       save
@@ -165,7 +165,7 @@ c
 c
 c
       subroutine  mmhunr( fid , mname, uname, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhunr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhunr
 c
       implicit none
       save
@@ -184,7 +184,7 @@ c
 c
 c
       subroutine  mmhatw( fid , name, nin, nvn, nnc, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhatw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhatw
 c
       implicit none
       save
@@ -202,7 +202,7 @@ c
 c
 c
       subroutine  mmhatr( fid , name, nin, nvn, nnc, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhatr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhatr
 c
       implicit none
       save
@@ -220,7 +220,7 @@ c
 c
 c
       subroutine  mmhgtw( fid , name, gtype, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhgtw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhgtw
 c
       implicit none
       save
@@ -238,7 +238,7 @@ c
 c
 c
       subroutine  mmhgtr( fid , name, gtype, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhgtr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhgtr
 c
       implicit none
       save
@@ -256,7 +256,7 @@ c
 c
 c
       subroutine  mmhgsw( fid , name, numdt, numit, dt, st, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhgsw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhgsw
 c
       implicit none
       save
@@ -276,7 +276,7 @@ c
 c
 c
       subroutine mmhgsr( fid , name, numdt, numit, st, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhgsr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhgsr
 c
       implicit none
       save
@@ -296,7 +296,7 @@ c
 c
       subroutine  mmhcow( fid , name, numdt, numit, dt, 
      &                    swm, n, coo, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcow
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhcow
 c
       implicit none
       save
@@ -317,7 +317,7 @@ c
 c
       subroutine  mmhcor( fid , name, numdt, numit,
      &                    swm, coo, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcor
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhcor
 c
       implicit none
       save
@@ -337,7 +337,7 @@ c
 c
       subroutine  mmhcpw( fid , name, numdt, numit, dt, 
      &                    stm, pname, swm, dim, n, coo, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcpw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhcpw
 c
       implicit none
       save
@@ -359,7 +359,7 @@ c
 c
       subroutine  mmhcpr( fid , name, numdt, numit,
      &                    stm, pname, swm, dim, coo, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcpr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhcpr
 c
       implicit none
       save
@@ -380,7 +380,7 @@ c
 c
       subroutine  mmhgcw( fid , name, numdt, numit, dt, 
      &                    axis, size, index, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhgcw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhgcw
 c
       implicit none
       save
@@ -401,7 +401,7 @@ c
 c
       subroutine  mmhgcr( fid , name, numdt, numit, 
      &                    axis, index, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhgcr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhgcr
 c
       implicit none
       save
@@ -421,7 +421,7 @@ c
 c
       subroutine  mmhenw(fid,name,numdt,numit,entype,geotype, 
      &                   n,num,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhenw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhenw
 c
       implicit none
       save
@@ -442,7 +442,7 @@ c
 c
       subroutine  mmhenr(fid,name,numdt,numit,entype,geotype, 
      &                   num,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhenr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhenr
 c
       implicit none
       save
@@ -463,7 +463,7 @@ c
 c
       subroutine  mmhfnw(fid,name,numdt,numit,entype,geotype, 
      &                   n,num,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhfnw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhfnw
 c
       implicit none
       save
@@ -484,7 +484,7 @@ c
 c
       subroutine  mmhfnr(fid,name,numdt,numit,entype,geotype, 
      &                   num,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhfnr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhfnr
 c
       implicit none
       save
@@ -505,7 +505,7 @@ c
 c
       subroutine mmheaw(fid,mname,numdt,numit,entype,geotype,
      &                  n,ename,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmheaw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmheaw
 c
       implicit none
       save
@@ -526,7 +526,7 @@ c
 c
       subroutine mmhear(fid,mname,numdt,numit,entype,geotype,
      &                  ename,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhear
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhear
 c
       implicit none
       save
@@ -548,7 +548,7 @@ c
       subroutine mmhnme(fid,name,numdt,numit,
      &                  entype,geotype,datype,cmode,
      &                  chgt,tsf,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhnme
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhnme
 c
       implicit none
       save
@@ -575,7 +575,7 @@ c
 c
       subroutine  mmhcyw(fid,name,numdt,numit,dt,entype,geotype, 
      &                   cmode,swm,n,con,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcyw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhcyw
 c
       implicit none
       save
@@ -597,7 +597,7 @@ c
 c
       subroutine  mmhcyr(fid,name,numdt,numit,entype,geotype, 
      &                   cmode,swm,con,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcyr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhcyr
 c
       implicit none
       save
@@ -618,7 +618,7 @@ c
 c
       subroutine  mmhypw(fid,name,numdt,numit,dt,entype,geotype, 
      &                   cmode,stmode,pname,swm,dim,n,con,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhypw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhypw
 c
       implicit none
       save
@@ -642,7 +642,7 @@ c
 c
       subroutine  mmhypr(fid,name,numdt,numit,entype,geotype, 
      &                   cmode,stmode,pname,swm,dim,n,con,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhypr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhypr
 c
       implicit none
       save
@@ -667,7 +667,7 @@ c
      &                  entype,geotype,datype,cmode,
      &                  stmode,pname,psize,
      &                  chgt,tsf,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhnep
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhnep
 c
       implicit none
       save
@@ -698,7 +698,7 @@ c
       subroutine  mmhnor(fid , name, numdt, numit, 
      &                   swm, coo, iname, nname, inum, num,
      &                   ifam,fam, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhnor
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhnor
       implicit none
       save
 c
@@ -723,7 +723,7 @@ c
       subroutine  mmhnow(fid, name, numdt, numit, dt,
      &                   swm, n, coo, iname, nname, inum, num,
      &                   ifam, fam, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhnow
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhnow
 c
       implicit none
       save
@@ -748,7 +748,7 @@ c
       subroutine  mmhelw(fid,name,numdt,numit,dt,entype,geotype, 
      &                   cmode,swm,n,con,iname, nname, inum, num,
      &                   ifam,fam,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhelw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhelw
 c
       implicit none
       save
@@ -775,7 +775,7 @@ c
       subroutine  mmhelr(fid,name,numdt,numit,entype,geotype, 
      &                   cmode,swm,con,iname, nname, inum, num,
      &                   ifam,fam,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhelr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhelr
 c
       implicit none
       save
@@ -799,7 +799,7 @@ c
 c
       subroutine mmhcaw( fid , name, numdt, numit, dt, 
      &                    flt, coo, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcaw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhcaw
 c
       implicit none
       save
@@ -821,7 +821,7 @@ c
 c
       subroutine  mmhcar(fid , name, numdt, numit,
      &                   flt, coo, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcar
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhcar
 c
       implicit none
       save
@@ -842,7 +842,7 @@ c
 c
       subroutine  mmhyaw(fid,name,numdt,numit,dt,entype,geotype, 
      &                   cmode,flt,con,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhyaw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhyaw
 c
       implicit none
       save
@@ -865,7 +865,7 @@ c
 c
       subroutine  mmhyar(fid,name,numdt,numit,entype,geotype, 
      &                   cmode,flt,con,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhyar
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhyar
 c
       implicit none
       save
@@ -887,7 +887,7 @@ c
 c
       subroutine  mmhpgw(fid,name,numdt,numit,dt,entype,
      &                   cmode,isize,index,con,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhpgw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhpgw
 c
       implicit none
       save
@@ -909,7 +909,7 @@ c
 c
       subroutine  mmhpgr(fid,name,numdt,numit,entype,
      &                   cmode,index,con,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhpgr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhpgr
 c
       implicit none
       save
@@ -930,7 +930,7 @@ c
 c
       subroutine  mmhphw(fid,name,numdt,numit,dt,entype,
      &                   cmode,fisize,findex,nisize,nindex,con,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhphw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhphw
 c
       implicit none
       save
@@ -952,7 +952,7 @@ c
 c
       subroutine  mmhphr(fid,name,numdt,numit,entype,
      &                   cmode,findex,nindex,con,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhphr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhphr
 c
       implicit none
       save
@@ -973,7 +973,7 @@ c
 c
       subroutine  mmhgnw(fid,name,numdt,numit,entype,geotype, 
      &                   n,num,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhgnw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhgnw
 c
       implicit none
       save
@@ -994,7 +994,7 @@ c
 c
       subroutine  mmhgnr(fid,name,numdt,numit,entype,geotype, 
      &                   num,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhgnr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhgnr
 c
       implicit none
       save
@@ -1015,7 +1015,7 @@ c
 c
       subroutine  mmhcsc(fid,name,numdt1,numit1,numdt2,numit2,
      &                   dt2,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcsc
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhcsc
 c
       implicit none
       save
@@ -1035,7 +1035,7 @@ c
 c
 c
       subroutine  mmhcsi(fid,name,csit,numdt,numit,dt,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcsi
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhcsi
 c
       implicit none
       save
@@ -1054,7 +1054,7 @@ c
 c
 c
       subroutine  mmhcsr(fid,name,numdt,numit,dt,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhcsr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhcsr
 c
       implicit none
       save
@@ -1073,7 +1073,7 @@ c
 c
 c
       subroutine  mmhstr(fid,name,stype,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhstr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhstr
 c
       implicit none
       save
@@ -1093,7 +1093,7 @@ c
       subroutine mmhraw(fid,name,numdt,numit,
      &                  geotype,aname,n,
      &                  val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhraw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhraw
 c
       implicit none
       save
@@ -1116,7 +1116,7 @@ c
       subroutine mmhiaw(fid,name,numdt,numit,
      &                  geotype,aname,n,
      &                  val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhiaw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhiaw
 c
       implicit none
       save
@@ -1139,7 +1139,7 @@ c
       subroutine mmhsaw(fid,name,numdt,numit,
      &                  geotype,aname,n,
      &                  val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhsaw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhsaw
 c
       implicit none
       save
@@ -1162,7 +1162,7 @@ c
       subroutine mmhrar(fid,name,numdt,numit,
      &                  geotype,aname,
      &                  val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhrar
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhrar
 c
       implicit none
       save
@@ -1183,7 +1183,7 @@ c
 c
       subroutine mmhiar(fid,name,numdt,numit,
      &                  geotype,aname,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhfiar
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhfiar
 c
       implicit none
       save
@@ -1204,7 +1204,7 @@ c
 c
       subroutine mmhsar(fid,name,numdt,numit,
      &                  geotype,aname,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhsar
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhsar
 c
       implicit none
       save
@@ -1226,7 +1226,7 @@ c
 c
       subroutine  mmheni(fid,name,numdt,numit,entype,it, 
      &                   geoname,geotype,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmheni
+cDEC$ ATTRIBUTES DLLEXPORT :: mmheni
 c
       implicit none
       save
@@ -1246,7 +1246,7 @@ c
 c
       subroutine  mmhtfw( fid , name, numdt, numit, dt, 
      &                    tsf,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhtfw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhtfw
 c
       implicit none
       save
@@ -1267,7 +1267,7 @@ c
 c
       subroutine mmhtfr( fid , name, numdt, numit, 
      &                   tsf,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhtfr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhtfr
 c
       implicit none
       save
@@ -1287,7 +1287,7 @@ c
 c
       subroutine mmhaaw(fid,mname,dtype,numdt,numit,entype,geotype,
      &                  flt,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhaaw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhaaw
 c
       implicit none
       save
@@ -1310,7 +1310,7 @@ c
 c
       subroutine mmhaar(fid,mname,dtype,numdt,numit,entype,geotype,
      &                  flt,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhaar
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhaar
 c
       implicit none
       save
@@ -1333,7 +1333,7 @@ c
 c
       subroutine mmhasw(fid,mname,dtype,numdt,numit,entype,geotype,
      &                  flt,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhasw
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhasw
 c
       implicit none
       save
@@ -1356,7 +1356,7 @@ c
 c
       subroutine mmhasr(fid,mname,dtype,numdt,numit,entype,geotype,
      &                  flt,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mmhasr
+cDEC$ ATTRIBUTES DLLEXPORT :: mmhasr
 c
       implicit none
       save

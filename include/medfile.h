@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -58,12 +58,21 @@ MEDfileName(med_idt fid, char * const filename, const med_int filenamesize);
 MEDC_EXPORT med_err
 MEDfileClose(med_idt fid);
 
-MEDC_EXPORT med_err
+/* deprecated functions:  */
+/* use MEDfileDescription */  
+MED_DEPRECATED(4.2.0) MEDC_EXPORT med_err
 MEDfileCommentWr(const med_idt fid,
-		 const char* const comment);
-MEDC_EXPORT med_err
+		 const char* const description);
+MED_DEPRECATED(4.2.0) MEDC_EXPORT med_err
 MEDfileCommentRd(const med_idt fid,
-		 char* const comment);
+		 char* const description);
+
+MEDC_EXPORT med_err
+MEDfileDescriptionWr(const med_idt fid,
+		     const char* const description);
+MEDC_EXPORT med_err
+MEDfileDescriptionRd(const med_idt fid,
+		           char* const description);
 MEDC_EXPORT med_err
 MEDfileCompatibility(const char* const filename,
 		     med_bool* const hdfok,
@@ -93,8 +102,40 @@ MEDfileObjectsUnmount(const med_idt fid,
 MEDC_EXPORT med_err
 MEDfileObjectExist(const med_idt           fid,
 		   const med_class         medclass,
-		   const char * const      objectname,
-		   med_bool   * const      objectexist );
+		   const char      * const objectname,
+		         med_bool  * const objectexist);
+
+MEDC_EXPORT med_err
+MEDfileObjectDescriptionExist(const med_idt           fid,
+			      const med_class         medclass,
+			      const char      * const objectname,
+			            med_bool  * const descriptionexist);
+
+MEDC_EXPORT med_err
+MEDfileObjectDescriptionExistByPath(const med_idt           fid,
+				          med_path  * const medpath,
+			                  med_bool  * const descriptionexist);
+
+MEDC_EXPORT med_err
+MEDfileObjectDescriptionWr(const med_idt           fid,
+			   const med_class         medclass,
+			   const char      * const objectname,
+			   const char      * const description);
+
+MEDC_EXPORT med_err
+MEDfileObjectDescriptionWrByPath(const med_idt           fid,
+				       med_path  * const medpath,
+				 const char      * const description);
+
+MEDC_EXPORT med_err
+MEDfileObjectDescriptionRd(const med_idt           fid,
+			   const med_class         medclass,
+			   const char      * const objectname,
+			         char      * const description);
+MEDC_EXPORT med_err
+MEDfileObjectDescriptionRdByPath(const med_idt           fid,
+				       med_path  * const medpath,
+				       char      * const description);
 
 #ifdef __cplusplus
 }

@@ -1,6 +1,6 @@
 !*  This file is part of MED.
 !*
-!*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+!*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 !*  MED is free software: you can redistribute it and/or modify
 !*  it under the terms of the GNU Lesser General Public License as published by
 !*  the Free Software Foundation, either version 3 of the License, or
@@ -453,7 +453,7 @@ integer function getFieldsOn(fid, nomcha, typcha, ncomp, entite, stockage, ncst)
                  cret = -1;
                  call efexit(cret)
               endif
-           else	  
+           else   
               allocate(vale(ncomp*nent*ngauss),STAT=retmem)
 
               call mfdipr(fid,nomcha,numdt,numo,entite,type_geo(k),USER_MODE, &

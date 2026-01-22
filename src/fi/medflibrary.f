@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -16,7 +16,7 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C*
 
       subroutine mlbclo(cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlbclo
+cDEC$ ATTRIBUTES DLLEXPORT :: mlbclo
 c
       implicit none
       save
@@ -32,7 +32,7 @@ c
 
 
       subroutine mlbnuv(major,minor,rel,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlbnuv
+cDEC$ ATTRIBUTES DLLEXPORT :: mlbnuv
 c
       implicit none
       save
@@ -48,7 +48,7 @@ c
 
 
       subroutine mlbstv(version,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlbstv
+cDEC$ ATTRIBUTES DLLEXPORT :: mlbstv
 c
       implicit none
       save
@@ -65,7 +65,7 @@ c
 
 
       subroutine mlbhnv(major,minor,rel,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlbhnv
+cDEC$ ATTRIBUTES DLLEXPORT :: mlbhnv
 c
       implicit none
       save
@@ -81,7 +81,7 @@ c
 
 
       subroutine mlbhsv(version,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlbhsv
+cDEC$ ATTRIBUTES DLLEXPORT :: mlbhsv
 c
       implicit none
       save

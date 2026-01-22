@@ -46,7 +46,7 @@
    \param com \comm
    \param info \info
    \param cret \error
-   \see MEDparfileOpen
+   \see MEDparFileOpen
    \details \MEDparfileOpenDetails
    \par Remarques
    \fidDes
@@ -65,22 +65,22 @@
 
 /**\ingroup MEDfileFortran
    \fn subroutine mficow(integer*8 fid, character*(*) cmt, integer cret)
-   \brief \MEDfileCommentWrBrief
+   \brief \MEDfileDescriptionWrBrief
    \param fid \fid
-   \param cmt \comment
+   \param cmt \description
    \param cret \error
-   \see MEDfileCommentWr
-   \details \MEDfileCommentWrDetails
+   \see MEDfileDescriptionWr
+   \details \MEDfileDescriptionWrDetails
 */
 
 /**\ingroup MEDfileFortran
    \fn subroutine mficor(integer*8 fid, character*(*) cmt, integer cret)
-   \brief \MEDfileCommentRdBrief
+   \brief \MEDfileDescriptionRdBrief
    \param fid \fid
-   \param cmt \comment
+   \param cmt \description
    \param cret \error
-   \see MEDfileCommentRd
-   \details \MEDfileCommentRdDetails
+   \see MEDfileDescriptionRd
+   \details \MEDfileDescriptionRdDetails
 */
 
 
@@ -153,6 +153,48 @@
    \param cret \error
    \see MEDfileObjectExist
    \details \MEDfileObjectExistDetails
+*/
+
+/**\ingroup MEDfileFortran
+   \fn subroutine  mfiodx(integer*8 fid, integer class, character*(*) oname, integer dexist, integer cret)
+   \brief \MEDfileObjectDescriptionExistBrief
+   \param fid \fid
+   \param class \medclass
+   \param oname \objectname
+   \param dexist \descriptionexist
+   \param cret \error
+   \see MEDfileObjectDescriptionExist
+   \details \MEDfileObjectDescriptionExistDetails
+   \par Remarques
+   \MEDfileObjectDescriptionRem
+*/
+
+/**\ingroup MEDfileFortran
+   \fn subroutine  mfiodr(integer*8 fid, integer class, character*(*) oname, character*(*) desc, integer cret)
+   \brief \MEDfileObjectDescriptionRdBrief
+   \param fid \fid
+   \param class \medclass
+   \param oname \objectname
+   \param desc \description
+   \param cret \error
+   \see MEDfileObjectDescriptionRd
+   \details \MEDfileObjectDescriptionRdDetails
+   \par Remarques
+   \MEDfileObjectDescriptionRem
+*/
+
+/**\ingroup MEDfileFortran
+   \fn subroutine  mfiodw(integer*8 fid, integer class, character*(*) oname, character*(*) desc, integer cret)
+   \brief \MEDfileObjectDescriptionWrBrief
+   \param fid \fid
+   \param class \medclass
+   \param oname \objectname
+   \param desc \description
+   \param cret \error
+   \see MEDfileObjectDescriptionWr
+   \details \MEDfileObjectDescriptionWrDetails
+   \par Remarques
+   \MEDfileObjectDescriptionRem
 */
 
 /**\ingroup MEDfileFortran

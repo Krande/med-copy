@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@ c
 c
       subroutine mlclow(fid,lname,gtype,sdim,ecoo,swm,nip,
      &                  ipcoo, wght, giname, isname, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlclow
+cDEC$ ATTRIBUTES DLLEXPORT :: mlclow
 c
       implicit none
       save
@@ -38,7 +38,7 @@ c
 c
 c
       subroutine mlcnlc(fid,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlcnlc
+cDEC$ ATTRIBUTES DLLEXPORT :: mlcnlc
 c
       implicit none
       save
@@ -61,7 +61,7 @@ c
 c
       subroutine mlclci(fid, it, lname, gtype, sdim, nip,
      &     giname, isname, nsmc, sgtype, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlclci
+cDEC$ ATTRIBUTES DLLEXPORT :: mlclci
 c
       implicit none
       save
@@ -82,7 +82,7 @@ c
 c
       subroutine mlclni(fid, lname, gtype, sdim, nip,
      &     giname, isname, nsmc, sgtype, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlclni
+cDEC$ ATTRIBUTES DLLEXPORT :: mlclni
 c
       implicit none
       save
@@ -103,7 +103,7 @@ c
 c
 
       subroutine mlclor(fid,lname,swm,ecoo,ipcoo, wght, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlclor
+cDEC$ ATTRIBUTES DLLEXPORT :: mlclor
 c
       implicit none
       save

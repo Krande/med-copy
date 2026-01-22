@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MED fichier:  Fichier source de MEDfileVersion.hxx</title>
+<title>MED fichier:  Fichier source de MEDfieldChecked.hxx</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -43,12 +43,12 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">MEDfileVersion.hxx</div>  </div>
+<div class="title">MEDfieldChecked.hxx</div>  </div>
 </div><!--header-->
 <div class="contents">
 <a href="a01388.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*  This file is part of MED.</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  COPYRIGHT (C) 1999 - 2021  EDF R&amp;D, CEA/DEN</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  COPYRIGHT (C) 1999 - 2025  EDF R&amp;D, CEA/DEN</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  MED is free software: you can redistribute it and/or modify</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *  it under the terms of the GNU Lesser General Public License as published by</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *  the Free Software Foundation, either version 3 of the License, or</span></div>
@@ -62,48 +62,47 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *  You should have received a copy of the GNU Lesser General Public License</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *  along with MED.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef MED_FILE_VERSION_HXX</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define MED_FILE_VERSION_HXX</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef MED_FIELD_CHECKED_HXX</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define MED_FIELD_CHECKED_HXX</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="a02309.html">med.h</a>&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="a02339.html">med.h</a>&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="a01388_a2d83a9d6677f42e2572510c1a14e58ed.html#a2d83a9d6677f42e2572510c1a14e58ed">   24</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>     <a class="code" href="a01388_a2d83a9d6677f42e2572510c1a14e58ed.html#a2d83a9d6677f42e2572510c1a14e58ed">keyType</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a01388_a3a30232ee47b7b08cb315168e9b34b7d.html#a3a30232ee47b7b08cb315168e9b34b7d">   25</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a02952.html">med_file_version</a>  <a class="code" href="a01388_a3a30232ee47b7b08cb315168e9b34b7d.html#a3a30232ee47b7b08cb315168e9b34b7d">valueType</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a01388_aa6adaf2e7beba8018c03e2c31cdede51.html#aa6adaf2e7beba8018c03e2c31cdede51">   26</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a02916.html">keyType</a>           <a class="code" href="a01388_aa6adaf2e7beba8018c03e2c31cdede51.html#aa6adaf2e7beba8018c03e2c31cdede51">fileNo</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a02924.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="a02924.html">MED_FILE_VERSION</a> : <span class="keyword">public</span> std::map&lt; keyType, valueType &gt;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">static</span> <a class="code" href="a02924.html">MED_FILE_VERSION</a>&amp; <a class="code" href="a02924_a80254791e22e2a206e5f6a10c9461da8.html#a80254791e22e2a206e5f6a10c9461da8">Instance</a>();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;private :</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a02924_a5454c0041e6ba0deb2d7f5da2b203cbf.html#a5454c0041e6ba0deb2d7f5da2b203cbf">   34</a></span>&#160;  <a class="code" href="a02924_a5454c0041e6ba0deb2d7f5da2b203cbf.html#a5454c0041e6ba0deb2d7f5da2b203cbf">MED_FILE_VERSION</a>(){};</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a02924_a1e1064af4de881f85458f59fd034b4bb.html#a1e1064af4de881f85458f59fd034b4bb">   35</a></span>&#160;  <a class="code" href="a02924_a1e1064af4de881f85458f59fd034b4bb.html#a1e1064af4de881f85458f59fd034b4bb">MED_FILE_VERSION</a>(<span class="keyword">const</span> <a class="code" href="a02924.html">MED_FILE_VERSION</a> &amp;){};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="a02924_a5290f558e87fadd609b74001b13fd675.html#a5290f558e87fadd609b74001b13fd675">~MED_FILE_VERSION</a>();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="a02946.html">   25</a></span>&#160;<span class="keyword">struct </span><a class="code" href="a02946.html">keyType</a>:std::pair&lt; unsigned long, std::string &gt;{};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="a01388_a1a0384b75e86505ce0c7c9282bec16e1.html#a1a0384b75e86505ce0c7c9282bec16e1">   27</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="a01388_a1a0384b75e86505ce0c7c9282bec16e1.html#a1a0384b75e86505ce0c7c9282bec16e1">fileNo</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="a01388_a66a535c9ec6775c22229edd062420b76.html#a66a535c9ec6775c22229edd062420b76">   28</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="a02339_a23f7fa6d76886ed3c91dc33b59190dee.html#a23f7fa6d76886ed3c91dc33b59190dee">med_bool</a>      <a class="code" href="a01388_a66a535c9ec6775c22229edd062420b76.html#a66a535c9ec6775c22229edd062420b76">valueType</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="a02950.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="a02950.html">MED_FIELD_CHECKED</a> : <span class="keyword">public</span> std::map&lt; keyType, valueType &gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">static</span> <a class="code" href="a02950.html">MED_FIELD_CHECKED</a>&amp; <a class="code" href="a02950_ac8406c30d28e37ac8c8af4551602278c.html#ac8406c30d28e37ac8c8af4551602278c">Instance</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;private :</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="a02950_a1a91325c85f72d2d421a678979995b89.html#a1a91325c85f72d2d421a678979995b89">   36</a></span>&#160;  <a class="code" href="a02950_a1a91325c85f72d2d421a678979995b89.html#a1a91325c85f72d2d421a678979995b89">MED_FIELD_CHECKED</a>(){};</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a02950_a856c52491739c55641eaf687a68285b6.html#a856c52491739c55641eaf687a68285b6">   37</a></span>&#160;  <a class="code" href="a02950_a856c52491739c55641eaf687a68285b6.html#a856c52491739c55641eaf687a68285b6">MED_FIELD_CHECKED</a>(<span class="keyword">const</span> <a class="code" href="a02950.html">MED_FIELD_CHECKED</a> &amp;){};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="a02950_af83ddb75e354dd5414c8f5d715363620.html#af83ddb75e354dd5414c8f5d715363620">~MED_FIELD_CHECKED</a>();</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// extern &quot;C&quot; valueType  _MEDfileVersion(const med_idt);</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// extern &quot;C&quot; med_err    _MEDfileVersionSetCache(const med_idt, const valueType&amp; v);</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aa01388_aa6adaf2e7beba8018c03e2c31cdede51_html_aa6adaf2e7beba8018c03e2c31cdede51"><div class="ttname"><a href="a01388_aa6adaf2e7beba8018c03e2c31cdede51.html#aa6adaf2e7beba8018c03e2c31cdede51">fileNo</a></div><div class="ttdeci">keyType fileNo</div><div class="ttdef"><b>Definition:</b> <a href="a01388_source.html#l00026">MEDfileVersion.hxx:26</a></div></div>
-<div class="ttc" id="aa02924_a80254791e22e2a206e5f6a10c9461da8_html_a80254791e22e2a206e5f6a10c9461da8"><div class="ttname"><a href="a02924_a80254791e22e2a206e5f6a10c9461da8.html#a80254791e22e2a206e5f6a10c9461da8">MED_FILE_VERSION::Instance</a></div><div class="ttdeci">static MED_FILE_VERSION &amp; Instance()</div></div>
-<div class="ttc" id="aa02916_html"><div class="ttname"><a href="a02916.html">keyType</a></div><div class="ttdef"><b>Definition:</b> <a href="a01382_source.html#l00025">MEDfieldChecked.hxx:25</a></div></div>
-<div class="ttc" id="aa01388_a2d83a9d6677f42e2572510c1a14e58ed_html_a2d83a9d6677f42e2572510c1a14e58ed"><div class="ttname"><a href="a01388_a2d83a9d6677f42e2572510c1a14e58ed.html#a2d83a9d6677f42e2572510c1a14e58ed">keyType</a></div><div class="ttdeci">unsigned long keyType</div><div class="ttdef"><b>Definition:</b> <a href="a01388_source.html#l00024">MEDfileVersion.hxx:24</a></div></div>
-<div class="ttc" id="aa02924_html"><div class="ttname"><a href="a02924.html">MED_FILE_VERSION</a></div><div class="ttdef"><b>Definition:</b> <a href="a01388_source.html#l00028">MEDfileVersion.hxx:28</a></div></div>
-<div class="ttc" id="aa02952_html"><div class="ttname"><a href="a02952.html">med_file_version</a></div><div class="ttdoc">Structure d'acceuil du numéro de version MED d'un fichier.</div><div class="ttdef"><b>Definition:</b> <a href="a02309_source.html#l00385">med.h:385</a></div></div>
-<div class="ttc" id="aa02924_a1e1064af4de881f85458f59fd034b4bb_html_a1e1064af4de881f85458f59fd034b4bb"><div class="ttname"><a href="a02924_a1e1064af4de881f85458f59fd034b4bb.html#a1e1064af4de881f85458f59fd034b4bb">MED_FILE_VERSION::MED_FILE_VERSION</a></div><div class="ttdeci">MED_FILE_VERSION(const MED_FILE_VERSION &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="a01388_source.html#l00035">MEDfileVersion.hxx:35</a></div></div>
-<div class="ttc" id="aa02309_html"><div class="ttname"><a href="a02309.html">med.h</a></div></div>
-<div class="ttc" id="aa02924_a5290f558e87fadd609b74001b13fd675_html_a5290f558e87fadd609b74001b13fd675"><div class="ttname"><a href="a02924_a5290f558e87fadd609b74001b13fd675.html#a5290f558e87fadd609b74001b13fd675">MED_FILE_VERSION::~MED_FILE_VERSION</a></div><div class="ttdeci">~MED_FILE_VERSION()</div></div>
-<div class="ttc" id="aa02924_a5454c0041e6ba0deb2d7f5da2b203cbf_html_a5454c0041e6ba0deb2d7f5da2b203cbf"><div class="ttname"><a href="a02924_a5454c0041e6ba0deb2d7f5da2b203cbf.html#a5454c0041e6ba0deb2d7f5da2b203cbf">MED_FILE_VERSION::MED_FILE_VERSION</a></div><div class="ttdeci">MED_FILE_VERSION()</div><div class="ttdef"><b>Definition:</b> <a href="a01388_source.html#l00034">MEDfileVersion.hxx:34</a></div></div>
-<div class="ttc" id="aa01388_a3a30232ee47b7b08cb315168e9b34b7d_html_a3a30232ee47b7b08cb315168e9b34b7d"><div class="ttname"><a href="a01388_a3a30232ee47b7b08cb315168e9b34b7d.html#a3a30232ee47b7b08cb315168e9b34b7d">valueType</a></div><div class="ttdeci">med_file_version valueType</div><div class="ttdef"><b>Definition:</b> <a href="a01388_source.html#l00025">MEDfileVersion.hxx:25</a></div></div>
+<div class="ttc" id="aa02950_a1a91325c85f72d2d421a678979995b89_html_a1a91325c85f72d2d421a678979995b89"><div class="ttname"><a href="a02950_a1a91325c85f72d2d421a678979995b89.html#a1a91325c85f72d2d421a678979995b89">MED_FIELD_CHECKED::MED_FIELD_CHECKED</a></div><div class="ttdeci">MED_FIELD_CHECKED()</div><div class="ttdef"><b>Definition:</b> <a href="a01388_source.html#l00036">MEDfieldChecked.hxx:36</a></div></div>
+<div class="ttc" id="aa02950_ac8406c30d28e37ac8c8af4551602278c_html_ac8406c30d28e37ac8c8af4551602278c"><div class="ttname"><a href="a02950_ac8406c30d28e37ac8c8af4551602278c.html#ac8406c30d28e37ac8c8af4551602278c">MED_FIELD_CHECKED::Instance</a></div><div class="ttdeci">static MED_FIELD_CHECKED &amp; Instance()</div></div>
+<div class="ttc" id="aa02339_a23f7fa6d76886ed3c91dc33b59190dee_html_a23f7fa6d76886ed3c91dc33b59190dee"><div class="ttname"><a href="a02339_a23f7fa6d76886ed3c91dc33b59190dee.html#a23f7fa6d76886ed3c91dc33b59190dee">med_bool</a></div><div class="ttdeci">med_bool</div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00264">med.h:264</a></div></div>
+<div class="ttc" id="aa02950_af83ddb75e354dd5414c8f5d715363620_html_af83ddb75e354dd5414c8f5d715363620"><div class="ttname"><a href="a02950_af83ddb75e354dd5414c8f5d715363620.html#af83ddb75e354dd5414c8f5d715363620">MED_FIELD_CHECKED::~MED_FIELD_CHECKED</a></div><div class="ttdeci">~MED_FIELD_CHECKED()</div></div>
+<div class="ttc" id="aa02946_html"><div class="ttname"><a href="a02946.html">keyType</a></div><div class="ttdef"><b>Definition:</b> <a href="a01388_source.html#l00025">MEDfieldChecked.hxx:25</a></div></div>
+<div class="ttc" id="aa02950_a856c52491739c55641eaf687a68285b6_html_a856c52491739c55641eaf687a68285b6"><div class="ttname"><a href="a02950_a856c52491739c55641eaf687a68285b6.html#a856c52491739c55641eaf687a68285b6">MED_FIELD_CHECKED::MED_FIELD_CHECKED</a></div><div class="ttdeci">MED_FIELD_CHECKED(const MED_FIELD_CHECKED &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="a01388_source.html#l00037">MEDfieldChecked.hxx:37</a></div></div>
+<div class="ttc" id="aa02339_html"><div class="ttname"><a href="a02339.html">med.h</a></div></div>
+<div class="ttc" id="aa01388_a66a535c9ec6775c22229edd062420b76_html_a66a535c9ec6775c22229edd062420b76"><div class="ttname"><a href="a01388_a66a535c9ec6775c22229edd062420b76.html#a66a535c9ec6775c22229edd062420b76">valueType</a></div><div class="ttdeci">med_bool valueType</div><div class="ttdef"><b>Definition:</b> <a href="a01388_source.html#l00028">MEDfieldChecked.hxx:28</a></div></div>
+<div class="ttc" id="aa02950_html"><div class="ttname"><a href="a02950.html">MED_FIELD_CHECKED</a></div><div class="ttdef"><b>Definition:</b> <a href="a01388_source.html#l00030">MEDfieldChecked.hxx:30</a></div></div>
+<div class="ttc" id="aa01388_a1a0384b75e86505ce0c7c9282bec16e1_html_a1a0384b75e86505ce0c7c9282bec16e1"><div class="ttname"><a href="a01388_a1a0384b75e86505ce0c7c9282bec16e1.html#a1a0384b75e86505ce0c7c9282bec16e1">fileNo</a></div><div class="ttdeci">unsigned long fileNo</div><div class="ttdef"><b>Definition:</b> <a href="a01388_source.html#l00027">MEDfieldChecked.hxx:27</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 8 Octobre 2021 13:44:05 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 21 Mai 2025 19:18:31 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.16
 </small></address>

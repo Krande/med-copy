@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -17,7 +17,7 @@ C*
 
       subroutine efcone (fid, maa, mdim,conn, switch, n, 
      1typent,typgeo,typcon,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efcone
+cDEC$ ATTRIBUTES DLLEXPORT :: efcone
 c
       implicit none
       save
@@ -37,7 +37,7 @@ c
       subroutine efconl(fid, maa, mdim,conn,switch,
      1                  pfltab,psize,
      1                  typent,typgeo,typcon,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efconl
+cDEC$ ATTRIBUTES DLLEXPORT :: efconl
 c
       implicit none
       save
@@ -59,7 +59,7 @@ c
       subroutine efcooe(fid, maa, mdim, coo, modcoo,
      &                  n,typrep, 
      &                  nom,unit,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efcooe
+cDEC$ ATTRIBUTES DLLEXPORT :: efcooe
 c
       implicit none
       save
@@ -81,7 +81,7 @@ c
       subroutine efcool(fid, maa, mdim,coo,modcoo,
      1                  numco,pfltab,psize, 
      1                  typrep,nom,unit,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efcool
+cDEC$ ATTRIBUTES DLLEXPORT :: efcool
 c
       implicit none
       save
@@ -104,7 +104,7 @@ c
 c
       subroutine efnome(fid, maa, nom, n, 
      1                  typent, typgeo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnome
+cDEC$ ATTRIBUTES DLLEXPORT :: efnome
 c
       implicit none
       save
@@ -123,7 +123,7 @@ c
 c
       subroutine efnoml(fid, maa, nom, n,  
      1typent, typgeo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnoml
+cDEC$ ATTRIBUTES DLLEXPORT :: efnoml
 c
       implicit none
       save
@@ -142,7 +142,7 @@ c
 c
       subroutine efnume(fid, maa, num, n, 
      1typent, typgeo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnume
+cDEC$ ATTRIBUTES DLLEXPORT :: efnume
 c
       implicit none
       save
@@ -162,7 +162,7 @@ c
 
       subroutine efnuml(fid, maa, num, n, 
      1typent, typgeo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnuml
+cDEC$ ATTRIBUTES DLLEXPORT :: efnuml
 c
       implicit none
       save
@@ -181,7 +181,7 @@ c
 c
       subroutine efnema(fid, maa, quoi,  
      1typent, typgeo,typcon,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnema
+cDEC$ ATTRIBUTES DLLEXPORT :: efnema
 c
       implicit none
       save
@@ -206,7 +206,7 @@ c
 c
 c
       subroutine efpgce(fid,maa,index,ni,conn,typent,typcon,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efpgce
+cDEC$ ATTRIBUTES DLLEXPORT :: efpgce
 c
       implicit none
       save
@@ -224,7 +224,7 @@ c
 c
 c
       subroutine efpgcl(fid,maa,index,ni,conn,typent,typcon,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efpgcl
+cDEC$ ATTRIBUTES DLLEXPORT :: efpgcl
 c
       implicit none
       save
@@ -240,7 +240,7 @@ c
       end
 c
       subroutine efpygi(fid,maa,typent,typcon,consiz,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efpygi
+cDEC$ ATTRIBUTES DLLEXPORT :: efpygi
 c
       implicit none
       save
@@ -258,7 +258,7 @@ c
 c
 c
       subroutine efpece(fid,maa,indexp,np,indexf,nf,conn,typcon,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efpece
+cDEC$ ATTRIBUTES DLLEXPORT :: efpece
 c
       implicit none
       save
@@ -276,7 +276,7 @@ c
 c
 c
       subroutine efpecl(fid,maa,indexp,np,indexf,nf,conn,typcon,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efpecl
+cDEC$ ATTRIBUTES DLLEXPORT :: efpecl
 c
       implicit none
       save
@@ -292,7 +292,7 @@ c
       end
 c
       subroutine efpyei(fid,maa,typcon,nf,consiz,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efpyei
+cDEC$ ATTRIBUTES DLLEXPORT :: efpyei
 c
       implicit none
       save
@@ -311,7 +311,7 @@ C
 c
       subroutine eficoe(fid,maa,mdim,indices, 
      &                  n,axe,comp,unit,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: eficoe
+cDEC$ ATTRIBUTES DLLEXPORT :: eficoe
 c
       implicit none
       save
@@ -333,7 +333,7 @@ C
 c
       subroutine eficol(fid,maa,mdim,indices, 
      &                  n,axe,comp,unit,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: eficol
+cDEC$ ATTRIBUTES DLLEXPORT :: eficol
 c
       implicit none
       save
@@ -354,7 +354,7 @@ c
 
 c
       subroutine efscoe(fid,maa,mdim,struct,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efscoe
+cDEC$ ATTRIBUTES DLLEXPORT :: efscoe
 c
       implicit none
       save
@@ -372,7 +372,7 @@ c
 
 c
       subroutine efscol(fid,maa,mdim,struct,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efscol
+cDEC$ ATTRIBUTES DLLEXPORT :: efscol
 c
       implicit none
       save

@@ -1,6 +1,6 @@
 !*  This file is part of MED.
 !*
-!*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+!*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 !*  MED is free software: you can redistribute it and/or modify
 !*  it under the terms of the GNU Lesser General Public License as published by
 !*  the Free Software Foundation, either version 3 of the License, or
@@ -48,7 +48,7 @@ program test13
                                                       &  MED_QUAD8,MED_POLYGON/)
 
    integer,parameter :: typfac(MY_NOF_DESCENDING_FACE_TYPE) = (/MED_TRIA3,MED_TRIA6,       &
-					&	 MED_QUAD4,MED_QUAD8, MED_POLYGON/)
+                                        &        MED_QUAD4,MED_QUAD8, MED_POLYGON/)
    integer,parameter ::typare(MY_NOF_DESCENDING_EDGE_TYPE) = (/MED_SEG2,MED_SEG3/)
    integer type
    character(16)  :: dtunit
@@ -98,7 +98,7 @@ program test13
 
          !** Lecture des correspondances sur les differents types d'entites **
          if (cret.eq.0) then
-	    !** Les noeuds **
+            !** Les noeuds **
             call meqcsz(fid,maa,equ,MED_NO_DT,MED_NO_IT,MED_NODE,MED_NONE,ncor,cret)
             print *,cret
             print *,"Il y a ",ncor," correspondances sur les noeuds "
@@ -110,8 +110,8 @@ program test13
                end do
                deallocate(cor)
             end if
-	    
-!!$	    !** Les mailles : on ne prend pas en compte les mailles 3D **
+            
+!!$         !** Les mailles : on ne prend pas en compte les mailles 3D **
 
             do j=1,MED_NBR_MAILLE_EQU
                call meqcsz(fid,maa,equ,MED_NO_DT,MED_NO_IT,MED_CELL,typmai(j),ncor,cret)
@@ -126,7 +126,7 @@ program test13
                endif
             end do
 
-!!$	    ! ** Les faces **
+!!$         ! ** Les faces **
             do j=1,MY_NOF_DESCENDING_FACE_TYPE
                call meqcsz(fid,maa,equ,MED_NO_DT,MED_NO_IT,MED_DESCENDING_FACE,typmai(j),ncor,cret)
                print *,"Il y a ",ncor," correspondances sur les faces ",typfac(j)
@@ -140,7 +140,7 @@ program test13
                endif
             end do
 
-!!$	    ! **  Les aretes **
+!!$         ! **  Les aretes **
             do j=1,MY_NOF_DESCENDING_EDGE_TYPE
                call meqcsz(fid,maa,equ,MED_NO_DT,MED_NO_IT,MED_DESCENDING_EDGE,typare(j),ncor,cret)
                print *,"Il y a ",ncor," correspondances sur les aretes ",typare(j)
@@ -166,7 +166,7 @@ program test13
    call efexit(cret)
    
  end program test13
-	
+        
 
 
 

@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -91,14 +91,15 @@ extern "C" void _MEDmodeErreurVerrouiller(void);
 
 
 
-int MEDimport(char * filein, char *  fileout) {
+int MEDimport(const char * filein, const char *  fileout) {
 
   med_idt fid, gid;
   med_err ret;
   med_int majeur, mineur, release;
   med_bool hdfok=MED_FALSE;
   med_bool medok=MED_FALSE;
-  char *_fileout,*tmp=NULL;
+  const char *_fileout;
+  char *tmp=NULL;
   int   _fileoutsize;
   bool  hasfileout=false;
   char *commande;
@@ -202,7 +203,7 @@ int MEDimport(char * filein, char *  fileout) {
     MAJ_310_320 = 1;
   if (strcmp(version, "3_3_0") < 0)
     MAJ_320_330 = 1;
-  if (strcmp(version, "4_0_0") < 0)
+  if (strcmp(version, "4_1_0") < 0)
     MAJ_400_410 = 1;
 
   /* Ne pas oublier que la version cible du fichier à convertir est celui de la bibliothèque. */
@@ -348,7 +349,6 @@ int MEDimport(char * filein, char *  fileout) {
     _MEDfileVersion(fid);
     /* Si le cache était dèjà instancié, met à jour le cache */
     MAJ_version_num(fid,4,0,0);
-
     /* Mise a jour des champs */
     fprintf(stdout,"- Lancement de la mise à jour des meta-données sur les champs (400_410) ... \n");
     MAJ_400_410_champs(fid);

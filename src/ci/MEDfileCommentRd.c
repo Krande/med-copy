@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -24,29 +24,15 @@
 /**\ingroup MEDfile
   \brief \MEDfileCommentRdBrief
   \param fid \fid
-  \param comment \comment
+  \param description \description
   \retval med_err \error
   \details \MEDfileCommentRdDetails
+  \par This function is obsolete since 4.2.0
+  \see MEDfileDescriptionRd
  */
 
 med_err
-MEDfileCommentRd(const med_idt fid, char* const comment)
+MEDfileCommentRd(const med_idt fid, char* const description)
 {
-
-  char *  name = "_MEDfileCommentRd";
-  int     dummy=0;
-  med_err fret=-1;
-  med_int majeur, mineur, release;
-  MedFuncType func;
-
-  _MEDmodeErreurVerrouiller();
-
-  MEDfileNumVersionRd(fid, &majeur, &mineur, &release);
-  func = _MEDversionedApi3(name,majeur,mineur,release);
-  if ( func != (MedFuncType) NULL )
-    func (dummy,
-	  fid,
-	  comment,
-	  &fret);
-  return fret;
+  return MEDfileDescriptionRd(fid, description);
 }

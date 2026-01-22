@@ -157,13 +157,13 @@ LDADD = $(top_builddir)/src/libmed.la
 if INSTALLTEST
 
 testf_PROGRAMS = test1 test2 test3 test4 test6 test8 test12 test14 test16 test18 test20 test21 test22 test23 test24 test25 test26 \
-test27 test28 test29 test31 test32 test33 $(mycheckPROGRAMS) $(mycheckPROGRAMS3264)
+test27 test28 test29 test31 test32 test33 test34 $(mycheckPROGRAMS) $(mycheckPROGRAMS3264)
 #test19  
 
 else
 
 check_PROGRAMS = test1 test2 test3 test4 test6 test8 test12 test14 test16 test18 test20 test21 test22 test23 test24 test25 test26 \
-test27 test28 test29 test31 test32 test33 $(mycheckPROGRAMS) $(mycheckPROGRAMS3264)
+test27 test28 test29 test31 test32 test33 test34 $(mycheckPROGRAMS) $(mycheckPROGRAMS3264)
 #test19  
 
 endif
@@ -194,6 +194,7 @@ test29_SOURCES = test29.f
 test31_SOURCES = test31.f
 test32_SOURCES = test32.f
 test33_SOURCES = test33.f
+test34_SOURCES = test34.f
 
 
 
@@ -223,6 +224,7 @@ CLEANFILES= \
 ./test27.med\
 ./test29.med\
 ./test31.med\
+./test34.med\
 ./test10f.dump\
 ./test10.dump\
 ./test10_f32.dump\
@@ -247,7 +249,8 @@ CLEANFILES= \
 ./test27.dump\
 ./test28.dump\
 ./test29.dump\
-./test31.dump
+./test31.dump\
+./test34.dump
 
 CLEANFILES+= $(BUILT_SOURCES) *med.out *.out *.out.ref *.out.tmp
 

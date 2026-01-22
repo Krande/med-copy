@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -161,7 +161,6 @@ med_idt _MEDparFileCreate(const char * const filename, const med_access_mode acc
 
 extern MEDC_EXPORT
 med_idt _MEDfileOpen(const char * const filename,const med_access_mode accessmode);
-
 
 extern MEDC_EXPORT
 med_int _MEDfileName(med_idt id, char * const filename, const med_int filenamesize);
@@ -351,12 +350,12 @@ typedef struct {
 extern MEDC_EXPORT
 void * _MEDcheckAttributeStringInit( med_string_itdatas * const itdatas, const char * const attname, med_int attsize);
 extern MEDC_EXPORT
-med_err _MEDcheckAttributeStringFunc(med_idt id,const char *lname, const H5L_info_t *linfo, med_string_itdatas *data);
+med_err _MEDcheckAttributeStringFunc(med_idt id,const char *lname, const H5L_info_t *linfo, void *data);
 extern MEDC_EXPORT
 void  _MEDcheckAttributeStringFin( med_string_itdatas * const itdatas);
 
 extern MEDC_EXPORT
-med_err _MEDchecknSublinkFunc(med_idt id,const char *lname, const H5L_info_t *linfo, med_bool *data);
+med_err _MEDchecknSublinkFunc(med_idt id,const char *lname, const H5L_info_t *linfo, void *data);
 
 #define MED_CHECK_ATTRIBUTE_FUNC(_check_med_type_) _MEDcheckAttributeFunc##_check_med_type_
 #define MED_CHECK_ATTRIBUTE_INIT(_check_med_type_,_check_med_itdata_,_check_med_attname_,_check_med_attsize_) _MEDcheckAttributeInit##_check_med_type_ (_check_med_itdata_,_check_med_attname_,_check_med_attsize_)
@@ -409,7 +408,8 @@ extern MEDC_EXPORT
 med_err _MEDvisit(const med_idt fid, const char * const srcpath, const char * const dstpath,
 		  medvisitorfunc);
 extern MEDC_EXPORT
-med_err _MEDiterate(const med_idt fid, herr_t (*func)(), void * itdatas );
+med_err
+_MEDiterate(const med_idt fid,  herr_t (*func)( hid_t g_id, const char *name, const H5L_info_t *info, void *op_data), void * itdatas );
 
 extern MEDC_EXPORT
 med_err

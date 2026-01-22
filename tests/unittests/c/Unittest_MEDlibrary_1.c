@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -29,7 +29,7 @@ int main (int argc, char **argv)
 {
   med_int major,minor,release;
   med_int majorFromStr, minorFromStr, releaseFromStr;
-  char version[11];
+  char version[5+3*2+2];
 
   /* Get library version numbers */
   if (MEDlibraryNumVersion(&major,&minor,&release) < 0) {

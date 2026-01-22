@@ -32,7 +32,8 @@ SET(misc_SOURCES
   _MED23v30stringConvert.c
   _MEDgetSupportMeshNbOfEntities.c
   MEDlogicalOp.cxx
-  _MEDgetEntityListAttributeIName.c	
+  _MEDgetEntityListAttributeIName.c
+  _MEDgetObjectStringPath.c
  )
   
 ADD_LIBRARY(_misc OBJECT ${misc_SOURCES})

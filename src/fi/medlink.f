@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -18,7 +18,7 @@ c
 c
 c
       subroutine mlnliw(fid,mname,lname,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlnliw
+cDEC$ ATTRIBUTES DLLEXPORT :: mlnliw
 c
       implicit none
       save
@@ -35,7 +35,7 @@ c
 c
 c
       subroutine mlnnln(fid,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlnnln
+cDEC$ ATTRIBUTES DLLEXPORT :: mlnnln
 c
       implicit none
       save
@@ -57,7 +57,7 @@ c
 c
 c
       subroutine mlnlni(fid, it, mname, lsize, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlnlni
+cDEC$ ATTRIBUTES DLLEXPORT :: mlnlni
 c
       implicit none
       save
@@ -75,7 +75,7 @@ c
 c
 c
       subroutine mlnlai(fid, mname, lsize, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlnlai
+cDEC$ ATTRIBUTES DLLEXPORT :: mlnlai
 c
       implicit none
       save
@@ -99,7 +99,7 @@ c
 c
 c
       subroutine mlnlir(fid,mname,lname,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mlnlir
+cDEC$ ATTRIBUTES DLLEXPORT :: mlnlir
 c
       implicit none
       save

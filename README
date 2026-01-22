@@ -50,7 +50,7 @@ b. libz
 
 c. compilateur C, C++ et eventuellement F77 et/ou F90
 
-d. eventuellement SWIG-3.0.12 si vous configurez med-fichier avec hdf5// ou with-med_int=long.
+d. eventuellement SWIG-4.1.1 si vous configurez med-fichier avec hdf5// ou with-med_int=long.
 
 2.3	Lancement de l'installation sous UNIX
 
@@ -278,6 +278,8 @@ $MED_SRC/./configure --prefix=$MED_PREFIX --disable-shared CC=mpixlc F77=mpixlf7
 Trois utilitaires sont compilés et installés dans <repertoire cible>/bin.
 Ce sont :
 - mdump* (xmdump*) : outil de dump d'un fichier MED qlq soit le format à partir DE V2.2.
+- mdump4           : outil de dump d'un fichier MED à partir du format 4.1
+                     (plus performant pour les champs avec deux nombreuses étapes de calcul).
 - medimport        : traducteur de fichier à partir des versions V2.x vers la version courante.
 - mdeconforme      : vérificateur de conformité de fichier avec la bibliothèque utilisée.
 

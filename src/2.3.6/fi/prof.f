@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -16,7 +16,7 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C*
 
       subroutine efnpro( fid , n , cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnpro
+cDEC$ ATTRIBUTES DLLEXPORT :: efnpro
 c
       implicit none
       save
@@ -39,7 +39,7 @@ c
 c
 c
       subroutine efproi( fid , indice , pro , n , cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efproi
+cDEC$ ATTRIBUTES DLLEXPORT :: efproi
 c
       implicit none
       save
@@ -58,7 +58,7 @@ c
 c
 
       subroutine efpfle(fid,pflval,n,nom,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efpfle
+cDEC$ ATTRIBUTES DLLEXPORT :: efpfle
 c
       implicit none
       save
@@ -77,7 +77,7 @@ c
       
 
       subroutine efnpfl(fid,nom,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnpfl
+cDEC$ ATTRIBUTES DLLEXPORT :: efnpfl
 c
       implicit none
       save
@@ -100,7 +100,7 @@ c
 c
 
       subroutine efpfll(fid,pflval,nom,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efpfll
+cDEC$ ATTRIBUTES DLLEXPORT :: efpfll
 c
       implicit none
       save

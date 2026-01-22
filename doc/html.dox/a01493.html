@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MED fichier: Référence du fichier MEDfieldInfo.c</title>
+<title>MED fichier: Référence du fichier MEDfieldEntityType.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,49 +45,50 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
-<div class="title">Référence du fichier MEDfieldInfo.c</div>  </div>
+<div class="title">Référence du fichier MEDfieldEntityType.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a02312_source.html">med_config.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="a02309_source.html">med.h</a>&gt;</code><br />
-<code>#include &quot;<a class="el" href="a01340_source.html">med_outils.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="a02342_source.html">med_config.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="a02339_source.html">med.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="a01346_source.html">med_outils.h</a>&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Graphe des dépendances par inclusion de MEDfieldInfo.c:</div>
+Graphe des dépendances par inclusion de MEDfieldEntityType.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a01494.jpg" border="0" usemap="#MEDfieldInfo_8c" alt=""/></div>
-<map name="MEDfieldInfo_8c" id="MEDfieldInfo_8c">
-<area shape="rect" title=" " alt="" coords="803,5,913,32"/>
-<area shape="rect" href="a02312.html" title=" " alt="" coords="624,229,724,256"/>
-<area shape="rect" href="a02309.html" title=" " alt="" coords="826,229,885,256"/>
-<area shape="rect" href="a01340.html" title=" " alt="" coords="865,80,961,107"/>
-<area shape="rect" title=" " alt="" coords="985,80,1051,107"/>
+<div class="center"><img src="a01494.jpg" border="0" usemap="#MEDfieldEntityType_8c" alt=""/></div>
+<map name="MEDfieldEntityType_8c" id="MEDfieldEntityType_8c">
+<area shape="rect" title=" " alt="" coords="919,5,1069,32"/>
+<area shape="rect" href="a02342.html" title=" " alt="" coords="625,229,725,256"/>
+<area shape="rect" href="a02339.html" title=" " alt="" coords="826,229,885,256"/>
+<area shape="rect" href="a01346.html" title=" " alt="" coords="946,80,1042,107"/>
+<area shape="rect" title=" " alt="" coords="1313,229,1377,256"/>
+<area shape="rect" title=" " alt="" coords="1383,80,1448,107"/>
 <area shape="rect" title=" " alt="" coords="725,304,783,331"/>
-<area shape="rect" href="a01343.html" title=" " alt="" coords="808,304,903,331"/>
-<area shape="rect" href="a01367.html" title=" " alt="" coords="798,453,913,480"/>
-<area shape="rect" href="a01400.html" title=" " alt="" coords="23,379,117,405"/>
-<area shape="rect" href="a01385.html" title=" " alt="" coords="141,379,215,405"/>
-<area shape="rect" href="a01412.html" title=" " alt="" coords="239,379,330,405"/>
-<area shape="rect" href="a01379.html" title=" " alt="" coords="354,379,437,405"/>
-<area shape="rect" href="a01376.html" title=" " alt="" coords="461,379,554,405"/>
-<area shape="rect" href="a01370.html" title=" " alt="" coords="579,379,705,405"/>
-<area shape="rect" href="a01427.html" title=" " alt="" coords="729,379,851,405"/>
-<area shape="rect" href="a01421.html" title=" " alt="" coords="875,379,969,405"/>
-<area shape="rect" href="a01391.html" title=" " alt="" coords="993,379,1075,405"/>
-<area shape="rect" href="a01406.html" title=" " alt="" coords="1099,379,1222,405"/>
-<area shape="rect" href="a01403.html" title=" " alt="" coords="1247,379,1325,405"/>
-<area shape="rect" href="a01424.html" title=" " alt="" coords="1349,379,1487,405"/>
-<area shape="rect" href="a01418.html" title=" " alt="" coords="1511,379,1627,405"/>
-<area shape="rect" href="a01397.html" title=" " alt="" coords="1651,379,1742,405"/>
-<area shape="rect" href="a01346.html" title=" " alt="" coords="669,155,767,181"/>
+<area shape="rect" href="a01349.html" title=" " alt="" coords="808,304,903,331"/>
+<area shape="rect" href="a01373.html" title=" " alt="" coords="797,453,911,480"/>
+<area shape="rect" href="a01406.html" title=" " alt="" coords="24,379,116,405"/>
+<area shape="rect" href="a01391.html" title=" " alt="" coords="141,379,215,405"/>
+<area shape="rect" href="a01418.html" title=" " alt="" coords="239,379,330,405"/>
+<area shape="rect" href="a01385.html" title=" " alt="" coords="354,379,437,405"/>
+<area shape="rect" href="a01382.html" title=" " alt="" coords="461,379,553,405"/>
+<area shape="rect" href="a01376.html" title=" " alt="" coords="577,379,704,405"/>
+<area shape="rect" href="a01433.html" title=" " alt="" coords="728,379,849,405"/>
+<area shape="rect" href="a01427.html" title=" " alt="" coords="874,379,967,405"/>
+<area shape="rect" href="a01397.html" title=" " alt="" coords="991,379,1074,405"/>
+<area shape="rect" href="a01412.html" title=" " alt="" coords="1098,379,1221,405"/>
+<area shape="rect" href="a01409.html" title=" " alt="" coords="1245,379,1324,405"/>
+<area shape="rect" href="a01430.html" title=" " alt="" coords="1348,379,1485,405"/>
+<area shape="rect" href="a01424.html" title=" " alt="" coords="1509,379,1625,405"/>
+<area shape="rect" href="a01403.html" title=" " alt="" coords="1650,379,1741,405"/>
+<area shape="rect" href="a01352.html" title=" " alt="" coords="669,155,767,181"/>
 <area shape="rect" title=" " alt="" coords="1236,155,1307,181"/>
-<area shape="rect" href="a01337.html" title=" " alt="" coords="1005,155,1098,181"/>
-<area shape="rect" href="a01331.html" title=" " alt="" coords="893,155,980,181"/>
-<area shape="rect" href="a02315.html" title=" " alt="" coords="1123,155,1212,181"/>
-<area shape="rect" title=" " alt="" coords="967,229,1037,256"/>
-<area shape="rect" href="a01325.html" title=" " alt="" coords="1061,229,1161,256"/>
-<area shape="rect" title=" " alt="" coords="1186,229,1250,256"/>
-<area shape="rect" href="a01322.html" title=" " alt="" coords="1274,229,1354,256"/>
+<area shape="rect" href="a01343.html" title=" " alt="" coords="1005,155,1098,181"/>
+<area shape="rect" href="a01337.html" title=" " alt="" coords="893,155,980,181"/>
+<area shape="rect" href="a02345.html" title=" " alt="" coords="1123,155,1212,181"/>
+<area shape="rect" title=" " alt="" coords="991,229,1061,256"/>
+<area shape="rect" href="a01331.html" title=" " alt="" coords="1085,229,1185,256"/>
+<area shape="rect" href="a01328.html" title=" " alt="" coords="1209,229,1289,256"/>
 </map>
 </div>
 </div>
@@ -95,14 +96,14 @@ Graphe des dépendances par inclusion de MEDfieldInfo.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:gaf2169b6d6505a28d7ee5f8599d2fb25e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a02309_abd29d7c6abaef5da2a5ed1b73464f0ba.html#abd29d7c6abaef5da2a5ed1b73464f0ba">med_err</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02320_gaf2169b6d6505a28d7ee5f8599d2fb25e.html#gaf2169b6d6505a28d7ee5f8599d2fb25e">MEDfieldInfo</a> (const <a class="el" href="a02309_afa4ec8284026c8c5545e5333475fb65a.html#afa4ec8284026c8c5545e5333475fb65a">med_idt</a> fid, const int ind, char *const fieldname, char *const meshname, <a class="el" href="a02309_a23f7fa6d76886ed3c91dc33b59190dee.html#a23f7fa6d76886ed3c91dc33b59190dee">med_bool</a> *const localmesh, <a class="el" href="a02309_a5615eeaf85e0b3f40b74bdd24178f2cd.html#a5615eeaf85e0b3f40b74bdd24178f2cd">med_field_type</a> *const fieldtype, char *const componentname, char *const componentunit, char *const dtunit, <a class="el" href="a02309_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> *const ncstp)</td></tr>
-<tr class="memdesc:gaf2169b6d6505a28d7ee5f8599d2fb25e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction permet de lire les informations concernant le champ d'indice <em>ind</em> .  <a href="a02320_gaf2169b6d6505a28d7ee5f8599d2fb25e.html#gaf2169b6d6505a28d7ee5f8599d2fb25e">Plus de détails...</a><br /></td></tr>
-<tr class="separator:gaf2169b6d6505a28d7ee5f8599d2fb25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga117cbfd7c1fc0b011adb7c886e143401"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a02339_abd29d7c6abaef5da2a5ed1b73464f0ba.html#abd29d7c6abaef5da2a5ed1b73464f0ba">med_err</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02350_ga117cbfd7c1fc0b011adb7c886e143401.html#ga117cbfd7c1fc0b011adb7c886e143401">MEDfieldEntityType</a> (const <a class="el" href="a02339_afa4ec8284026c8c5545e5333475fb65a.html#afa4ec8284026c8c5545e5333475fb65a">med_idt</a> fid, const char *const fieldname, const <a class="el" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> numdt, const <a class="el" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> numit, <a class="el" href="a02339_aab0e957294723517d5c3641bb71b0470.html#aab0e957294723517d5c3641bb71b0470">med_entity_type</a> *const entitytypes, <a class="el" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> *const usedbyncs)</td></tr>
+<tr class="memdesc:ga117cbfd7c1fc0b011adb7c886e143401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette fonction retourne la liste des types d'entité présents dans un champ (<a class="el" href="a02339_aab0e957294723517d5c3641bb71b0470.html#aab0e957294723517d5c3641bb71b0470">med_entity_type</a>).  <a href="a02350_ga117cbfd7c1fc0b011adb7c886e143401.html#ga117cbfd7c1fc0b011adb7c886e143401">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga117cbfd7c1fc0b011adb7c886e143401"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 8 Octobre 2021 13:44:08 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 21 Mai 2025 19:18:32 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.16
 </small></address>

@@ -32,6 +32,7 @@ SET(testf_SOURCES
     test31.f
     test32.f
     test33.f
+    test34.f
     test3.f
     test4.f
     test5.f90

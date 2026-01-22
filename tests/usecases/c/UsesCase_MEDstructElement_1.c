@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -88,7 +88,7 @@ int main (int argc, char **argv) {
 					  10,11,
 					  11,12 };
   med_int nentity;
-  const med_int labels[3] = { 1, 2, 3 }; /* nodes numbers */
+  const med_int labels[3] = { 1, 2, 3 };        /* nodes numbers used as particles ids.*/
   const med_int ballconnectivity[2] = { 4, 5 }; /* nodes numbers */
   const med_float balldiameter[2] = { 2.0, 5.8 };
   const med_int nquad4=4;

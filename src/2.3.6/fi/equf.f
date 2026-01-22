@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -16,7 +16,7 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C*
 
       subroutine efequc ( fid , maa , eq , des , cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efequc
+cDEC$ ATTRIBUTES DLLEXPORT :: efequc
 c
       implicit none
       save
@@ -32,7 +32,7 @@ c
       end
 c
       subroutine efeque (fid,maa,eq,corr,n,typent,typgeo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efeque
+cDEC$ ATTRIBUTES DLLEXPORT :: efeque
 c
       implicit none
       save
@@ -49,7 +49,7 @@ c
       end
 c
       subroutine efequl(fid,maa,eq,corr,n,typent,typgeo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efequl
+cDEC$ ATTRIBUTES DLLEXPORT :: efequl
 c
       implicit none
       save
@@ -66,7 +66,7 @@ c
       end
 c
       subroutine efncor(fid,maa,eq,typent,typgeo,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efncor
+cDEC$ ATTRIBUTES DLLEXPORT :: efncor
 c
       implicit none
       save
@@ -87,7 +87,7 @@ c
       end
 c
       subroutine efnequ(fid,maa,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnequ
+cDEC$ ATTRIBUTES DLLEXPORT :: efnequ
 c
       implicit none
       save
@@ -108,7 +108,7 @@ c
       end
 c      
       subroutine efequi(fid,maa,ind,eq,des,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efequi
+cDEC$ ATTRIBUTES DLLEXPORT :: efequi
 c
       implicit none
       save

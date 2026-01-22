@@ -1,6 +1,6 @@
 !*  This file is part of MED.
 !*
-!*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+!*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 !*  MED is free software: you can redistribute it and/or modify
 !*  it under the terms of the GNU Lesser General Public License as published by
 !*  the Free Software Foundation, either version 3 of the License, or
@@ -105,7 +105,7 @@ program test17
   ! ** Fermeture du fichier **
   call mficlo(fid,cret)
   print *,cret
-	
+        
   ! ** Affichage **
   if (cret.eq.0) then
       print *,"Connectivite des segments : ",se2
@@ -128,7 +128,7 @@ program test17
       endif
 
       if (inuele2 .eq. MED_TRUE) then
-	  print *,"Numeros des triangles :", numtr3
+          print *,"Numeros des triangles :", numtr3
       endif
 
       print *,"Numeros des familles des triangles :", nufatr3

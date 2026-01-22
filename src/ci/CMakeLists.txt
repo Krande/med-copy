@@ -28,6 +28,8 @@ MEDmemFileOpen.c
 MEDfileClose.c 
 MEDfileCommentWr.c 
 MEDfileCommentRd.c 
+MEDfileDescriptionWr.c 
+MEDfileDescriptionRd.c 
 MEDfileCompatibility.c 
 MEDfileNumVersionRd.c 
 MEDfileStrVersionRd.c 
@@ -35,6 +37,12 @@ MEDfileObjectsMount.c
 MEDfileObjectsMountById.c 
 MEDfileObjectsUnmount.c 
 MEDfileObjectExist.c
+MEDfileObjectDescriptionExist.c
+MEDfileObjectDescriptionWr.c
+MEDfileObjectDescriptionRd.c
+MEDfileObjectDescriptionWrByPath.c
+MEDfileObjectDescriptionRdByPath.c
+MEDfileObjectDescriptionExistByPath.c
 MEDnProfile.c 
 MEDprofileInfo.c 
 MEDprofileWr.c 
@@ -179,7 +187,7 @@ MEDstructElementInfo.c
 MEDstructElementConstAttInfoByName.c 
 MEDstructElementConstAttInfo.c 
 MEDstructElementConstAttRd.c 
-MEDstructElementAttSizeof.c  
+MEDstructElementAttSizeof.c 
 MEDstructElementVarAttCr.c 
 MEDstructElementVarAttInfoByName.c 
 MEDstructElementVarAttInfo.c 
@@ -270,8 +278,8 @@ _MEDparameterInfoByName30.c
 _MEDparameterInfoByName236.c 
 _MEDparameterValueRd30.c 
 _MEDparameterValueRd236.c 
-_MEDfileCommentRd30.c 
-_MEDfileCommentRd236.c 
+_MEDfileDescriptionRd30.c 
+_MEDfileDescriptionRd236.c 
 _MEDfileObjectsMount30.c 
 _MEDfileObjectsMount236.c 
 _MEDfileObjectsUnmount30.c 

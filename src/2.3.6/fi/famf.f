@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -17,7 +17,7 @@ C*
 
       subroutine effamc(fid,maa,fam,num,attid,attval,attdes,
      1     natt, gro,ngro,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: effamc
+cDEC$ ATTRIBUTES DLLEXPORT :: effamc
 c
       implicit none
       save
@@ -36,7 +36,7 @@ c
       end
 c
       subroutine effame(fid,maa,fam,n,typent,typgeo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: effame
+cDEC$ ATTRIBUTES DLLEXPORT :: effame
 c
       implicit none
       save
@@ -52,7 +52,7 @@ c
       end
 c
       subroutine effaml(fid,maa,fam,n,typent,typgeo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: effaml
+cDEC$ ATTRIBUTES DLLEXPORT :: effaml
 c
       implicit none
       save
@@ -69,7 +69,7 @@ c
 c      
       subroutine effami(fid,maa,ind,fam,num,attid,attval,attdes,
      1     natt,gro,ngro,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: effami
+cDEC$ ATTRIBUTES DLLEXPORT :: effami
 c
       implicit none
       save
@@ -87,7 +87,7 @@ c
       end
 c      
       subroutine efnfam(fid,maa,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnfam
+cDEC$ ATTRIBUTES DLLEXPORT :: efnfam
 c
       implicit none
       save
@@ -109,7 +109,7 @@ c
 c
 
       subroutine efngro(fid,maa,ind,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efngro
+cDEC$ ATTRIBUTES DLLEXPORT :: efngro
 c
       implicit none
       save
@@ -131,7 +131,7 @@ c
 c
 
       subroutine efnatt(fid,maa,ind,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnatt
+cDEC$ ATTRIBUTES DLLEXPORT :: efnatt
 c
       implicit none
       save

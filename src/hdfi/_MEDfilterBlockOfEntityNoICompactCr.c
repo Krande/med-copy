@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -82,6 +82,17 @@ med_err _MEDfilterBlockOfEntityNoICompactCr(const med_idt          fid,
     _dimutil  = nconstituentpervalue;
   }
 
+  /* _profilearraysize est calculé avant le test suivant      */
+  /*  pour le positionner correctement dans le filtre         */
+  /* C'est particulièrement important pour _MEDdatasetWr      */
+  /* qui l'utlise pour calculer la taille du diskdataspace    */
+  if ( (_anyprofil=(strlen(profilename))) ) {
+    profilearraysize = MEDprofileSizeByName(fid,profilename);
+    _profilearraysize=profilearraysize;
+  } else {
+    _profilearraysize = nentity;
+  }
+  
   if ( (count < 1 ) || ( blocksize < 1 ) ) {
     _index=0;
     for (_dim=_firstdim; _dim < _lastdim; _dim++) {
@@ -106,13 +117,6 @@ med_err _MEDfilterBlockOfEntityNoICompactCr(const med_idt          fid,
 /*   ISCRUTE(_count); */
 /*   ISCRUTE(_countfilelastblock[0]); */
 
-  /* Conditionne les traitements à l'existence d'un profil */
-  if ( _anyprofil=(strlen(profilename)) ) {
-    profilearraysize = MEDprofileSizeByName(fid,profilename);
-    _profilearraysize=profilearraysize;
-  } else {
-    _profilearraysize = nentity;
-  }
 
   _blocksize             [0] = blocksize*nvaluesperentity; /*!*nconstituentpervalue car on sélectionne par constituent*/
   _onedimallvaluesmemoffset  = _blocksize[0]*_count+ _anylastblock*lastblocksize*nvaluesperentity;
@@ -126,17 +130,17 @@ med_err _MEDfilterBlockOfEntityNoICompactCr(const med_idt          fid,
   _stridefile        [0]     = stride*nvaluesperentity;
   _filelastblocksize [0]     *= lastblocksize*nvaluesperentity;
 
-/*   ISCRUTE(_blocksize             [0] ); */
-/*   ISCRUTE(_onedimallvaluesmemoffset  ); */
-/*   ISCRUTE_id(_memspacesize          [0] ); */
-/*   ISCRUTE(_stridemem             [0] ); */
-/*   ISCRUTE(_countmem              [0] ); */
-/*   ISCRUTE(_memblocksize          [0] ); */
+  /* ISCRUTE(_blocksize             [0] ); */
+  /* ISCRUTE(_onedimallvaluesmemoffset  ); */
+  /* ISCRUTE_id(_memspacesize          [0] ); */
+  /* ISCRUTE(_stridemem             [0] ); */
+  /* ISCRUTE(_countmem              [0] ); */
+  /* ISCRUTE(_memblocksize          [0] ); */
 
-/*   ISCRUTE(_onedimallvaluesfileoffset ); */
-/*   ISCRUTE_int(_filespacesize     [0]     ); */
-/*   ISCRUTE(_stridefile        [0]     ); */
-/*   ISCRUTE(_filelastblocksize [0]     ); */
+  /* ISCRUTE(_onedimallvaluesfileoffset ); */
+  /* ISCRUTE_int(_filespacesize     [0]     ); */
+  /* ISCRUTE(_stridefile        [0]     ); */
+  /* ISCRUTE(_filelastblocksize [0]     ); */
 
 
   if ( _memspacesize[0] > _filespacesize[0] ) {

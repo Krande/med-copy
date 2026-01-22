@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -17,7 +17,7 @@ C*
 
       subroutine msecre(fid,mname,mdim,smname,setype,
      &                  sgtype, etype, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msecre
+cDEC$ ATTRIBUTES DLLEXPORT :: msecre
 c
       implicit none
       save
@@ -41,7 +41,7 @@ c
 c
 c
       subroutine msense(fid,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msense
+cDEC$ ATTRIBUTES DLLEXPORT :: msense
 c
       implicit none
       save
@@ -65,7 +65,7 @@ c
       subroutine msesei(fid,it,mname,mgtype,mdim,smname,
      &                  setype,snnode,sncell,sgtype,
      &                  ncatt,ap,nvatt,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msesei
+cDEC$ ATTRIBUTES DLLEXPORT :: msesei
 c
       implicit none
       save
@@ -87,7 +87,7 @@ c
       subroutine msesin(fid,mname,mgtype,mdim,smname,
      &                  setype,snnode,sncell,sgtype,
      &                  ncatt,ap,nvatt,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msesin
+cDEC$ ATTRIBUTES DLLEXPORT :: msesin
 c
       implicit none
       save
@@ -107,7 +107,7 @@ c
 c
 c
       subroutine msesen(fid,mgtype,mname,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msesen
+cDEC$ ATTRIBUTES DLLEXPORT :: msesen
 c
       implicit none
       save
@@ -124,7 +124,7 @@ c
 c
 c
       subroutine msesgt(fid,mname,gtype,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msesgt
+cDEC$ ATTRIBUTES DLLEXPORT :: msesgt
 c
       implicit none
       save
@@ -147,7 +147,7 @@ c
 c
 c
       subroutine msevac(fid,mname,aname,atype,anc,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msevac
+cDEC$ ATTRIBUTES DLLEXPORT :: msevac
 c
       implicit none
       save
@@ -166,7 +166,7 @@ c
 c
 c
       subroutine msevni(fid,mname,aname,atype,anc,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msevni
+cDEC$ ATTRIBUTES DLLEXPORT :: msevni
 c
       implicit none
       save
@@ -185,7 +185,7 @@ c
 c
 c
       subroutine msevai(fid,mname,it,aname,atype,anc,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msevai
+cDEC$ ATTRIBUTES DLLEXPORT :: msevai
 c
       implicit none
       save
@@ -203,7 +203,7 @@ c
 c
 c
       subroutine mseasz(atype,size,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mseasz
+cDEC$ ATTRIBUTES DLLEXPORT :: mseasz
 c
       implicit none
       save
@@ -225,7 +225,7 @@ c
 c
       subroutine mseraw(fid,mname,aname,atype,anc,
      &                  setype,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mseraw
+cDEC$ ATTRIBUTES DLLEXPORT :: mseraw
 c
       implicit none
       save
@@ -246,7 +246,7 @@ c
 c
       subroutine mseiaw(fid,mname,aname,atype,anc,
      &                  setype,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mseiaw
+cDEC$ ATTRIBUTES DLLEXPORT :: mseiaw
 c
       implicit none
       save
@@ -267,7 +267,7 @@ c
 c
       subroutine msesaw(fid,mname,aname,atype,anc,
      &                  setype,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msesaw
+cDEC$ ATTRIBUTES DLLEXPORT :: msesaw
 c
       implicit none
       save
@@ -288,7 +288,7 @@ c
 c
       subroutine mserpw(fid,mname,aname,atype,anc,
      &                  setype,pname,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mserpw
+cDEC$ ATTRIBUTES DLLEXPORT :: mserpw
 c
       implicit none
       save
@@ -310,7 +310,7 @@ c
 c
       subroutine mseipw(fid,mname,aname,atype,anc,
      &                  setype,pname,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mseipw
+cDEC$ ATTRIBUTES DLLEXPORT :: mseipw
 c
       implicit none
       save
@@ -332,7 +332,7 @@ c
 c
       subroutine msespw(fid,mname,aname,atype,anc,
      &                  setype,pname,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msespw
+cDEC$ ATTRIBUTES DLLEXPORT :: msespw
 c
       implicit none
       save
@@ -354,7 +354,7 @@ c
 c
       subroutine msecni(fid,mname,aname,atype,anc,
      &                  setype,pname,psize,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msecni
+cDEC$ ATTRIBUTES DLLEXPORT :: msecni
 c
       implicit none
       save
@@ -374,7 +374,7 @@ c
 c
       subroutine msecai(fid,mname,it,aname,atype,anc,
      &                  setype,pname,psize,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msecai
+cDEC$ ATTRIBUTES DLLEXPORT :: msecai
 c
       implicit none
       save
@@ -393,7 +393,7 @@ c
 c
 c
       subroutine mserar(fid,mname,aname,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mserar
+cDEC$ ATTRIBUTES DLLEXPORT :: mserar
 c
       implicit none
       save
@@ -412,7 +412,7 @@ c
 c
 c
       subroutine mseiar(fid,mname,aname,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mseiar
+cDEC$ ATTRIBUTES DLLEXPORT :: mseiar
 c
       implicit none
       save
@@ -431,7 +431,7 @@ c
 c
 c
       subroutine msesar(fid,mname,aname,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msesar
+cDEC$ ATTRIBUTES DLLEXPORT :: msesar
 c
       implicit none
       save

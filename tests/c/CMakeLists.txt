@@ -11,9 +11,9 @@ SET(testc_SOURCES test1.c test2.c test3.c test4.c test5.c
     test11.c test11b.c 
     test12.c test13.c test14.c test15.c test16.c test17.c test18.c 
     test20.c test21.c test22.c test23.c test24.c test25.c test26.c test27.c 
-    test28.c test29.c test30.c test31.c test32.c test33.c)
+    test28.c test29.c test30.c test31.c test32.c test33.c test34.c test34b.c)
 
-SET(testc_NOT_AUTO_LAUNCH test13 test15 test30 test31 test32 test33)
+SET(testc_NOT_AUTO_LAUNCH test13 test15 test30 test31 test32 test33 test34 test34b)
 
 # Test20 needs files from dumps.ref:
 FILE(COPY "dumps.ref/test2-med.hdf" DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

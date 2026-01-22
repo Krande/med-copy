@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -25,7 +25,7 @@ c          si le fichier existe deja il est detruit)
 c     Out : cret 0 reussite, -1 echec
 c
       subroutine efouvr(fid, nom, acces, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efouvr
+cDEC$ ATTRIBUTES DLLEXPORT :: efouvr
 c
       implicit none
       save
@@ -62,7 +62,7 @@ c
 c
 c
       subroutine eflfde (fid,lon,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: eflfde
+cDEC$ ATTRIBUTES DLLEXPORT :: eflfde
 c
       implicit none
       save
@@ -83,7 +83,7 @@ c
 c
 c
       subroutine effien (fid,quoi,str,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: effien
+cDEC$ ATTRIBUTES DLLEXPORT :: effien
 c
       implicit none
       save
@@ -100,7 +100,7 @@ c
 c
 c
       subroutine effide (fid,des,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: effide
+cDEC$ ATTRIBUTES DLLEXPORT :: effide
 c
       implicit none
       save
@@ -114,7 +114,7 @@ c
       end
 
       subroutine effoco (nom,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: effoco
+cDEC$ ATTRIBUTES DLLEXPORT :: effoco
 c
       implicit none
       save
@@ -130,7 +130,7 @@ c
 c
 c
       subroutine efveco (nom,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efveco
+cDEC$ ATTRIBUTES DLLEXPORT :: efveco
 c
       implicit none
       save
@@ -147,7 +147,7 @@ c
 c
 c
       subroutine efveli (fid,maj,min,rel,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efveli
+cDEC$ ATTRIBUTES DLLEXPORT :: efveli
 c
       implicit none
       save
@@ -164,7 +164,7 @@ c
 c
 c
       subroutine efvedo (maj,min,rel,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efvedo
+cDEC$ ATTRIBUTES DLLEXPORT :: efvedo
 c
       implicit none
       save
@@ -182,7 +182,7 @@ c
 c
 c
       subroutine efmont(fid, acces, type, mid, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efmont
+cDEC$ ATTRIBUTES DLLEXPORT :: efmont
 c
       implicit none
       save
@@ -205,7 +205,7 @@ c
 c
 c
       subroutine efdemo(fid, mid, type, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efdemo
+cDEC$ ATTRIBUTES DLLEXPORT :: efdemo
 c
       implicit none
       save

@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -46,7 +46,7 @@ med_err _MEDattributeNumWr(med_idt pid,
     case MED_INTERNAL_FLOAT64 :
       type_hdf = H5T_NATIVE_DOUBLE;
       break;
-      
+
     case MED_INTERNAL_INT :
 #if defined(HAVE_F77INT64)
       type_hdf = MED_H5T_INT64;
@@ -56,9 +56,9 @@ med_err _MEDattributeNumWr(med_idt pid,
 #endif
       break;
 
-    case MED_INTERNAL_INT8:
-      type_hdf = H5T_NATIVE_B8;
-      break;
+    /* case MED_INTERNAL_INT8: */
+    /*   type_hdf = H5T_NATIVE_B8; */
+    /*   break; */
 
     case MED_INTERNAL_INT32:
       type_hdf = H5T_NATIVE_B32;
@@ -123,7 +123,7 @@ med_err _MEDattributeNumWr(med_idt pid,
     MED_ERR_(_ret,MED_ERR_CLOSE,MED_ERR_ATTRIBUTE, MED_ERR_ID_MSG );
     ISCRUTE_id(_attid);
   }
-  
+
   return _ret;
 
 }

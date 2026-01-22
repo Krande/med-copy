@@ -1,6 +1,6 @@
 !*  This file is part of MED.
 !*
-!*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+!*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 !*  MED is free software: you can redistribute it and/or modify
 !*  it under the terms of the GNU Lesser General Public License as published by
 !*  the Free Software Foundation, either version 3 of the License, or
@@ -102,7 +102,7 @@
 
 !   ** Lecture de la connectivite des segments           **   
       if (cret.eq.0) then
-	call mmhcyr(fid,maa,MED_NO_DT,MED_NO_IT,MED_DESCENDING_EDGE,MED_SEG2,MED_DESCENDING,MED_FULL_INTERLACE,se2,cret)
+        call mmhcyr(fid,maa,MED_NO_DT,MED_NO_IT,MED_DESCENDING_EDGE,MED_SEG2,MED_DESCENDING,MED_FULL_INTERLACE,se2,cret)
       endif
       if (cret.ne.0) then
          call efexit(-1)
@@ -129,7 +129,7 @@
 
 !   ** Lecture des composantes n°2 des segments
      if (cret.eq.0) then
-	call mmhyar(fid,maa,MED_NO_DT,MED_NO_IT,MED_DESCENDING_EDGE,MED_SEG2,MED_DESCENDING, &
+        call mmhyar(fid,maa,MED_NO_DT,MED_NO_IT,MED_DESCENDING_EDGE,MED_SEG2,MED_DESCENDING, &
                     flt(1),se21,cret)
      endif
      if (cret.ne.0) then
@@ -177,7 +177,7 @@
 
 !  ** Lecture de la connectivite des triangles sans profil **
       if (cret.eq.0) then
-	call mmhcyr(fid,maa,MED_NO_DT,MED_NO_IT,MED_CELL,MED_TRIA3,MED_DESCENDING,MED_NO_INTERLACE,tr3,cret)
+        call mmhcyr(fid,maa,MED_NO_DT,MED_NO_IT,MED_CELL,MED_TRIA3,MED_DESCENDING,MED_NO_INTERLACE,tr3,cret)
       endif
      if (cret.ne.0) then
         call efexit(-1)
@@ -263,4 +263,3 @@
       call efexit(cret)
 
     end program test7
-

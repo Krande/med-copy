@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@ c
 c
       subroutine mfrcre(fid,nent,nvent,ncent,cs,swm,
      &                  stm,pname,fltas,flta,flt,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfrcre
+cDEC$ ATTRIBUTES DLLEXPORT :: mfrcre
 c
       implicit none
       save
@@ -41,7 +41,7 @@ c
 c
 c
       subroutine mfrall(nflt,flt,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfrall
+cDEC$ ATTRIBUTES DLLEXPORT :: mfrall
 c
       implicit none
       save 
@@ -57,7 +57,7 @@ c
 c
 c
       subroutine mfrdea(nflt,flt,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfrdea
+cDEC$ ATTRIBUTES DLLEXPORT :: mfrdea
 c
       implicit none
       save 
@@ -75,7 +75,7 @@ c
       subroutine mfrblc(fid,nent,nvent,ncent,cs,swm,
      &                  stm,pname,start,stride,count,bsize,
      &                  lbsize,flt,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfrblc
+cDEC$ ATTRIBUTES DLLEXPORT :: mfrblc
 c
       implicit none
       save

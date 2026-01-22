@@ -29,6 +29,8 @@
       medmesh
       medparameter
       medprofile
+      medstructelement
+      medsubdomain
 
     Utility tools
     -------------
@@ -77,6 +79,8 @@ from .medlocalization import *
 from .medmesh import *
 from .medparameter import *
 from .medprofile import *
+from .medstructelement import *
+from .medsubdomain import *
 
 
 # define the version

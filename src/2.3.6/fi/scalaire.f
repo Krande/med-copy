@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -16,7 +16,7 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C*
 
       subroutine efscac(fid,sca,type,desc,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efscac 
+cDEC$ ATTRIBUTES DLLEXPORT :: efscac 
 c
       implicit none
       save
@@ -34,7 +34,7 @@ c
 c     Ecriture des scalaires en differenciant ENTIERS et REELS
 c
       subroutine efscee(fid,sca,val,numdt,dtunit,dt,numo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efscee 
+cDEC$ ATTRIBUTES DLLEXPORT :: efscee 
 c
       implicit none
       save
@@ -57,7 +57,7 @@ c
 c     
       subroutine efscfe(fid,sca,val,numdt,dtunit,
      1                  dt,numo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efscfe
+cDEC$ ATTRIBUTES DLLEXPORT :: efscfe
 c
       implicit none
       save
@@ -82,7 +82,7 @@ c
 c     Lecture des champs en distinguant les reels et les entiers
 c     
       subroutine efscel(fid,sca,val,numdt, numo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efscel
+cDEC$ ATTRIBUTES DLLEXPORT :: efscel
 c
       implicit none
       save
@@ -101,7 +101,7 @@ c
 c
 c
       subroutine efscfl(fid,sca,val,numdt, numo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efscfl
+cDEC$ ATTRIBUTES DLLEXPORT :: efscfl
  
       implicit none
       save
@@ -121,7 +121,7 @@ c
 c
 c
       subroutine efscai(fid,ind,sca,type,desc,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efscai
+cDEC$ ATTRIBUTES DLLEXPORT :: efscai
 c
       implicit none
       save
@@ -137,7 +137,7 @@ c
       end
 c
       subroutine efnsca(fid,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnsca
+cDEC$ ATTRIBUTES DLLEXPORT :: efnsca
 c
       implicit none
       save
@@ -157,7 +157,7 @@ c
       end
 c
       subroutine efnspd(fid,sca,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnspd 
+cDEC$ ATTRIBUTES DLLEXPORT :: efnspd 
 c
       implicit none
       save
@@ -181,7 +181,7 @@ c
 
       subroutine efspdi(fid,sca,indice,
      1                  numdt,dtunit,dt,numo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efspdi 
+cDEC$ ATTRIBUTES DLLEXPORT :: efspdi 
 c
       implicit none
       save

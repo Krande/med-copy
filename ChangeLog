@@ -1,3 +1,23 @@
+Modifications dans la version 4.2.0 :
+
+- Nouvelles fonctions pour gérer les descriptions des objets medfichier :
+  MEDfileObjectDescriptionExist, MEDfileObjectDescriptionRd, MEDfileObjectDescriptionWr
+- Création d'une nouvelle notion de path medfichier et création de nvlles fctions de description d'objet :
+  MEDfileObjectDescriptionExistByPath, MEDfileObjectDescriptionRdByPath, MEDfileObjectDescriptionWrByPath
+- Les fonctions MEDfileComment{Wr,Rd} sont déclarées obsoletes
+- Compatibilité supplémentaire avec swig >= 4.3.0
+- Corrections diverses pour portage sur plateformes récentes
+
+Modifications dans la version 4.1.2 :
+
+- Correction d'un bug pouvant mener à un blocage des processus lors d'écritures en mode //
+- Correction d'un bug pouvant mener à un blocage des processus lors d'écritures NO_INTERLACE, COMPACT en mode //
+- Correction de compilation fortran avec GCC > 10, -fallow-argument-mismatch via -std=legacy
+- Corrections des directives de compilations Windows pour dll exports intel Fortran compiler
+- hdf5-1.10.7 is not correcty detected (an m4 substitution into [ ] is not active due to the presence of a previous # character)
+- Corrections concernant la gestion du Python 3.10
+- Patch Cmake Windows symlink-or-copy
+
 Modifications dans la version 4.1.1 :
 
 - Correction concernant Windows pour l'écriture/la lecture des fichiers 2.3 avec med-fichier configuré pour des entiers 64bits

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MED fichier: parallel/getBlocksOfEntitiesPartition.c</title>
+<title>MED fichier: usecases/c/UsesCase_MEDfile_1.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,12 +39,12 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">parallel/getBlocksOfEntitiesPartition.c</div>  </div>
+<div class="title">usecases/c/UsesCase_MEDfile_1.c</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><span class="comment">/*  This file is part of MED.</span></div>
 <div class="line"><span class="comment"> *</span></div>
-<div class="line"><span class="comment"> *  COPYRIGHT (C) 1999 - 2021  EDF R&amp;D, CEA/DEN</span></div>
+<div class="line"><span class="comment"> *  COPYRIGHT (C) 1999 - 2025  EDF R&amp;D, CEA/DEN</span></div>
 <div class="line"><span class="comment"> *  MED is free software: you can redistribute it and/or modify</span></div>
 <div class="line"><span class="comment"> *  it under the terms of the GNU Lesser General Public License as published by</span></div>
 <div class="line"><span class="comment"> *  the Free Software Foundation, either version 3 of the License, or</span></div>
@@ -59,141 +59,55 @@ $(function() {
 <div class="line"><span class="comment"> *  along with MED.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
 <div class="line"><span class="comment"> */</span></div>
 <div class="line"> </div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="a02309.html">med.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="a02339.html">med.h</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#define MESGERR 1</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="a02315.html">med_utils.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="a02345.html">med_utils.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a name="a0"></a><a class="code" href="a03359_a3c04138a5bfe5d72780bb7e82a18e627.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
 <div class="line"> </div>
 <div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="a01052.html">getBlocksOfEntitiesPartition.h</a>&quot;</span></div>
+<div class="line"> <span class="comment">/* how to mount a MED file with a mesh and a MED file with a field in a </span></div>
+<div class="line"><span class="comment">    root MED file */</span></div>
 <div class="line"> </div>
+<div class="line">  <a class="code" href="a02339_afa4ec8284026c8c5545e5333475fb65a.html#afa4ec8284026c8c5545e5333475fb65a">med_idt</a> fid;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> <a name="a0"></a><a class="code" href="a01049_a1a1e5d889c1ec1e795b6663cbbac7e39.html#a1a1e5d889c1ec1e795b6663cbbac7e39">getContinuousBlocksOfEntities</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> myrank, <span class="keyword">const</span> <span class="keywordtype">int</span> nproc, <span class="keyword">const</span> <span class="keywordtype">int</span> nentities,</div>
-<div class="line">                                    <a class="code" href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a> * <span class="keyword">const</span> start, <a class="code" href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a> * <span class="keyword">const</span> stride, <a class="code" href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a> * <span class="keyword">const</span> count, <a class="code" href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a> * blocksize,</div>
-<div class="line">                                    <span class="keywordtype">int</span> * <span class="keyword">const</span> lastusedrank, <a class="code" href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a> * <span class="keyword">const</span> lastblocksize ) {</div>
+<div class="line">  <span class="comment">/* file creation */</span></div>
+<div class="line">  fid = <a name="a1"></a><a class="code" href="a02351_ga9376a1654b7bf099c3f8941074c5fdfb.html#ga9376a1654b7bf099c3f8941074c5fdfb">MEDfileOpen</a>(<span class="stringliteral">&quot;UsesCase_MEDfile_1.med&quot;</span>,<a name="a2"></a><a class="code" href="a02339_adcd0322de9fec3b5e199ffeda3f44c85.html#adcd0322de9fec3b5e199ffeda3f44c85aa23dd1c18b596924d5f50c8402b84c8e">MED_ACC_CREAT</a>);</div>
+<div class="line">  <span class="keywordflow">if</span> (fid &lt; 0) {</div>
+<div class="line">    <a name="a3"></a><a class="code" href="a02345_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a>(<span class="stringliteral">&quot;ERROR : file creation&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> -1;</div>
+<div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span>      _nusedproc      = nproc;</div>
-<div class="line">    <span class="keywordtype">int</span>      _lastusedrank   = 0;</div>
-<div class="line">    <a class="code" href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a> _blocksize      = nentities/nproc;</div>
-<div class="line">    <span class="comment">/* _nblocks_pproc vaut 1 ou 0 si l&#39;on utilise pas tous les processus */</span></div>
-<div class="line">    <span class="keywordtype">int</span>      _nblocks_pproc  = 0;</div>
+<div class="line">  <span class="comment">/* comment writing */</span></div>
+<div class="line">  <span class="keywordflow">if</span> (<a name="a4"></a><a class="code" href="a02351_ga431a4a1d1f95d4b2b6786db002c6c1be.html#ga431a4a1d1f95d4b2b6786db002c6c1be">MEDfileCommentWr</a>(fid,<span class="stringliteral">&quot;A root MED file&quot;</span>) &lt; 0) {</div>
+<div class="line">    <a class="code" href="a02345_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a>(<span class="stringliteral">&quot;ERROR : file comment writing&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> -1;</div>
+<div class="line">  }</div>
 <div class="line"> </div>
+<div class="line">  <span class="comment">/* file closing */</span></div>
+<div class="line">  <span class="keywordflow">if</span> (<a name="a5"></a><a class="code" href="a02351_ga12a0e901c376be997a41a073ce426283.html#ga12a0e901c376be997a41a073ce426283">MEDfileClose</a>(fid) &lt; 0) {</div>
+<div class="line">    <a class="code" href="a02345_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a>(<span class="stringliteral">&quot;ERROR : file closing&quot;</span>);             </div>
+<div class="line">    <span class="keywordflow">return</span> -1; </div>
+<div class="line">  } </div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">/*Tant que la taille des blocks est nulle on diminue le</span></div>
-<div class="line"><span class="comment">      nombre de processus utilisé jusqu&#39;au minimum d&#39;un processus</span></div>
-<div class="line"><span class="comment">    */</span></div>
-<div class="line">    <span class="keywordflow">for</span> (; (_blocksize &lt; 1) &amp;&amp; ( _nusedproc &gt; 1 ) ; ) {</div>
-<div class="line">      <a name="a1"></a><a class="code" href="a02315_a257959db0a78623caa051d11ceb2f8cb.html#a257959db0a78623caa051d11ceb2f8cb">SSCRUTE</a>(<span class="stringliteral">&quot;NOT USING ALL PROCESS&quot;</span>);</div>
-<div class="line">      --_nusedproc;</div>
-<div class="line">      _blocksize = nentities/_nusedproc;</div>
-<div class="line">    }</div>
-<div class="line">    _lastusedrank   = _nusedproc-1;</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> ( myrank &lt; _nusedproc)</div>
-<div class="line">      _nblocks_pproc = 1;</div>
-<div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      _blocksize = 0;</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">/*     if ( _blocksize == 0 ) { */</span></div>
-<div class="line"><span class="comment">/*       if (myrank == 0 ) { _nblocks_pproc=1;_blocksize=nentities;} */</span></div>
-<div class="line"><span class="comment">/*       _lastusedrank = 0; */</span></div>
-<div class="line"><span class="comment">/*       _nusedproc = 1; */</span></div>
-<div class="line"><span class="comment">/*       _blocksize    = nentities; */</span> <span class="comment">/*TODO : essayer de l&#39;enlever maintenant : Ajouté pour symétrie des opération MPI_File, *count == 0*/</span></div>
-<div class="line"><span class="comment">/*     } else { */</span></div>
-<div class="line"><span class="comment">/*       _nblocks_pproc = 1; */</span></div>
-<div class="line"><span class="comment">/*     } */</span></div>
-<div class="line"> </div>
-<div class="line">    *start         = myrank*_nblocks_pproc*_blocksize;</div>
-<div class="line">    *stride        = _blocksize;</div>
-<div class="line">    *count         = _nblocks_pproc;</div>
-<div class="line">    *lastblocksize = 0;</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> ( myrank == _lastusedrank ) {</div>
-<div class="line">      *blocksize = nentities+_blocksize*(1-_nusedproc);</div>
-<div class="line">    } <span class="keywordflow">else</span> {</div>
-<div class="line">      *blocksize =_blocksize;</div>
-<div class="line">    }</div>
-<div class="line">    ++(*start);</div>
-<div class="line">    *lastusedrank=_lastusedrank;</div>
-<div class="line">    printf(<span class="stringliteral">&quot;My rank %d , start %l , stride %l , blocksize %l , count %l , lastblocksize %l\n&quot;</span>,</div>
-<div class="line">            myrank,*start,*stride,*blocksize,*count,*lastblocksize);</div>
-<div class="line">    <span class="keywordflow">return</span>;</div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> <a name="a2"></a><a class="code" href="a01049_a9a1191a9ceaa2926cc07e5cdd38339cb.html#a9a1191a9ceaa2926cc07e5cdd38339cb">getCyclicBlocksOfEntities</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> myrank, <span class="keyword">const</span> <span class="keywordtype">int</span> nproc, <span class="keyword">const</span> <span class="keywordtype">int</span> nentities,</div>
-<div class="line">                               <a class="code" href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a> * <span class="keyword">const</span> start, <a class="code" href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a> * <span class="keyword">const</span> stride,  <a class="code" href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a> * <span class="keyword">const</span> io_count, <a class="code" href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a> * blocksize,</div>
-<div class="line">                               <span class="keywordtype">int</span> * <span class="keyword">const</span> lastusedrank, <a class="code" href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a> * <span class="keyword">const</span> lastblocksize ) {</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordtype">int</span>      _nusedproc      = nproc;</div>
-<div class="line">    <span class="keywordtype">int</span>      _lastusedrank   = nproc-1;</div>
-<div class="line">    <span class="keywordtype">int</span>      _nblocks_pproc  = *io_count;</div>
-<div class="line">    <span class="keywordtype">int</span>      _nblocks        = _nblocks_pproc*nproc;</div>
-<div class="line">    <a class="code" href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a> _blocksize      = 0;</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> (_nblocks) _blocksize=nentities/_nblocks;</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">/*Tant que la taille des block est nulle on diminue le</span></div>
-<div class="line"><span class="comment">     nombre de blocks affecté par processus jusqu&#39;au minimum</span></div>
-<div class="line"><span class="comment">     d&#39;un block par processus</span></div>
-<div class="line"><span class="comment">    */</span></div>
-<div class="line">    <span class="keywordflow">for</span> (; (_blocksize &lt; 1) &amp;&amp; ( _nblocks_pproc &gt; 1 ) ; ) {</div>
-<div class="line">      --_nblocks_pproc;</div>
-<div class="line">      _nblocks   = _nblocks_pproc*nproc;</div>
-<div class="line">      _blocksize = nentities/_nblocks;</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">/*     ISCRUTE(_nblocks_pproc); */</span></div>
-<div class="line"><span class="comment">/*     ISCRUTE(_blocksize); */</span></div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">/*Si la taille des blocks est toujours nulle,</span></div>
-<div class="line"><span class="comment">      c&#39;est qu&#39;il y a trop de processus pour le nombre d&#39;entités :</span></div>
-<div class="line"><span class="comment">      -&gt; On effectue alors une répartition par block contigüs qui prend</span></div>
-<div class="line"><span class="comment">      en compte la possible non affectation de certains processus.</span></div>
-<div class="line"><span class="comment">    */</span></div>
-<div class="line">    <span class="keywordflow">if</span> ( _blocksize == 0 ) {</div>
-<div class="line">      <a name="a3"></a><a class="code" href="a02315_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a>(<span class="stringliteral">&quot;Downcasting getCyclicBlocksOfEntities to getContinuousBlocksOfEntities&quot;</span>);</div>
-<div class="line">      <a class="code" href="a01049_a1a1e5d889c1ec1e795b6663cbbac7e39.html#a1a1e5d889c1ec1e795b6663cbbac7e39">getContinuousBlocksOfEntities</a>(myrank, nproc, nentities,</div>
-<div class="line">                                    start, stride, io_count, blocksize, lastusedrank, lastblocksize );</div>
-<div class="line">      <span class="keywordflow">return</span>;</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    <span class="comment">/* A partir d&#39;ici on est en mesure de calculer une répartition cyclique par block*/</span></div>
-<div class="line">    *blocksize     = _blocksize;</div>
-<div class="line">    *stride        = _blocksize*nproc;</div>
-<div class="line">    *start         = _blocksize*myrank;</div>
-<div class="line">    *io_count      = _nblocks_pproc;</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">if</span> (myrank == _lastusedrank) {</div>
-<div class="line">      *lastblocksize = nentities + _blocksize*(1-nproc*_nblocks_pproc);</div>
-<div class="line">      <span class="comment">/*Dans le cas _nblocks_pproc==1 on a en fait une répartition contigüe des blocks</span></div>
-<div class="line"><span class="comment">       lastblocksize vaut alors 0 car il n&#39;est pas utilisé.*/</span></div>
-<div class="line">      <span class="keywordflow">if</span> ( _nblocks_pproc == 1 ) {*blocksize=*lastblocksize;*lastblocksize=0;}</div>
-<div class="line">    } <span class="keywordflow">else</span></div>
-<div class="line">      *lastblocksize=0;</div>
-<div class="line"> </div>
-<div class="line">    ++(*start);</div>
-<div class="line">    *lastusedrank=_lastusedrank;</div>
-<div class="line"><span class="comment">/*     printf(&quot;My rank %d, start %d, stride %d, blocksize %d, io_count %d, lastblocksize %d\n&quot;,myrank,*start,*stride,*blocksize,*io_count,*lastblocksize); */</span></div>
-<div class="line">    <span class="keywordflow">return</span>;</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"> </div>
 <div class="line"> </div>
 </div><!-- fragment --> </div><!-- contents -->
-<div class="ttc" id="aa02309_abc4b2f6b68a545b7b3441b0d3d860629_html_abc4b2f6b68a545b7b3441b0d3d860629"><div class="ttname"><a href="a02309_abc4b2f6b68a545b7b3441b0d3d860629.html#abc4b2f6b68a545b7b3441b0d3d860629">med_size</a></div><div class="ttdeci">hsize_t med_size</div><div class="ttdef"><b>Definition:</b> <a href="a02309_source.html#l00329">med.h:329</a></div></div>
-<div class="ttc" id="aa01052_html"><div class="ttname"><a href="a01052.html">getBlocksOfEntitiesPartition.h</a></div></div>
-<div class="ttc" id="aa02315_a3756046b0a6a7e51b8eb544d0d77c17c_html_a3756046b0a6a7e51b8eb544d0d77c17c"><div class="ttname"><a href="a02315_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a></div><div class="ttdeci">#define MESSAGE(chaine)</div><div class="ttdef"><b>Definition:</b> <a href="a02315_source.html#l00324">med_utils.h:324</a></div></div>
-<div class="ttc" id="aa02309_html"><div class="ttname"><a href="a02309.html">med.h</a></div></div>
-<div class="ttc" id="aa01049_a9a1191a9ceaa2926cc07e5cdd38339cb_html_a9a1191a9ceaa2926cc07e5cdd38339cb"><div class="ttname"><a href="a01049_a9a1191a9ceaa2926cc07e5cdd38339cb.html#a9a1191a9ceaa2926cc07e5cdd38339cb">getCyclicBlocksOfEntities</a></div><div class="ttdeci">void getCyclicBlocksOfEntities(const int myrank, const int nproc, const int nentities, med_size *const start, med_size *const stride, med_size *const io_count, med_size *blocksize, int *const lastusedrank, med_size *const lastblocksize)</div><div class="ttdef"><b>Definition:</b> <a href="a01049_source.html#l00079">getBlocksOfEntitiesPartition.c:79</a></div></div>
-<div class="ttc" id="aa02315_a257959db0a78623caa051d11ceb2f8cb_html_a257959db0a78623caa051d11ceb2f8cb"><div class="ttname"><a href="a02315_a257959db0a78623caa051d11ceb2f8cb.html#a257959db0a78623caa051d11ceb2f8cb">SSCRUTE</a></div><div class="ttdeci">#define SSCRUTE(chaine)</div><div class="ttdef"><b>Definition:</b> <a href="a02315_source.html#l00323">med_utils.h:323</a></div></div>
-<div class="ttc" id="aa01049_a1a1e5d889c1ec1e795b6663cbbac7e39_html_a1a1e5d889c1ec1e795b6663cbbac7e39"><div class="ttname"><a href="a01049_a1a1e5d889c1ec1e795b6663cbbac7e39.html#a1a1e5d889c1ec1e795b6663cbbac7e39">getContinuousBlocksOfEntities</a></div><div class="ttdeci">void getContinuousBlocksOfEntities(const int myrank, const int nproc, const int nentities, med_size *const start, med_size *const stride, med_size *const count, med_size *blocksize, int *const lastusedrank, med_size *const lastblocksize)</div><div class="ttdef"><b>Definition:</b> <a href="a01049_source.html#l00027">getBlocksOfEntitiesPartition.c:27</a></div></div>
-<div class="ttc" id="aa02315_html"><div class="ttname"><a href="a02315.html">med_utils.h</a></div></div>
+<div class="ttc" id="aa03359_a3c04138a5bfe5d72780bb7e82a18e627_html_a3c04138a5bfe5d72780bb7e82a18e627"><div class="ttname"><a href="a03359_a3c04138a5bfe5d72780bb7e82a18e627.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a></div><div class="ttdeci">int main(int argc, char **argv)</div><div class="ttdef"><b>Definition:</b> <a href="a03359_source.html#l00050">3.0.8/test10.c:50</a></div></div>
+<div class="ttc" id="aa02339_afa4ec8284026c8c5545e5333475fb65a_html_afa4ec8284026c8c5545e5333475fb65a"><div class="ttname"><a href="a02339_afa4ec8284026c8c5545e5333475fb65a.html#afa4ec8284026c8c5545e5333475fb65a">med_idt</a></div><div class="ttdeci">hid_t med_idt</div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00335">med.h:335</a></div></div>
+<div class="ttc" id="aa02345_a3756046b0a6a7e51b8eb544d0d77c17c_html_a3756046b0a6a7e51b8eb544d0d77c17c"><div class="ttname"><a href="a02345_a3756046b0a6a7e51b8eb544d0d77c17c.html#a3756046b0a6a7e51b8eb544d0d77c17c">MESSAGE</a></div><div class="ttdeci">#define MESSAGE(chaine)</div><div class="ttdef"><b>Definition:</b> <a href="a02345_source.html#l00324">med_utils.h:324</a></div></div>
+<div class="ttc" id="aa02345_html"><div class="ttname"><a href="a02345.html">med_utils.h</a></div></div>
+<div class="ttc" id="aa02351_ga431a4a1d1f95d4b2b6786db002c6c1be_html_ga431a4a1d1f95d4b2b6786db002c6c1be"><div class="ttname"><a href="a02351_ga431a4a1d1f95d4b2b6786db002c6c1be.html#ga431a4a1d1f95d4b2b6786db002c6c1be">MEDfileCommentWr</a></div><div class="ttdeci">med_err MEDfileCommentWr(const med_idt fid, const char *const description)</div><div class="ttdoc">\MEDfileCommentWrBrief</div><div class="ttdef"><b>Definition:</b> <a href="a01562_source.html#l00037">MEDfileCommentWr.c:37</a></div></div>
+<div class="ttc" id="aa02351_ga12a0e901c376be997a41a073ce426283_html_ga12a0e901c376be997a41a073ce426283"><div class="ttname"><a href="a02351_ga12a0e901c376be997a41a073ce426283.html#ga12a0e901c376be997a41a073ce426283">MEDfileClose</a></div><div class="ttdeci">MEDC_EXPORT med_err MEDfileClose(med_idt fid)</div><div class="ttdoc">Fermeture d'un fichier MED.</div><div class="ttdef"><b>Definition:</b> <a href="a01556_source.html#l00030">MEDfileClose.c:30</a></div></div>
+<div class="ttc" id="aa02339_html"><div class="ttname"><a href="a02339.html">med.h</a></div></div>
+<div class="ttc" id="aa02351_ga9376a1654b7bf099c3f8941074c5fdfb_html_ga9376a1654b7bf099c3f8941074c5fdfb"><div class="ttname"><a href="a02351_ga9376a1654b7bf099c3f8941074c5fdfb.html#ga9376a1654b7bf099c3f8941074c5fdfb">MEDfileOpen</a></div><div class="ttdeci">MEDC_EXPORT med_idt MEDfileOpen(const char *const filename, const med_access_mode accessmode)</div><div class="ttdoc">Ouverture d'un fichier MED.</div><div class="ttdef"><b>Definition:</b> <a href="a01613_source.html#l00042">MEDfileOpen.c:42</a></div></div>
+<div class="ttc" id="aa02339_adcd0322de9fec3b5e199ffeda3f44c85_html_adcd0322de9fec3b5e199ffeda3f44c85aa23dd1c18b596924d5f50c8402b84c8e"><div class="ttname"><a href="a02339_adcd0322de9fec3b5e199ffeda3f44c85.html#adcd0322de9fec3b5e199ffeda3f44c85aa23dd1c18b596924d5f50c8402b84c8e">MED_ACC_CREAT</a></div><div class="ttdef"><b>Definition:</b> <a href="a02339_source.html#l00126">med.h:126</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 8 Octobre 2021 13:44:04 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 21 Mai 2025 19:18:30 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.16
 </small></address>

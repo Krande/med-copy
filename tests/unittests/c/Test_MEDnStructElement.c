@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -46,6 +46,12 @@ int main (int argc, char **argv)
   if ( (_nstructelement = MEDnStructElement(_fid)) <0) _ret=_nstructelement;
 
   ISCRUTE(_nstructelement);
+
+  /* close file */
+  if (MEDfileClose(_fid) < 0) {
+    MESSAGE("ERROR : close file ...");
+    return -1;
+  }
 
   return _ret;
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MED fichier: Référence du fichier medfile.f</title>
+<title>MED fichier: Référence du fichier MEDsubdomainJointCr.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,63 +38,72 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_21ff39c74838e10d1b918a45b9d185d5.html">src</a></li><li class="navelem"><a class="el" href="dir_dbd2ee24887c28c24b530cac4c2c97c8.html">fi</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_21ff39c74838e10d1b918a45b9d185d5.html">src</a></li><li class="navelem"><a class="el" href="dir_48027acf4688ac8b76ff5eb90d59af4a.html">ci</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Fonctions/Subroutines</a>  </div>
+<a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
-<div class="title">Référence du fichier medfile.f</div>  </div>
+<div class="title">Référence du fichier MEDsubdomainJointCr.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;<a class="el" href="a02339_source.html">med.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="a02342_source.html">med_config.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="a01346_source.html">med_outils.h</a>&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de MEDsubdomainJointCr.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="a02013.jpg" border="0" usemap="#MEDsubdomainJointCr_8c" alt=""/></div>
+<map name="MEDsubdomainJointCr_8c" id="MEDsubdomainJointCr_8c">
+<area shape="rect" title=" " alt="" coords="1349,5,1517,32"/>
+<area shape="rect" href="a02339.html" title=" " alt="" coords="1281,229,1339,256"/>
+<area shape="rect" href="a02342.html" title=" " alt="" coords="1076,229,1176,256"/>
+<area shape="rect" href="a01346.html" title=" " alt="" coords="1385,80,1481,107"/>
+<area shape="rect" title=" " alt="" coords="1737,229,1801,256"/>
+<area shape="rect" title=" " alt="" coords="1807,80,1872,107"/>
+<area shape="rect" title=" " alt="" coords="1281,304,1339,331"/>
+<area shape="rect" href="a01349.html" title=" " alt="" coords="911,304,1005,331"/>
+<area shape="rect" href="a01373.html" title=" " alt="" coords="901,453,1015,480"/>
+<area shape="rect" href="a01406.html" title=" " alt="" coords="5,379,97,405"/>
+<area shape="rect" href="a01391.html" title=" " alt="" coords="122,379,197,405"/>
+<area shape="rect" href="a01418.html" title=" " alt="" coords="221,379,311,405"/>
+<area shape="rect" href="a01385.html" title=" " alt="" coords="335,379,418,405"/>
+<area shape="rect" href="a01382.html" title=" " alt="" coords="443,379,535,405"/>
+<area shape="rect" href="a01376.html" title=" " alt="" coords="559,379,685,405"/>
+<area shape="rect" href="a01433.html" title=" " alt="" coords="709,379,831,405"/>
+<area shape="rect" href="a01427.html" title=" " alt="" coords="855,379,949,405"/>
+<area shape="rect" href="a01397.html" title=" " alt="" coords="973,379,1055,405"/>
+<area shape="rect" href="a01412.html" title=" " alt="" coords="1079,379,1202,405"/>
+<area shape="rect" href="a01409.html" title=" " alt="" coords="1227,379,1305,405"/>
+<area shape="rect" href="a01430.html" title=" " alt="" coords="1329,379,1467,405"/>
+<area shape="rect" href="a01424.html" title=" " alt="" coords="1491,379,1607,405"/>
+<area shape="rect" href="a01403.html" title=" " alt="" coords="1631,379,1722,405"/>
+<area shape="rect" href="a01352.html" title=" " alt="" coords="1145,155,1243,181"/>
+<area shape="rect" title=" " alt="" coords="1660,155,1731,181"/>
+<area shape="rect" href="a01343.html" title=" " alt="" coords="1429,155,1522,181"/>
+<area shape="rect" href="a01337.html" title=" " alt="" coords="1267,155,1353,181"/>
+<area shape="rect" href="a02345.html" title=" " alt="" coords="1547,155,1636,181"/>
+<area shape="rect" title=" " alt="" coords="1415,229,1485,256"/>
+<area shape="rect" href="a01331.html" title=" " alt="" coords="1509,229,1609,256"/>
+<area shape="rect" href="a01328.html" title=" " alt="" coords="1633,229,1713,256"/>
+</map>
+</div>
+</div>
 <p><a href="a02012_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Fonctions/Subroutines</h2></td></tr>
-<tr class="memitem:gadde61a2d3f69031bebee02d2ddd7cfcf"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02336_gadde61a2d3f69031bebee02d2ddd7cfcf.html#gadde61a2d3f69031bebee02d2ddd7cfcf">mfivop</a> (fid, name, access, major, minor, rel, cret)</td></tr>
-<tr class="memdesc:gadde61a2d3f69031bebee02d2ddd7cfcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouverture d'un fichier MED en indiquant la version du modèle à utiliser en cas de création d'un nouveau fichier.  <a href="a02336_gadde61a2d3f69031bebee02d2ddd7cfcf.html#gadde61a2d3f69031bebee02d2ddd7cfcf">Plus de détails...</a><br /></td></tr>
-<tr class="separator:gadde61a2d3f69031bebee02d2ddd7cfcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga68bd28216f39b6aac3f3cdeb58ca0343"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02336_ga68bd28216f39b6aac3f3cdeb58ca0343.html#ga68bd28216f39b6aac3f3cdeb58ca0343">mfiope</a> (fid, name, access, cret)</td></tr>
-<tr class="memdesc:ga68bd28216f39b6aac3f3cdeb58ca0343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ouverture d'un fichier MED.  <a href="a02336_ga68bd28216f39b6aac3f3cdeb58ca0343.html#ga68bd28216f39b6aac3f3cdeb58ca0343">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ga68bd28216f39b6aac3f3cdeb58ca0343"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga459a0e25f47c45aaac1c76b7f708f6b6"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02336_ga459a0e25f47c45aaac1c76b7f708f6b6.html#ga459a0e25f47c45aaac1c76b7f708f6b6">mfinam</a> (fid, name, cret)</td></tr>
-<tr class="memdesc:ga459a0e25f47c45aaac1c76b7f708f6b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoi le nom de fichier MED à partir d'un med_idt.  <a href="a02336_ga459a0e25f47c45aaac1c76b7f708f6b6.html#ga459a0e25f47c45aaac1c76b7f708f6b6">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ga459a0e25f47c45aaac1c76b7f708f6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabaf92f77da8cad332344587fca32c410"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02336_gabaf92f77da8cad332344587fca32c410.html#gabaf92f77da8cad332344587fca32c410">mficlo</a> (fid, cret)</td></tr>
-<tr class="memdesc:gabaf92f77da8cad332344587fca32c410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fermeture d'un fichier MED.  <a href="a02336_gabaf92f77da8cad332344587fca32c410.html#gabaf92f77da8cad332344587fca32c410">Plus de détails...</a><br /></td></tr>
-<tr class="separator:gabaf92f77da8cad332344587fca32c410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab78133f6c93fe7753df1825b03e71a0c"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02336_gab78133f6c93fe7753df1825b03e71a0c.html#gab78133f6c93fe7753df1825b03e71a0c">mficow</a> (fid, cmt, cret)</td></tr>
-<tr class="memdesc:gab78133f6c93fe7753df1825b03e71a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ecriture d'un descripteur dans un fichier MED.  <a href="a02336_gab78133f6c93fe7753df1825b03e71a0c.html#gab78133f6c93fe7753df1825b03e71a0c">Plus de détails...</a><br /></td></tr>
-<tr class="separator:gab78133f6c93fe7753df1825b03e71a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab26d974190257fbd793fe0ea03b7efe0"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02336_gab26d974190257fbd793fe0ea03b7efe0.html#gab26d974190257fbd793fe0ea03b7efe0">mficor</a> (fid, cmt, cret)</td></tr>
-<tr class="memdesc:gab26d974190257fbd793fe0ea03b7efe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lecture d'un descripteur dans un fichier MED.  <a href="a02336_gab26d974190257fbd793fe0ea03b7efe0.html#gab26d974190257fbd793fe0ea03b7efe0">Plus de détails...</a><br /></td></tr>
-<tr class="separator:gab26d974190257fbd793fe0ea03b7efe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga52a5889f86eb89357c467bcf14259cc9"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02336_ga52a5889f86eb89357c467bcf14259cc9.html#ga52a5889f86eb89357c467bcf14259cc9">mfinvr</a> (fid, major, minor, rel, cret)</td></tr>
-<tr class="memdesc:ga52a5889f86eb89357c467bcf14259cc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lecture du numéro de version de la bibliothèque MED utilisée pour créer le fichier.  <a href="a02336_ga52a5889f86eb89357c467bcf14259cc9.html#ga52a5889f86eb89357c467bcf14259cc9">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ga52a5889f86eb89357c467bcf14259cc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga27a2052435f1d113a3b6a12233796f58"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02336_ga27a2052435f1d113a3b6a12233796f58.html#ga27a2052435f1d113a3b6a12233796f58">mfisvr</a> (fid, version, cret)</td></tr>
-<tr class="memdesc:ga27a2052435f1d113a3b6a12233796f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lecture du numéro de version de la bibliothèque MED utilisée pour créer le fichier (renvoyé sous la forme d'une chaîne de caractères).  <a href="a02336_ga27a2052435f1d113a3b6a12233796f58.html#ga27a2052435f1d113a3b6a12233796f58">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ga27a2052435f1d113a3b6a12233796f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafe8966708bfc658ffa1b8b83550624c1"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02336_gafe8966708bfc658ffa1b8b83550624c1.html#gafe8966708bfc658ffa1b8b83550624c1">mficom</a> (fname, hdfok, medok, cret)</td></tr>
-<tr class="memdesc:gafe8966708bfc658ffa1b8b83550624c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérification de la compatibilité d'un fichier avec HDF et MED.  <a href="a02336_gafe8966708bfc658ffa1b8b83550624c1.html#gafe8966708bfc658ffa1b8b83550624c1">Plus de détails...</a><br /></td></tr>
-<tr class="separator:gafe8966708bfc658ffa1b8b83550624c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4110ef3056468b90d52f86c2866d5e0b"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02012_a4110ef3056468b90d52f86c2866d5e0b.html#a4110ef3056468b90d52f86c2866d5e0b">mfiomn</a> (fid, fname, class, mid, cret)</td></tr>
-<tr class="separator:a4110ef3056468b90d52f86c2866d5e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19946219dd1ba0c71df93f89b3457084"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02012_a19946219dd1ba0c71df93f89b3457084.html#a19946219dd1ba0c71df93f89b3457084">mfioun</a> (fid, mid, class, cret)</td></tr>
-<tr class="separator:a19946219dd1ba0c71df93f89b3457084"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1ac5de3dd126859d6364491c94d2af04"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02336_ga1ac5de3dd126859d6364491c94d2af04.html#ga1ac5de3dd126859d6364491c94d2af04">mfioex</a> (fid, class, oname, oexist, cret)</td></tr>
-<tr class="memdesc:ga1ac5de3dd126859d6364491c94d2af04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interroge le fichier <em>fid</em> pour tester l'existence de l'objet <em>objectname</em> de type <em>medclass</em>.  <a href="a02336_ga1ac5de3dd126859d6364491c94d2af04.html#ga1ac5de3dd126859d6364491c94d2af04">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ga1ac5de3dd126859d6364491c94d2af04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga25a050e72faf164453471cdd0e2d1ffc"><td class="memItemLeft" align="right" valign="top">subroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02336_ga25a050e72faf164453471cdd0e2d1ffc.html#ga25a050e72faf164453471cdd0e2d1ffc">mfiexi</a> (fname, access, fexist, accok, cret)</td></tr>
-<tr class="memdesc:ga25a050e72faf164453471cdd0e2d1ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interroge l'existence d'un fichier de nom <em>filename</em> et la possibilité de l'ouvrir selon le mode d'accès <em>accessmode</em>.  <a href="a02336_ga25a050e72faf164453471cdd0e2d1ffc.html#ga25a050e72faf164453471cdd0e2d1ffc">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ga25a050e72faf164453471cdd0e2d1ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Fonctions</h2></td></tr>
+<tr class="memitem:gab139ed60d40b7a61416f46eb5ff2dac2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a02339_abd29d7c6abaef5da2a5ed1b73464f0ba.html#abd29d7c6abaef5da2a5ed1b73464f0ba">med_err</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a02361_gab139ed60d40b7a61416f46eb5ff2dac2.html#gab139ed60d40b7a61416f46eb5ff2dac2">MEDsubdomainJointCr</a> (const <a class="el" href="a02339_afa4ec8284026c8c5545e5333475fb65a.html#afa4ec8284026c8c5545e5333475fb65a">med_idt</a> fid, const char *const localmeshname, const char *const jointname, const char *const <a class="el" href="a01391_a983b441e1238aaad5e971f903d900687.html#a983b441e1238aaad5e971f903d900687">description</a>, const <a class="el" href="a02339_a88dc15143f934cc7b771bc89f46372dc.html#a88dc15143f934cc7b771bc89f46372dc">med_int</a> domainnumber, const char *const remotemeshname)</td></tr>
+<tr class="memdesc:gab139ed60d40b7a61416f46eb5ff2dac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cette routine permet de créer un joint dans un maillage.  <a href="a02361_gab139ed60d40b7a61416f46eb5ff2dac2.html#gab139ed60d40b7a61416f46eb5ff2dac2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gab139ed60d40b7a61416f46eb5ff2dac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Vendredi 8 Octobre 2021 13:44:08 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 21 Mai 2025 19:18:34 pour MED fichier par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.16
 </small></address>

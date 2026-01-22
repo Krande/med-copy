@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -16,7 +16,7 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C
 
       subroutine meqcre(fid , maa , eq , des , cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: meqcre
+cDEC$ ATTRIBUTES DLLEXPORT :: meqcre
 c
       implicit none
       save
@@ -35,7 +35,7 @@ c
 c
       subroutine meqcow(fid,maa,eq,numdt,numit,typent,typgeo,
      &                  n,corr,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: meqcow
+cDEC$ ATTRIBUTES DLLEXPORT :: meqcow
 c
       implicit none
       save
@@ -57,7 +57,7 @@ c
 c
 c
       subroutine meqneq(fid,maa,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: meqneq
+cDEC$ ATTRIBUTES DLLEXPORT :: meqneq
 c
       implicit none
       save
@@ -80,7 +80,7 @@ c
 c
 c
       subroutine meqeqi(fid,maa,ind,eq,des,nstep,nctcor,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: meqeqi
+cDEC$ ATTRIBUTES DLLEXPORT :: meqeqi
 c
       implicit none
       save
@@ -100,7 +100,7 @@ c
 c
       subroutine meqcsz(fid,maa,eq,numdt,numit,
      &                   typent,typgeo,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: meqcsz
+cDEC$ ATTRIBUTES DLLEXPORT :: meqcsz
 c
       implicit none
       save
@@ -126,7 +126,7 @@ c
 c
       subroutine meqszi(fid,maa,eq,numdt,numit,
      &                  corit,typent,typgeo,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: meqszi
+cDEC$ ATTRIBUTES DLLEXPORT :: meqszi
 c
       implicit none
       save
@@ -147,7 +147,7 @@ c
 c
       subroutine meqcor(fid,maa,eq,numdt,mumit,typent,typgeo,
      &                  corr,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: meqcor
+cDEC$ ATTRIBUTES DLLEXPORT :: meqcor
 c
       implicit none
       save
@@ -166,7 +166,7 @@ c
 c
 c
       subroutine meqcsi(fid,maa,eq,ind,numdt,numit,ncor,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: meqcsi
+cDEC$ ATTRIBUTES DLLEXPORT :: meqcsi
 c
       implicit none
       save

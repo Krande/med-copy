@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -16,7 +16,7 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C
 
       subroutine mprcre(fid , name , type , des , dtunit,  cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mprcre
+cDEC$ ATTRIBUTES DLLEXPORT :: mprcre
 c
       implicit none
       save
@@ -35,7 +35,7 @@ c
 c
 c
       subroutine mprrvw(fid,name,numdt,numit,dt,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mprrvw
+cDEC$ ATTRIBUTES DLLEXPORT :: mprrvw
 c
       implicit none
       save
@@ -53,7 +53,7 @@ c
 c
 c
       subroutine mprivw(fid,name,numdt,numit,dt,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mprivw
+cDEC$ ATTRIBUTES DLLEXPORT :: mprivw
 c
       implicit none
       save
@@ -72,7 +72,7 @@ c
 c
 c
       subroutine mprrvr(fid,name,numdt,numit,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mprrvr
+cDEC$ ATTRIBUTES DLLEXPORT :: mprrvr
 c
       implicit none
       save
@@ -90,7 +90,7 @@ c
 c
 c
       subroutine mprivr(fid,name,numdt,numit,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mprivr
+cDEC$ ATTRIBUTES DLLEXPORT :: mprivr
 c
       implicit none
       save
@@ -108,7 +108,7 @@ c
 c
 c
       subroutine mprnpr(fid,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mprnpr
+cDEC$ ATTRIBUTES DLLEXPORT :: mprnpr
 c
       implicit none
       save
@@ -131,7 +131,7 @@ c
 c
       subroutine mprpri(fid, it, name, type, desc, 
      &                  dtunit,  nstep, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mprpri
+cDEC$ ATTRIBUTES DLLEXPORT :: mprpri
 c
       implicit none
       save
@@ -151,7 +151,7 @@ c
 c
       subroutine mprpin(fid, name, type, desc, 
      &                  dtunit,  nstep, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mprpin
+cDEC$ ATTRIBUTES DLLEXPORT :: mprpin
 c
       implicit none
       save
@@ -171,7 +171,7 @@ c
 c
       subroutine mprcsi(fid, name, it, numdt, numit,
      &                  dt, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mprcsi
+cDEC$ ATTRIBUTES DLLEXPORT :: mprcsi
 c
       implicit none
       save

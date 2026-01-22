@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -43,7 +43,6 @@
 #define MED_NOM_NNS "NNS" /**< Nombre de noeuds sommets                                                                                                                                                                                              */
 #define MED_NOM_NNM "NNM" /**< Nombre de noeuds maximum par maille                                                                                                                                                                                   */
 #define MED_NOM_NNI "NNI" /**< Nombre de noeuds isolés                                                                                                                                                                                               */
-#define MED_NOM_GRO "GRO" /**< Nom du dataset contenant les noms des groupes associés à une famille                                                                                                                                                  */
 #define MED_NOM_ATT "ATT" /**< Type des valeurs des attributs cst/var.                                                                                                                                                                               */
 #define MED_NOM_NCO "NCO" /**< Nombre de composantes/constituants par valeur                                                                                                                                                                         */
 #define MED_NOM_DIM "DIM" /**< Dimension d'un maillage                                                                                                                                                                                               */
@@ -155,6 +154,12 @@
 #define MED_NOM_COE "COE" /**< Nom du dataset contenant les coefficients d'un polynôme                                                     */
 #define MED_NOM_POW "POW" /**< Nom du dataset contenant les puissances d'un polynôme                                                       */
 
+
+/* Nom du DATA GROUP CONTENANT TOUS LES OBJETS DU FICHIER HDF */
+#define MED_FILE_NAME ""
+#define MED_FILE_GRP "/"
+#define MED_FILE_GRP_SIZE 1
+
 /* Nom du DATA GROUP CONTENANT TOUS LES MAILLAGES DU FICHIER HDF */
 #define MED_MESH_NAME "ENS_MAA"
 #define MED_MESH_GRP "/" MED_MESH_NAME "/"
@@ -204,24 +209,50 @@
 #define MED_COOTRF_NOM "COOTRF"
 #define MED_TAILLE_COOTRF 8
 
-/* Nom du data group point de montage */
+/* NOM DU DATA GROUP POINT DE MONTAGE */
 #define MED_MNT "/MNT/"
 #define MED_TAILLE_MNT 5
 
-/* Nom du data group ou ranger les familles */
+/* NOM DU DATA GROUP OU RANGER LES FAMILLES */
 #define MED_FAMILY_NAME "FAS"
 #define MED_FAMILY_GRP "/" MED_FAMILY_NAME "/"
 #define MED_FAMILY_GRP_SIZE 5
 
 #define FAMILLE_ZERO "FAMILLE_ZERO"
-#define MED_FAS_ZERO "/FAMILLE_ZERO/"
-#define MED_FAS_ZERO_NOM "FAMILLE_ZERO"
+#define FAMILY_ZERO FAMILLE_ZERO
+/* DEPRECATED NAME DEBUT */
+#define MED_FAS_ZERO_NOM FAMILLE_ZERO
+#define MED_FAS_ZERO "/" FAMILY_ZERO "/"
 #define MED_TAILLE_FAS_ZERO 14
+/* DEPRECATED NAME FIN */
+#define MED_FAMILY_ZERO_NAME FAMILLE_ZERO
+#define MED_FAMILY_ZERO_GRP "/" FAMILY_ZERO "/"
+#define MED_FAMILY_ZERO_GRP_SIZE 14
+
+/* DEPRECATED NAME DEBUT */
 #define MED_FAS_NOEUD "/NOEUD/"
 #define MED_FAS_NOEUD_NOM "NOEUD"
+/* DEPRECATED NAME FIN */
+#define MED_FAMILY_NODE_NAME "NOEUD"
+#define MED_FAMILY_NODE_GRP  "/" MED_FAMILY_NODE_NAME "/"
+#define MED_FAMILY_NODE_GRP_SIZE 7
+
+/* DEPRECATED NAME DEBUT */
 #define MED_FAS_ELEME "/ELEME/"
 #define MED_FAS_ELEME_NOM "ELEME"
 #define MED_TAILLE_FAS_ENTITE 7
+/* DEPRECATED NAME FIN */
+#define MED_FAMILY_ELEM_NAME "ELEME"
+#define MED_FAMILY_ELEM_GRP  "/" MED_FAMILY_ELEM_NAME "/"
+#define MED_FAMILY_ELEM_GRP_SIZE 7
+
+/* DEPRECATED NAME DEBUT */
+#define MED_NOM_GRO "GRO" /**< Nom du groupe contenant le dataset des noms des groupes associés à une famille                                                                                                                                        */
+/* DEPRECATED NAME FIN */
+
+#define MED_GROUP_NAME MED_NOM_GRO
+#define MED_GROUP_GRP  "/" MED_GROUP_NAME "/"
+#define MED_GROUP_GRP_SIZE 5
 
 /* Nom du data group ou ranger les equivalences */
 #define MED_EQUIVALENCE_NAME "EQS"

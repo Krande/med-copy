@@ -1,6 +1,6 @@
 !*  This file is part of MED.
 !*
-!*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+!*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 !*  MED is free software: you can redistribute it and/or modify
 !*  it under the terms of the GNU Lesser General Public License as published by
 !*  the Free Software Foundation, either version 3 of the License, or
@@ -69,13 +69,13 @@ program test9
   if (cret .eq. 0) then
      do i=1,nfam
         
-!	** Lecture du nombre de groupe **
+!       ** Lecture du nombre de groupe **
         if (cret .eq. 0) then
            call mfanfg(fid,maa,i,ngro,cret)
         endif
         print *,cret
 
-!	** Lecture du nombre d'attributs pour les
+!       ** Lecture du nombre d'attributs pour les
 !          fichiers 2.3 **
         if (cret .eq. 0) then
            call mfaona(fid,maa,i,natt,cret)
@@ -84,7 +84,7 @@ program test9
 
         print *,"Famille ",i," a ",ngro," groupes et ", natt, " attributs" 
 
-!	** Lecture de : nom,numero,attributs,groupes **
+!       ** Lecture de : nom,numero,attributs,groupes **
         if (cret .eq. 0) then
            allocate(gro(ngro), attid(natt), attval(natt), attdes(natt),STAT=ret)
            print *,ret

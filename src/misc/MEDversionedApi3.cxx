@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -28,7 +28,7 @@ using namespace std;
 
 static MED_VERSIONED_API3 & MedVersionedApi3=MED_VERSIONED_API3::Instance();
 
-MED_VERSIONED_API3::~MED_VERSIONED_API3() {};
+MED_VERSIONED_API3::~MED_VERSIONED_API3() {}
 
 MED_VERSIONED_API3& MED_VERSIONED_API3::Instance() {
   static MED_VERSIONED_API3 obj;
@@ -188,8 +188,8 @@ MED_VERSIONED_API3::MED_VERSIONED_API3() : map<keyType,
    table[ "_MEDfieldnValue300"                  ]   = _MEDfieldnValue30 ;
    table[ "_MEDfieldnValue236"                  ]   = _MEDfieldnValue236 ;
 
-   table[ "_MEDfileCommentRd300"      ] = _MEDfileCommentRd30 ;
-   table[ "_MEDfileCommentRd236"      ] = _MEDfileCommentRd236 ;
+   table[ "_MEDfileDescriptionRd300"  ] = _MEDfileDescriptionRd30 ;
+   table[ "_MEDfileDescriptionRd236"  ] = _MEDfileDescriptionRd236 ;
    table[ "_MEDfileObjectsMount300"   ] = _MEDfileObjectsMount30 ;
    table[ "_MEDfileObjectsMount236"   ] = _MEDfileObjectsMount236 ;
    table[ "_MEDfileObjectsUnmount300" ] = _MEDfileObjectsUnmount30 ;

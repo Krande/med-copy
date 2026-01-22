@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@ c
 c
       subroutine mfdcre(fid,fname,ftype,ncomp,cname,cunit,
      &                  dtunit,mname,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdcre
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdcre
 c
       implicit none
       save
@@ -39,7 +39,7 @@ c
 c
       subroutine mfdrvw(fid,fname,numdt,numit,dt,
      &                  etype,gtype,swm,cs,n,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdrvw
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdrvw
 c
       implicit none
       save
@@ -60,7 +60,7 @@ c
 c
       subroutine mfdivw(fid,fname,numdt,numit,dt,
      &                  etype,gtype,swm,cs,n,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdivw
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdivw
 c
       implicit none
       save
@@ -84,7 +84,7 @@ c
      &                  etype,gtype,
      &                  stm,pname,lname,
      &                  swm,cs,n,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdrpw
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdrpw
 c
       implicit none
       save
@@ -108,7 +108,7 @@ c
      &                  etype,gtype,
      &                  stm,pname,lname,
      &                  swm,cs,n,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdipw
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdipw
 c
       implicit none
       save
@@ -132,7 +132,7 @@ c
       subroutine mfdraw(fid,fname,numdt,numit,dt,
      &                  etype,gtype,lname,flt,
      &                  val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdraw
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdraw
 c
       implicit none
       save
@@ -155,7 +155,7 @@ c
       subroutine mfdiaw(fid,fname,numdt,numit,dt,
      &                  etype,gtype,lname,flt,
      &                  val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdiaw
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdiaw
 c
       implicit none
       save
@@ -177,7 +177,7 @@ c
 c
 c
       subroutine mfdnfd(fid,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdnfd
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdnfd
 c
       implicit none
       save
@@ -199,7 +199,7 @@ c
 c
 c
       subroutine mfdnfc(fid,ind,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdnfc
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdnfc
 c
       implicit none
       save
@@ -221,7 +221,7 @@ c
 c
 c
       subroutine mfdncn(fid,fname,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdncn
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdncn
 c
       implicit none
       save
@@ -245,7 +245,7 @@ c
 c
       subroutine mfdfdi(fid, it, fname, mname, lmesh, type, 
      &                  cname, cunit, dtunit, nc, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdfdi
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdfdi
 c
       implicit none
       save
@@ -258,7 +258,7 @@ c
 c
       cret = mfdffdi(fid, it, fname, mname, lmesh, type,
      &               cname, cunit, dtunit, nc)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdffdi
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdffdi
 c     
       return
       end
@@ -267,7 +267,7 @@ c
 c
       subroutine mfdfin(fid, fname, mname, lmesh, type, 
      &                  cname, cunit, dtunit, nc, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdfin
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdfin
 c
       implicit none
       save
@@ -287,7 +287,7 @@ c
 c
 c
       subroutine mfdcsi(fid, fname, it, numdt, numit, dt, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdcsi
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdcsi
 c
       implicit none
       save
@@ -308,7 +308,7 @@ c
 c
       subroutine mfdcmi(fid, fname, it, numdt, numit, dt, 
      &     mnumdt, mnumit, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdcmi
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdcmi
 c
       implicit none
       save
@@ -330,7 +330,7 @@ c
 c
       subroutine mfdcmw(fid, fname, numdt, numit,
      &     mnumdt, mnumit, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdcmw
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdcmw
 c
       implicit none
       save
@@ -351,7 +351,7 @@ c
 c
       subroutine mfdnpf(fid,fname,numdt,numit,etype,gtype,
      &                  dpname, dlname, n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdnpf
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdnpf
 c
       implicit none
       save
@@ -377,7 +377,7 @@ c
 c
 c
       subroutine mfdnva(fid,fname,numdt,numit,etype,gtype,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdnva
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdnva
 c
       implicit none
       save
@@ -403,7 +403,7 @@ c
       subroutine mfdnvp(fid,fname,numdt,numit,etype,gtype,
      &                  pit,stm,pname,psize,lname,nip,
      &                  n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdnvp
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdnvp
 c
       implicit none
       save
@@ -431,7 +431,7 @@ c
       subroutine mfdnpn(fid,fname,numdt,numit,etype,gtype,
      &                  pname,stm,psize,lname,nip,
      &                  n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdnpn
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdnpn
 c
       implicit none
       save
@@ -458,7 +458,7 @@ c
 c
       subroutine mfdrvr(fid,fname,numdt,numit,
      &                  etype,gtype,swm,cs,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdrvr
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdrvr
 c
       implicit none
       save
@@ -479,7 +479,7 @@ c
 c
       subroutine mfdivr(fid,fname,numdt,numit,
      &                  etype,gtype,swm,cs,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdivr
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdivr
 c
       implicit none
       save
@@ -502,7 +502,7 @@ c
      &                  etype,gtype,
      &                  stm,pname,
      &                  swm,cs,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdrpr
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdrpr
 c
       implicit none
       save
@@ -525,7 +525,7 @@ c
      &                  etype,gtype,
      &                  stm,pname,
      &                  swm,cs,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdipr
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdipr
 c
       implicit none
       save
@@ -547,7 +547,7 @@ c
       subroutine mfdrar(fid,fname,numdt,numit,
      &                  etype,gtype,flt,
      &                  val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdrar
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdrar
 c
       implicit none
       save
@@ -570,7 +570,7 @@ c
       subroutine mfdiar(fid,fname,numdt,numit,
      &                  etype,gtype,flt,
      &                  val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdiar
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdiar
 c
       implicit none
       save
@@ -591,7 +591,7 @@ c
 c
 c    
       subroutine mfdinw(fid,fname,iname,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdinw
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdinw
 c
       implicit none
       save
@@ -608,7 +608,7 @@ c
 c
 c
       subroutine mfdnin(fid,fname,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdnin
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdnin
 c
       implicit none
       save
@@ -631,7 +631,7 @@ c
 c
 c
       subroutine mfdini(fid,fname,it,iname,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdini
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdini
 c
       implicit none
       save
@@ -650,7 +650,7 @@ c
       subroutine mfdoci(fid, fname, it, numdt, numit, dt, 
      &                  nmesh, mname, lmesh, 
      &                  mnumdt, mnumit, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdoci
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdoci
 c
       implicit none
       save
@@ -675,7 +675,7 @@ c
 c
       subroutine mfdonp(fid,fname,numdt,numit,etype,gtype,
      &                  it,mname, dpname, dlname, n, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdonp
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdonp
 c
       implicit none
       save
@@ -703,7 +703,7 @@ c
       subroutine mfdonv(fid,fname,numdt,numit,etype,gtype,
      &                  mname,pit,stm,pname,psize,lname,
      &                  nip,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdonv 
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdonv 
 c
       implicit none
       save
@@ -735,7 +735,7 @@ c
      &                  mname,
      &                  stm,pname,
      &                  swm,cs,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdorr
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdorr
 c
       implicit none
       save
@@ -760,7 +760,7 @@ c
      &                  mname,
      &                  stm,pname,
      &                  swm,cs,val,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: mfdoir
+cDEC$ ATTRIBUTES DLLEXPORT :: mfdoir
 c
       implicit none
       save

@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -16,7 +16,7 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C*
 
       subroutine efmaac ( fid , nom , dim , type, desc, cret )
-c     DEC$ ATTRIBUTES DLLEXPORT :: efmaac
+cDEC$ ATTRIBUTES DLLEXPORT :: efmaac
 c
       implicit none
       save
@@ -34,7 +34,7 @@ c
 c
 c
       subroutine efnmaa( fid , n , cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnmaa
+cDEC$ ATTRIBUTES DLLEXPORT :: efnmaa
 c
       implicit none
       save
@@ -57,7 +57,7 @@ c
 c
 c
       subroutine efmaai( fid, indice, maa, dim, type, desc, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efmaai
+cDEC$ ATTRIBUTES DLLEXPORT :: efmaai
 c
       implicit none
       save
@@ -76,7 +76,7 @@ c
       end
 c
       subroutine efdiml( fid , maa, dim, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efdiml
+cDEC$ ATTRIBUTES DLLEXPORT :: efdiml
 c
       implicit none
       save
@@ -98,7 +98,7 @@ c
 c
 c
       subroutine efnnsl (fid,maa,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnnsl
+cDEC$ ATTRIBUTES DLLEXPORT :: efnnsl
 c
       implicit none
       save
@@ -120,7 +120,7 @@ c
 c
 c
       subroutine efnnse (fid,maa,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnnse
+cDEC$ ATTRIBUTES DLLEXPORT :: efnnse
 c
       implicit none
       save
@@ -136,7 +136,7 @@ c
 c
 c
       subroutine efnnil (fid,maa,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnnil
+cDEC$ ATTRIBUTES DLLEXPORT :: efnnil
 c
       implicit none
       save
@@ -158,7 +158,7 @@ c
 c
 c
       subroutine efnnie (fid,maa,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnnie
+cDEC$ ATTRIBUTES DLLEXPORT :: efnnie
 c
       implicit none
       save
@@ -174,7 +174,7 @@ c
 c
 c
       subroutine efnnml (fid,maa,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnnml
+cDEC$ ATTRIBUTES DLLEXPORT :: efnnml
 c
       implicit none
       save
@@ -196,7 +196,7 @@ c
 c
 c
       subroutine efnnme (fid,maa,n,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnnme
+cDEC$ ATTRIBUTES DLLEXPORT :: efnnme
 c
       implicit none
       save
@@ -212,7 +212,7 @@ c
 
 
       subroutine efunvc ( fid , nom , cret )
-c     DEC$ ATTRIBUTES DLLEXPORT :: efunvc
+cDEC$ ATTRIBUTES DLLEXPORT :: efunvc
 c
       implicit none
       save
@@ -228,7 +228,7 @@ c
       end
 
       subroutine efunvl( fid , nom , nomu , cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efunvl
+cDEC$ ATTRIBUTES DLLEXPORT :: efunvl
 c
       implicit none
       save
@@ -245,7 +245,7 @@ c
 c
 c
       subroutine efespc(fid, nom, dim, cret )
-c     DEC$ ATTRIBUTES DLLEXPORT :: efespc
+cDEC$ ATTRIBUTES DLLEXPORT :: efespc
 c
       implicit none
       save
@@ -262,7 +262,7 @@ c
 c
 c
       subroutine efespl( fid , maa, dim, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efespl
+cDEC$ ATTRIBUTES DLLEXPORT :: efespl
 c
       implicit none
       save
@@ -285,7 +285,7 @@ c
 c
 c
       subroutine efnage(fid,maa,typ,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnage
+cDEC$ ATTRIBUTES DLLEXPORT :: efnage
 c
       implicit none
       save
@@ -302,7 +302,7 @@ c
 c
 c
       subroutine efnagl(fid,maa,typ,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnagl
+cDEC$ ATTRIBUTES DLLEXPORT :: efnagl
 c
       implicit none
       save

@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -27,6 +27,16 @@
 # endif
 # else
 # define MEDC_EXPORT
+#endif
+
+#if defined(__GNUC__)							\
+    && ((__GNUC__ >= 4) || (__GNUC__ == 3) && (__GNUC_MINOR__ >= 1))
+#define MED_DEPRECATED(VERSION_UNUSED) __attribute__((__deprecated__))
+#elif defined(_MSC_VER)
+#define MED_DEPRECATED(VERSION) __declspec(deprecated( \
+                                          "deprecated in " #VERSION))
+#else
+#define MED_DEPRECATED(VERSION_UNUSED)
 #endif
 
 #endif

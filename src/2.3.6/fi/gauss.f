@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -16,7 +16,7 @@ C*  along with MED.  If not, see <http://www.gnu.org/licenses/>.
 C*
 
       subroutine efngau( fid , n , cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efngau
+cDEC$ ATTRIBUTES DLLEXPORT :: efngau
 c
       implicit none
       save
@@ -39,7 +39,7 @@ c
 c
 c
       subroutine efgaui( fid , indice , locname, typgeo, ngauss , cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efgaui
+cDEC$ ATTRIBUTES DLLEXPORT :: efgaui
 c
       implicit none
       save
@@ -60,7 +60,7 @@ c
 c
       subroutine efgaue( fid, typgeo, refcoo, mode_coo, ngauss,
      1                  gscoo, wg, locname,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efgaue
+cDEC$ ATTRIBUTES DLLEXPORT :: efgaue
 c
       implicit none
       save
@@ -81,7 +81,7 @@ c
 c
       subroutine efgaul( fid, refcoo, gscoo, wg, 
      1                   mode_coo, locname, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efgaul
+cDEC$ ATTRIBUTES DLLEXPORT :: efgaul
 c
       implicit none
       save

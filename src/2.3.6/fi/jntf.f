@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -19,7 +19,7 @@ C**************************************************************************
 C     creation d'un joint
 C**************************************************************************
       subroutine efjntc ( fid , maalcl , jn , des , dom, maadst, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efjntc
+cDEC$ ATTRIBUTES DLLEXPORT :: efjntc
 c
       implicit none
       save
@@ -40,7 +40,7 @@ C**************************************************************************
 c     Lecture du nombre de joints 
 C**************************************************************************
       subroutine efnjnt ( fid , maalcl , n , cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnjnt
+cDEC$ ATTRIBUTES DLLEXPORT :: efnjnt
 c
       implicit none
       save
@@ -70,7 +70,7 @@ C     Lecture des informations relatives a un joint
 C**************************************************************************
       subroutine efjnti ( fid , maalcl , ind, jn , des , dom,
      $     maadst, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efjnti
+cDEC$ ATTRIBUTES DLLEXPORT :: efjnti
 c
       implicit none
       save
@@ -96,7 +96,7 @@ C**************************************************************************
       subroutine efjnte ( fid , maalcl , jn , corrtab, n,
      $                    entlcl, geolcl, entdst, geodst,
      $                    cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efjnte
+cDEC$ ATTRIBUTES DLLEXPORT :: efjnte
 c
       implicit none
       save
@@ -120,7 +120,7 @@ C**************************************************************************
       subroutine efjntl ( fid , maalcl , jn , corrtab, n,
      $                    entlcl, geolcl, entdst, geodst,
      $                    cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efjntl
+cDEC$ ATTRIBUTES DLLEXPORT :: efjntl
 c
       implicit none
       save
@@ -145,7 +145,7 @@ C**************************************************************************
       subroutine efjnco ( fid , maalcl , jn, 
      $     entlcl, geolcl, entdst, geodst,
      $     nent, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efjnco
+cDEC$ ATTRIBUTES DLLEXPORT :: efjnco
 c
       implicit none
       save
@@ -177,7 +177,7 @@ C**************************************************************************
       subroutine efjtco ( fid , maalcl , jn, ind, 
      $     entlcl, geolcl, entdst, geodst,
      $     cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efjtco
+cDEC$ ATTRIBUTES DLLEXPORT :: efjtco
 c
       implicit none
       save
@@ -211,7 +211,7 @@ c    ecriture d'une numerotation globale
 C**************************************************************************
       subroutine efgnme ( fid , maa , numtab, n,
      $                    ent, geo, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efgnme
+cDEC$ ATTRIBUTES DLLEXPORT :: efgnme
 c
       implicit none
       save
@@ -234,7 +234,7 @@ c    lecture d'une numerotation globale
 C**************************************************************************
       subroutine efgnml ( fid , maa , numtab, n,
      $                    ent, geo, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efgnml
+cDEC$ ATTRIBUTES DLLEXPORT :: efgnml
 c
       implicit none
       save

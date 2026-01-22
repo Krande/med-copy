@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -204,7 +204,7 @@ int MEDgetEntityTypeIt(med_entity_type entitytype) {
   case  MED_STRUCT_ELEMENT    : return 6; break;
   /* case  MED_UNDEF_ENTITY_TYPE : return 7; break;  */
   }
-};
+}
 
 
 int MEDgetCellGeometryTypeIt(med_geometry_type geotype) {
@@ -236,7 +236,7 @@ int MEDgetCellGeometryTypeIt(med_geometry_type geotype) {
   case MED_POLYHEDRON : return 24; break;
   /* case MED_NO_GEOTYPE : return 25; break; */
   }
-};
+}
 
 
 int MEDgetFaceGeometryTypeIt(med_geometry_type geotype) {
@@ -252,7 +252,7 @@ int MEDgetFaceGeometryTypeIt(med_geometry_type geotype) {
   case MED_POLYGON2   : return 8; break;
   /* case MED_NO_GEOTYPE : return 9; break; */
   }
-};
+}
 
 int MEDgetEdgeGeometryTypeIt(med_geometry_type geotype) {
   switch( geotype ) {
@@ -261,13 +261,13 @@ int MEDgetEdgeGeometryTypeIt(med_geometry_type geotype) {
   case MED_SEG3       : return 2; break;
   case MED_SEG4       : return 3; break;
   }
-};
+}
 
 int MEDgetNodeGeometryTypeIt(med_geometry_type geotype) {
   switch( geotype ) {
   case MED_NO_GEOTYPE : return 1; break;
   }
-};
+}
 
 int MEDgetEntityGeometryTypeIt(med_entity_type entitytype, med_geometry_type geotype) {
   switch( entitytype ) {
@@ -279,7 +279,7 @@ int MEDgetEntityGeometryTypeIt(med_entity_type entitytype, med_geometry_type geo
   case  MED_NODE_ELEMENT      : return MEDgetCellGeometryTypeIt(geotype); break;
   case  MED_STRUCT_ELEMENT    : return geotype%MED_STRUCT_GEO_INTERNAL  ; break;
   }
-};
+}
 
 const char * const  MEDgetEntityTypeName(med_entity_type entitytype) {
   switch( entitytype ) {
@@ -324,4 +324,4 @@ const char * const  MEDgetGeometryTypeName(med_geometry_type geotype) {
     return "MED_UNKNOWN_GEOTYPE";
     break;
   }
-};
+}

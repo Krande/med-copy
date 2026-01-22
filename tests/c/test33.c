@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -63,7 +63,7 @@ int main (int argc, char **argv)
 
 
   if (argc != 2) {
-    MESSAGE("Il faut passer un fichier MED en param~tre");
+    MESSAGE("Il faut passer un fichier MED en paramètre");
     return -1;
   }
 

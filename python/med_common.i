@@ -100,11 +100,29 @@ MEDINT64=None
 
 //Désactive toutes les sorties d'erreur
 //les erreurs sont gérées par les exceptions
+//Pour SWIG4.3.0 : https://github.com/swig/swig/issues/3084
+
+#if defined(SWIG_GE_40300)
 %typemap(out) med_err {
-  Py_INCREF(Py_None);
-  $result=Py_None;
+   //Contenu supprimé depuis 4.3.0 (pas le typemap!)
+   //Py_INCREF(Py_None);
+   //$result=Py_None;
 }
 
+%typemap(ret,noblock=1) med_err {
+   //Ajouté depuis 4.3.0
+   if (resultobj == NULL) {
+     Py_INCREF(Py_None);
+     resultobj=Py_None;
+   }
+}
+#else
+%typemap(out) med_err {
+   Py_INCREF(Py_None);
+   $result=Py_None;
+}
+#endif
+ 
 //Ajoute la fonctionnalité de passage d'arguments par mot clés
 //sur toutes les fonctions MED
 %feature ("kwargs");

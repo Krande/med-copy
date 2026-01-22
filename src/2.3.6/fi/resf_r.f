@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -22,7 +22,7 @@ c
       subroutine efchre(fid,maa,cha,val,interlace,n,locname,numco,
      1                  profil,pflmod,typent,typgeo,numdt,dtunit,
      1                  dt,numo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efchre
+cDEC$ ATTRIBUTES DLLEXPORT :: efchre
 c
       implicit none
       save
@@ -52,7 +52,7 @@ c
      1                  interlace,numco,locname,profil,pflmod,
      1                  typent,typgeo,
      1                  numdt, numo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efchrl 
+cDEC$ ATTRIBUTES DLLEXPORT :: efchrl 
 c
       implicit none
       save

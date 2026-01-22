@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -77,7 +77,7 @@ C     - Des coordonnees en mode MED_FULL_INTERLACE : (X1,Y1,X2,Y2,X3,Y3,...)
 C     dans un repere cartesien 
 C     - Des noms (optionnel dans un fichier MED) 
 C     - Des numeros (optionnel dans un fichier MED) 
-C     - Des numeros de familles des noeuds **	  
+C     - Des numeros de familles des noeuds **     
       call mmhnow(fid,maa,MED_NO_DT,MED_NO_IT,dt,MED_FULL_INTERLACE, 
      &            nnoe,coo,MED_TRUE,nomnoe,MED_TRUE,numnoe,
      &            MED_TRUE,nufano,cret)    
@@ -96,6 +96,6 @@ C     ** Fermeture du fichier **
       endif      
 C
       end 
-	
+        
 
 

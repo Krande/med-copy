@@ -144,13 +144,15 @@ INSTALLCHECK_TESTS_ENVIRONMENT = AUTOTEST_PATH=$(testpydir) PYTHON=$(PYTHON) PYT
 # TESTS = test1.sh $(TESTS_ECR) $(TESTS_LEC)
 
 TESTS_LEC = test3.py test5.py test7.py test9.py \
-            test11.py test13.py test22.py test24.py test28.py test30.py 
+            test11.py test13.py test22.py test24.py \
+            test28.py test30.py test32.py
 #test3.py test15.py test17.py test26.py test32.py test33.py
 
 TESTS_ECR = test1.py test2.py test4.py test6.py test8.py \
 	test10_f64_i32.py test10_f32_i32.py  \
 	test10_f64_i64.py test10_f32_i64.py  \
-	test12.py test21.py test23.py test27.py test29.py \
+	test12.py test14.py test21.py test23.py \
+	test27.py test29.py test31.py test34.py \
 	test_medfile.py test_medmesh.py \
 	UseCase_MEDinterp_1.py \
 	UseCase_MEDinterp_2.py \
@@ -175,13 +177,15 @@ test11_f32_i64_int_py3.expout
 CHECK_TESTS_LEC = $(srcdir)/test3.atpy $(srcdir)/test5.atpy $(srcdir)/test7.atpy $(srcdir)/test9.atpy \
             $(srcdir)/test11.atpy $(srcdir)/test13.atpy \
             $(srcdir)/test22.atpy $(srcdir)/test24.atpy $(srcdir)/test28.atpy \
-	    $(srcdir)/test30.atpy 
+	    $(srcdir)/test30.atpy $(srcdir)/test32.atpy 
 #$(srcdir)/test3.atpy $(srcdir)/test15.atpy $(srcdir)/test17.atpy $(srcdir)/test26.atpy $(srcdir)/test32.atpy $(srcdir)/test33.atpy
 
 CHECK_TESTS_ECR = $(srcdir)/test1.atpy $(srcdir)/test2.atpy $(srcdir)/test4.atpy $(srcdir)/test6.atpy $(srcdir)/test8.atpy \
 	$(srcdir)/test10.atpy $(srcdir)/test12.atpy \
+	$(srcdir)/test14.atpy \
 	$(srcdir)/test21.atpy  $(srcdir)/test23.atpy \
 	$(srcdir)/test27.atpy $(srcdir)/test29.atpy \
+	$(srcdir)/test31.atpy $(srcdir)/test34.atpy \
 	$(srcdir)/test_medfile.atpy \
 	$(srcdir)/test_medmesh.atpy \
 	$(srcdir)/UseCase_MEDinterp_1.atpy \

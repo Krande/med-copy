@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -34,7 +34,7 @@ c
 c
 	subroutine efnoel(fid,maa,mdim,coo,modcoo,rep,nomcoo,
      &                  unicoo,nom,inom,num,inum,fam,nnoe,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnoel
+cDEC$ ATTRIBUTES DLLEXPORT :: efnoel
 c
 	implicit none
 	save
@@ -69,7 +69,7 @@ c
 c
 	subroutine efnoee(fid,maa,mdim,coo,modcoo,rep,nomcoo,unicoo,
      &                  nom,inom,num,inum,fam,nnoe,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efnoee
+cDEC$ ATTRIBUTES DLLEXPORT :: efnoee
 c
 	implicit none
 	save
@@ -106,7 +106,7 @@ c
 	subroutine efelee (fid,maa,mdim,conn,switch,nom,inom,
      &                     num,inum,fam,nele,typent,typgeo,
      &                     typcon,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efelee
+cDEC$ ATTRIBUTES DLLEXPORT :: efelee
 	implicit none
 	save
 c
@@ -144,7 +144,7 @@ c
 	subroutine efelel (fid,maa,mdim,conn,switch,nom,inom,
      &                   num,inum,fam,nele,typent,typgeo,
      &                   typcon,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efelel
+cDEC$ ATTRIBUTES DLLEXPORT :: efelel
 	implicit none
 	save
 c
@@ -178,7 +178,7 @@ c
 c
       subroutine efg2fc(fid,maa,nomgro,ind,ngro,ent,nent,
      &                  typent,typgeo,indgeo,ngeo,cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: efg2fc
+cDEC$ ATTRIBUTES DLLEXPORT :: efg2fc
 	implicit none
 	save
 c     

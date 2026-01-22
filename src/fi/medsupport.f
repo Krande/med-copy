@@ -1,6 +1,6 @@
 C*  This file is part of MED.
 C*
-C*  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+C*  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 C*  MED is free software: you can redistribute it and/or modify
 C*  it under the terms of the GNU Lesser General Public License as published by
 C*  the Free Software Foundation, either version 3 of the License, or
@@ -17,7 +17,7 @@ C
 
       subroutine msmcre(fid , maa , sdim , mdim , des, 
      &                  atype, aname, aunit, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msmcre
+cDEC$ ATTRIBUTES DLLEXPORT :: msmcre
 c
       implicit none
       save
@@ -37,7 +37,7 @@ c
 c
 c
       subroutine msmnsm( fid , n , cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msmnsm
+cDEC$ ATTRIBUTES DLLEXPORT :: msmnsm
 c
       implicit none
       save
@@ -61,7 +61,7 @@ c
 c
       subroutine msmsni(fid, name, sdim, mdim, desc,
      &                  atype, aname, aunit, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msmsni
+cDEC$ ATTRIBUTES DLLEXPORT :: msmsni
 c
       implicit none
       save
@@ -81,7 +81,7 @@ c
 c
       subroutine msmsmi(fid, it, name, sdim, mdim, desc,
      &                  atype, aname, aunit, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msmsmi
+cDEC$ ATTRIBUTES DLLEXPORT :: msmsmi
 c
       implicit none
       save
@@ -100,7 +100,7 @@ c
 c
 c
       subroutine msmnax( fid , it, naxis, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msmnax
+cDEC$ ATTRIBUTES DLLEXPORT :: msmnax
 c
       implicit none
       save
@@ -122,7 +122,7 @@ c
 c
 c
       subroutine  msmnan( fid , name, naxis, cret)
-c     DEC$ ATTRIBUTES DLLEXPORT :: msmnan
+cDEC$ ATTRIBUTES DLLEXPORT :: msmnan
 c
       implicit none
       save

@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -134,9 +134,9 @@ med_idt _MEDfileCreate(const char * const filename, const med_access_mode access
 #if (MED_NUM_MINEUR == 0) && (MED_NUM_RELEASE > 1)
 #error "Don't forget to change the value of MED_40_LATEST_RELEASE when you change the release of version 4.0 of the library !"
 #endif
-    /* case 1: _release = 0; break; */
+    case 1: _release = MED_41_LATEST_RELEASE; break;
     /* case 2: _release = 1; break; */
-#if MED_NUM_MINEUR > 1
+#if MED_NUM_MINEUR > 2
 #error "Don't forget to add a case line version here when you change the minor version of the library !"
 #endif
 #if MED_NUM_MAJEUR != 4

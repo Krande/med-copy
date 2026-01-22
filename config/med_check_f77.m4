@@ -1,6 +1,6 @@
 dnl  This file is part of MED.
 dnl
-dnl  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+dnl  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 dnl  MED is free software: you can redistribute it and/or modify
 dnl  it under the terms of the GNU Lesser General Public License as published by
 dnl  the Free Software Foundation, either version 3 of the License, or
@@ -60,8 +60,19 @@ AS_IF([test x"$enable_fortran" = xyes ],
 # Pour l'affichage du Summary
    BUILD_F77TESTS_CONDITIONAL_TRUE=
    BUILD_F77TESTS_CONDITIONAL_FALSE='#'
+
+   MED_FFLAGS=""
+   if test x"$G77" = xyes; then
+     AC_MSG_NOTICE([Using -fallow-argument-mismatch flags for some gnu fortran 77 tests])
+#     MED_FFLAGS="-fallow-argument-mismatch"
+# The legacy option is oldest and implies allow-argument-mismatch
+# It avoids to test the gfortran version (>=10)
+     MED_FFLAGS="-std=legacy"
+   fi
+
 ],[
    FC="" 
+   MED_FFLAGS=""
 # Pour l'affichage du Summary
    BUILD_F77TESTS_CONDITIONAL_TRUE='#'
    BUILD_F77TESTS_CONDITIONAL_FALSE=
@@ -69,6 +80,8 @@ AS_IF([test x"$enable_fortran" = xyes ],
 
 AC_SUBST([BUILD_F77TESTS_CONDITIONAL_TRUE])
 AC_SUBST([BUILD_F77TESTS_CONDITIONAL_FALSE])
+
+AC_SUBST([MED_FFLAGS])
 
 ])
 

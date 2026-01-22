@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -25,41 +25,17 @@
 /**\ingroup MEDfile
   \brief \MEDfileCommentWrBrief
   \param fid \fid
-  \param comment \comment
+  \param description \description
   \retval med_err \error
   \details \MEDfileCommentWrDetails
+  \par This function is obsolete since 4.2.0
+  \see MEDfileDescriptionWr
  */
+
 
 med_err
 MEDfileCommentWr(const med_idt fid,
-		 const char* const comment)
+		     const char* const description)
 {
-  med_idt _rootId=0;
-  med_err _ret=-1;
-
-  _MEDmodeErreurVerrouiller();
- if (_MEDcheckVersion30(fid) < 0) goto ERROR;
-
-  /* the root data group is open */
-  if ((_rootId = _MEDdatagroupOuvrir(fid,"/")) < 0) {
-    MED_ERR_(_ret,MED_ERR_OPEN,MED_ERR_DATAGROUP," : '/'");
-    goto ERROR;
-  }
-
-  /* The comment is stored in a HDF attribute */
-  if (_MEDattributeStringWr(_rootId,MED_COMMENT_NAME,MED_COMMENT_SIZE,(char*)comment) < 0) {
-    MED_ERR_(_ret,MED_ERR_WRITE,MED_ERR_ATTRIBUTE,MED_COMMENT_NAME);
-    SSCRUTE(comment);
-    goto ERROR;
-  }
-
-  _ret = 0;
- ERROR:
-
-  /* the "/" group has to be closed */
-  if (_rootId > 0)
-    if (_MEDdatagroupFermer(_rootId) < 0) {
-      MED_ERR_(_ret,MED_ERR_CLOSE,MED_ERR_DATAGROUP," : '/'");
-    }
-  return _ret;
+return MEDfileDescriptionWr(fid, description);
 }

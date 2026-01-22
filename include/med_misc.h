@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -158,6 +158,9 @@ const char * const  _MEDgetEntityListAttributeINameAll(const med_entity_type ent
 
 extern MEDC_EXPORT
 int _MEDaccess(const char * const file, int mode);
+
+extern MEDC_EXPORT
+med_err _MEDgetObjectStringPath(med_path * const medpath);
 
 /* Gestion des messages d'erreur */
 /* extern MEDC_EXPORT */

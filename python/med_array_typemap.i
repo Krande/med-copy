@@ -181,7 +181,11 @@ Type.__repr__= lambda self: #Type +"("+str([x for x in self])+")"
 //  TypeMed * const ParamName : OUT 2/4 (l'allocation Type est faite ds Python)
 %typemap(freearg) TypeMed * const ParamName {
   Py_INCREF(o$argnum);
+#if defined(SWIG_GE_40300)
+  $result=SWIG_Python_AppendOutput($result, o$argnum, $isvoid);
+#else
   $result=SWIG_Python_AppendOutput($result, o$argnum);
+#endif  
 }
 // TypeMed * const (OUT) 3/4
 // pour ne pas activer un out du TypeMed * const (par sécurité)
@@ -290,7 +294,11 @@ Type.__repr__= lambda self: #Type +"("+str([x for x in self])+")"
 //  unsigned char * const : OUT 2/4 (l'allocation Type est faite ds Python)
 %typemap(freearg) unsigned char * const {
   Py_INCREF(o$argnum);
+#if defined(SWIG_GE_40300)
+  $result=SWIG_Python_AppendOutput($result, o$argnum, $isvoid);
+#else
   $result=SWIG_Python_AppendOutput($result, o$argnum);
+#endif
 }
 // unsigned char * const (OUT) 3/4
 // pour ne pas activer un out du unsigned char * const (par sécurité)

@@ -34,7 +34,8 @@ _MEDcheckVersion30.c \
 _MED23v30stringConvert.c \
 _MEDgetSupportMeshNbOfEntities.c \
 _MEDgetEntityListAttributeIName.c \
-_MEDaccess.c
+_MEDaccess.c \
+_MEDgetObjectStringPath.c
 
 EXTRA_DIST = CMakeLists.txt
 

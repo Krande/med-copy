@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -42,31 +42,31 @@ int main (int argc, char **argv) {
   char structelementname[MED_NAME_SIZE+1];
   const med_float tempvalue[3*1*4] = { 1.1, 2.2, 3.3, 4.4, 
                                        5.5, 6.6, 7.7, 8.8, 
-				       9.9, 10.1,11.11, 12.12};
+                                       9.9, 10.1,11.11, 12.12};
   const char localization[MED_NAME_SIZE+1] = "BEAM_INTEGRATION_POINTS";
   const char localization2[MED_NAME_SIZE+1] = "BEAM_INTEGRATION_TRANSF";
   const med_float elementcoordinate[3*3] = { 0.0,0.0,0.0,
-					     0.0,0.0,0.0,
-					     0.0,0.0,0.0,};
+                                             0.0,0.0,0.0,
+                                             0.0,0.0,0.0,};
   const med_float ipointcoordinate[3*3] = { 0.0,0.0,2.5,
-					    0.0,0.0,3.5,
-					    0.0,0.0,4.5};
+                                            0.0,0.0,3.5,
+                                            0.0,0.0,4.5};
   const med_float weight[4] = {1.0/4, 1.0/4, 1.0/4, 1.0/4};
   const char beamsectionname[MED_NAME_SIZE+1]="BEAM_SECTION_MESH";
   const med_int nipoint = 3;
   char interpname[MED_NAME_SIZE+1] = "geometrical transformation";
-  const med_int nvariable=2;
-  const med_int maxdegree=1;
-  const med_int nmaxcoefficient=3;
-  const med_int         ncoefficient1_1 = 3;
-  const med_int   const power1_1[]         = {0,0,1,0,0,1};
-  const med_float const coefficient1_1[]   = {1,-1,-1};
-  const med_int         ncoefficient1_2 = 1;
-  const med_int   const power1_2[]         = {1,0};
-  const med_float const coefficient1_2[]   = {1};
-  const med_int         ncoefficient1_3 = 1;
-  const med_int   const power1_3[]         = {0,1};
-  const med_float const coefficient1_3[]   = {1};
+  const med_int   nvariable        =2;
+  const med_int   maxdegree        =1;
+  const med_int   nmaxcoefficient  =3;
+  const med_int   ncoefficient1_1  = 3;
+  const med_int   power1_1[]       = {0,0,1,0,0,1};
+  const med_float coefficient1_1[] = {1,-1,-1};
+  const med_int   ncoefficient1_2  = 1;
+  const med_int   power1_2[]       = {1,0};
+  const med_float coefficient1_2[] = {1};
+  const med_int   ncoefficient1_3  = 1;
+  const med_int   power1_3[]       = {0,1};
+  const med_float coefficient1_3[] = {1};
   int ret=-1;
 
 
@@ -125,17 +125,17 @@ int main (int argc, char **argv) {
   /* create the families of integration points 
      for the struct element */
   if (MEDlocalizationWr(fid, localization, geotype, spacedim, 
-			elementcoordinate, MED_FULL_INTERLACE, 
-			nipoint, ipointcoordinate, weight, 
-			MED_NO_INTERPOLATION, beamsectionname) < 0) {
+                        elementcoordinate, MED_FULL_INTERLACE, 
+                        nipoint, ipointcoordinate, weight, 
+                        MED_NO_INTERPOLATION, beamsectionname) < 0) {
     MESSAGE("ERROR : create famlily of integration points ...");
     goto ERROR; 
   }
 
   if (MEDlocalizationWr(fid, localization2, geotype, spacedim, 
-			elementcoordinate, MED_FULL_INTERLACE, 
-			nipoint, ipointcoordinate, weight, 
-			interpname, beamsectionname) < 0) {
+                        elementcoordinate, MED_FULL_INTERLACE, 
+                        nipoint, ipointcoordinate, weight, 
+                        interpname, beamsectionname) < 0) {
     MESSAGE("ERROR : create famlily of integration points ...");
     goto ERROR; 
   }
@@ -147,26 +147,26 @@ int main (int argc, char **argv) {
    * - mesh is the 3D computation mesh of UsesCase_MEDstructElement_1 use case.
    */
   if (MEDfieldCr(fid, fieldname, MED_FLOAT64,
-		 ncomponent, componentname, componentunit,
-		 "ms", meshname) < 0) {
+                 ncomponent, componentname, componentunit,
+                 "ms", meshname) < 0) {
     MESSAGE("ERROR : create field");
     goto ERROR;
   }
 
   if (MEDfieldValueWithProfileWr(fid, fieldname, MED_NO_DT, MED_NO_IT, MED_UNDEF_DT, 
-				 MED_STRUCT_ELEMENT, geotype, 
-				 MED_COMPACT_STMODE, MED_NO_PROFILE, localization,
-				 MED_FULL_INTERLACE, MED_ALL_CONSTITUENT,
-				 nbeam, (unsigned char*) tempvalue) < 0) {
+                                 MED_STRUCT_ELEMENT, geotype, 
+                                 MED_COMPACT_STMODE, MED_NO_PROFILE, localization,
+                                 MED_FULL_INTERLACE, MED_ALL_CONSTITUENT,
+                                 nbeam, (unsigned char*) tempvalue) < 0) {
     MESSAGE("ERROR : write field values on MED_BEAM ");
     goto ERROR;
   }
 
   if (MEDfieldValueWithProfileWr(fid, fieldname, MED_NO_DT, 1, MED_UNDEF_DT, 
-				 MED_STRUCT_ELEMENT, geotype, 
-				 MED_COMPACT_STMODE, MED_NO_PROFILE, localization2,
-				 MED_FULL_INTERLACE, MED_ALL_CONSTITUENT,
-				 nbeam, (unsigned char*) tempvalue) < 0) {
+                                 MED_STRUCT_ELEMENT, geotype, 
+                                 MED_COMPACT_STMODE, MED_NO_PROFILE, localization2,
+                                 MED_FULL_INTERLACE, MED_ALL_CONSTITUENT,
+                                 nbeam, (unsigned char*) tempvalue) < 0) {
     MESSAGE("ERROR : write field values on MED_BEAM ");
     goto ERROR;
   }

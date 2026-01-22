@@ -1,6 +1,6 @@
 dnl  This file is part of MED.
 dnl
-dnl  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+dnl  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
 dnl  MED is free software: you can redistribute it and/or modify
 dnl  it under the terms of the GNU Lesser General Public License as published by
 dnl  the Free Software Foundation, either version 3 of the License, or
@@ -126,9 +126,10 @@ AC_REQUIRE([AC_PROG_GREP])
       HDF5_VERSION="0"
       if test -n "$HDF5_ABS_PATH" ; then 
          HDF5_USED_VER=` grep H5_VERS_INFO $HDF5_ABS_PATH | sed  's/\([[^"]]*\)\(".*"\)\([[^"]]*\)/\2/g' `
-         H5_VER_MAJOR=`  grep '#define *H5_VERS_MAJOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MAJOR[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
-         H5_VER_MINOR=`  grep '#define *H5_VERS_MINOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MINOR[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
-         H5_VER_RELEASE=`grep '#define *H5_VERS_RELEASE' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_RELEASE[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
+	 dnl ATTENTION : la presence du caractere diese dans les 3 expressions suivantes empeche la substitution des double crochets en simple crochet 
+         H5_VER_MAJOR=`  grep '#define *H5_VERS_MAJOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MAJOR[ \t]*\([0-9]*\)[ \t]*.*$/\1/g' `
+         H5_VER_MINOR=`  grep '#define *H5_VERS_MINOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MINOR[ \t]*\([0-9]*\)[ \t]*.*$/\1/g' `
+         H5_VER_RELEASE=`grep '#define *H5_VERS_RELEASE' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_RELEASE[ \t]*\([0-9]*\)[ \t]*.*$/\1/g' `
          HDF5_VERSION=`  expr 10000 \* ${H5_VER_MAJOR} + 100 \* ${H5_VER_MINOR} + ${H5_VER_RELEASE} `
          test "0${HDF5_VERSION}" -gt "11100" || test "0${HDF5_VERSION}" -lt "11002" && AC_MSG_ERROR([
 This HDF5 version ${H5_VER_MAJOR}.${H5_VER_MINOR}.${H5_VER_RELEASE} must not be used with med-fichier${MED_NUM_MAJEUR}.${MED_NUM_MINEUR}.${MED_NUM_RELEASE}.

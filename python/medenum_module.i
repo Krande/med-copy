@@ -100,6 +100,34 @@
 %}
 %med_enum_typemaps(medenum,med_axis_type,MED_AXIS_TYPE)
 
+%{
+  const enum_ MED_CLASS_init[]= {
+    enum_(0  ,"MED_MESH"),
+    enum_(1  ,"MED_FIELD"),
+    enum_(2  ,"MED_LIBRARY"),
+    enum_(3  ,"MED_FILE"),
+    enum_(4  ,"MED_MESH_SUPPORT"),
+    enum_(5  ,"MED_ELSTRUCT"),
+    enum_(6  ,"MED_FAMILY"),
+    enum_(7  ,"MED_EQUIVALENCE"),
+    enum_(8  ,"MED_GROUP"),
+    enum_(9  ,"MED_JOINT"), 
+    enum_(10 ,"MED_LOCALIZATION"),
+    enum_(11 ,"MED_PROFILE"),
+    enum_(12 ,"MED_FILTER"),
+    enum_(13 ,"MED_INTERPOLATION"),
+    enum_(14 ,"MED_NUMERICAL_DATA"),
+    enum_(15 ,"MED_LINK"),
+    enum_(16 ,"MED_FAMILY_ZERO"),
+    enum_(17 ,"MED_FAMILY_NODE"),
+    enum_(18 ,"MED_FAMILY_ELEM"),
+    enum_(-1 ,"MED_CLASS_UNDEF"),
+    enum_(-2 ,"MED_CLASS_ALL")
+   };
+%}
+
+%med_enum_typemaps(medenum,med_class,MED_CLASS)
+
 /** Essai **/
 
 /* %{ */

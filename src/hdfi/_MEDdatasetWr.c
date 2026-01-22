@@ -1,6 +1,6 @@
 /*  This file is part of MED.
  *
- *  COPYRIGHT (C) 1999 - 2021  EDF R&D, CEA/DEN
+ *  COPYRIGHT (C) 1999 - 2025  EDF R&D, CEA/DEN
  *  MED is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -39,15 +39,15 @@ med_err _MEDdatasetWr(const med_idt               id,
   hsize_t         _dim=0;
   const void      *_value= value;
 
- /*  ISCRUTE((*filter).nentity              ); */
-/*   ISCRUTE((*filter).nvaluesperentity     ); */
-/*   ISCRUTE((*filter).nconstituentpervalue ); */
-/*   ISCRUTE((*filter).constituentselect       ); */
-/*   ISCRUTE((*filter).switchmode              ); */
-/*   ISCRUTE((*filter).filterarraysize         ); */
-/*   ISCRUTE((*filter).profilearraysize        ); */
-/*   ISCRUTE((*filter).storagemode             ); */
-/*   SSCRUTE((*filter).profilename             ); */
+  /*  ISCRUTE((*filter).nentity              ); */
+  /*   ISCRUTE((*filter).nvaluesperentity     ); */
+  /*   ISCRUTE((*filter).nconstituentpervalue ); */
+  /*   ISCRUTE((*filter).constituentselect       ); */
+  /*   ISCRUTE((*filter).switchmode              ); */
+  /*   ISCRUTE((*filter).filterarraysize         ); */
+  /*   ISCRUTE((*filter).profilearraysize        ); */
+  /*   ISCRUTE((*filter).storagemode             ); */
+  /*   SSCRUTE((*filter).profilename             ); */
 
 
   if ( (_MED_ACCESS_MODE = _MEDmodeAcces(id) ) == MED_ACC_UNDEF ) {
@@ -102,7 +102,7 @@ med_err _MEDdatasetWr(const med_idt               id,
     case MED_INTERNAL_LNAME:
       if (!_dim) _dim = MED_LNAME_SIZE;
 
-/*       ISCRUTE(_dim); */
+      /*       ISCRUTE(_dim); */
       if( (_hdftype =  H5Tarray_create1( H5T_NATIVE_CHAR, 1, &_dim, 0 )) < 0) {
 	MED_ERR_(_ret,MED_ERR_CREATE,MED_ERR_DATATYPE,"");goto ERROR;
       }
@@ -125,20 +125,26 @@ med_err _MEDdatasetWr(const med_idt               id,
   }
   _datasetsize[0] = (*filter).nvaluesperentity * (*filter).nconstituentpervalue;
   if ( (*filter).profilearraysize == MED_UNDEF_SIZE ) {
-/*     if ( ! (*filter).nentity )  { */
-/*       MED_ERR_(_ret,MED_ERR_NOTNULL,MED_ERR_FILTER,""); */
-/*       ISCRUTE((*filter).nentity); */
-/*       goto ERROR; */
-/*     } */
+    /*     if ( ! (*filter).nentity )  { */
+    /*       MED_ERR_(_ret,MED_ERR_NOTNULL,MED_ERR_FILTER,""); */
+    /*       ISCRUTE((*filter).nentity); */
+    /*       goto ERROR; */
+    /*     } */
     _datasetsize[0]*= (*filter).nentity;
   }  else
     _datasetsize[0]*= (*filter).profilearraysize;
 
-  if ( ! _datasetsize[0] || ! _value) {
+  /* En //, il faut que le datsetsize est la même valeur pour ts les processus */
+  /* indépendemment de la quantité de données à écrire : si _value == NULL     */
+  /* il ne faut pas un dataspace == H5S_null */
+  /* if ( ! _datasetsize[0] || ! _value ) { */
+  if ( ! _datasetsize[0] ) {
     _dataspace = H5Screate( H5S_NULL );
     _value=NULL;
   }
 
+  /* Dataspace utilisé uniquement pour la création du dataset */
+  /* L'écriture utilise les dataspaces du filtre              */
   if (!_dataspace)
     if ((_dataspace = H5Screate_simple(1,_datasetsize,NULL)) < 0) {
       MED_ERR_(_ret,MED_ERR_CREATE,MED_ERR_DATASPACE,MED_ERR_SIZE_MSG);
@@ -146,6 +152,7 @@ med_err _MEDdatasetWr(const med_idt               id,
       goto ERROR;
     }
 
+  /* Supprime s'il existe le lien symbolique à l'emplacement du dataset à créer. */
   if ( H5Lget_info( id, datasetname,  &_linkinfo, H5P_DEFAULT ) >= 0 ) {
     if ( _linkinfo.type == H5L_TYPE_SOFT )
       if ( H5Ldelete(id,datasetname,H5P_DEFAULT) < 0 ) {
@@ -211,7 +218,14 @@ med_err _MEDdatasetWr(const med_idt               id,
   } /*Fin de traitement d'un dataset existant */
 
 
-  if (_value)
+  /* Deux cas différent dans le choix d'écrire in fine le dataset ou non                        */
+  /*  - *filter.nentity == 0 : Pas d'écriture, cas des connectivités MED_PARTICLE implicites    */
+  /*  - _value == NULL       : dans le cas des appels en // par des processus ayant count == 0, */
+  /*                           value peut être mis à NULL                                       */
+  /*                           (l'appel au H5Dwrite doit être fait car collectif)               */
+
+  if ( _datasetsize[0] ) {
+    
     for (_i=0; _i < (*filter).nspaces; ++_i) {
       if ( H5Dwrite(_dataset,_hdftype,(*filter).memspace[_i],
 		    (*filter).diskspace[_i],H5P_DEFAULT, _value) < 0 ) {
@@ -223,8 +237,10 @@ med_err _MEDdatasetWr(const med_idt               id,
 	goto ERROR;
       }
     }
-
-    _ret = 0;
+    
+  }
+  
+  _ret = 0;
 
   ERROR:
 
@@ -233,20 +249,20 @@ med_err _MEDdatasetWr(const med_idt               id,
       ISCRUTE_id(_dataspace);
     }
 
-    if ( _datadiskspace > 0 ) if ( H5Sclose(_datadiskspace) < 0) {
+  if ( _datadiskspace > 0 ) if ( H5Sclose(_datadiskspace) < 0) {
       MED_ERR_(_ret,MED_ERR_CLOSE,MED_ERR_DATASPACE, MED_ERR_ID_MSG );
       ISCRUTE_id(_datadiskspace);
     }
 
-    if ( _dataset > 0 ) if ( H5Dclose(_dataset) < 0) {
+  if ( _dataset > 0 ) if ( H5Dclose(_dataset) < 0) {
       MED_ERR_(_ret,MED_ERR_CLOSE,MED_ERR_DATASET, MED_ERR_ID_MSG );
       ISCRUTE_id(_dataset);
     }
 
-    if ( _dim > 1 ) if ( H5Tclose(_hdftype) < 0 ) {
+  if ( _dim > 1 ) if ( H5Tclose(_hdftype) < 0 ) {
       MED_ERR_(_ret,MED_ERR_CLOSE,MED_ERR_DATATYPE, MED_ERR_ID_MSG );
       ISCRUTE_id(_hdftype);
     }
 
-    return _ret;
-  }
+  return _ret;
+}
